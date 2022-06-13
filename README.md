@@ -7,28 +7,28 @@
 ## Team Name
 
 **Art**<br/>
-Amanda Hahne | [LinkedIn]() [Portfolio]()<br/>
-Filip Suthawan | [LinkedIn]() [Portfolio]()<br/>
-Rachael Whelan | [LinkedIn]() [Portfolio]()<br/>
-Rasmus Mårtenson | [LinkedIn]() [Portfolio]()<br/>
+Amanda Hahne | [LinkedIn]() | [Portfolio]()<br/>
+Filip Suthawan | [LinkedIn]() | [Portfolio]()<br/>
+Rachael Whelan | [LinkedIn]() | [Portfolio]()<br/>
+Rasmus Mårtenson | [LinkedIn]() | [Portfolio]()<br/>
 
 **Game Designers**<br/>
-Elias Bernmarker | [LinkedIn]() [Portfolio]()<br/>
-Erick Vaghi | [LinkedIn]() [Portfolio]()<br/>
-Joakim Örnerfors | [LinkedIn]() [Portfolio]()<br/>
+Elias Bernmarker | [LinkedIn]() | [Portfolio]()<br/>
+Erick Vaghi | [LinkedIn]() | [Portfolio]()<br/>
+Joakim Örnerfors | [LinkedIn]() | [Portfolio]()<br/>
 
 **Programmers**<br/>
-Emir Ulusoy | [LinkedIn]() [Portfolio]()<br/>
-Felix Kjellberg | [LinkedIn]() [Portfolio]()<br/>
-Olle Reberg | [LinkedIn]() [Portfolio]()<br/>
-Oskar Anderson | [LinkedIn]() [Portfolio]()<br/>
-Sami Olsson | [LinkedIn]() [Portfolio]()<br/>
-Sara Saber | [LinkedIn]() [Portfolio]()<br/>
-Sokratis Papageorgiou | [LinkedIn](https://www.linkedin.com/in/sokratis-papageorgiou-b26b1652/) [Portfolio](https://www.sokpapageorgiou.com/)<br/>
+Emir Ulusoy | [LinkedIn]() | [Portfolio]()<br/>
+Felix Kjellberg | [LinkedIn]() | [Portfolio]()<br/>
+Olle Reberg | [LinkedIn]() | [Portfolio]()<br/>
+Oskar Anderson | [LinkedIn]() | [Portfolio]()<br/>
+Sami Olsson | [LinkedIn]() | [Portfolio]()<br/>
+Sara Saber | [LinkedIn]() | [Portfolio]()<br/>
+Sokratis Papageorgiou | [LinkedIn](https://www.linkedin.com/in/sokratis-papageorgiou-b26b1652/) | [Portfolio](https://www.sokpapageorgiou.com/)<br/>
 
 **Sound Designers**<br/>
-Arvid Lundin | [LinkedIn]() [Portfolio]()<br/>
-Tom Olovsson | [LinkedIn]() [Portfolio]()<br/>
+Arvid Lundin | [LinkedIn]() | [Portfolio]()<br/>
+Tom Olovsson | [LinkedIn]() | [Portfolio]()<br/>
 
 ## Design Documents
 
