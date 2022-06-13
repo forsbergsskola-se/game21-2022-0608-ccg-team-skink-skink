@@ -4,7 +4,7 @@
 
 {description}
 
-## Team Name
+## Team Skink Skink
 
 **Art**<br/>
 Amanda Hahne | [LinkedIn]() | [Portfolio]()<br/>
