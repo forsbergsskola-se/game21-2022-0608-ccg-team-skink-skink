@@ -1,26 +1,25 @@
 using System;
 using Gameplay.AI.Unit.Behaviours;
+using Gameplay.Unit;
 using UnityEngine;
 
 namespace Gameplay.AI.Unit
 {
     public class UnitAI : MonoBehaviour
     {
-        //Todo: move stats to another component
-        [SerializeField] private float speed;
-        [SerializeField] private Vector3 direction;
-        [SerializeField] private float range;
+        [Header("Dependencies")]
+        [SerializeField] private Stats stats;
         
         private Movement movement;
 
         private void Awake() 
-            => movement = new Movement(speed, direction);
+            => movement = new Movement(stats.Speed, stats.Direction);
 
         private void FixedUpdate()
         {
             RaycastHit hit;
             
-            if(Physics.SphereCast(transform.position, 1, direction,out hit, range))
+            if(Physics.SphereCast(transform.position, 1, stats.Direction,out hit, stats.Range))
             {
                 
             } 
