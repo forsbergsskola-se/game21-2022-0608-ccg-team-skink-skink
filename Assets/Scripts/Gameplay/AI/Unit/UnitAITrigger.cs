@@ -1,10 +1,11 @@
+using System;
 using Gameplay.AI.Unit.Behaviours;
 using Gameplay.Unit;
 using UnityEngine;
 
 namespace Gameplay.AI.Unit
 {
-    public class UnitAI : MonoBehaviour
+    public class UnitAITrigger : MonoBehaviour
     {
         [Header("Dependencies")]
         [SerializeField] private Stats stats;
@@ -21,14 +22,16 @@ namespace Gameplay.AI.Unit
             attack = new Attack();
         }
 
-        private void FixedUpdate()
+        private void Start() 
+            => StartCoroutine(movement.Move(GetComponentInParent<Transform>(), Direction));
+
+        private void OnTriggerEnter(Collider other)
         {
-            if (Physics.SphereCast(transform.position, 1, Direction, out RaycastHit hit, stats.Range) 
-                && hit.transform.CompareTag(Target))
+            if (other.CompareTag(Target))
             {
+                StopAllCoroutines();
                 StartCoroutine(attack.Hit());
             }
-            else StartCoroutine(movement.Move(this.transform, Direction));
         }
     }
 }

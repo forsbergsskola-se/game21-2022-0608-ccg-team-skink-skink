@@ -7,7 +7,7 @@ namespace Gameplay.AI.Unit.Behaviours
     {
         private float speed;
         
-        public Movement(float speed, Vector3 direction)
+        public Movement(float speed)
         {
             this.speed = speed;
         }

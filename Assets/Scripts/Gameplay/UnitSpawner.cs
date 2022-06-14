@@ -8,7 +8,8 @@ namespace Gameplay
         [Header("Dependencies")]
         public GameObject unit;
 
-        [Header("Base SetUp")]
+        [Header("Base SetUp")] 
+        [SerializeField] private string unitTag;
         [SerializeField] private string targetTag;
         [SerializeField] private Vector3 direction;
     
@@ -16,7 +17,8 @@ namespace Gameplay
         public void Spawn()
         {
             var temp = Instantiate(unit, transform.position, Quaternion.identity);
-            UnitAI ai = temp.GetComponent<UnitAI>(); 
+            temp.tag = unitTag;
+            UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
             ai.Target = targetTag;
             ai.Direction = direction;
