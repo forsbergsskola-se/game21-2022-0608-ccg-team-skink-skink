@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d509f4aca62cc741af69ad3b9f7ba1c, type: 3}
-  m_Name: BasicUnit
+  m_Name: Unit4
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 0.3
   direction: {x: 1, y: 0, z: 0}
-  range: 1
-  cost: 10
-  health: 0
-  damage: 0
-  attackSpeed: 0
+  range: 3
+  cost: 35
+  health: 15
+  damage: 15
+  attackSpeed: 0.9
