@@ -45,6 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 415738900540054693, guid: 44fa5abc0b04a784386a5bc4f0f98135, type: 3}
-  unitTag: Player
-  targetTag: Enemy
+  isPlayerBase: 1
   direction: {x: -1, y: 0, z: 0}
