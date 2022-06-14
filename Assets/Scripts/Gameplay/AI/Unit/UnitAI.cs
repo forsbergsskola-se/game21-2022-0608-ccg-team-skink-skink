@@ -15,8 +15,7 @@ namespace Gameplay.AI.Unit
         private void Awake() 
             => movement = new Movement(speed, direction);
         
-
         private void FixedUpdate() 
-            => movement.Move(this.transform);
+            => StartCoroutine(movement.Move(this.transform));
     }
 }

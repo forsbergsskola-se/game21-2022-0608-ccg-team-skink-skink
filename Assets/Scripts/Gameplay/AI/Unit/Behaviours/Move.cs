@@ -14,7 +14,9 @@ namespace Gameplay.AI.Unit.Behaviours
             this.direction = direction;
         }
 
-        public void Move(Transform transform) 
-            => transform.position += speed * direction;
+        public IEnumerator Move(Transform transform)
+        {
+            yield return transform.position += speed * direction;
+        }
     }
 }
