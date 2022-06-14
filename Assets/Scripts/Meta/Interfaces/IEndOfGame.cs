@@ -1,9 +1,12 @@
 using System;
 
-public interface IEndOfGame
+namespace Meta.Interfaces
 {
-    public void OnGameEnded(bool userWon);
+    public interface IEndOfGame
+    {
+        public void OnGameEnded(bool userWon);
 
-    internal event Action OnWin;
-    internal event Action OnLose;
+        internal event Action OnWin;
+        internal event Action OnLose;
+    }
 }
