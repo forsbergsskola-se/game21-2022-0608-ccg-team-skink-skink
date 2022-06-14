@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ICurrency : MonoBehaviour
+namespace Meta.Interfaces
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public interface INormalCoinCarrier
+    { 
+        public int Amount { get; }
     }
 
-    // Update is called once per frame
-    void Update()
+    public interface IPremiumCoinCarrier
     {
-        
+        public int Amount { get; }
     }
 }
