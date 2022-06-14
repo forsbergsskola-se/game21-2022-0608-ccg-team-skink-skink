@@ -1,13 +1,19 @@
 using System;
 
-public interface IAdSystem
+namespace Meta.Interfaces
 {
-    public interface IAdController
+    public interface IAdSystem
     {
-        public event Action OnAdCompleted;
-    }
-    public interface IAd
-    {
-        public void PlayAd();
+        public interface IAd
+        {
+            public void PlayAd();
+        }
+    
+        public interface IAdController
+        {
+            public event Action OnAdCompleted;
+
+            public IAd GetAd();
+        }
     }
 }
