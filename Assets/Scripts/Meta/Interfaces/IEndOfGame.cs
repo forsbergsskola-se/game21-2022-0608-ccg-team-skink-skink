@@ -6,7 +6,7 @@ namespace Meta.Interfaces
     {
         public void OnGameEnded(bool userWon);
 
-        internal event Action OnWin;
-        internal event Action OnLose;
+        public event Action OnWin;
+        public event Action OnLose;
     }
 }
