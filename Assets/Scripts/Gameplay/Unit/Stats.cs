@@ -6,7 +6,6 @@ namespace Gameplay.Unit
     public class Stats : ScriptableObject
     {
         [SerializeField] private float speed;
-        [SerializeField] private Vector3 direction;
         [SerializeField] private float range;
         [SerializeField] private int cost;
         [SerializeField] private float baseHealth;
@@ -14,7 +13,6 @@ namespace Gameplay.Unit
         [SerializeField] private float attackSpeed;
 
         public float Speed => speed;
-        public Vector3 Direction => direction;
         public float Range => range;
 
         public int Cost => cost;

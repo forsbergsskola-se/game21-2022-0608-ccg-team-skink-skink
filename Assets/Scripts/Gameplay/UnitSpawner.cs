@@ -1,28 +1,25 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Gameplay.Unit;
+using Gameplay.AI.Unit;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UnitSpawner : MonoBehaviour
+namespace Gameplay
 {
-    public Transform spawnPoint;
-    public GameObject unit;
-    public Stats stats;
+    public class UnitSpawner : MonoBehaviour
+    {
+        [Header("Dependencies")]
+        public GameObject unit;
 
-    //TODO: remove update input, keep until done testing
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Spawn();
-        }
-    }
+        [Header("Base SetUp")]
+        [SerializeField] private string targetTag;
+        [SerializeField] private Vector3 direction;
     
-    //spawns unit at the selected spawnPoint
-    public void Spawn()
-    {
-        Instantiate(unit, spawnPoint);
+        //spawns unit at the selected spawnPoint
+        public void Spawn()
+        {
+            var temp = Instantiate(unit, transform.position, Quaternion.identity);
+            UnitAI ai = temp.GetComponent<UnitAI>(); 
+
+            ai.Target = targetTag;
+            ai.Direction = direction;
+        }
     }
 }

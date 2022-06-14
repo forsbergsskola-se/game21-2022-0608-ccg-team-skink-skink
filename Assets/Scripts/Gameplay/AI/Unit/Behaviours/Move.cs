@@ -6,15 +6,13 @@ namespace Gameplay.AI.Unit.Behaviours
     public class Movement
     {
         private float speed;
-        private Vector3 direction;
-
+        
         public Movement(float speed, Vector3 direction)
         {
             this.speed = speed;
-            this.direction = direction;
         }
 
-        public IEnumerator Move(Transform transform)
+        public IEnumerator Move(Transform transform, Vector3 direction)
         {
             yield return transform.position += speed * direction;
         }
