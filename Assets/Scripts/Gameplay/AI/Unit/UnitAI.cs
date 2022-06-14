@@ -19,14 +19,16 @@ namespace Gameplay.AI.Unit
             attack = new Attack();
         }
             
-
         private void FixedUpdate()
         {
-            if(Physics.SphereCast(transform.position, 1, stats.Direction,out RaycastHit hit, stats.Range))
-                StartCoroutine(attack.Hit());
-            
+            if (Physics.SphereCast(transform.position, 1, stats.Direction, out RaycastHit hit, stats.Range) 
+                && hit.transform.CompareTag("Enemy"))
+            {
+                
+                StartCoroutine(attack.Hit());   
+                
+            }
             else StartCoroutine(movement.Move(this.transform));
-        } 
-           
+        }
     }
 }
