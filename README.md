@@ -13,7 +13,7 @@ Rachael Whelan | [LinkedIn]() | [Portfolio]()<br/>
 Rasmus Mårtenson | [LinkedIn]() | [Portfolio]()<br/>
 
 **Game Designers**<br/>
-Elias Bernmarker | [LinkedIn]() | [Portfolio]()<br/>
+Elias Bernmarker | [LinkedIn](https://www.linkedin.com/in/elias-bernmarker-0733a9203/?original_referer=) | [Portfolio](https://ivinsiblee.wixsite.com/eliasbernmarker)<br/>
 Erick Vaghi | [LinkedIn]() | [Portfolio]()<br/>
 Joakim Örnerfors | [LinkedIn]() | [Portfolio]()<br/>
 
