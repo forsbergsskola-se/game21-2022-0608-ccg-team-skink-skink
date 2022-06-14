@@ -1,4 +1,5 @@
 using UnityEngine.SceneManagement;
+
 namespace Meta.Interfaces
 {
     public interface ILevelController
