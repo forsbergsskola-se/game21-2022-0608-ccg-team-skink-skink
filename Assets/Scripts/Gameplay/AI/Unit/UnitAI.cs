@@ -12,14 +12,11 @@ namespace Gameplay.AI.Unit
         
         private Movement movement;
 
-        private void Awake()
-        {
-            movement = new Movement(speed, direction);
-        }
+        private void Awake() 
+            => movement = new Movement(speed, direction);
+        
 
-        private void FixedUpdate()
-        {
-            movement.Move(this.transform);
-        }
+        private void FixedUpdate() 
+            => movement.Move(this.transform);
     }
 }
