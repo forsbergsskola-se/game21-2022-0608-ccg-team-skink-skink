@@ -7,20 +7,20 @@ using UnityEngine.UI;
 public class UnitSpawner : MonoBehaviour
 {
     public Transform spawnPoint;
-    public GameObject unit1;
+    public GameObject unit;
 
     //TODO: remove update input, keep until done testing
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Spawn1();
+            Spawn();
         }
     }
     
     //spawns unit at the selected spawnPoint
-    public void Spawn1()
+    public void Spawn()
     {
-        Instantiate(unit1, spawnPoint);
+        Instantiate(unit, spawnPoint);
     }
 }
