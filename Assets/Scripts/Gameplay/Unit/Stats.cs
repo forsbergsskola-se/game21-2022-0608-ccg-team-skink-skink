@@ -9,7 +9,7 @@ namespace Gameplay.Unit
         [SerializeField] private Vector3 direction;
         [SerializeField] private float range;
         [SerializeField] private int cost;
-        [SerializeField] private float health;
+        [SerializeField] private float baseHealth;
         [SerializeField] private float damage;
         [SerializeField] private float attackSpeed;
 
@@ -18,7 +18,7 @@ namespace Gameplay.Unit
         public float Range => range;
 
         public int Cost => cost;
-        public float Health => health;
+        public float BaseHealth => baseHealth;
         public float Damage => damage;
         public float AttackSpeed => attackSpeed;
     }
