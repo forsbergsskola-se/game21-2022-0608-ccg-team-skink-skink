@@ -11,18 +11,20 @@ namespace Gameplay.AI.Unit
         [SerializeField] private Stats stats;
         
         private Movement movement;
+        private Attack attack;
 
-        private void Awake() 
-            => movement = new Movement(stats.Speed, stats.Direction);
+        private void Awake()
+        {
+            movement = new Movement(stats.Speed, stats.Direction);
+            attack = new Attack();
+        }
+            
 
         private void FixedUpdate()
         {
-            RaycastHit hit;
+            if(Physics.SphereCast(transform.position, 1, stats.Direction,out RaycastHit hit, stats.Range))
+                StartCoroutine(attack.Hit());
             
-            if(Physics.SphereCast(transform.position, 1, stats.Direction,out hit, stats.Range))
-            {
-                
-            } 
             else StartCoroutine(movement.Move(this.transform));
         } 
            
