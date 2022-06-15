@@ -3,10 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 namespace Meta.Level
 {
-    public class LevelLoader : MonoBehaviour
+    public class LevelLoader : MonoBehaviour, ILevelController
     {
-        //TODO:Get this to work with ILevel interface
-        public void LoadLevel(Level level)
+        public void LoadLevel(ILevel level)
         {
             SceneManager.LoadScene(level.InternalSceneName);
         }
