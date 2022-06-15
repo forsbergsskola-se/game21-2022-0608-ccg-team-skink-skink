@@ -580,7 +580,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1735731046}
         m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
-        m_MethodName: Spawn
+        m_MethodName: SpawnUnit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -714,7 +714,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 34660473}
         m_TargetAssemblyTypeName: Gameplay.UnitSpawner, Assembly-CSharp
-        m_MethodName: Spawn
+        m_MethodName: SpawnUnit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1076,7 +1076,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1135631069}
         m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
-        m_MethodName: Spawn
+        m_MethodName: SpawnUnit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1439,7 +1439,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1166844632}
         m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
-        m_MethodName: Spawn
+        m_MethodName: SpawnUnit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
