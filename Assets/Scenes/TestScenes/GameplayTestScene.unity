@@ -255,7 +255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
   isPlayer: 0
-  direction: {x: 0, y: 0, z: 0}
 --- !u!136 &242458724
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1031,7 +1030,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 8866419275615297644, guid: a498ae963c764df449e1341ef4ba08e1, type: 3}
   isPlayer: 0
-  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &1135631070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,7 +1193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
   isPlayer: 0
-  direction: {x: 0, y: 0, z: 0}
 --- !u!136 &1155230328
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1504,7 +1501,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 415738900540054693, guid: 44fa5abc0b04a784386a5bc4f0f98135, type: 3}
   isPlayer: 0
-  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &1466402346
 GameObject:
   m_ObjectHideFlags: 0

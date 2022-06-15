@@ -15,6 +15,7 @@ namespace Gameplay
         //spawns unit at the selected spawnPoint
         public void Spawn()
         {
+            //Todo: Connect with the pool
             var temp = Instantiate(unit, transform.position, Quaternion.identity);
             temp.tag = SetTag(isPlayer);
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
