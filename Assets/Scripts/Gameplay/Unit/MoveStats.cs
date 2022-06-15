@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Gameplay.Unit
 {
-    [CreateAssetMenu(fileName = "NewMovStats", menuName = "Unit/MovStats")]
-    public class MovStats : ScriptableObject
+    [CreateAssetMenu(fileName = "NewMoveStats", menuName = "Unit/MoveStats")]
+    public class MoveStats : ScriptableObject
     {
         [SerializeField] private float speed;
         [SerializeField] private float range;

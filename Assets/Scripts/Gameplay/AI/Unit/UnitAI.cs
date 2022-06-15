@@ -7,7 +7,7 @@ namespace Gameplay.AI.Unit
     public class UnitAI : MonoBehaviour
     {
         [Header("Dependencies")]
-        [SerializeField] private Stats stats;
+        [SerializeField] private MoveStats moveStats;
         
         private Movement movement;
         private Attack attack;
@@ -17,13 +17,13 @@ namespace Gameplay.AI.Unit
 
         private void Awake()
         {
-            movement = new Movement(stats.Speed);
+            movement = new Movement(moveStats.Speed);
             attack = new Attack();
         }
 
         private void FixedUpdate()
         {
-            if (Physics.SphereCast(transform.position, 1, Direction, out RaycastHit hit, stats.Range) 
+            if (Physics.SphereCast(transform.position, 1, Direction, out RaycastHit hit, moveStats.Range) 
                 && hit.transform.CompareTag(Target))
             {
                 StartCoroutine(attack.Hit());
