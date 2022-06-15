@@ -14,12 +14,12 @@ namespace Meta.Level
         {
             Name = visualName;
             Index = index;
-            LevelScene = SceneManager.GetSceneByName(internalSceneName);
+            InternalSceneName = internalSceneName;
         }
 
 
         public string Name { get; private set; }
         public int Index { get; private set; }
-        public Scene LevelScene { get; private set; }
+        public string InternalSceneName { get; private set; }
     }
 }

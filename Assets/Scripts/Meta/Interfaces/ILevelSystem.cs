@@ -10,6 +10,6 @@ namespace Meta.Interfaces
     {
         public string Name { get; }
         public int Index { get; }
-        public Scene LevelScene { get; }
+        public string InternalSceneName { get; }
     }
 }
