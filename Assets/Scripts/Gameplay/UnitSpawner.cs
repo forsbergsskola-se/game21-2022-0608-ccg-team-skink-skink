@@ -9,11 +9,9 @@ namespace Gameplay
         [Header("Dependencies")]
         public GameObject unit;
 
-        [FormerlySerializedAs("isPlayerBase")]
         [Header("Base SetUp")] 
         [SerializeField] private bool isPlayer;
-        [SerializeField] private Vector3 direction;
-    
+        
         //spawns unit at the selected spawnPoint
         public void Spawn()
         {
@@ -22,9 +20,14 @@ namespace Gameplay
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
             ai.Target = SetTag(!isPlayer);
-            ai.Direction = direction;
+            ai.Direction = SetDirection(ai.transform.position.x);
         }
 
-        private string SetTag(bool player) => player ? "Player" : "Enemy";
+        private string SetTag(bool player)
+            => player ? "Player" : "Enemy";
+
+        private Vector3 SetDirection(float positionX)
+            => new Vector3(positionX * -1, 0, 0).normalized;
+        
     }
 }
