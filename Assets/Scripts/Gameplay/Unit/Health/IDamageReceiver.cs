@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface IDamageReciver
+namespace Gameplay.Unit.Health
 {
-    void TakeDamage(float value);
+    public interface IDamageReciver
+    {
+        void TakeDamage(float value);
+    }
 }
