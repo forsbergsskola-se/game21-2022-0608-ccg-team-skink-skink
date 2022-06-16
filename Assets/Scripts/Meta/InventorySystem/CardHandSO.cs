@@ -9,13 +9,15 @@ namespace Meta.InventorySystem
         [SerializeField] private CardSO abilityCard;
         [SerializeField] private CardSO[] cards = new CardSO[6];
         
-        public void Awake()
-        {
-            AbilityCard = abilityCard;
-            //Cards = cards;
-        }
-
         public ICard[] Cards => cards;
-        public ICard AbilityCard { get; set; }
+
+        public ICard AbilityCard
+        {
+            get => abilityCard;
+            set
+            {
+                abilityCard = (CardSO) value;
+            } 
+        }
     }
 }

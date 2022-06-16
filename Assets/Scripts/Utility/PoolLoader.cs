@@ -16,18 +16,15 @@ namespace Utility
             var cardsToPool = new Dictionary<string, GameObject>();
             CardAdder(cardsToPool, playerHand);
             CardAdder(cardsToPool, enemyHand);
-            
-            Debug.Log(cardsToPool.Count);
         }
 
-        private void CardAdder(Dictionary<string, GameObject> cardsToPool,ICardHand hand)
+        private void CardAdder(Dictionary<string, GameObject> cardsToPool, ICardHand hand)
         {
             foreach (var card in hand.Cards)
             {
                 if (!cardsToPool.ContainsKey(card.Name))
                 {
                     cardsToPool.Add(card.Name, card.CardObject);
-                    Debug.Log("Add: " + card.Name);
                 }
             } 
         }
