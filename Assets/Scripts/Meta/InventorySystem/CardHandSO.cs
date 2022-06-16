@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Meta.Interfaces;
 using UnityEngine;
 
@@ -8,16 +10,17 @@ namespace Meta.InventorySystem
     {
         [SerializeField] private CardSO abilityCard;
         [SerializeField] private CardSO[] cards = new CardSO[6];
-        
-        public ICard[] Cards => cards;
 
-        public ICard AbilityCard
+        private void Awake()
         {
-            get => abilityCard;
-            set
-            {
-                abilityCard = (CardSO) value;
-            } 
+            Debug.Log("I'm awake, need coffee tho");
+            //Cards = cards.ToArray<ICard>();
+            AbilityCard = abilityCard;
         }
+
+        public ICard[] Cards => cards;
+        
+        public ICard AbilityCard { get; set; }
+        
     }
 }
