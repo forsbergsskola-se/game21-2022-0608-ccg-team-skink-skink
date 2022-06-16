@@ -5,8 +5,8 @@ namespace Gameplay.Unit
     [CreateAssetMenu(fileName = "NewHealthStats", menuName = "Unit/HealthStats")]
     public class HealthStats : ScriptableObject
     {
-        [SerializeField] private int health;
+        [SerializeField] private float maxHealth;
 
-        public int Health => health;
+        public float MaxHealth => maxHealth;
     }
 }
