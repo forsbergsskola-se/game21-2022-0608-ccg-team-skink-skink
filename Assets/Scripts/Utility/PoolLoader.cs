@@ -16,6 +16,11 @@ namespace Utility
             var cardsToPool = new Dictionary<string, GameObject>();
             CardAdder(cardsToPool, playerHand);
             CardAdder(cardsToPool, enemyHand);
+
+            foreach (var uniqueCard in cardsToPool)
+            {
+                pool.CreatePool(uniqueCard.Key, uniqueCard.Value, 10);
+            }
         }
 
         private void CardAdder(Dictionary<string, GameObject> cardsToPool, ICardHand hand)
