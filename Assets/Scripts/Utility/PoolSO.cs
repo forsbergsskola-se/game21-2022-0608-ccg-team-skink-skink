@@ -8,8 +8,6 @@ namespace Utility
     {
         private Dictionary<string, Queue<GameObject>> collection = new();
 
-        public Dictionary<string, Queue<GameObject>> Collection => collection;
-        
         public void CreatePool(string key, GameObject card, int cardAmount)
         {
             var pool = new Queue<GameObject>();
