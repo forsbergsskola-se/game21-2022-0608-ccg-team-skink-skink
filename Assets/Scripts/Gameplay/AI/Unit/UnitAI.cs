@@ -1,3 +1,4 @@
+using System;
 using Gameplay.AI.Unit.Behaviours;
 using Gameplay.Unit;
 using Gameplay.Unit.StatsInterfaces;
@@ -14,6 +15,7 @@ namespace Gameplay.AI.Unit
         
         private Movement movement;
         private Attack attack;
+        private UnitState state;
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
@@ -22,17 +24,28 @@ namespace Gameplay.AI.Unit
         {
             movement = new Movement(moveStats);
             attack = new Attack();
+
+            state = UnitState.Moving;
         }
 
         private void FixedUpdate()
         {
-            if (Physics.SphereCast(transform.position, 1, Direction, out RaycastHit hit, moveStats.Range) 
-                && hit.transform.CompareTag(Target))
+            switch (state)
             {
-                StartCoroutine(attack.Hit());
+                case UnitState.Moving:
+                    movement.Move(this.transform, Direction);
+                    
+                    if (Physics.SphereCast(transform.position, 1, Direction, out RaycastHit hit, moveStats.Range) 
+                        && hit.transform.CompareTag(Target))
+                    {
+                        state = UnitState.Attacking;
+                    }
+                    break;
+                
+                case UnitState.Attacking:
+                    attack.Hit();
+                    break;
             }
-            else StartCoroutine(movement.Move(this.transform, Direction));
         }
-        
     }
 }

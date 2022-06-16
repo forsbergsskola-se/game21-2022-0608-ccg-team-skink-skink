@@ -10,9 +10,8 @@ namespace Gameplay.AI.Unit.Behaviours
         
         public Movement(IMoveStats moveStats) => this.moveStats = moveStats;
        
-        public IEnumerator Move(Transform transform, Vector3 direction)
-        {
-            yield return transform.position += moveStats.Speed * direction;
-        }
+        public void Move(Transform transform, Vector3 direction) 
+            => transform.position += moveStats.Speed * direction;
+        
     }
 }
