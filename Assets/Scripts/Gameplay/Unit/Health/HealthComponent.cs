@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Gameplay.Unit.Health
 {
-    public class HealthComponent : MonoBehaviour, IDamageReciver
+    public class HealthComponent : MonoBehaviour, IDamageReceiver
     {
         [SerializeField] private HealthStats healthStats;
 

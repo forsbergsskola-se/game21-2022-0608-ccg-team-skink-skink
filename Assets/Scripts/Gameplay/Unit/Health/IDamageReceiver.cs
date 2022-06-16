@@ -1,6 +1,6 @@
 namespace Gameplay.Unit.Health
 {
-    public interface IDamageReciver
+    public interface IDamageReceiver
     {
         void TakeDamage(float value);
     }
