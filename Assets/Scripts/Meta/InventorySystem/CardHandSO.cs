@@ -12,10 +12,10 @@ namespace Meta.InventorySystem
         public void Awake()
         {
             AbilityCard = abilityCard;
-            Cards = cards;
+            //Cards = cards;
         }
 
-        public ICard[] Cards { get; private set; }
+        public ICard[] Cards => cards;
         public ICard AbilityCard { get; set; }
     }
 }

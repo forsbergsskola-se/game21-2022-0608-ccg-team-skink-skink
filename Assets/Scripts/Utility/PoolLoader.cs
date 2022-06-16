@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Meta.Interfaces;
+using Meta.InventorySystem;
 using UnityEngine;
 
 namespace Utility
@@ -7,32 +8,28 @@ namespace Utility
     public class PoolLoader : MonoBehaviour
     {
         [SerializeField] private PoolSO pool;
-        [SerializeField] private ICardHand playerHand;
-        [SerializeField] private ICardHand enemyHand;
-
-        public List<GameObject> prefabs;
+        [SerializeField] private CardHandSO playerHand;
+        [SerializeField] private CardHandSO enemyHand;
 
         private void Awake()
         {
             var cardsToPool = new Dictionary<string, GameObject>();
-            foreach (var card in playerHand.Cards)
-            {
-                cardsToPool.Add(card.Name, card.CardObject);
-            }
+            CardAdder(cardsToPool, playerHand);
+            CardAdder(cardsToPool, enemyHand);
+            
+            Debug.Log(cardsToPool.Count);
+        }
 
-            foreach (var card in enemyHand.Cards)
+        private void CardAdder(Dictionary<string, GameObject> cardsToPool,ICardHand hand)
+        {
+            foreach (var card in hand.Cards)
             {
-                GameObject cardToAdd = cardsToPool[card.Name];
-                if (cardToAdd == null)
+                if (!cardsToPool.ContainsKey(card.Name))
                 {
                     cardsToPool.Add(card.Name, card.CardObject);
+                    Debug.Log("Add: " + card.Name);
                 }
-            }
-            foreach (var prefab in prefabs )
-            {
-                var temp = Instantiate(prefab);
-                
-            }
+            } 
         }
     }
 }
