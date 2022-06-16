@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicUnit
   m_EditorClassIdentifier: 
   speed: 0.2
-  direction: {x: 1, y: 0, z: 0}
+  direction: {x: -1, y: 0, z: 0}
   range: 1
   cost: 10
   health: 0

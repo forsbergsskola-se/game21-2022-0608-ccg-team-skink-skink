@@ -1,28 +1,38 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Gameplay.Unit;
+using Gameplay.AI.Unit;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Pool;
+using UnityEngine.Serialization;
 
-public class UnitSpawner : MonoBehaviour
+namespace Gameplay
 {
-    public Transform spawnPoint;
-    public GameObject unit;
-    public Stats stats;
+    public class UnitSpawner : MonoBehaviour
+    {
 
-    //TODO: remove update input, keep until done testing
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
+        //[Header("Dependencies")]
+        public GameObject unit;
+
+        [Header("Base SetUp")] 
+        [SerializeField] private bool isPlayer;
+        
+        //spawns unit at the selected spawnPoint
+        public void SpawnUnit()
         {
-            Spawn();
+            //Todo: Connect with the pool
+            var temp = Instantiate(unit, transform.position, Quaternion.identity);
+            temp.tag = SetTag(isPlayer);
+            UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
+
+            ai.Target = SetTag(!isPlayer);
+            ai.Direction = SetDirection(ai.transform.position.x);
         }
-    }
-    
-    //spawns unit at the selected spawnPoint
-    public void Spawn()
-    {
-        Instantiate(unit, spawnPoint);
+
+
+        private string SetTag(bool player)
+            => player ? "Player" : "Enemy";
+
+        private Vector3 SetDirection(float positionX)
+            => new Vector3(positionX * -1, 0, 0).normalized;
+        
     }
 }
