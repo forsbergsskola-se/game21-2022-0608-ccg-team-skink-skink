@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{570b91cc-f203-4266-b0d7-68af47620ba8}">
 		<property name="builtBanksOutputDirectory">
-			<value>../../Unity/game21-2022-0608-ccg-team-skink-skink/Assets/Streaming Assets</value>
+			<value>../Assets/Streaming Assets</value>
 		</property>
 		<relationship name="masterEventFolder">
 			<destination>{731ea65c-8219-42ba-b6f4-4503077cf604}</destination>
@@ -33,6 +33,7 @@
 		</relationship>
 		<relationship name="platforms">
 			<destination>{76988889-0106-41d1-bd14-b1646b30cd75}</destination>
+			<destination>{cbce6728-ceb2-4916-bcff-f36660a9dd65}</destination>
 		</relationship>
 	</object>
 </objects>
