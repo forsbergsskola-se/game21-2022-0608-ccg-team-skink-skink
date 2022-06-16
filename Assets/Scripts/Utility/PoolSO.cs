@@ -6,20 +6,33 @@ namespace Utility
     [CreateAssetMenu(menuName = "Utilities/Pool",fileName = "NewPool")]
     public class PoolSO : ScriptableObject
     {
-        public Dictionary<string, Queue<GameObject>> CardHandCollection = new();
-        //public Queue<GameObject> pool = new ();
+        private Dictionary<string, Queue<GameObject>> collection = new();
 
-        public void CreatePool(string name, GameObject card, int cardAmount)
+        public Dictionary<string, Queue<GameObject>> Collection => collection;
+        
+        public void CreatePool(string key, GameObject card, int cardAmount)
         {
             var pool = new Queue<GameObject>();
+            
             for (int i = 0; i < cardAmount; i++)
             {
                 var tempObj = Instantiate(card);
                 tempObj.SetActive(false);
                 pool.Enqueue(tempObj);
             }
-            CardHandCollection.Add(name, pool);
+            
+            collection.Add(key, pool);
         }
+
+        public GameObject GetInstance(string key)
+        {
+            var temp = collection[key].Dequeue();
+            temp.SetActive(true);
+            collection[key].Enqueue(temp);
+
+            return temp;
+        }
+        
     }
     
 }
