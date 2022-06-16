@@ -1,5 +1,7 @@
 using Gameplay.AI.Unit.Behaviours;
 using Gameplay.Unit;
+using Gameplay.Unit.StatsInterfaces;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -18,7 +20,7 @@ namespace Gameplay.AI.Unit
 
         private void Awake()
         {
-            movement = new Movement(moveStats.Speed);
+            movement = new Movement(moveStats);
             attack = new Attack();
         }
 
