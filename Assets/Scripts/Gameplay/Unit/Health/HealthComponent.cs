@@ -20,6 +20,8 @@ namespace Gameplay.Unit.Health
             {
                 if (value <= 0)
                     OnDeath?.Invoke();
+
+                currentHealth = value;
             }
         }
     
