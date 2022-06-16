@@ -1,4 +1,6 @@
+using System.Runtime.CompilerServices;
 using Meta.Interfaces;
+using Meta.InventorySystem;
 using UnityEngine;
 
 namespace Meta.Level
@@ -8,9 +10,12 @@ namespace Meta.Level
         [SerializeField] private string visualName;
         [SerializeField] private int index;
         [SerializeField] private string internalSceneName;
+        
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyCardHand;
 
         public string Name => visualName;
         public int Index => index;
+        public ICardHand EnemyHandPreset => enemyCardHand as ICardHand;
         public string InternalSceneName => internalSceneName;
     }
 }
