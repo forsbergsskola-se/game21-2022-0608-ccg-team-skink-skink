@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,11 +16,6 @@ namespace Utility
                 var temp = Instantiate(prefab);
                 pool.pool.Enqueue(temp);
             }
-        }
-
-        private void Start()
-        {
-            Debug.Log(pool.pool.Count);
         }
     }
 }
