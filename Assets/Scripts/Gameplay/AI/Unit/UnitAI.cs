@@ -1,10 +1,6 @@
-using System;
 using Gameplay.AI.Unit.Behaviours;
 using Gameplay.Unit;
-using Gameplay.Unit.StatsInterfaces;
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Pool;
 
 namespace Gameplay.AI.Unit
 {
@@ -38,11 +34,11 @@ namespace Gameplay.AI.Unit
                     if (Physics.SphereCast(transform.position, 1, Direction, out RaycastHit hit, moveStats.Range) 
                         && hit.transform.CompareTag(Target))
                     {
-                        state = UnitState.Attacking;
+                        state = UnitState.Action;
                     }
                     break;
                 
-                case UnitState.Attacking:
+                case UnitState.Action:
                     attack.Hit();
                     break;
             }
