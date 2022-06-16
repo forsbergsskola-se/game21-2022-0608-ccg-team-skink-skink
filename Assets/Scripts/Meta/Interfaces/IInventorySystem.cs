@@ -12,6 +12,7 @@ namespace Meta.Interfaces
     {
         public string Name { get; }
         public int CardLevel { get; }
+        public int ApCost { get; }
         public GameObject CardObject { get; }
     }
 
