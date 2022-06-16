@@ -1,8 +1,7 @@
-using System.Collections;
 using Gameplay.Unit.StatsInterfaces;
 using UnityEngine;
 
-namespace Gameplay.AI.Unit.Behaviours
+namespace Gameplay.AI.Unit.UnitActions
 {
     public class Movement
     {
@@ -12,6 +11,5 @@ namespace Gameplay.AI.Unit.Behaviours
        
         public void Move(Transform transform, Vector3 direction) 
             => transform.position += moveStats.Speed * direction;
-        
     }
 }
