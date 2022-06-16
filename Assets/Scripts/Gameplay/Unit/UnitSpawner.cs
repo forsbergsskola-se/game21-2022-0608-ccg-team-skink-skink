@@ -27,7 +27,6 @@ namespace Gameplay
             ai.Direction = SetDirection(ai.transform.position.x);
         }
 
-
         private string SetTag(bool player)
             => player ? "Player" : "Enemy";
 
