@@ -1,26 +1,44 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Gameplay.Unit;
-using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthComponent : MonoBehaviour, IDamageReciver
+namespace Gameplay.Unit.Health
 {
-    public UnityEvent OnDamageTaken;
-    public float CurrentHealth { get; private set; }
-    private HealthStats healthStats;
-    
+    public class HealthComponent : MonoBehaviour, IDamageReciver
+    {
+        [SerializeField] private HealthStats healthStats;
 
-    void OnEnable()
-    {
-        CurrentHealth = healthStats.MaxHealth;
-    }
+        public UnityEvent OnDamageTaken;
+        public UnityEvent OnDeath;
+
     
-    public void TakeDamage(float value)
-    {
-        CurrentHealth -= value;
-        OnDamageTaken?.Invoke();
+    
+        private float currentHealth;
+        public float CurrentHealth
+        {
+            get => currentHealth;
+            private set
+            {
+                if (value <= 0)
+                    OnDeath?.Invoke();
+            }
+        }
+    
+    
+    
+        void OnEnable()
+        {
+            currentHealth = healthStats.MaxHealth;
+        }
+    
+    
+    
+        public void TakeDamage(float value)
+        {
+            CurrentHealth -= value;
+        
+            // Prevent the onDamageTaken event from firing in the case of the player being healed.
+            if (value > 0)
+                OnDamageTaken?.Invoke();
+        }
     }
 }
