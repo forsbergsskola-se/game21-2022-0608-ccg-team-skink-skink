@@ -1865,13 +1865,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304378a577eba2d4781873b3372aab8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4134689633044338768, guid: 80e7966bcd56e5e4a91448a7c1042b95, type: 3}
-  enemy2: {fileID: 762221597463476538, guid: 5e6cbc021e698a1429a906bac0efd648, type: 3}
-  spawnPoints:
-  - {fileID: 34660474}
+  enemy: {fileID: 0}
+  enemy2: {fileID: 0}
+  spawnPoints: []
   spawnValues: {x: 0, y: 0, z: 0}
   spawnTick: 10
-  spawnAmount: 1
+  spawnAmount: 2
   eTimer: 0
 --- !u!1 &1652846924
 GameObject:
