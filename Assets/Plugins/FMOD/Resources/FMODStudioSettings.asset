@@ -308,7 +308,17 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Desktop/Master
-  Banks: []
+  Banks:
+  - Desktop/Game
+  - Desktop/Level0
+  - Desktop/Level1
+  - Desktop/Level2
+  - Desktop/Level3
+  - Desktop/Level4
+  - Desktop/Level5
+  - Desktop/Level6
+  - Desktop/Level7
+  - Desktop/MetaGame
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
