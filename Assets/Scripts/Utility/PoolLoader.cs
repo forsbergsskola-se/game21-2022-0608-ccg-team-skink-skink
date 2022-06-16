@@ -6,7 +6,7 @@ namespace Utility
 {
     public class PoolLoader : MonoBehaviour
     {
-        [SerializeField] private PoolSO pool;
+        [SerializeField] private Pool pool;
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object[] hands;
         
         private void Awake()

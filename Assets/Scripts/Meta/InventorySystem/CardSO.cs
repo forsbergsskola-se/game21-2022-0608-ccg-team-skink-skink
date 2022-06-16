@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Meta.InventorySystem
 {
-    [CreateAssetMenu(fileName = "NewCard", menuName = "CardSystem/Card")]
+    [CreateAssetMenu(fileName = "NewCard", menuName = "ScriptableObjects/CardSystem/Card")]
     public class CardSO : ScriptableObject, ICard
     {
         [SerializeField] string cardTitle;

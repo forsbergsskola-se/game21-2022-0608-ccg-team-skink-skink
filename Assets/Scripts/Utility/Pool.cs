@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Utility
 {
-    [CreateAssetMenu(menuName = "Utilities/Pool",fileName = "NewPool")]
-    public class PoolSO : ScriptableObject
+    [CreateAssetMenu(menuName = "ScriptableObjects/Utilities/Pool",fileName = "NewPool")]
+    public class Pool : ScriptableObject
     {
         private Dictionary<string, Queue<GameObject>> collection = new();
 
