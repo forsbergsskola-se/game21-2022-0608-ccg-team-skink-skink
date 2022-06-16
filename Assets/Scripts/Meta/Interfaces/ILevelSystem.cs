@@ -10,6 +10,7 @@ namespace Meta.Interfaces
     {
         public string Name { get; }
         public int Index { get; }
+        public ICardHand EnemyHandPreset { get; }
         public string InternalSceneName { get; }
     }
 }

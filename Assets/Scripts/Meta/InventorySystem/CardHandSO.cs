@@ -6,16 +6,10 @@ namespace Meta.InventorySystem
     [CreateAssetMenu(fileName = "NewCardHand", menuName = "CardSystem/Cardhand")]
     public class CardHandSO : ScriptableObject, ICardHand
     {
-        [SerializeField] private CardSO abilityCard;
-        [SerializeField] private CardSO[] cards = new CardSO[6];
-        
-        public void Awake()
-        {
-            AbilityCard = abilityCard;
-            Cards = cards;
-        }
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object abilityCard;
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object[] cards = new Object[6];
 
-        public ICard[] Cards { get; private set; }
-        public ICard AbilityCard { get; set; }
+        public ICard[] Cards => cards as ICard[];
+        public ICard AbilityCard => abilityCard as ICard;
     }
 }
