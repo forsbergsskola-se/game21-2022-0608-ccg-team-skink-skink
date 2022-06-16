@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f160762e9f1b67046988d9628e3d9e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 0}
+  pool: {fileID: 11400000, guid: f2fa46f2fd8731247aa1dd9f20fea179, type: 2}
   prefabs:
   - {fileID: 415738900540054693, guid: 44fa5abc0b04a784386a5bc4f0f98135, type: 3}
   - {fileID: 8866419275615297644, guid: a498ae963c764df449e1341ef4ba08e1, type: 3}

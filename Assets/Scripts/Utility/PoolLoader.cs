@@ -14,8 +14,14 @@ namespace Utility
         {
             foreach (var prefab in prefabs )
             {
-                pool.pool.Enqueue(prefab);
+                var temp = Instantiate(prefab);
+                pool.pool.Enqueue(temp);
             }
+        }
+
+        private void Start()
+        {
+            Debug.Log(pool.pool.Count);
         }
     }
 }
