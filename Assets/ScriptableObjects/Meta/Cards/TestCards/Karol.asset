@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
-  m_Name: Test
+  m_Name: Karol
   m_EditorClassIdentifier: 
-  cardTitle: 
+  cardTitle: Karol
   level: 0
   apCost: 0
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 762221597463476538, guid: 5e6cbc021e698a1429a906bac0efd648,
+    type: 3}
