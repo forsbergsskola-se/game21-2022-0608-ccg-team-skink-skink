@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6290ff9f-98fc-4efe-bdf1-c1181ac033d9}">
+		<property name="assetPath">
+			<value>Audience/Audience Laughter_V5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.7674374999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d77e523b-8e2f-4328-810d-dd31beea7deb}</destination>
+		</relationship>
+	</object>
+</objects>
