@@ -1,5 +1,7 @@
+using System;
 using Meta.Interfaces;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Meta.InventorySystem
 {
@@ -7,23 +9,9 @@ namespace Meta.InventorySystem
     public class CardHandSO : ScriptableObject, ICardHand
     {
         [SerializeField, RequireInterface(typeof(ICard))] private Object abilityCard;
-        [SerializeField, RequireInterface(typeof(ICard))] private Object[] cards = new Object[6];
+        [SerializeField, RequireInterface(typeof(ICard))] private Object[] cards;
 
-        //public ICard[] Cards => cards as ICard[];
-        public ICard[] Cards => GetCards();
+        public ICard[] Cards => Array.ConvertAll(cards, card => card as ICard);
         public ICard AbilityCard => abilityCard as ICard;
-
-        //Todo: Get rid of this method :)
-        public ICard[] GetCards()
-        {
-            ICard[] temp = new ICard[6];
-
-            for (int i = 0; i < temp.Length; i++)
-            {
-                temp[i] = cards[i] as ICard;
-            }
-
-            return temp;
-        }
     }
 }
