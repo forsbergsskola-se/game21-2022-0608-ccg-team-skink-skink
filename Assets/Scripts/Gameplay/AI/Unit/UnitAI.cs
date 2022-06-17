@@ -18,8 +18,8 @@ namespace Gameplay.AI.Unit
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
-        
-        [SerializeField] float cooldown;
+        //TODO:Maybe create own class/interface for this
+        float cooldown;
         [SerializeField] float timeBetweenAttacks = 4f;
 
         private void Awake()
@@ -44,6 +44,7 @@ namespace Gameplay.AI.Unit
                     break;
                 
                 case UnitState.Action:
+                    //TODO: If is player look for enemy, if is enemy look for player tag
                     if (Physics.Raycast(transform.position,Direction, out RaycastHit hitTarget))
                     {
                         IDamageReceiver damageReceiver = hitTarget.collider.GetComponent<IDamageReceiver>();
@@ -61,10 +62,6 @@ namespace Gameplay.AI.Unit
                     }
                     break;
             }
-        }
-        IEnumerator StartCooldown(float seconds)
-        {
-            yield return new WaitForSeconds(seconds);
         }
     }
 }
