@@ -1,5 +1,6 @@
 using Gameplay.AI.Unit.UnitActions;
 using Gameplay.Unit;
+using Gameplay.Unit.Health;
 using UnityEngine;
 
 namespace Gameplay.AI.Unit
@@ -23,7 +24,6 @@ namespace Gameplay.AI.Unit
 
             state = UnitState.Moving;
         }
-
         private void FixedUpdate()
         {
             switch (state)
@@ -39,7 +39,19 @@ namespace Gameplay.AI.Unit
                     break;
                 
                 case UnitState.Action:
-                    attack.Hit();
+                    //TODO:Clean up debug
+                    Debug.Log("trying to attack");
+                    //TODO:Remove magic numbers
+                    if (Physics.Raycast(transform.position,Direction, out RaycastHit hitTarget))
+                    {
+                        Debug.Log("found target");
+                        IDamageReceiver damageReceiver = hitTarget.collider.GetComponent<IDamageReceiver>();
+                        if (damageReceiver != null)
+                        {
+                            Debug.Log("trying to deal damage");
+                            damageReceiver.TakeDamage(attack.Hit());
+                        }
+                    }
                     break;
             }
         }
