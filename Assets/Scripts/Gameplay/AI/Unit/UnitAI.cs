@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Gameplay.AI.Unit.UnitActions;
 using Gameplay.Unit;
 using Gameplay.Unit.Health;
@@ -16,6 +18,9 @@ namespace Gameplay.AI.Unit
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
+        
+        [SerializeField] float cooldown;
+        [SerializeField] float timeBetweenAttacks = 4f;
 
         private void Awake()
         {
@@ -39,21 +44,27 @@ namespace Gameplay.AI.Unit
                     break;
                 
                 case UnitState.Action:
-                    //TODO:Clean up debug
-                    Debug.Log("trying to attack");
-                    //TODO:Remove magic numbers
                     if (Physics.Raycast(transform.position,Direction, out RaycastHit hitTarget))
                     {
-                        Debug.Log("found target");
                         IDamageReceiver damageReceiver = hitTarget.collider.GetComponent<IDamageReceiver>();
                         if (damageReceiver != null)
                         {
-                            Debug.Log("trying to deal damage");
-                            damageReceiver.TakeDamage(attack.Hit());
+                            cooldown += Time.deltaTime;
+                            if (cooldown > timeBetweenAttacks)
+                            {
+                                damageReceiver.TakeDamage(attack.Hit());
+                                Debug.Log("Should be dealing damage");
+                                cooldown -= timeBetweenAttacks;
+                            }
+                            
                         }
                     }
                     break;
             }
+        }
+        IEnumerator StartCooldown(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
         }
     }
 }
