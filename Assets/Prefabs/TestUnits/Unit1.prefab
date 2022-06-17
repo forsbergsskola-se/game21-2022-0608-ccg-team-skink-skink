@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4178463055700318641}
   - component: {fileID: 5187380962262630780}
   - component: {fileID: 5267501316503636514}
+  - component: {fileID: 6704766551610010832}
   m_Layer: 0
   m_Name: Unit1
   m_TagString: Untagged
@@ -128,3 +129,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveStats: {fileID: 11400000, guid: b6715230ad8f6da49b99b42f5e993934, type: 2}
+--- !u!114 &6704766551610010832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415738900540054693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b76f69653ef3ec449993d476c1a26da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStats: {fileID: 11400000, guid: 66e7f982f0e46224e992a1d00b4d9f6a, type: 2}
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
