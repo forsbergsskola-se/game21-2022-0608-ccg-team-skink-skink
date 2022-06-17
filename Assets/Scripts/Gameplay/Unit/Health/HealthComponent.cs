@@ -37,7 +37,9 @@ namespace Gameplay.Unit.Health
             //TODO:Clean up debug
             Debug.Log($"{this.name} is getting attacked");
             Debug.Log(currentHealth);
+            
             CurrentHealth -= damageAmount;
+            
             Debug.Log(currentHealth);
         
             // Prevent the onDamageTaken event from firing in the case of the player being healed.
