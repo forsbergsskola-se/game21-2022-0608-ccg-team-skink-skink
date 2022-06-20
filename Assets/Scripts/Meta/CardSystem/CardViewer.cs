@@ -20,10 +20,13 @@ namespace Meta.CardSystem
         [SerializeField, RequireInterface(typeof(IUIValueBar))] private Object healthBar;
         [SerializeField, RequireInterface(typeof(IUIValueBar))] private Object speedBar;
         
+        public IInventory Inventory { private get; set; }
         
         
-        public void ViewCard(ICard card)
+        public void ViewCard()
         {
+            var card = Inventory.SelectedCard;
+            
             actionPointCostText.text = card.ApCost.ToString();
             cardImage = card.Image;
             description.text = card.Description;
