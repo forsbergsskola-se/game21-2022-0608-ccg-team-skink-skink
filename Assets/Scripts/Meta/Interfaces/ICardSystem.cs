@@ -10,6 +10,11 @@ namespace Meta.Interfaces
         /// List of owned cards.
         /// </summary>
         public List<ICard> Cards { get; }
+        
+        /// <summary>
+        /// Current selected card.
+        /// </summary>
+        public ICard SelectedCard { get; set; }
     }
 
     public interface ICard
