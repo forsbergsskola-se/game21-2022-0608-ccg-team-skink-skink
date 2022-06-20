@@ -15,6 +15,7 @@ public class UnitPoolConnection : MonoBehaviour
     public void DeathEvent()
     {
         ReturnToPool?.Invoke(key, gameObject);
+        gameObject.SetActive(false);
     }
 }
 }

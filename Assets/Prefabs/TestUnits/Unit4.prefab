@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8968375533577636263}
   - component: {fileID: 6726266526832372544}
   - component: {fileID: 5258100319470821705}
+  - component: {fileID: 841987916249188486}
   m_Layer: 0
   m_Name: Unit4
   m_TagString: Untagged
@@ -142,4 +143,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d91458f613931c4c98c8fb5341a064c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 0}
+--- !u!114 &841987916249188486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4134689633044338768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b76f69653ef3ec449993d476c1a26da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStats: {fileID: 11400000, guid: 66e7f982f0e46224e992a1d00b4d9f6a, type: 2}
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5258100319470821705}
+        m_TargetAssemblyTypeName: Utility.UnitPoolConnection, Assembly-CSharp
+        m_MethodName: DeathEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
