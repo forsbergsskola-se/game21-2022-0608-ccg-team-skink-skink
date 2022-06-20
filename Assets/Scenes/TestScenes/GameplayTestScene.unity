@@ -1389,6 +1389,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHand: {fileID: 11400000, guid: 14116d48ebbdcfa468e7417857de4e33, type: 2}
+  waves: {fileID: 11400000, guid: 5a32cd831fdcc0f4c88cef33d5886584, type: 2}
+  spawnTimer: 2
   spawnEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1404,34 +1406,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  enemies:
-  - enemyPrefab: {fileID: 415738900540054693, guid: 44fa5abc0b04a784386a5bc4f0f98135,
-      type: 3}
-    cost: 1
-  - enemyPrefab: {fileID: 8866419275615297644, guid: a498ae963c764df449e1341ef4ba08e1,
-      type: 3}
-    cost: 2
-  - enemyPrefab: {fileID: 762221597463476538, guid: 5e6cbc021e698a1429a906bac0efd648,
-      type: 3}
-    cost: 3
-  - enemyPrefab: {fileID: 4134689633044338768, guid: 80e7966bcd56e5e4a91448a7c1042b95,
-      type: 3}
-    cost: 4
-  - enemyPrefab: {fileID: 6345901830199661119, guid: 3fdc8b218daf6674ba483c921f9f3ce7,
-      type: 3}
-    cost: 1
-  currentWave: 1
-  waveValue: 0
   enemiesToSpawn:
   - {fileID: 415738900540054693, guid: 44fa5abc0b04a784386a5bc4f0f98135, type: 3}
   - {fileID: 8866419275615297644, guid: a498ae963c764df449e1341ef4ba08e1, type: 3}
   - {fileID: 762221597463476538, guid: 5e6cbc021e698a1429a906bac0efd648, type: 3}
   - {fileID: 4134689633044338768, guid: 80e7966bcd56e5e4a91448a7c1042b95, type: 3}
   - {fileID: 6345901830199661119, guid: 3fdc8b218daf6674ba483c921f9f3ce7, type: 3}
-  pool: {fileID: 0}
-  spawnLocation: {fileID: 34660474}
   waveDuration: 20
-  spawnTimer: 2
 --- !u!114 &1636292863 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1234205636421970626, guid: f2d0884d21a44f1429cf13e69c3f09fb,
