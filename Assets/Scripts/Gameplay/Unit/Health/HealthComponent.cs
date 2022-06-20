@@ -13,6 +13,7 @@ namespace Gameplay.Unit.Health
     
     
         private float currentHealth;
+        //Todo: Possibly make private
         public float CurrentHealth
         {
             get => currentHealth;

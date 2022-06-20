@@ -1,4 +1,4 @@
-using Gameplay.AI.Unit;
+using Gameplay.Unit;
 using Meta.Interfaces;
 using UnityEngine;
 using Utility;

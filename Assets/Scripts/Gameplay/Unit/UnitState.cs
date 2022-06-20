@@ -1,4 +1,4 @@
-namespace Gameplay.AI.Unit
+namespace Gameplay.Unit
 {
     public enum UnitState 
     {
