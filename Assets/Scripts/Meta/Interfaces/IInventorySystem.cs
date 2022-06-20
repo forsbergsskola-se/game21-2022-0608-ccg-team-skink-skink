@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Meta.Interfaces
 {
@@ -11,6 +12,7 @@ namespace Meta.Interfaces
     public interface ICard
     {
         public string Name { get; }
+        public Sprite Image { get; }
         public int CardLevel { get; }
         public int ApCost { get; }
         public GameObject CardObject { get; }
