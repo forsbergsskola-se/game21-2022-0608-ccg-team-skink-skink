@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Meta.Interfaces
 {
@@ -17,6 +18,7 @@ namespace Meta.Interfaces
         /// Card display name.
         /// </summary>
         public string Name { get; }
+        public Sprite Image { get; }
         public int CardLevel { get; }
         
         /// <summary>

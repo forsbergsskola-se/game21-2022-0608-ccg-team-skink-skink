@@ -1,21 +1,26 @@
+using System;
 using Meta.Interfaces;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Meta.InventorySystem
 {
-    [CreateAssetMenu(fileName = "NewCardHand", menuName = "CardSystem/Cardhand")]
+    [CreateAssetMenu(fileName = "NewCardHand", menuName = "ScriptableObjects/CardSystem/Cardhand")]
     public class CardHandSO : ScriptableObject, ICardHand
     {
-        [SerializeField] private CardSO abilityCard;
-        [SerializeField] private CardSO[] cards = new CardSO[6];
-        
-        public void Awake()
+        [SerializeField, RequireInterface(typeof(ICard))] private Object abilityCard;
+        [SerializeField, RequireInterface(typeof(ICard))] private Object[] cards = new Object[6];
+
+        public ICard[] Cards
         {
-            AbilityCard = abilityCard;
-            Cards = cards;
+            get => Array.ConvertAll(cards, card => card as ICard);
+            set => cards = Array.ConvertAll(value, card => card as Object);
         }
 
-        public ICard[] Cards { get; private set; }
-        public ICard AbilityCard { get; set; }
+        public ICard AbilityCard
+        {
+            get => abilityCard as ICard;
+            set => abilityCard = value as Object;
+        }
     }
 }
