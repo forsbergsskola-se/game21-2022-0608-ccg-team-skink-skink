@@ -1,3 +1,4 @@
+using Meta.Interfaces;
 using UnityEngine;
 
 namespace Gameplay.AI
@@ -5,6 +6,6 @@ namespace Gameplay.AI
     [CreateAssetMenu(menuName = "ScriptableObjects/Utilities/Wave", fileName = "NewWaveSo")]
     public class WaveSO : ScriptableObject
     {
-        [SerializeField] private string[] units = new string[1];
+        [SerializeField] private int[] units = new int[6];
     }
 }

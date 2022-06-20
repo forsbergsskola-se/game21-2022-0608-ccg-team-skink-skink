@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay.AI;
 using Gameplay.AI.Unit;
 using Gameplay.Unit;
 using Meta.Interfaces;
@@ -13,6 +14,8 @@ using Random = UnityEngine.Random;
 public class AISpawner : MonoBehaviour
 {
     [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyHand;
+    [SerializeField] private WaveSO wave;
+    private int counter = 0;
     public UnityEvent<int> spawnEvent;
     public int currentWave;
     public int waveValue;
@@ -31,7 +34,7 @@ public class AISpawner : MonoBehaviour
     
     private IEnumerator SpawnEnemyUnit()
     {
-        spawnEvent.Invoke(1);
+        spawnEvent.Invoke(counter ++);
         yield return new WaitForSeconds(spawnTimer);
         StartCoroutine(SpawnEnemyUnit());
     }
