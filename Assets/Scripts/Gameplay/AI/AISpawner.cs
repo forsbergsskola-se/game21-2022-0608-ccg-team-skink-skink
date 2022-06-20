@@ -1,52 +1,42 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Gameplay.AI;
-using Gameplay.AI.Unit;
 using Gameplay.Unit;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
-using Utility;
 using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
 
-public class AISpawner : MonoBehaviour
+namespace Gameplay.AI
 {
-    [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyHand;
-    [SerializeField] private WaveCollectionSO waves;
-    [SerializeField] private float spawnTimer;
-
-    private int waveCounter;
-    private int counter = 0;
-    public UnityEvent<int> spawnEvent;
-    public List<GameObject> enemiesToSpawn = new List<GameObject>();
-
-    public int waveDuration;
-    
-    private void Start()
-    { 
-       StartCoroutine(SpawnEnemyUnit());
-    }
-
-    
-    private IEnumerator SpawnEnemyUnit()
+    [RequireComponent(typeof(UnitSpawner))]
+    public class AISpawner : MonoBehaviour
     {
-        spawnEvent.Invoke(waves.Collection[waveCounter].Units[counter++]);
-        if (waves.Collection[waveCounter].Units.Length <= counter)
-        {
-            waveCounter++;
-            counter = 0;
-        }
+        [SerializeField] private float spawnTimer;
+        [SerializeField] private UnityEvent<int> spawnEvent;
 
-        if (waveCounter < waves.Collection.Length)
+        [Header("Dependencies")]
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyHand;
+        [SerializeField] private WaveCollectionSO waves;
+        
+        private int waveCounter;
+        private int counter = 0;
+
+        private void Start() => StartCoroutine(SpawnEnemyUnit());
+        
+        private IEnumerator SpawnEnemyUnit()
         {
-            yield return new WaitForSeconds(spawnTimer);
-            StartCoroutine(SpawnEnemyUnit()); 
-        }
-        else
-        {
-            yield return null;
+            spawnEvent.Invoke(waves.Collection[waveCounter].Units[counter++]);
+            if (waves.Collection[waveCounter].Units.Length <= counter)
+            {
+                waveCounter++;
+                counter = 0;
+            }
+
+            if (waveCounter < waves.Collection.Length)
+            {
+                yield return new WaitForSeconds(spawnTimer);
+                StartCoroutine(SpawnEnemyUnit()); 
+            }
+            else  yield return null;
         }
     }
 }
