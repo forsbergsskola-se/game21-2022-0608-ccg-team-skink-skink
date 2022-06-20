@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258a5ef556e18c94bacc75889fe69e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 415738900540054693, guid: 44fa5abc0b04a784386a5bc4f0f98135, type: 3}
+  pool: {fileID: 11400000, guid: f2fa46f2fd8731247aa1dd9f20fea179, type: 2}
+  playerHand: {fileID: 11400000, guid: a83d80bbbe833b3418fa6c7ccce616bd, type: 2}
   isPlayer: 1

@@ -1,25 +1,31 @@
-using System;
 using Gameplay.AI.Unit;
+using Meta.Interfaces;
 using UnityEngine;
-using UnityEngine.Pool;
-using UnityEngine.Serialization;
+using Utility;
 
-namespace Gameplay
+namespace Gameplay.Unit
 {
     public class UnitSpawner : MonoBehaviour
     {
 
-        //[Header("Dependencies")]
-        public GameObject unit;
+        [Header("Dependencies")]
+        [SerializeField] public Pool pool;
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object playerHand;
 
         [Header("Base SetUp")] 
         [SerializeField] private bool isPlayer;
-        
-        //spawns unit at the selected spawnPoint
-        public void SpawnUnit()
+
+        public void SpawnUnit(int buttonId)
         {
-            //Todo: Connect with the pool
-            var temp = Instantiate(unit, transform.position, Quaternion.identity);
+            ICardHand hand = playerHand as ICardHand;
+            
+            PlaceUnit(hand.Cards[buttonId].Name);
+        }
+
+        private void PlaceUnit(string unitName)
+        {
+            var temp = pool.GetInstance(unitName);
+            temp.transform.position = transform.position;
             temp.tag = SetTag(isPlayer);
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
