@@ -10,14 +10,14 @@ namespace Gameplay.Unit
 
         [Header("Dependencies")]
         [SerializeField] public Pool pool;
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object deckHand;
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object playerHand;
 
         [Header("Base SetUp")] 
         [SerializeField] private bool isPlayer;
 
         public void SpawnUnit(int buttonId)
         {
-            ICardHand hand = deckHand as ICardHand;
+            ICardHand hand = playerHand as ICardHand;
             
             PlaceUnit(hand.Cards[buttonId].Name);
         }
