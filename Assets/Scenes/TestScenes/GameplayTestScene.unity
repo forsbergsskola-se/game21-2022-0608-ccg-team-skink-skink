@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
-  playerHand: {fileID: 0}
+  deckHand: {fileID: 0}
   isPlayer: 0
 --- !u!136 &242458724
 CapsuleCollider:
@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
-  playerHand: {fileID: 0}
+  deckHand: {fileID: 0}
   isPlayer: 0
 --- !u!136 &1155230328
 CapsuleCollider:
@@ -1383,11 +1383,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636292861}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 304378a577eba2d4781873b3372aab8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHand: {fileID: 11400000, guid: 14116d48ebbdcfa468e7417857de4e33, type: 2}
+  spawnEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1636292863}
+        m_TargetAssemblyTypeName: Gameplay.Unit.UnitSpawner, Assembly-CSharp
+        m_MethodName: SpawnUnit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   enemies:
   - enemyPrefab: {fileID: 415738900540054693, guid: 44fa5abc0b04a784386a5bc4f0f98135,
       type: 3}
@@ -1412,8 +1428,21 @@ MonoBehaviour:
   - {fileID: 762221597463476538, guid: 5e6cbc021e698a1429a906bac0efd648, type: 3}
   - {fileID: 4134689633044338768, guid: 80e7966bcd56e5e4a91448a7c1042b95, type: 3}
   - {fileID: 6345901830199661119, guid: 3fdc8b218daf6674ba483c921f9f3ce7, type: 3}
+  pool: {fileID: 0}
   spawnLocation: {fileID: 34660474}
   waveDuration: 20
+--- !u!114 &1636292863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1234205636421970626, guid: f2d0884d21a44f1429cf13e69c3f09fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1234205636387375803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636292861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258a5ef556e18c94bacc75889fe69e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1681147110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2129,6 +2158,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1234205636421970626, guid: f2d0884d21a44f1429cf13e69c3f09fb,
+        type: 3}
+      propertyPath: pool
+      value: 
+      objectReference: {fileID: 11400000, guid: f2fa46f2fd8731247aa1dd9f20fea179,
+        type: 2}
+    - target: {fileID: 1234205636421970626, guid: f2d0884d21a44f1429cf13e69c3f09fb,
+        type: 3}
+      propertyPath: deckHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 14116d48ebbdcfa468e7417857de4e33,
+        type: 2}
+    - target: {fileID: 1234205636421970626, guid: f2d0884d21a44f1429cf13e69c3f09fb,
+        type: 3}
+      propertyPath: playerHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 14116d48ebbdcfa468e7417857de4e33,
+        type: 2}
     - target: {fileID: 1234205636421970627, guid: f2d0884d21a44f1429cf13e69c3f09fb,
         type: 3}
       propertyPath: m_Name
