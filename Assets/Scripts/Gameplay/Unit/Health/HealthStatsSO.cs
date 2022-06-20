@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Gameplay.Unit
 {
     [CreateAssetMenu(fileName = "NewHealthStats", menuName = "ScriptableObjects/Unit/HealthStats")]
-    public class HealthStats : ScriptableObject
+    public class HealthStatsSO : ScriptableObject
     {
         [SerializeField] private float maxHealth;
 

@@ -2030,6 +2030,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1146901263}
     m_Modifications:
+    - target: {fileID: 1636292862, guid: f2d0884d21a44f1429cf13e69c3f09fb, type: 3}
+      propertyPath: waves
+      value: 
+      objectReference: {fileID: 11400000, guid: f2cc5d93ea017234eb9e20e53586d9ec,
+        type: 2}
+    - target: {fileID: 1636292862, guid: f2d0884d21a44f1429cf13e69c3f09fb, type: 3}
+      propertyPath: spawnTimer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1234205636421970625, guid: f2d0884d21a44f1429cf13e69c3f09fb,
         type: 3}
       propertyPath: m_RootOrder
@@ -2352,6 +2361,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8142048309292015402, guid: d7aef7322d2a0cb4c896ae1940a45aea,
+        type: 3}
+      propertyPath: deckHand
+      value: 
+      objectReference: {fileID: 11400000, guid: a83d80bbbe833b3418fa6c7ccce616bd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7aef7322d2a0cb4c896ae1940a45aea, type: 3}
 --- !u!114 &8142048310914365517 stripped

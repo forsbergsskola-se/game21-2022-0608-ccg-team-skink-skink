@@ -5,7 +5,7 @@ namespace Gameplay.Unit.Health
 {
     public class HealthComponent : MonoBehaviour, IDamageReceiver
     {
-        [SerializeField] private HealthStats healthStats;
+        [SerializeField] private HealthStatsSO healthStats;
 
         public UnityEvent OnDamageTaken;
         public UnityEvent OnDeath;
