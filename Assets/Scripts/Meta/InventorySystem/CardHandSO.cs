@@ -14,10 +14,7 @@ namespace Meta.InventorySystem
         public ICard[] Cards
         {
             get => Array.ConvertAll(cards, card => card as ICard);
-            set
-            {
-                cards = Array.ConvertAll(value, card => card as Object);
-            }
+            set => cards = Array.ConvertAll(value, card => card as Object);
         }
 
         public ICard AbilityCard
