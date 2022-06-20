@@ -1,15 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay.AI.Unit;
+using Gameplay.Unit;
+using Meta.Interfaces;
 using UnityEngine;
+using UnityEngine.Events;
+using Utility;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class AISpawner : MonoBehaviour
 {
+    [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyHand;
+    public UnityEvent<int> spawnEvent;
     public List<EnemyAI> enemies = new List<EnemyAI>();
     public int currentWave;
     public int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
+    public Pool pool;
 
     public Transform spawnLocation;
     public int waveDuration; 
@@ -19,29 +28,20 @@ public class AISpawner : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(SpawnEnemyUnit());
        GenerateWave();
     }
 
-    void FixedUpdate () 
+    void FixedUpdate ()
     {
-        if (spawnTimer <= 0)
-        {
-            if (enemiesToSpawn.Count > 0)
-            {
-                Instantiate(enemiesToSpawn[0], spawnLocation.position, Quaternion.identity);
-                enemiesToSpawn.RemoveAt(0);
-                spawnTimer = spawnInterval;
-            }
-            else
-            {
-                waveTimer = 0;
-            }
-        }
-        else
-        {
-            spawnTimer -= Time.fixedDeltaTime;
-            waveTimer -= Time.fixedDeltaTime;
-        }
+        
+    }
+
+    private IEnumerator SpawnEnemyUnit()
+    {
+        spawnEvent.Invoke(1);
+        yield return new WaitForSeconds(spawnTimer);
+        StartCoroutine(SpawnEnemyUnit());
     }
 
     public void GenerateWave()
