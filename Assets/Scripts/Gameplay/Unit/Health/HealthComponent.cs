@@ -5,7 +5,7 @@ namespace Gameplay.Unit.Health
 {
     public class HealthComponent : MonoBehaviour, IDamageReceiver
     {
-        [SerializeField] private HealthStats healthStats;
+        [SerializeField] private HealthStatsSO healthStats;
 
         public UnityEvent OnDamageTaken;
         public UnityEvent OnDeath;
@@ -13,6 +13,7 @@ namespace Gameplay.Unit.Health
     
     
         private float currentHealth;
+        //Todo: Possibly make private
         public float CurrentHealth
         {
             get => currentHealth;

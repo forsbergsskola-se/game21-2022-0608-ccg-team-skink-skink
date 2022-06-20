@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Gameplay.AI.Unit.UnitActions;
+using Gameplay.Unit.UnitActions;
 using Gameplay.Unit;
 using Gameplay.Unit.Health;
 using UnityEngine;
 
-namespace Gameplay.AI.Unit
+namespace Gameplay.Unit
 {
     public class UnitAI : MonoBehaviour
     {

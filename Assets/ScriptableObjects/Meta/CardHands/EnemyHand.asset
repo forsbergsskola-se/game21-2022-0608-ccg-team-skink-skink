@@ -15,8 +15,8 @@ MonoBehaviour:
   abilityCard: {fileID: 0}
   cards:
   - {fileID: 11400000, guid: 35827848c7aa5294e9ac5e2c2292a9fa, type: 2}
-  - {fileID: 11400000, guid: 35827848c7aa5294e9ac5e2c2292a9fa, type: 2}
-  - {fileID: 11400000, guid: 35827848c7aa5294e9ac5e2c2292a9fa, type: 2}
-  - {fileID: 11400000, guid: 35827848c7aa5294e9ac5e2c2292a9fa, type: 2}
-  - {fileID: 11400000, guid: 35827848c7aa5294e9ac5e2c2292a9fa, type: 2}
-  - {fileID: 11400000, guid: 35827848c7aa5294e9ac5e2c2292a9fa, type: 2}
+  - {fileID: 11400000, guid: 3dc5d927355b72c46a3f2a8f1ca704b4, type: 2}
+  - {fileID: 11400000, guid: 11a6b3afd5b2a004ea2edac6ee91084a, type: 2}
+  - {fileID: 11400000, guid: 5ffdb3d4292c8b54d90eaac48bd4406b, type: 2}
+  - {fileID: 11400000, guid: 4276eccf09967ff4f90e73fa94a5dc24, type: 2}
+  - {fileID: 11400000, guid: 4276eccf09967ff4f90e73fa94a5dc24, type: 2}

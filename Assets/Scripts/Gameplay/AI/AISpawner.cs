@@ -1,87 +1,44 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
+using Gameplay.Unit;
+using Meta.Interfaces;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.Events;
+using Object = UnityEngine.Object;
 
-public class AISpawner : MonoBehaviour
+namespace Gameplay.AI
 {
-    public List<EnemyAI> enemies = new List<EnemyAI>();
-    public int currentWave;
-    public int waveValue;
-    public List<GameObject> enemiesToSpawn = new List<GameObject>();
-
-    public Transform spawnLocation;
-    public int waveDuration; 
-    private float waveTimer;
-    private float spawnInterval;
-    private float spawnTimer;
-
-    private void Start()
+    [RequireComponent(typeof(UnitSpawner))]
+    public class AISpawner : MonoBehaviour
     {
-       GenerateWave();
-    }
+        [SerializeField] private float spawnTimer;
+        [SerializeField] private UnityEvent<int> spawnEvent;
 
-    void FixedUpdate () 
-    {
-        if (spawnTimer <= 0)
-        {
-            if (enemiesToSpawn.Count > 0)
-            {
-                Instantiate(enemiesToSpawn[0], spawnLocation.position, Quaternion.identity);
-                enemiesToSpawn.RemoveAt(0);
-                spawnTimer = spawnInterval;
-            }
-            else
-            {
-                waveTimer = 0;
-            }
-        }
-        else
-        {
-            spawnTimer -= Time.fixedDeltaTime;
-            waveTimer -= Time.fixedDeltaTime;
-        }
-    }
-
-    public void GenerateWave()
-    {
-        waveValue = currentWave * 10;
-        GenerateEnemies();
+        [Header("Dependencies")]
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyHand;
+        [SerializeField] private WaveCollectionSO waves;
         
-        //provides fixed time between enemies
-        spawnInterval = waveDuration / enemiesToSpawn.Count;
-        waveTimer = waveDuration;
-    }
+        private int waveCounter;
+        private int counter = 0;
 
-    public void GenerateEnemies()
-    {
-        //create temp list of enemies to generate in loop
-        //if can afford, add to list and deduct cost
-        List<GameObject> generatedEnemies = new List<GameObject>();
-        while (waveValue > 0)
+        private void Start() => StartCoroutine(SpawnEnemyUnit());
+        
+        private IEnumerator SpawnEnemyUnit()
         {
-            int randomEnemyID = Random.Range(0, enemies.Count);
-            int randomEnemyCost = enemies[randomEnemyID].cost;
+            spawnEvent.Invoke(waves.Collection[waveCounter].Units[counter++]);
+            if (waves.Collection[waveCounter].Units.Length <= counter)
+            {
+                waveCounter++;
+                counter = 0;
+            }
 
-            if (waveValue - randomEnemyCost >= 0)
+            if (waveCounter < waves.Collection.Length)
             {
-                generatedEnemies.Add(enemies[randomEnemyID].enemyPrefab);
-                waveValue -= randomEnemyCost;
+                yield return new WaitForSeconds(spawnTimer);
+                StartCoroutine(SpawnEnemyUnit()); 
             }
-            else if (waveValue <= 0)
-            {
-                break;
-            }
+            else  yield return null;
         }
-        enemiesToSpawn.Clear();
-        enemiesToSpawn = generatedEnemies;
     }
 }
 
-[System.Serializable]
-public class EnemyAI
-{
-    public GameObject enemyPrefab;
-    public int cost;
-}
+

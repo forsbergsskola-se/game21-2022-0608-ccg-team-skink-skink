@@ -1,7 +1,7 @@
 using Gameplay.Unit.StatsInterfaces;
 using UnityEngine;
 
-namespace Gameplay.AI.Unit.UnitActions
+namespace Gameplay.Unit.UnitActions
 {
     public class Movement
     {

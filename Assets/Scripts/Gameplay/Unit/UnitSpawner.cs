@@ -1,4 +1,4 @@
-using Gameplay.AI.Unit;
+using Gameplay.Unit;
 using Meta.Interfaces;
 using UnityEngine;
 using Utility;
@@ -10,14 +10,14 @@ namespace Gameplay.Unit
 
         [Header("Dependencies")]
         [SerializeField] public Pool pool;
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object playerHand;
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object deckHand;
 
         [Header("Base SetUp")] 
         [SerializeField] private bool isPlayer;
 
         public void SpawnUnit(int buttonId)
         {
-            ICardHand hand = playerHand as ICardHand;
+            ICardHand hand = deckHand as ICardHand;
             
             PlaceUnit(hand.Cards[buttonId].Name);
         }

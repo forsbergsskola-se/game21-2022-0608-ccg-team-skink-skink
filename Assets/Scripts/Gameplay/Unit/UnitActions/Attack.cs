@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameplay.AI.Unit.UnitActions
+namespace Gameplay.Unit.UnitActions
 {
     public class Attack
     {
