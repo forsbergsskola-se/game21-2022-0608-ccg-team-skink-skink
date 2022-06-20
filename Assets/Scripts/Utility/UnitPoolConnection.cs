@@ -5,9 +5,10 @@ using Gameplay.Unit.Health;
 using UnityEngine;
 using Utility;
 
+namespace Utility
+{
 public class UnitPoolConnection : MonoBehaviour
 {
-    public Pool pool;
     public event Action<string, GameObject> ReturnToPool;
     public string key { get; set; }
     
@@ -15,4 +16,5 @@ public class UnitPoolConnection : MonoBehaviour
     {
         ReturnToPool?.Invoke(key, gameObject);
     }
+}
 }

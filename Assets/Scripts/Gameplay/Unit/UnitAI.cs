@@ -34,7 +34,7 @@ namespace Gameplay.Unit
             switch (state)
             {
                 case UnitState.Moving:
-                    movement.Move(this.transform, Direction);
+                    movement.Move(transform, Direction);
                     
                     if (Physics.SphereCast(transform.position, 1, Direction, out RaycastHit hit, moveStats.Range) 
                         && hit.transform.CompareTag(Target))
@@ -57,7 +57,6 @@ namespace Gameplay.Unit
                                 Debug.Log("Should be dealing damage");
                                 cooldown -= timeBetweenAttacks;
                             }
-                            
                         }
                     }
                     break;

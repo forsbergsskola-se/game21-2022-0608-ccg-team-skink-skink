@@ -36,7 +36,7 @@ namespace Gameplay.Unit.Health
         void Hit(float damageAmount)
         {
             //TODO:Clean up debug
-            Debug.Log($"{this.name} is getting attacked");
+            Debug.Log($"{name} is getting attacked");
             Debug.Log(currentHealth);
             
             CurrentHealth -= damageAmount;
