@@ -1,5 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using Gameplay.AI.Unit.UnitActions;
 using Gameplay.Unit;
+using Gameplay.Unit.Health;
 using UnityEngine;
 
 namespace Gameplay.AI.Unit
@@ -15,6 +18,9 @@ namespace Gameplay.AI.Unit
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
+        //TODO:Maybe create own class/interface for this
+        float cooldown;
+        [SerializeField] float timeBetweenAttacks = 4f;
 
         private void Awake()
         {
@@ -23,7 +29,6 @@ namespace Gameplay.AI.Unit
 
             state = UnitState.Moving;
         }
-
         private void FixedUpdate()
         {
             switch (state)
@@ -39,7 +44,22 @@ namespace Gameplay.AI.Unit
                     break;
                 
                 case UnitState.Action:
-                    attack.Hit();
+                    //TODO: If is player look for enemy, if is enemy look for player tag
+                    if (Physics.Raycast(transform.position,Direction, out RaycastHit hitTarget))
+                    {
+                        IDamageReceiver damageReceiver = hitTarget.collider.GetComponent<IDamageReceiver>();
+                        if (damageReceiver != null)
+                        {
+                            cooldown += Time.deltaTime;
+                            if (cooldown > timeBetweenAttacks)
+                            {
+                                damageReceiver.TakeDamage(attack.Hit());
+                                Debug.Log("Should be dealing damage");
+                                cooldown -= timeBetweenAttacks;
+                            }
+                            
+                        }
+                    }
                     break;
             }
         }

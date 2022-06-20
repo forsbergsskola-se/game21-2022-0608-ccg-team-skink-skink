@@ -1,5 +1,7 @@
+using System;
 using Meta.Interfaces;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Meta.InventorySystem
 {
@@ -9,21 +11,16 @@ namespace Meta.InventorySystem
         [SerializeField, RequireInterface(typeof(ICard))] private Object abilityCard;
         [SerializeField, RequireInterface(typeof(ICard))] private Object[] cards = new Object[6];
 
-        //public ICard[] Cards => cards as ICard[];
-        public ICard[] Cards => GetCards();
-        public ICard AbilityCard => abilityCard as ICard;
-
-        //Todo: Get rid of this method :)
-        public ICard[] GetCards()
+        public ICard[] Cards
         {
-            ICard[] temp = new ICard[6];
+            get => Array.ConvertAll(cards, card => card as ICard);
+            set => cards = Array.ConvertAll(value, card => card as Object);
+        }
 
-            for (int i = 0; i < temp.Length; i++)
-            {
-                temp[i] = cards[i] as ICard;
-            }
-
-            return temp;
+        public ICard AbilityCard
+        {
+            get => abilityCard as ICard;
+            set => abilityCard = value as Object;
         }
     }
 }

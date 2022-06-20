@@ -31,16 +31,26 @@ namespace Gameplay.Unit.Health
         {
             currentHealth = healthStats.MaxHealth;
         }
-    
+
+        void Hit(float damageAmount)
+        {
+            //TODO:Clean up debug
+            Debug.Log($"{this.name} is getting attacked");
+            Debug.Log(currentHealth);
+            
+            CurrentHealth -= damageAmount;
+            
+            Debug.Log(currentHealth);
+        
+            // Prevent the onDamageTaken event from firing in the case of the player being healed.
+            if (damageAmount > 0)
+                OnDamageTaken?.Invoke();
+        }
     
     
         public void TakeDamage(float value)
         {
-            CurrentHealth -= value;
-        
-            // Prevent the onDamageTaken event from firing in the case of the player being healed.
-            if (value > 0)
-                OnDamageTaken?.Invoke();
+            Hit(value);
         }
     }
 }

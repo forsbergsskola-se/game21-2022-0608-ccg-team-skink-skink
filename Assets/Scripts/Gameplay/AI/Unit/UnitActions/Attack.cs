@@ -2,9 +2,10 @@ using UnityEngine;
 
 namespace Gameplay.AI.Unit.UnitActions
 {
-    public class Attack 
+    public class Attack
     {
-        public void Hit() => Debug.Log("I am Attacking!!!!");
+        //TODO: Used for debug, changed to get the stats from character 
+        public float Hit() => 50f;
     }
     
 }
