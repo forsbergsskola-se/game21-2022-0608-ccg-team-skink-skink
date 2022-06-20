@@ -1431,6 +1431,7 @@ MonoBehaviour:
   pool: {fileID: 0}
   spawnLocation: {fileID: 34660474}
   waveDuration: 20
+  spawnTimer: 2
 --- !u!114 &1636292863 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1234205636421970626, guid: f2d0884d21a44f1429cf13e69c3f09fb,
