@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5187380962262630780}
   - component: {fileID: 5267501316503636514}
   - component: {fileID: 6704766551610010832}
+  - component: {fileID: -3496019467797339918}
   m_Layer: 0
   m_Name: Unit1
   m_TagString: Untagged
@@ -129,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveStats: {fileID: 11400000, guid: b6715230ad8f6da49b99b42f5e993934, type: 2}
+  timeBetweenAttacks: 4
 --- !u!114 &6704766551610010832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,4 +149,29 @@ MonoBehaviour:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -3496019467797339918}
+        m_TargetAssemblyTypeName: UnitPoolConnection, Assembly-CSharp
+        m_MethodName: DeathEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-3496019467797339918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415738900540054693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d91458f613931c4c98c8fb5341a064c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathCheck: {fileID: 0}

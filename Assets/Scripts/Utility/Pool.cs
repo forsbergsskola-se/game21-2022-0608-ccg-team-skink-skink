@@ -15,10 +15,14 @@ namespace Utility
             for (int i = 0; i < cardAmount; i++)
             {
                 var tempObj = Instantiate(card);
+                
+                var unitConnect = tempObj.GetComponent<UnitPoolConnection>();
+                unitConnect.ReturnToPool += ReturnToPool;
+                unitConnect.key = key;
+                
                 tempObj.SetActive(false);
                 pool.Enqueue(tempObj);
             }
-            
             collection.Add(key, pool);
         }
 
@@ -26,9 +30,18 @@ namespace Utility
         {
             var temp = collection[key].Dequeue();
             temp.SetActive(true);
-            collection[key].Enqueue(temp);
+            
+            //TODO: Fix and replace so that this doesn't grab alive units 
+            //collection[key].Enqueue(temp);
 
             return temp;
+        }
+
+        public void ReturnToPool(string key, GameObject unit)
+        {
+            collection[key].Enqueue(unit);
+            Debug.Log("Added object: " + unit);
+            Debug.Log("Objects in queue: " + collection[key].Count);
         }
         
     }

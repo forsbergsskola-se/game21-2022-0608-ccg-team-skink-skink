@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 1318938482463197668}
   - component: {fileID: -2916436633958772477}
   - component: {fileID: -4891279950721687291}
+  - component: {fileID: -8052910111773130973}
   m_Layer: 0
   m_Name: WarriorEliteUnit
   m_TagString: Untagged
@@ -654,6 +655,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &-8052910111773130973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345901830199661119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d91458f613931c4c98c8fb5341a064c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: {fileID: 0}
 --- !u!1 &6847481151495500319
 GameObject:
   m_ObjectHideFlags: 0
