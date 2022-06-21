@@ -23,50 +23,7 @@ namespace Meta.CardSystem
         private readonly Stack<BasicCardViewer> hiddenCards = new();
         
         
-
-        private void AddCard(ICard card)
-        {
-            if (cardViewers.TryGetValue(card.Id, out BasicCardViewer basicCardViewer))
-            {
-                basicCardViewer.StackSize++;
-                return;
-            }
-
-            basicCardViewer = hiddenCards.Pop();
-            basicCardViewer.SetCard(card);
-            basicCardViewer.transform.SetParent(transform);
-            basicCardViewer.gameObject.SetActive(true);
-            cardViewers.Add(card.Id, basicCardViewer);
-        }
-
-        private void RemoveCard(ICard card)
-        {
-            if (cardViewers.TryGetValue(card.Id, out BasicCardViewer basicCardViewer))
-            {
-                basicCardViewer.StackSize--;
-                if (basicCardViewer.StackSize <= 0)
-                {
-                    cardViewers.Remove(card.Id);
-                    hiddenCards.Push(basicCardViewer);
-                    basicCardViewer.gameObject.SetActive(false);
-                    basicCardViewer.transform.SetParent(transform.root);
-                }
-            }
-        }
         
-        
-        private void SetSelectedCard(ICard card){}
-
-        private void CreateCards()
-        {
-            for (int i = 0; i < totalDifferentCardAmount; i++)
-            {
-                var cardViewerObject = Instantiate(cardUIPrefab);
-                var basicCardViewer = cardViewerObject.GetComponent<BasicCardViewer>();
-                hiddenCards.Push(basicCardViewer);
-            }
-        }
-
         public void SetFromInventory(IInventory inventory)
         {
             inventory.SelectedCardChanged += SetSelectedCard;
@@ -84,6 +41,58 @@ namespace Meta.CardSystem
                 cardViewers[card.Id].StackSize = cardCollection.Value.Count;
             }
         }
+        
+        
+
+        private void AddCard(ICard card)
+        {
+            if (cardViewers.TryGetValue(card.Id, out BasicCardViewer basicCardViewer))
+            {
+                basicCardViewer.StackSize++;
+                return;
+            }
+
+            basicCardViewer = hiddenCards.Pop();
+            
+            basicCardViewer.SetCard(card);
+            basicCardViewer.transform.SetParent(transform);
+            cardViewers.Add(card.Id, basicCardViewer);
+        }
+
+        
+        
+        private void RemoveCard(ICard card)
+        {
+            if (cardViewers.TryGetValue(card.Id, out BasicCardViewer basicCardViewer))
+            {
+                basicCardViewer.StackSize--;
+                if (basicCardViewer.StackSize <= 0)
+                {
+                    cardViewers.Remove(card.Id);
+                    hiddenCards.Push(basicCardViewer);
+                    basicCardViewer.Reset();
+                    basicCardViewer.transform.SetParent(transform.root);
+                }
+            }
+        }
+        
+        
+        
+        private void SetSelectedCard(ICard card){}
+        
+        
+
+        private void CreateCards()
+        {
+            for (int i = 0; i < totalDifferentCardAmount; i++)
+            {
+                var cardViewerObject = Instantiate(cardUIPrefab);
+                var basicCardViewer = cardViewerObject.GetComponent<BasicCardViewer>();
+                hiddenCards.Push(basicCardViewer);
+            }
+        }
+        
+        
 
         private void Show()
         {
