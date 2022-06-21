@@ -10,6 +10,8 @@ namespace Gameplay.Unit.Health
         public UnityEvent OnDamageTaken;
         public UnityEvent OnDeath;
 
+    
+    
         private float currentHealth;
         //Todo: Possibly make private
         public float CurrentHealth
@@ -23,7 +25,9 @@ namespace Gameplay.Unit.Health
                 currentHealth = value;
             }
         }
-
+    
+    
+    
         void OnEnable()
         {
             currentHealth = healthStats.MaxHealth;

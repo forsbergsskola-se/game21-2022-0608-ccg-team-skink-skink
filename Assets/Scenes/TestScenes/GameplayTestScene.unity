@@ -1059,11 +1059,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawnPoint
       objectReference: {fileID: 0}
-    - target: {fileID: 1234205636421970627, guid: f2d0884d21a44f1429cf13e69c3f09fb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2d0884d21a44f1429cf13e69c3f09fb, type: 3}
 --- !u!1001 &7507454182356554358
@@ -1312,11 +1307,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8113515734996193452, guid: 84c55b2dd92a4f941b6d2e04cd0a9ea8,
-        type: 3}
-      propertyPath: amount
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8113515734996193453, guid: 84c55b2dd92a4f941b6d2e04cd0a9ea8,
         type: 3}
       propertyPath: m_RootOrder

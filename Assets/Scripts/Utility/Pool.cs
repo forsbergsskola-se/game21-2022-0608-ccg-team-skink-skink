@@ -16,9 +16,9 @@ namespace Utility
             {
                 var tempObj = Instantiate(card);
                 
-                // var unitConnect = tempObj.GetComponent<UnitPoolConnection>();
-                // unitConnect.ReturnToPool += ReturnToPool;
-                // unitConnect.key = key;
+                var unitConnect = tempObj.GetComponent<UnitPoolConnection>();
+                unitConnect.ReturnToPool += ReturnToPool;
+                unitConnect.key = key;
                 
                 tempObj.SetActive(false);
                 pool.Enqueue(tempObj);
@@ -28,21 +28,13 @@ namespace Utility
 
         public GameObject GetInstance(string key)
         {
-            var dequeued = collection[key].Dequeue();
-
-            if (dequeued.gameObject.activeInHierarchy)
-            {
-                var temp = Instantiate(dequeued);
-                collection[key].Enqueue(dequeued);
-                dequeued = temp;
-            }
+            var temp = collection[key].Dequeue();
+            temp.SetActive(true);
             
-            dequeued.SetActive(true);
-            collection[key].Enqueue(dequeued);
+            //TODO: Fix and replace so that this doesn't grab alive units 
+            //collection[key].Enqueue(temp);
 
-            //TODO: Add "Garbage Collection" to the Pool if necessary
-            
-            return dequeued;
+            return temp;
         }
 
         public void ReturnToPool(string key, GameObject unit)
