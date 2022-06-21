@@ -16,5 +16,5 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 0cb09f54465a2f14caa387a03b035fbb, type: 3}
   level: 0
   apCost: 0
-  unitPrefab: {fileID: 4134689633044338768, guid: 80e7966bcd56e5e4a91448a7c1042b95,
+  unitPrefab: {fileID: 762221597463476538, guid: 5e6cbc021e698a1429a906bac0efd648,
     type: 3}

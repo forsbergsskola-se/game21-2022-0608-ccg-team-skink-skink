@@ -1,6 +1,7 @@
 using Gameplay.Unit;
 using Meta.Interfaces;
 using UnityEngine;
+using UnityEngine.UI;
 using Utility;
 
 namespace Gameplay.Unit
@@ -25,12 +26,18 @@ namespace Gameplay.Unit
         private void PlaceUnit(string unitName)
         {
             var temp = pool.GetInstance(unitName);
-            temp.transform.position = transform.position;
+            SetTransform(temp);
             temp.tag = SetTag(isPlayer);
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
             ai.Target = SetTag(!isPlayer);
             ai.Direction = SetDirection(ai.transform.position.x);
+        }
+
+        private void SetTransform(GameObject temp)
+        {
+            temp.transform.position = transform.position;
+            temp.transform.eulerAngles = transform.eulerAngles;
         }
 
         private string SetTag(bool player)

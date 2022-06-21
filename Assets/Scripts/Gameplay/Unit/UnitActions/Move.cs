@@ -5,11 +5,11 @@ namespace Gameplay.Unit.UnitActions
 {
     public class Movement
     {
-        private IMoveStats moveStats;
+        private IMoveStats stats;
         
-        public Movement(IMoveStats moveStats) => this.moveStats = moveStats;
+        public Movement(IMoveStats stats) => this.stats = stats;
        
         public void Move(Transform transform, Vector3 direction) 
-            => transform.position += moveStats.Speed * direction;
+            => transform.position += stats.Speed * direction;
     }
 }

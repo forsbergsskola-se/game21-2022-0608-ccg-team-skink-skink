@@ -22,7 +22,7 @@ namespace Gameplay.Unit.Health
                 if (value <= 0)
                     OnDeath?.Invoke();
 
-                currentHealth = value;
+                currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
             }
         }
     
@@ -33,7 +33,7 @@ namespace Gameplay.Unit.Health
             currentHealth = healthStats.MaxHealth;
         }
 
-        void Hit(float damageAmount)
+        public void Hit(float damageAmount)
         {
             //TODO:Clean up debug
             Debug.Log($"{name} is getting attacked");

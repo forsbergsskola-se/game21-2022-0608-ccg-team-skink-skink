@@ -7,14 +7,11 @@ using Utility;
 
 namespace Utility
 {
-public class UnitPoolConnection : MonoBehaviour
+public class UnitDeathEvent : MonoBehaviour
 {
-    public event Action<string, GameObject> ReturnToPool;
-    public string key { get; set; }
-    
     public void DeathEvent()
     {
-        ReturnToPool?.Invoke(key, gameObject);
+        gameObject.SetActive(false);
     }
 }
 }
