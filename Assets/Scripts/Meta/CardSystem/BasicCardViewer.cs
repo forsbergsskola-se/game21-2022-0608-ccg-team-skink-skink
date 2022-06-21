@@ -9,7 +9,8 @@ namespace Meta.CardSystem
         [SerializeField] private TMP_Text actionPointCostText;
         [SerializeField] private Image cardImage;
         [SerializeField] private TMP_Text stackSizeText;
-        private int stackSize;
+        private int stackSize = 1;
+
         public int StackSize
         {
             get => stackSize;
@@ -17,7 +18,7 @@ namespace Meta.CardSystem
             {
                 stackSize = value;
                 stackSizeText.text = $"X{stackSize}";
-            } 
+            }
         }
         public void SetCard(ICard card)
         {
