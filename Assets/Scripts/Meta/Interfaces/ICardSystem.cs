@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,11 @@ namespace Meta.Interfaces
         /// Current selected card.
         /// </summary>
         public ICard SelectedCard { get; set; }
+
+        /// <summary>
+        /// Invoked when the selected card has changed.
+        /// </summary>
+        public event Action SelectedCardChanged;
     }
 
     public interface ICard
