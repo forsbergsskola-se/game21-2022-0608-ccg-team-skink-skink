@@ -31,7 +31,7 @@ namespace Gameplay.Unit
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
             ai.Target = SetTag(!isPlayer);
-            ai.Direction = SetDirection(ai.transform.position.x);
+            ai.Direction = SetDirection(isPlayer);
         }
 
         private void SetTransform(GameObject temp)
@@ -43,8 +43,8 @@ namespace Gameplay.Unit
         private string SetTag(bool player)
             => player ? "Player" : "Enemy";
 
-        private Vector3 SetDirection(float positionX)
-            => new Vector3(positionX * -1, 0, 0).normalized;
+        private Vector3 SetDirection(bool player)
+            => player? new Vector3(-1, 0, 0) : new Vector3(1, 0, 0);
         
     }
 }
