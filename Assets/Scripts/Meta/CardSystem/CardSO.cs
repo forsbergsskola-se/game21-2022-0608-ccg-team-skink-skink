@@ -12,12 +12,22 @@ namespace Meta.InventorySystem
         [SerializeField] int level;
         [SerializeField] int apCost;
         [SerializeField] GameObject unitPrefab;
-
+        static sbyte nextId;
+        public CardSO()
+        {
+            Id = nextId++;
+            tempId = Id;
+        }
         public string Description => description;
         public Sprite Image => cardImage;
         public string Name => cardTitle;
         public int CardLevel => level;
+        public sbyte Id { get; }
         public int ApCost => apCost;
         public GameObject CardObject => unitPrefab;
+        
+        //TODO:TEMPORARY
+        [SerializeField]
+        sbyte tempId;
     }
 }

@@ -11,6 +11,8 @@ namespace Meta.Interfaces
         
         public int CardLevel { get; }
         
+        public sbyte Id { get; }
+        
         /// <summary>
         /// Prefab of the cards unit.
         /// </summary>
