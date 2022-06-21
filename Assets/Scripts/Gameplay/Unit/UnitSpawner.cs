@@ -26,8 +26,7 @@ namespace Gameplay.Unit
         private void PlaceUnit(string unitName)
         {
             var temp = pool.GetInstance(unitName);
-            temp.transform.position = transform.position;
-            temp.transform.eulerAngles = transform.eulerAngles;
+            SetTransform(temp);
             temp.tag = SetTag(isPlayer);
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
@@ -35,14 +34,16 @@ namespace Gameplay.Unit
             ai.Direction = SetDirection(ai.transform.position.x);
         }
 
+        private void SetTransform(GameObject temp)
+        {
+            temp.transform.position = transform.position;
+            temp.transform.eulerAngles = transform.eulerAngles;
+        }
+
         private string SetTag(bool player)
             => player ? "Player" : "Enemy";
 
         private Vector3 SetDirection(float positionX)
             => new Vector3(positionX * -1, 0, 0).normalized;
-
-        private Quaternion SetRotation(float rotationY)
-            => new Quaternion(rotationY * 0, 90, 0, 0).normalized;
-
     }
 }
