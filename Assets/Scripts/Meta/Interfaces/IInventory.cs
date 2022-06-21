@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace Meta.Interfaces
 {
@@ -27,29 +25,5 @@ namespace Meta.Interfaces
 
         public void Add(ICard card);
         public void Remove(ICard card);
-    }
-
-
-
-    public interface IInventoryController
-    {
-        /// <summary>
-        /// Creates a card. (This might end up being removed/modified)
-        /// </summary>
-        /// <returns></returns>
-        public void AddCard(ICard card);
-
-        /// <summary>
-        /// Fuse cards together into a stronger card.
-        /// </summary>
-        /// <param name="cards"></param>
-        /// <returns></returns>
-        public ICard FuseCards(ICard[] cards);
-
-        /// <summary>
-        /// Destroys a card, removing it from the users inventory.
-        /// </summary>
-        /// <param name="card"></param>
-        public void DestroyCard(ICard card);
     }
 }
