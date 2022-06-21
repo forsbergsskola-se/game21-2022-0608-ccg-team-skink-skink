@@ -18,27 +18,11 @@ namespace Meta.CardSystem
         // TODO: This is temporary! We will want to grab the total amount of different cards from wherever all cards are stored!
         [SerializeField] private int totalDifferentCardAmount;
 
-        private Dictionary<sbyte, BasicCardViewer> cardViewers = new Dictionary<sbyte, BasicCardViewer>();
-        private Stack<BasicCardViewer> hiddenCards = new Stack<BasicCardViewer>();
 
-        void Start()
-        {
-            inventory.SelectedCardChanged += SetSelectedCard;
-            inventory.CardAdded += AddCard;
-            inventory.CardRemoved += RemoveCard;
-
-            CreateCards();
-            
-            foreach (var cardList in inventory.Cards)
-            {
-                foreach (var card in cardList.Value)
-                {
-                    AddCard(card);
-                }
-            }
-            
-            Show();
-        }
+        private readonly Dictionary<sbyte, BasicCardViewer> cardViewers = new();
+        private readonly Stack<BasicCardViewer> hiddenCards = new();
+        
+        
 
         private void AddCard(ICard card)
         {
@@ -51,12 +35,26 @@ namespace Meta.CardSystem
             basicCardViewer = hiddenCards.Pop();
             basicCardViewer.SetCard(card);
             basicCardViewer.transform.SetParent(transform);
+            basicCardViewer.gameObject.SetActive(true);
             cardViewers.Add(card.Id, basicCardViewer);
-
-            // var cardUIObject = Instantiate(cardUIPrefab, transform);
-            // cardUIObject.GetComponent<BasicCardViewer>().SetCard(card);
         }
-        private void RemoveCard(ICard card){}
+
+        private void RemoveCard(ICard card)
+        {
+            if (cardViewers.TryGetValue(card.Id, out BasicCardViewer basicCardViewer))
+            {
+                basicCardViewer.StackSize--;
+                if (basicCardViewer.StackSize <= 0)
+                {
+                    cardViewers.Remove(card.Id);
+                    hiddenCards.Push(basicCardViewer);
+                    basicCardViewer.gameObject.SetActive(false);
+                    basicCardViewer.transform.SetParent(transform.root);
+                }
+            }
+        }
+        
+        
         private void SetSelectedCard(ICard card){}
 
         private void CreateCards()
@@ -67,14 +65,31 @@ namespace Meta.CardSystem
                 var basicCardViewer = cardViewerObject.GetComponent<BasicCardViewer>();
                 hiddenCards.Push(basicCardViewer);
             }
-            
+        }
 
+        public void SetFromInventory(IInventory inventory)
+        {
+            inventory.SelectedCardChanged += SetSelectedCard;
+            inventory.CardAdded += AddCard;
+            inventory.CardRemoved += RemoveCard;
+
+            this.inventory = inventory;
+
+            CreateCards();
+
+            foreach (var cardCollection in inventory.Cards)
+            {
+                var card = cardCollection.Value[0];
+                AddCard(card);
+                cardViewers[card.Id].StackSize = cardCollection.Value.Count;
+            }
         }
 
         private void Show()
         {
             Debug.Log(inventory.Cards.Count);
         }
+        
         private void Hide(){}
     }
 }
