@@ -325,6 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8770d8859a7ee418e8a6cf7c54954e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardUIPrefab: {fileID: 80132486657472983, guid: 016769112e33e3146bf43d168dff2ed2,
+    type: 3}
 --- !u!1 &1750185204
 GameObject:
   m_ObjectHideFlags: 0
