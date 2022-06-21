@@ -20,7 +20,7 @@ namespace Meta.Development
             }
 
             temporaryInventoryUserInterface.Inventory = inventory;
-            inventoryViewer.inventory = inventory;
+            inventoryViewer.SetFromInventory(inventory);
         }
     }
 }
