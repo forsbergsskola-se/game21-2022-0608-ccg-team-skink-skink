@@ -11,8 +11,6 @@ namespace Gameplay.Unit.Health
         public UnityEvent OnDamageTaken;
         public UnityEvent OnDeath;
 
-    
-    
         private float currentHealth;
         //Todo: Possibly make private
         public float CurrentHealth
@@ -21,8 +19,11 @@ namespace Gameplay.Unit.Health
             private set
             {
                 if (value <= 0)
+                {
                     OnDeath?.Invoke();
-
+                    gameObject.SetActive(false);
+                }
+                    
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
             }
         }

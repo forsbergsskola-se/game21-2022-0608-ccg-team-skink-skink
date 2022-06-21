@@ -46,6 +46,5 @@ namespace Gameplay.Unit
         
         private Vector3 SetDirection(bool player)
             => player ? Vector3.left : Vector3.right;
-
     }
 }
