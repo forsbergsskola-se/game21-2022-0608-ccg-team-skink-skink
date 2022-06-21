@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using Meta.Interfaces;
+using Unity.VisualScripting;
 
 
 namespace Meta.CardSystem
 {
     public class InventoryModel : IInventory
     {
-        private readonly List<ICard> internalCardList = new();
-        public IList<ICard> Cards => internalCardList.AsReadOnly();
+        private readonly Dictionary<sbyte,List<ICard>> internalCardList = new();
+        public Dictionary<sbyte, List<ICard>> Cards => internalCardList;
 
         private ICard selectedCard;
 
@@ -31,14 +32,32 @@ namespace Meta.CardSystem
         
         public void Add(ICard card)
         {
-            internalCardList.Add(card);
+            if (internalCardList.TryGetValue(card.Id, out List<ICard> cards))
+            {
+                cards.Add(card);
+            }
+            else
+            {
+                var newCardList = new List<ICard>();
+                newCardList.Add(card);
+                internalCardList.Add(card.Id, newCardList);
+            }
             CardAdded?.Invoke(card);
         }
 
         public void Remove(ICard card)
         {
-            internalCardList.Remove(card);
-            CardRemoved?.Invoke(card);
+            if (internalCardList.TryGetValue(card.Id, out List<ICard> cards))
+            {
+                if (cards.Remove(card))
+                {
+                    if (cards.Count <= 0)
+                    {
+                        internalCardList.Remove(card.Id);
+                    }
+                    CardRemoved?.Invoke(card);
+                }
+            }
         }
     }
 }

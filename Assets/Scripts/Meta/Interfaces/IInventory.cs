@@ -9,7 +9,7 @@ namespace Meta.Interfaces
         /// Get a readonly copy of the current cards in the inventory. This list is not meant to be used to change the
         /// state. Please refer to IInventory Add and Remove!
         /// </summary>
-        public IList<ICard> Cards { get; }
+        public Dictionary<sbyte,List<ICard>> Cards { get; }
         
         /// <summary>
         /// Current selected card.
