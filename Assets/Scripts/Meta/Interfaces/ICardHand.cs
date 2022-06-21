@@ -1,3 +1,5 @@
+using System;
+using UnityEngine;
 namespace Meta.Interfaces
 {
     public interface ICardHand
@@ -13,6 +15,9 @@ namespace Meta.Interfaces
     }
     public interface ISettableCardHand : ICardHand
     {
+        public event Action<int, ICard> HandChanged;
+        public event Action<ICard> AbilityCardChanged; 
+        public ICard this[int number] { get; set; }
         public new ICard AbilityCard { set; }
     }
 }
