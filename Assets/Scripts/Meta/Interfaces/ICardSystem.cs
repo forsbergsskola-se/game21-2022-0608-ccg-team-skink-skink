@@ -8,9 +8,10 @@ namespace Meta.Interfaces
     public interface IInventory
     {
         /// <summary>
-        /// List of owned cards.
+        /// Get a readonly copy of the current cards in the inventory. This list is not meant to be used to change the
+        /// state. Please refer to IInventory Add and Remove!
         /// </summary>
-        public List<ICard> Cards { get; }
+        public IList<ICard> Cards { get; }
         
         /// <summary>
         /// Current selected card.
@@ -20,35 +21,15 @@ namespace Meta.Interfaces
         /// <summary>
         /// Invoked when the selected card has changed.
         /// </summary>
-        public event Action SelectedCardChanged;
+        public event Action<ICard> SelectedCardChanged;
+        public event Action<ICard> CardAdded;
+        public event Action<ICard> CardRemoved;
+
+        public void Add(ICard card);
+        public void Remove(ICard card);
     }
 
-    public interface ICard
-    {
-        /// <summary>
-        /// ActionPoint cost for using this card.
-        /// </summary>
-        public int ApCost { get; }
-        
-        public int CardLevel { get; }
-        
-        /// <summary>
-        /// Prefab of the cards unit.
-        /// </summary>
-        public GameObject CardObject { get; }
-        
-        /// <summary>
-        /// Card description
-        /// </summary>
-        public string Description { get; }
 
-        public Sprite Image { get; }
-        
-        /// <summary>
-        /// Card display name.
-        /// </summary>
-        public string Name { get; }
-    }
 
     public interface IInventoryController
     {
@@ -56,7 +37,7 @@ namespace Meta.Interfaces
         /// Creates a card. (This might end up being removed/modified)
         /// </summary>
         /// <returns></returns>
-        public ICard AddCard(ICard card);
+        public void AddCard(ICard card);
 
         /// <summary>
         /// Fuse cards together into a stronger card.
