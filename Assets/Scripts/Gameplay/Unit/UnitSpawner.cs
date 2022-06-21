@@ -6,7 +6,6 @@ namespace Gameplay.Unit
 {
     public class UnitSpawner : MonoBehaviour
     {
-
         [Header("Dependencies")]
         [SerializeField] private Pool pool;
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object deckHand;
@@ -24,8 +23,8 @@ namespace Gameplay.Unit
         {
             var temp = pool.GetInstance(unitName);
             SetTransform(temp);
-            UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
+            IUnit ai = temp.GetComponentInChildren<IUnit>(); 
             ai.Target = SetTag(!isPlayer);
             ai.Direction = SetDirection(transform.position.x);
         }

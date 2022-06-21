@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Gameplay.Unit
 {
-    public class UnitAI : MonoBehaviour
+    public class UnitAI : MonoBehaviour, IUnit
     {
         [Header("Dependencies")]
         [SerializeField] private MoveStats moveStats;

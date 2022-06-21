@@ -27,8 +27,8 @@ namespace Gameplay.Unit.UnitActions
             while (targetIsAlive)
             {
                 opponent.TakeDamage(stats.Damage);
-                yield return new WaitForSeconds(coolDown / stats.AttackSpeed);
                 Debug.Log("I am attacking!");
+                yield return new WaitForSeconds(coolDown / stats.AttackSpeed);
             }
 
             yield return null;

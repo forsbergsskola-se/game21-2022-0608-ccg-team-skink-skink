@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07d6003ba72d59498b74d4ad2aecb9e, type: 3}
   m_Name: BaseCombat
   m_EditorClassIdentifier: 
-  attackSpeed: 0.2
+  attackSpeed: 10
   damage: 1
   defence: 0
   range: 0
