@@ -44,13 +44,13 @@ namespace Meta.Interfaces
         public string Name { get; }
     }
 
-    public interface ICardSystem
+    public interface IInventoryController
     {
         /// <summary>
         /// Creates a card. (This might end up being removed/modified)
         /// </summary>
         /// <returns></returns>
-        public ICard CreateCard();
+        public ICard AddCard(ICard card);
 
         /// <summary>
         /// Fuse cards together into a stronger card.
