@@ -7,9 +7,7 @@ namespace Gameplay.Unit
     public class MoveStats : ScriptableObject, IMoveStats
     {
         [SerializeField] private float speed;
-        [SerializeField] private float range;
         
         public float Speed => speed;
-        public float Range => range;
     }
 }
