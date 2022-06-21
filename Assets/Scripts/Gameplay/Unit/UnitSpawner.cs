@@ -1,6 +1,7 @@
 using Gameplay.Unit;
 using Meta.Interfaces;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Utility;
 
@@ -12,7 +13,7 @@ namespace Gameplay.Unit
         [Header("Dependencies")]
         [SerializeField] private Pool pool;
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object deckHand;
-
+        
         [Header("Base SetUp")] 
         [SerializeField] private bool isPlayer;
 
@@ -42,9 +43,9 @@ namespace Gameplay.Unit
 
         private string SetTag(bool player)
             => player ? "Player" : "Enemy";
-
-        private Vector3 SetDirection(bool player)
-            => player? new Vector3(-1, 0, 0) : new Vector3(1, 0, 0);
         
+        private Vector3 SetDirection(bool player)
+            => player ? Vector3.left : Vector3.right;
+
     }
 }
