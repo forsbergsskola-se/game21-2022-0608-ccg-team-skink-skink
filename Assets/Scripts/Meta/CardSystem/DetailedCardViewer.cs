@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 
 namespace Meta.CardSystem
 {
-    public class CardViewer : MonoBehaviour
+    public class DetailedCardViewer : MonoBehaviour
     {
         [SerializeField] private TMP_Text actionPointCostText;
         [SerializeField] private Sprite cardImage;
