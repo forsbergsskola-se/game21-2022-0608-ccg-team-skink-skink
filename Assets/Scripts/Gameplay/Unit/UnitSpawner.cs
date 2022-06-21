@@ -10,7 +10,7 @@ namespace Gameplay.Unit
     {
 
         [Header("Dependencies")]
-        [SerializeField] public Pool pool;
+        [SerializeField] private Pool pool;
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object deckHand;
 
         [Header("Base SetUp")] 

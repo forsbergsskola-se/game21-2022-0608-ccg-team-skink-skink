@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,33 +26,32 @@ namespace Gameplay.Unit.Health
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
             }
         }
-    
-    
-    
+
+
         void OnEnable()
         {
             currentHealth = healthStats.MaxHealth;
         }
 
-        public void Hit(float damageAmount)
+
+        public void TakeDamage(float value)
         {
             //TODO:Clean up debug
             Debug.Log($"{name} is getting attacked");
             Debug.Log(currentHealth);
             
-            CurrentHealth -= damageAmount;
+            CurrentHealth -= value;
             
             Debug.Log(currentHealth);
         
             // Prevent the onDamageTaken event from firing in the case of the player being healed.
-            if (damageAmount > 0)
+            if (value > 0)
                 OnDamageTaken?.Invoke();
         }
-    
-    
-        public void TakeDamage(float value)
+
+        public void SubscribeToOnDeath(UnityAction method)
         {
-            Hit(value);
+            OnDeath.AddListener(method);
         }
     }
 }

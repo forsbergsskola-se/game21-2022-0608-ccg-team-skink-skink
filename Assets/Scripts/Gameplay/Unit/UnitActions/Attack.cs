@@ -1,5 +1,7 @@
 using System.Collections;
+using Gameplay.Unit.Health;
 using Gameplay.Unit.StatsInterfaces;
+using UnityEngine;
 
 namespace Gameplay.Unit.UnitActions
 {
@@ -9,9 +11,10 @@ namespace Gameplay.Unit.UnitActions
 
         public Attack(ICombatStats stats) => this.stats = stats;
 
-        public IEnumerator execution()
+        public IEnumerator Execution(IDamageReceiver opponent)
         {
-            yield return null;
+            opponent.TakeDamage(stats.Damage);
+            yield return new WaitForSeconds(stats.AttackSpeed);
         }
         
         
