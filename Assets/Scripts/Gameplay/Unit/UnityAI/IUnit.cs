@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public interface IUnit
+namespace Gameplay.Unit.UnityAI
 {
-    public string Target { get; set; }
-    public Vector3 Direction { get; set; }
+    public interface IUnit
+    {
+        public string Target { get; set; }
+        public Vector3 Direction { get; set; }
+    }
 }

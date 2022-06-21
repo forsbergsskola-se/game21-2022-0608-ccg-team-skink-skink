@@ -8,16 +8,10 @@ namespace Gameplay.Unit.UnitActions
     public class Attack
     {
         private ICombatStats stats;
-        private UnitState state;
-
         private bool targetIsAlive = true;
 
-        public Attack(ICombatStats stats, UnitState state)
-        {
-            this.stats = stats;
-            this.state = state;
-        } 
-
+        public Attack(ICombatStats stats) => this.stats = stats;
+        
         public IEnumerator StartAttacking(IDamageReceiver opponent)
         {
             //Todo: Discuss with the designers how to manage attack coolDown
@@ -31,14 +25,10 @@ namespace Gameplay.Unit.UnitActions
                 yield return new WaitForSeconds(coolDown / stats.AttackSpeed);
             }
 
-            yield return null;
+            yield return UnitState.Moving;
         }
 
-        public void StopAttacking()
-        {
-            state = UnitState.Moving;
-            targetIsAlive = false;
-        }
+        private void StopAttacking() => targetIsAlive = false;
     }
     
 }

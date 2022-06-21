@@ -1,9 +1,10 @@
 using System;
-using Gameplay.Unit.UnitActions;
 using Gameplay.Unit.Health;
+using Gameplay.Unit.UnitActions;
+using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Gameplay.Unit
+namespace Gameplay.Unit.UnityAI
 {
     public class UnitAI : MonoBehaviour, IUnit
     {
@@ -21,7 +22,7 @@ namespace Gameplay.Unit
         private void Awake()
         {
             movement = new Movement(moveStats);
-            attack = new Attack(combatStats, state);
+            attack = new Attack(combatStats);
 
             state = UnitState.Moving;
         }
@@ -35,11 +36,12 @@ namespace Gameplay.Unit
         {
             state = UnitState.Action;
             var damageReceiver = other.GetComponent<IDamageReceiver>();
+            damageReceiver.SubscribeToOnDeath(() => state = UnitState.Moving);
 
             if (damageReceiver != null && !other.gameObject.CompareTag(gameObject.tag))
             {
                 Debug.Log("I am starting the attack");
-                StartCoroutine(attack.StartAttacking(other.GetComponent<IDamageReceiver>()));
+                StartCoroutine(attack.StartAttacking(damageReceiver));
             }
         }
     }
