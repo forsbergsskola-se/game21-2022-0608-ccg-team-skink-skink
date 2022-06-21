@@ -8,18 +8,37 @@ namespace Gameplay.Unit.UnitActions
     public class Attack
     {
         private ICombatStats stats;
+        private UnitState state;
 
-        public Attack(ICombatStats stats) => this.stats = stats;
+        private bool targetIsAlive = true;
 
-        public IEnumerator Execution(IDamageReceiver opponent)
+        public Attack(ICombatStats stats, UnitState state)
         {
-            opponent.TakeDamage(stats.Damage);
-            yield return new WaitForSeconds(stats.AttackSpeed);
+            this.stats = stats;
+            this.state = state;
+        } 
+
+        public IEnumerator StartAttacking(IDamageReceiver opponent)
+        {
+            //Todo: Discuss with the designers how to manage attack coolDown
+            float coolDown = 2f;
+            opponent.SubscribeToOnDeath(StopAttacking);
+
+            while (targetIsAlive)
+            {
+                opponent.TakeDamage(stats.Damage);
+                yield return new WaitForSeconds(coolDown / stats.AttackSpeed);
+                Debug.Log("I am attacking!");
+            }
+
+            yield return null;
         }
-        
-        
-        //TODO: Used for debug, changed to get the stats from character 
-        public float Hit() => 50f;
+
+        public void StopAttacking()
+        {
+            state = UnitState.Moving;
+            targetIsAlive = false;
+        }
     }
     
 }

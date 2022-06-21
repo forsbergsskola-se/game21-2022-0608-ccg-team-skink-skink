@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 242458726}
   - component: {fileID: 242458725}
   - component: {fileID: 242458724}
-  - component: {fileID: 242458723}
+  - component: {fileID: 242458728}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Enemy
@@ -161,21 +161,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &242458723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242458722}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258a5ef556e18c94bacc75889fe69e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool: {fileID: 0}
-  deckHand: {fileID: 0}
-  isPlayer: 0
 --- !u!136 &242458724
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -248,13 +233,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242458722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.2}
+  m_LocalPosition: {x: -1, y: 1, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1146901263}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &242458728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242458722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b76f69653ef3ec449993d476c1a26da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStats: {fileID: 11400000, guid: 66e7f982f0e46224e992a1d00b4d9f6a, type: 2}
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &405019571 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2779851027856037253, guid: a812e705abe261149936f973b3a4aad2,
@@ -575,7 +579,7 @@ GameObject:
   - component: {fileID: 1155230330}
   - component: {fileID: 1155230329}
   - component: {fileID: 1155230328}
-  - component: {fileID: 1155230327}
+  - component: {fileID: 1155230332}
   m_Layer: 0
   m_Name: PlayerBase
   m_TagString: Player
@@ -583,21 +587,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1155230327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155230326}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258a5ef556e18c94bacc75889fe69e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool: {fileID: 0}
-  deckHand: {fileID: 0}
-  isPlayer: 0
 --- !u!136 &1155230328
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -670,13 +659,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155230326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 1, z: 0.2}
+  m_LocalPosition: {x: 21, y: 1, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1146901263}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1155230332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155230326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b76f69653ef3ec449993d476c1a26da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStats: {fileID: 11400000, guid: 66e7f982f0e46224e992a1d00b4d9f6a, type: 2}
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1166844629 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
@@ -972,10 +980,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2671261328274757585, guid: c6a2d679b80ccbd4d8aa826fc1c45d03,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -316889123982917489, guid: c6a2d679b80ccbd4d8aa826fc1c45d03,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6a2d679b80ccbd4d8aa826fc1c45d03,
         type: 3}
       propertyPath: m_Name
       value: theater
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6a2d679b80ccbd4d8aa826fc1c45d03,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685605364693271151, guid: c6a2d679b80ccbd4d8aa826fc1c45d03,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953606483559150473, guid: c6a2d679b80ccbd4d8aa826fc1c45d03,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a2d679b80ccbd4d8aa826fc1c45d03, type: 3}
@@ -1027,7 +1060,7 @@ PrefabInstance:
     - target: {fileID: 1234205636421970625, guid: f2d0884d21a44f1429cf13e69c3f09fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1234205636421970625, guid: f2d0884d21a44f1429cf13e69c3f09fb,
         type: 3}
@@ -1436,7 +1469,7 @@ PrefabInstance:
     - target: {fileID: 8142048309292015401, guid: d7aef7322d2a0cb4c896ae1940a45aea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8142048309292015401, guid: d7aef7322d2a0cb4c896ae1940a45aea,
         type: 3}

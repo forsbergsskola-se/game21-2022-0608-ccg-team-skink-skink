@@ -103,7 +103,7 @@ CapsuleCollider:
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -1}
 --- !u!54 &939844862787321827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!114 &-7308912049688483007
 MonoBehaviour:
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveStats: {fileID: 11400000, guid: b6715230ad8f6da49b99b42f5e993934, type: 2}
-  timeBetweenAttacks: 4
+  combatStats: {fileID: 11400000, guid: a1f5209c83b5be24d96e9e432d895231, type: 2}
 --- !u!114 &7680745698172867942
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5187380962262630780}
   - component: {fileID: 6704766551610010832}
   - component: {fileID: -3496019467797339918}
+  - component: {fileID: 4360799925084504813}
   m_Layer: 0
   m_Name: Unit1
   m_TagString: Untagged
@@ -116,7 +117,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!114 &6704766551610010832
 MonoBehaviour:
@@ -161,6 +162,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d91458f613931c4c98c8fb5341a064c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4360799925084504813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415738900540054693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d0f479dcbfc4d4db51ca717e2038b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveStats: {fileID: 11400000, guid: b6715230ad8f6da49b99b42f5e993934, type: 2}
+  combatStats: {fileID: 11400000, guid: a1f5209c83b5be24d96e9e432d895231, type: 2}
 --- !u!1 &2552989868888539327
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,4 +333,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveStats: {fileID: 11400000, guid: b6715230ad8f6da49b99b42f5e993934, type: 2}
-  timeBetweenAttacks: 4
+  combatStats: {fileID: 0}
