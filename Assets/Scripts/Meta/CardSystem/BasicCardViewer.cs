@@ -17,14 +17,21 @@ namespace Meta.CardSystem
             set
             {
                 stackSize = value;
-                stackSizeText.text = $"X{stackSize}";
+                stackSizeText.text = stackSize > 1 ? $"X{stackSize}" : "";
             }
         }
         public void SetCard(ICard card)
         {
+            gameObject.SetActive(true);
             actionPointCostText.text = card.ApCost.ToString();
             cardImage.sprite = card.Image;
-            stackSizeText.text = StackSize.ToString();
+        }
+
+        public void Reset()
+        {
+            stackSize = 1;
+            stackSizeText.text = "";
+            gameObject.SetActive(false);
         }
     }
 }
