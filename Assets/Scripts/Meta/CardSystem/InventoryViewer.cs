@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
 
@@ -8,7 +9,17 @@ namespace Meta.CardSystem
     {
         [SerializeField] private GameObject cardUIPrefab;
         
+        
+        
+        
+        // TODO: This is temporary! We do not want this to be public in the future. A singleton set in all objects using a dependency injector would be preferred.
         public IInventory inventory;
+
+        // TODO: This is temporary! We will want to grab the total amount of different cards from wherever all cards are stored!
+        [SerializeField] private int totalDifferentCardAmount;
+
+        private Dictionary<sbyte, BasicCardViewer> cardViewers = new Dictionary<sbyte, BasicCardViewer>();
+        private Stack<BasicCardViewer> hiddenCards = new Stack<BasicCardViewer>();
 
         void Start()
         {
@@ -17,29 +28,47 @@ namespace Meta.CardSystem
             inventory.CardRemoved += RemoveCard;
 
             CreateCards();
+            
+            foreach (var cardList in inventory.Cards)
+            {
+                foreach (var card in cardList.Value)
+                {
+                    AddCard(card);
+                }
+            }
+            
             Show();
         }
 
         private void AddCard(ICard card)
         {
-            var cardUIObject = Instantiate(cardUIPrefab, transform);
-            cardUIObject.GetComponent<BasicCardViewer>().SetCard(card);
+            if (cardViewers.TryGetValue(card.Id, out BasicCardViewer basicCardViewer))
+            {
+                basicCardViewer.StackSize++;
+                return;
+            }
+
+            basicCardViewer = hiddenCards.Pop();
+            basicCardViewer.SetCard(card);
+            basicCardViewer.transform.SetParent(transform);
+            cardViewers.Add(card.Id, basicCardViewer);
+
+            // var cardUIObject = Instantiate(cardUIPrefab, transform);
+            // cardUIObject.GetComponent<BasicCardViewer>().SetCard(card);
         }
         private void RemoveCard(ICard card){}
         private void SetSelectedCard(ICard card){}
 
         private void CreateCards()
         {
-            foreach (var cardList in inventory.Cards)
+            for (int i = 0; i < totalDifferentCardAmount; i++)
             {
-                var cardUIObject = Instantiate(cardUIPrefab, transform);
-                var basicCardViewer = cardUIObject.GetComponent<BasicCardViewer>();
-                basicCardViewer.SetCard(cardList.Value[0]);
-                if (cardList.Value.Count > 1)
-                {
-                    basicCardViewer.StackSize = cardList.Value.Count;
-                }
+                var cardViewerObject = Instantiate(cardUIPrefab);
+                var basicCardViewer = cardViewerObject.GetComponent<BasicCardViewer>();
+                hiddenCards.Push(basicCardViewer);
             }
+            
+
         }
 
         private void Show()
