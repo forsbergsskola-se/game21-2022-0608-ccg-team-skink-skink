@@ -10,6 +10,7 @@ namespace Gameplay.UI
         [Header("Dependencies")]
         [SerializeField] private Button[] buttons;
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object playerHand;
+        [SerializeField] private Image[] cardImage;
         
         private void Awake()
         {
@@ -18,7 +19,7 @@ namespace Gameplay.UI
             for (int i = 0; i < buttons.Length; i++)
             {
                 buttons[i].GetComponentInChildren<Text>().text = hand.Cards[i].Name;
-                buttons[i].GetComponentInChildren<Image>().sprite = hand.Cards[i].Image;
+                cardImage[i].sprite = hand.Cards[i].Image;
             }
         }
     }
