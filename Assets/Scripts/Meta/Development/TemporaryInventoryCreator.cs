@@ -9,14 +9,17 @@ namespace Meta.Development
     public class TemporaryInventoryCreator : MonoBehaviour
     {
         [SerializeField] InventoryViewer inventoryViewer;
+        [SerializeField] private TemporaryInventoryUserInterface temporaryInventoryUserInterface;
         [SerializeField, RequireInterface(typeof(ICard))] Object card;
         void Awake()
         {
             var inventory = new InventoryModel();
-            for (int i = 0; i <= 10; i++)
+            for (int i = 0; i < 15; i++)
             {
                 inventory.Add(card as ICard);    
             }
+
+            temporaryInventoryUserInterface.Inventory = inventory;
             inventoryViewer.inventory = inventory;
         }
     }
