@@ -1,19 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Meta.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class BasicCardViewer : MonoBehaviour
+namespace Meta.CardSystem
 {
-    [SerializeField] private TMP_Text actionPointCostText;
-    [SerializeField] private Image cardImage;
-
-    public void SetCard(ICard card)
+    public class BasicCardViewer : MonoBehaviour
     {
-        actionPointCostText.text = card.ApCost.ToString();
-        cardImage.sprite = card.Image;
+        [SerializeField] private TMP_Text actionPointCostText;
+        [SerializeField] private Image cardImage;
+        [SerializeField] private TMP_Text stackSizeText;
+        private int stackSize;
+        public int StackSize
+        {
+            get => stackSize;
+            set
+            {
+                stackSize = value;
+                stackSizeText.text = $"X{stackSize}";
+            } 
+        }
+        public void SetCard(ICard card)
+        {
+            actionPointCostText.text = card.ApCost.ToString();
+            cardImage.sprite = card.Image;
+            stackSizeText.text = StackSize.ToString();
+        }
     }
 }
