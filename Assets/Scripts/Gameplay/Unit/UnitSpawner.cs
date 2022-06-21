@@ -1,6 +1,7 @@
 using Gameplay.Unit;
 using Meta.Interfaces;
 using UnityEngine;
+using UnityEngine.UI;
 using Utility;
 
 namespace Gameplay.Unit
@@ -26,6 +27,7 @@ namespace Gameplay.Unit
         {
             var temp = pool.GetInstance(unitName);
             temp.transform.position = transform.position;
+            temp.transform.eulerAngles = transform.eulerAngles;
             temp.tag = SetTag(isPlayer);
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
@@ -38,6 +40,9 @@ namespace Gameplay.Unit
 
         private Vector3 SetDirection(float positionX)
             => new Vector3(positionX * -1, 0, 0).normalized;
-        
+
+        private Quaternion SetRotation(float rotationY)
+            => new Quaternion(rotationY * 0, 90, 0, 0).normalized;
+
     }
 }
