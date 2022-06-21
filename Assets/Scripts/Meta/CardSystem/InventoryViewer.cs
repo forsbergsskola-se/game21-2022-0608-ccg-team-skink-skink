@@ -28,7 +28,8 @@ namespace Meta.CardSystem
         {
             foreach (var card in inventory.Cards)
             {
-                Instantiate(cardUIPrefab, transform);
+                var cardUIObject = Instantiate(cardUIPrefab, transform);
+                cardUIObject.GetComponent<BasicCardViewer>().SetCard(card);
             }
         }
 
