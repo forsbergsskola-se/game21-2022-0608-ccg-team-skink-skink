@@ -1,8 +1,5 @@
-using Gameplay.Unit;
 using Meta.Interfaces;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 using Utility;
 
 namespace Gameplay.Unit
@@ -27,7 +24,6 @@ namespace Gameplay.Unit
         {
             var temp = pool.GetInstance(unitName);
             SetTransform(temp);
-            temp.tag = SetTag(isPlayer);
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
             ai.Target = SetTag(!isPlayer);
@@ -36,18 +32,28 @@ namespace Gameplay.Unit
 
         private void SetTransform(GameObject temp)
         {
-            temp.transform.position = transform.position;
-            temp.transform.eulerAngles = transform.eulerAngles;
+            var position = transform.position;
+            
+            temp.transform.position = position;
+            temp.transform.Rotate(SetRotation(position.x));
+            temp.tag = SetTag(isPlayer);
         }
 
         private string SetTag(bool player)
             => player ? "Player" : "Enemy";
+
+        private Vector3 SetRotation(float positionX)
+        {
+            float y = 0;
+            if (positionX > 0) y = 180;
+
+            return new Vector3(0, y, 0);
+        }
 
         private Vector3 SetDirection(float positionX)
         {
             var x = Mathf.Clamp(positionX * -1, -1, 1);
             return new Vector3(x, 0, 0);
         }
-            
     }
 }
