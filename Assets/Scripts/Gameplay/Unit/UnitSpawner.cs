@@ -45,5 +45,6 @@ namespace Gameplay.Unit
 
         private Vector3 SetDirection(float positionX)
             => new Vector3(positionX * -1, 0, 0).normalized;
+        
     }
 }
