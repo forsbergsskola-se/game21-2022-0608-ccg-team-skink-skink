@@ -19,17 +19,26 @@ namespace Meta.CardSystem
             CreateCards();
             Show();
         }
-        
-        private void AddCard(ICard card){}
+
+        private void AddCard(ICard card)
+        {
+            var cardUIObject = Instantiate(cardUIPrefab, transform);
+            cardUIObject.GetComponent<BasicCardViewer>().SetCard(card);
+        }
         private void RemoveCard(ICard card){}
         private void SetSelectedCard(ICard card){}
 
         private void CreateCards()
         {
-            foreach (var card in inventory.Cards)
+            foreach (var cardList in inventory.Cards)
             {
                 var cardUIObject = Instantiate(cardUIPrefab, transform);
-                cardUIObject.GetComponent<BasicCardViewer>().SetCard(card);
+                var basicCardViewer = cardUIObject.GetComponent<BasicCardViewer>();
+                basicCardViewer.SetCard(cardList.Value[0]);
+                if (cardList.Value.Count > 1)
+                {
+                    basicCardViewer.StackSize = cardList.Value.Count;
+                }
             }
         }
 
