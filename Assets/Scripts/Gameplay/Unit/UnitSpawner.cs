@@ -20,7 +20,6 @@ namespace Gameplay.Unit
         public void SpawnUnit(int buttonId)
         {
             ICardHand hand = deckHand as ICardHand;
-            
             PlaceUnit(hand.Cards[buttonId].Name);
         }
 
@@ -32,7 +31,7 @@ namespace Gameplay.Unit
             UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
             ai.Target = SetTag(!isPlayer);
-            ai.Direction = SetDirection(isPlayer);
+            ai.Direction = SetDirection(transform.position.x);
         }
 
         private void SetTransform(GameObject temp)
@@ -43,8 +42,12 @@ namespace Gameplay.Unit
 
         private string SetTag(bool player)
             => player ? "Player" : "Enemy";
-        
-        private Vector3 SetDirection(bool player)
-            => player ? Vector3.left : Vector3.right;
+
+        private Vector3 SetDirection(float positionX)
+        {
+            var x = Mathf.Clamp(positionX * -1, -1, 1);
+            return new Vector3(x, 0, 0);
+        }
+            
     }
 }
