@@ -23,6 +23,9 @@ public class FuseCards : MonoBehaviour
     }
     private void ButtonControl(ICard card)
     {
+        if (card == null)
+            return;
+        
         var selectedCardList = Inventory.Cards[card.Id];
         upgradeButton.interactable = selectedCardList.Count >= 2;
     }
