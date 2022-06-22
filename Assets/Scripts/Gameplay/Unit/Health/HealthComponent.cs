@@ -10,8 +10,6 @@ namespace Gameplay.Unit.Health
         public UnityEvent OnDamageTaken;
         public UnityEvent OnDeath;
 
-    
-    
         private float currentHealth;
         //Todo: Possibly make private
         public float CurrentHealth
@@ -20,38 +18,34 @@ namespace Gameplay.Unit.Health
             private set
             {
                 if (value <= 0)
+                {
                     OnDeath?.Invoke();
-
+                    gameObject.SetActive(false);
+                }
+                    
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
             }
         }
-    
-    
-    
+
+
         void OnEnable()
         {
             currentHealth = healthStats.MaxHealth;
         }
 
-        public void Hit(float damageAmount)
-        {
-            //TODO:Clean up debug
-            Debug.Log($"{name} is getting attacked");
-            Debug.Log(currentHealth);
-            
-            CurrentHealth -= damageAmount;
-            
-            Debug.Log(currentHealth);
-        
-            // Prevent the onDamageTaken event from firing in the case of the player being healed.
-            if (damageAmount > 0)
-                OnDamageTaken?.Invoke();
-        }
-    
-    
+
         public void TakeDamage(float value)
         {
-            Hit(value);
+            CurrentHealth -= value;
+            
+           // Prevent the onDamageTaken event from firing in the case of the player being healed.
+           if (value > 0)
+                OnDamageTaken?.Invoke();
+        }
+
+        public void SubscribeToOnDeath(UnityAction method)
+        {
+            OnDeath.AddListener(method);
         }
     }
 }

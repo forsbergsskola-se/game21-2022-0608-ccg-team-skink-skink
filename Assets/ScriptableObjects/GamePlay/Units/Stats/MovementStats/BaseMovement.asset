@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d509f4aca62cc741af69ad3b9f7ba1c, type: 3}
-  m_Name: Unit4
+  m_Script: {fileID: 11500000, guid: 40732d18a02a7664eb0b38dbc8ccb430, type: 3}
+  m_Name: BaseMovement
   m_EditorClassIdentifier: 
-  speed: 0.6
-  direction: {x: -1, y: 0, z: 0}
-  range: 3
-  cost: 35
-  health: 15
-  damage: 15
-  attackSpeed: 0.9
+  speed: 0.1

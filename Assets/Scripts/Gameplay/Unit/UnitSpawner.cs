@@ -1,25 +1,22 @@
-using Gameplay.Unit;
+using Gameplay.Unit.UnityAI;
 using Meta.Interfaces;
 using UnityEngine;
-using UnityEngine.UI;
 using Utility;
 
 namespace Gameplay.Unit
 {
     public class UnitSpawner : MonoBehaviour
     {
-
         [Header("Dependencies")]
-        [SerializeField] public Pool pool;
+        [SerializeField] private Pool pool;
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object deckHand;
-
+        
         [Header("Base SetUp")] 
         [SerializeField] private bool isPlayer;
 
         public void SpawnUnit(int buttonId)
         {
             ICardHand hand = deckHand as ICardHand;
-            
             PlaceUnit(hand.Cards[buttonId].Name);
         }
 
@@ -27,24 +24,36 @@ namespace Gameplay.Unit
         {
             var temp = pool.GetInstance(unitName);
             SetTransform(temp);
-            temp.tag = SetTag(isPlayer);
-            UnitAI ai = temp.GetComponentInChildren<UnitAI>(); 
 
+            IUnit ai = temp.GetComponentInChildren<IUnit>(); 
             ai.Target = SetTag(!isPlayer);
-            ai.Direction = SetDirection(ai.transform.position.x);
+            ai.Direction = SetDirection(transform.position.x);
         }
 
         private void SetTransform(GameObject temp)
         {
-            temp.transform.position = transform.position;
-            temp.transform.eulerAngles = transform.eulerAngles;
+            var position = transform.position;
+            
+            temp.transform.position = position;
+            temp.transform.Rotate(SetRotation(position.x));
+            temp.tag = SetTag(isPlayer);
         }
 
         private string SetTag(bool player)
             => player ? "Player" : "Enemy";
 
+        private Vector3 SetRotation(float positionX)
+        {
+            float y = 0;
+            if (positionX > 0) y = 180;
+
+            return new Vector3(0, y, 0);
+        }
+
         private Vector3 SetDirection(float positionX)
-            => new Vector3(positionX * -1, 0, 0).normalized;
-        
+        {
+            var x = Mathf.Clamp(positionX * -1, -1, 1);
+            return new Vector3(x, 0, 0);
+        }
     }
 }
