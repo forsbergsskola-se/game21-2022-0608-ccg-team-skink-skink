@@ -20,6 +20,7 @@ namespace Meta.Interfaces
         public string Name { get; }
         public Sprite Image { get; }
         public int CardLevel { get; }
+        public int CoolDownTime { get; }
         
         /// <summary>
         /// ActionPoint cost for using this card.

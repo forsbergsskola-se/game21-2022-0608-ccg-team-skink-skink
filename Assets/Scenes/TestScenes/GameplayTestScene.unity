@@ -717,6 +717,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1876109635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 825267188389204836, guid: 5bce5ebd80fb239439e84d542f4ec893,
+    type: 3}
+  m_PrefabInstance: {fileID: 825267189044769792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1930477231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1113,9 +1119,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8142048310914365517}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8142048310914365519}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CoolDownUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Unit.UnitCoolDownTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7507454182417300712, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1248,29 +1289,229 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8142048310914365517}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8142048310914365519}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CoolDownUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Unit.UnitCoolDownTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8142048310914365517}
     - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8142048310914365519}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CoolDownUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Unit.UnitCoolDownTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8142048310914365517}
     - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8142048310914365519}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CoolDownUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Unit.UnitCoolDownTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8142048310914365517}
     - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8142048310914365519}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CoolDownUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Unit.UnitCoolDownTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8142048310914365517}
     - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 8142048310914365517}
+      objectReference: {fileID: 8142048310914365519}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CoolDownUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Unit.UnitCoolDownTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a812e705abe261149936f973b3a4aad2, type: 3}
 --- !u!1001 &8113515735460072442
@@ -1348,9 +1589,22 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 825267189044769792}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1876109635}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 258a5ef556e18c94bacc75889fe69e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8142048310914365519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876109635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f01e22c1dc542a4e94591d963d692d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckHand: {fileID: 11400000, guid: a83d80bbbe833b3418fa6c7ccce616bd, type: 2}
