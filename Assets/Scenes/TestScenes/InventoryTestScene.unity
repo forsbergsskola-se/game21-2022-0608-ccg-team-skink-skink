@@ -640,6 +640,22 @@ PrefabInstance:
       propertyPath: InventoryChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1364157379, guid: eff97843c49d63943b7508a03fdca803, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1750185207}
+    - target: {fileID: 1364157379, guid: eff97843c49d63943b7508a03fdca803, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Remove
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908963129, guid: eff97843c49d63943b7508a03fdca803, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1750185207}
+    - target: {fileID: 1908963129, guid: eff97843c49d63943b7508a03fdca803, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 3337085230362832350, guid: eff97843c49d63943b7508a03fdca803,
         type: 3}
       propertyPath: m_Pivot.x
