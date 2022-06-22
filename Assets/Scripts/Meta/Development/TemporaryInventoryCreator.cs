@@ -9,6 +9,7 @@ namespace Meta.Development
     public class TemporaryInventoryCreator : MonoBehaviour
     {
         [SerializeField] InventoryViewer inventoryViewer;
+        [SerializeField] private SelectedCardController selectedCardController;
         [SerializeField] private TemporaryInventoryUserInterface temporaryInventoryUserInterface;
         [SerializeField, RequireInterface(typeof(ICard))] Object card;
         void Awake()
@@ -21,6 +22,7 @@ namespace Meta.Development
 
             temporaryInventoryUserInterface.Inventory = inventory;
             inventoryViewer.SetFromInventory(inventory);
+            selectedCardController.Inventory = inventory;
         }
     }
 }
