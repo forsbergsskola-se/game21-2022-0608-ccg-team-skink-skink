@@ -11,11 +11,13 @@ namespace Meta.InventorySystem
         [SerializeField] int level;
         [SerializeField] int apCost;
         [SerializeField] GameObject unitPrefab;
+        [SerializeField] private int coolDownTime;
 
         public Sprite Image => cardImage;
         public string Name => cardTitle;
         public int CardLevel => level;
         public int ApCost => apCost;
         public GameObject CardObject => unitPrefab;
+        public int CoolDownTime => coolDownTime;
     }
 }
