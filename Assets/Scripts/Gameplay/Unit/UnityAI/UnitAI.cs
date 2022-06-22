@@ -17,7 +17,6 @@ namespace Gameplay.Unit.UnityAI
         private Movement movement;
         private Attack attack;
         private UnitState state;
-        private BoxCollider collider;
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
@@ -29,7 +28,7 @@ namespace Gameplay.Unit.UnityAI
 
             state = UnitState.Moving;
 
-            collider = SetRange();
+            SetRange();
         }
 
         private void FixedUpdate()
@@ -49,12 +48,10 @@ namespace Gameplay.Unit.UnityAI
             }
         }
 
-        private BoxCollider SetRange()
+        private void SetRange()
         {
             var bc = GetComponent<BoxCollider>();
             bc.center += new Vector3(combatStats.Range, 0, 0);
-
-            return bc;
         }
     }
 }
