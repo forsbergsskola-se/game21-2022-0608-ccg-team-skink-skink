@@ -1,8 +1,9 @@
-using JetBrains.Annotations;
 using Meta.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 namespace Meta.CardSystem
 {
     public class BasicCardViewer : MonoBehaviour
@@ -13,7 +14,7 @@ namespace Meta.CardSystem
         [SerializeField] private Image typeImage;
         [SerializeField] private Image cardBackground;
 
-        [CanBeNull] public ICard Card { get; private set; }
+        public ICard Card { get; private set; }
         private int stackSize = 1;
 
         public int StackSize
