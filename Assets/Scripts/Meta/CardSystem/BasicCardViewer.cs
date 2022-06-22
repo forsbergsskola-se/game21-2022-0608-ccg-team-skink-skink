@@ -52,6 +52,7 @@ namespace Meta.CardSystem
         {
             stackSize = 1;
             stackSizeText.text = "";
+            IsSelected = false;
             gameObject.SetActive(false);
             Card = null;
         }
