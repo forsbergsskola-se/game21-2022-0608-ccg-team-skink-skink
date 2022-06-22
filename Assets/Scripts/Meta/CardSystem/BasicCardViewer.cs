@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Meta.Interfaces;
 using TMPro;
 using UnityEngine;
@@ -9,6 +10,9 @@ namespace Meta.CardSystem
         [SerializeField] private TMP_Text actionPointCostText;
         [SerializeField] private Image cardImage;
         [SerializeField] private TMP_Text stackSizeText;
+        [SerializeField] private Image typeImage;
+
+        [CanBeNull] public ICard Card { get; private set; }
         private int stackSize = 1;
 
         public int StackSize
@@ -24,7 +28,9 @@ namespace Meta.CardSystem
         {
             gameObject.SetActive(true);
             actionPointCostText.text = card.ApCost.ToString();
-            cardImage.sprite = card.Image;
+            cardImage.sprite = card.CardImage;
+            typeImage.sprite = card.TypeImage;
+            Card = card;
         }
 
         public void Reset()
@@ -32,6 +38,7 @@ namespace Meta.CardSystem
             stackSize = 1;
             stackSizeText.text = "";
             gameObject.SetActive(false);
+            Card = null;
         }
     }
 }
