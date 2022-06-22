@@ -10,6 +10,7 @@ namespace Utility
         [SerializeField] private ActionPointsSO actionPoints;
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object playerHand;
         [SerializeField] private UnityEvent<uint, uint> onAPUpdate;
+        [SerializeField] private UnityEvent<int> onAPSpent;
         
         private uint currentAP;
         private bool isUpdating;
@@ -50,18 +51,18 @@ namespace Utility
             if (currentAP >= apCost)
             {
                 StopAllCoroutines();
-                StartCoroutine(SubtractAP(apCost));
+                
+                StartCoroutine(SubtractAP(apCost, buttonId));
             }
         }
             
-        
-        private IEnumerator SubtractAP(int apCost)
+        private IEnumerator SubtractAP(int apCost, int buttonId)
         {
             isUpdating = true;
 
             currentAP -= (uint)apCost;
-            Debug.Log(currentAP);
             onAPUpdate.Invoke(currentAP, actionPoints.Max);
+            onAPSpent.Invoke(buttonId);
             
             yield return new WaitForSeconds(actionPoints.Regen);
             
