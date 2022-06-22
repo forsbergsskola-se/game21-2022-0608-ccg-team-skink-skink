@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1691573925712647364}
   - component: {fileID: 3138097285625699917}
   m_Layer: 5
-  m_Name: Card Inventory
+  m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
