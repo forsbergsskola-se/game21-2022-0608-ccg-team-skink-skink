@@ -19,8 +19,9 @@ namespace Meta.CardSystem
         [SerializeField] private int totalDifferentCardAmount;
 
 
+        
         private readonly Dictionary<sbyte, BasicCardViewer> cardViewers = new();
-        private readonly Stack<BasicCardViewer> hiddenCards = new();
+        private readonly Queue<BasicCardViewer> hiddenCards = new();
         
         
         
@@ -52,10 +53,9 @@ namespace Meta.CardSystem
                 return;
             }
 
-            basicCardViewer = hiddenCards.Pop();
-            
+            basicCardViewer = hiddenCards.Dequeue();
             basicCardViewer.SetCard(card);
-            basicCardViewer.transform.SetParent(transform);
+            
             cardViewers.Add(card.Id, basicCardViewer);
         }
 
@@ -69,16 +69,19 @@ namespace Meta.CardSystem
                 if (basicCardViewer.StackSize <= 0)
                 {
                     cardViewers.Remove(card.Id);
-                    hiddenCards.Push(basicCardViewer);
+                    hiddenCards.Enqueue(basicCardViewer);
                     basicCardViewer.Reset();
-                    basicCardViewer.transform.SetParent(transform.root);
+                    basicCardViewer.transform.SetAsLastSibling();
                 }
             }
         }
-        
-        
-        
-        private void SetSelectedCard(ICard card){}
+
+
+
+        private void SetSelectedCard(ICard card)
+        {
+            Debug.Log("A card has been selected! Hurray!");
+        }
         
         
 
@@ -86,9 +89,9 @@ namespace Meta.CardSystem
         {
             for (int i = 0; i < totalDifferentCardAmount; i++)
             {
-                var cardViewerObject = Instantiate(cardUIPrefab);
+                var cardViewerObject = Instantiate(cardUIPrefab, transform);
                 var basicCardViewer = cardViewerObject.GetComponent<BasicCardViewer>();
-                hiddenCards.Push(basicCardViewer);
+                hiddenCards.Enqueue(basicCardViewer);
             }
         }
         
