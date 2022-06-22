@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using Utility;
 
 public class APCounter : MonoBehaviour
 {
     [SerializeField] private ActionPointsSO actionPointsSO;
+    [SerializeField] private UnityEvent<uint> onAPUpdate;
     private uint currentAP;
     private bool isUpdating = false;
 
@@ -29,9 +32,8 @@ public class APCounter : MonoBehaviour
         
         while (isUpdating)
         {
-            currentAP++;
+            onAPUpdate.Invoke(++currentAP);
             yield return new WaitForSeconds(actionPointsSO.APRegen);
-            Debug.Log("You getting more AP by the minute buddy" + currentAP);
             if (currentAP == actionPointsSO.MaxAP)
             {
                 isUpdating = false;

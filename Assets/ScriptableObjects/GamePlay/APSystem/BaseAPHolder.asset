@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAP: 40
   maxAP: 200
-  regenAP: 1
+  regenAP: 0.5
