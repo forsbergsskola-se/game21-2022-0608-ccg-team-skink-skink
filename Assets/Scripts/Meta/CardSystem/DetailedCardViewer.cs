@@ -28,7 +28,7 @@ namespace Meta.CardSystem
             var card = Inventory.SelectedCard;
             
             actionPointCostText.text = card.ApCost.ToString();
-            cardImage = card.Image;
+            cardImage = card.CardImage;
             description.text = card.Description;
             levelText.text = card.CardLevel.ToString();
             nameText.text = card.Name;

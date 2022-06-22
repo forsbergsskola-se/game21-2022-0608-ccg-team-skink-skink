@@ -23,7 +23,9 @@ namespace Meta.Interfaces
         /// </summary>
         public string Description { get; }
 
-        public Sprite Image { get; }
+        public Sprite CardImage { get; }
+        
+        public Sprite TypeImage { get; }
         
         /// <summary>
         /// Card display name.
