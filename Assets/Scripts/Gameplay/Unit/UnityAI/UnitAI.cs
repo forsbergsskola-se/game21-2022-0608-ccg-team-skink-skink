@@ -39,11 +39,11 @@ namespace Gameplay.Unit.UnityAI
 
         private void OnTriggerEnter(Collider other)
         {
-            var damageReceiver = other.GetComponent<IDamageReceiver>();
-            damageReceiver.SubscribeToOnDeath(() => state = UnitState.Moving);
-
-            if (damageReceiver != null && !other.gameObject.CompareTag(gameObject.tag))
+            if (state != UnitState.Action && !other.gameObject.CompareTag(gameObject.tag))
             {
+                var damageReceiver = other.GetComponent<IDamageReceiver>();
+                damageReceiver.SubscribeToOnDeath(() => state = UnitState.Moving);
+
                 state = UnitState.Action;
                 StartCoroutine(attack.StartAttacking(damageReceiver));
             }
