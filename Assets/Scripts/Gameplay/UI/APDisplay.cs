@@ -1,22 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
-public class APDisplay : MonoBehaviour
+namespace Gameplay.UI
 {
-   private TextMeshProUGUI text;
-
-   private void Awake()
+   [RequireComponent(typeof(TextMeshProUGUI))]
+   public class APDisplay : MonoBehaviour
    {
-      text = GetComponent<TextMeshProUGUI>();
-   }
+      private TextMeshProUGUI mesh;
 
-   public void UpdateAPDisplay(uint currentAP)
-   {
-      text.text = currentAP.ToString();
+      private void Awake() 
+         => mesh = GetComponent<TextMeshProUGUI>();
+      
+      public void UpdateAPDisplay(uint currentAP, uint maxAP)
+         => mesh.text = $"AP: {currentAP} / {maxAP}";
    }
 }

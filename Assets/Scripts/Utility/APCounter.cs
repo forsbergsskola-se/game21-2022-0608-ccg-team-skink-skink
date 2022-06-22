@@ -7,7 +7,7 @@ namespace Utility
     public class APCounter : MonoBehaviour
     {
         [SerializeField] private ActionPointsSO actionPoints;
-        [SerializeField] private UnityEvent<uint> onAPUpdate;
+        [SerializeField] private UnityEvent<uint, uint> onAPUpdate;
         private uint currentAP;
         private bool isUpdating;
 
@@ -26,7 +26,7 @@ namespace Utility
         {
             while (isUpdating)
             {
-                onAPUpdate.Invoke(++currentAP);
+                onAPUpdate.Invoke(++currentAP, actionPoints.MaxAP);
                 if (currentAP == actionPoints.MaxAP) isUpdating = false;
             
                 yield return new WaitForSeconds(actionPoints.APRegen);
