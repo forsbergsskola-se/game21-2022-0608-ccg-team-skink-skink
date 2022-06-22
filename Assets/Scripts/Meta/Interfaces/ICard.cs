@@ -17,7 +17,7 @@ namespace Meta.Interfaces
         /// Prefab of the cards unit.
         /// </summary>
         public GameObject CardObject { get; }
-        
+
         /// <summary>
         /// Card description
         /// </summary>
@@ -31,5 +31,7 @@ namespace Meta.Interfaces
         /// Card display name.
         /// </summary>
         public string Name { get; }
+
+        public ICard UpgradedCard { get; }
     }
 }

@@ -1,5 +1,6 @@
 using Meta.Interfaces;
 using UnityEngine;
+using Object = UnityEngine.Object;
 namespace Meta.CardSystem
 {
     [CreateAssetMenu(fileName = "NewCard", menuName = "ScriptableObjects/CardSystem/Card")]
@@ -12,6 +13,7 @@ namespace Meta.CardSystem
         [SerializeField] private int level;
         [SerializeField] private int apCost;
         [SerializeField] private GameObject unitPrefab;
+        [SerializeField, RequireInterface(typeof(ICard))] Object upgradedCard;
         static sbyte nextId;
         public CardSO()
         {
@@ -23,6 +25,7 @@ namespace Meta.CardSystem
         public Sprite TypeImage => typeImage;
         
         public string Name => cardTitle;
+        public ICard UpgradedCard => upgradedCard as ICard;
         public int CardLevel => level;
         public sbyte Id { get; }
         public int ApCost => apCost;
