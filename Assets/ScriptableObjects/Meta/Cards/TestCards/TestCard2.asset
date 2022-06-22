@@ -15,6 +15,9 @@ MonoBehaviour:
   description: 
   cardTitle: 
   cardImage: {fileID: 21300000, guid: 87fd9225d88096f48be35b93c310812c, type: 3}
+  typeImage: {fileID: 0}
   level: 0
   apCost: 16
   unitPrefab: {fileID: 0}
+  upgradedCard: {fileID: 11400000, guid: 5ffdb3d4292c8b54d90eaac48bd4406b, type: 2}
+  tempId: 9
