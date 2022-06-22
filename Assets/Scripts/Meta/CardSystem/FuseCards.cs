@@ -40,7 +40,7 @@ namespace Meta.CardSystem
                 Inventory.Remove(cardToUpgrade);
             }
             Inventory.Add(cardToUpgrade.UpgradedCard);
-            ButtonControl(cardToUpgrade);
+            ButtonControl(Inventory.SelectedCard);
             (cardUpgradeScreen as ICardUpgradeScreen).Hide();
         }
     }
