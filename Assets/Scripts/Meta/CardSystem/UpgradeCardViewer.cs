@@ -1,6 +1,8 @@
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 namespace Meta.CardSystem
 {
     public class UpgradeCardViewer : MonoBehaviour, ICardUpgradeScreen
@@ -36,6 +38,11 @@ namespace Meta.CardSystem
             // (resultCardHealthBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
             // (resultCardSpeedBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
 
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
         }
     }
 }
