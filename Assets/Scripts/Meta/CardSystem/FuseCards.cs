@@ -1,32 +1,47 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
-public class FuseCards : MonoBehaviour
+namespace Meta.CardSystem
 {
-    [SerializeField, RequireInterface(typeof(ICardUpgradeScreen))] private Object cardUpgradeScreen;
-    [SerializeField] Button upgradeButton;
-    public IInventory Inventory;
+    public class FuseCards : MonoBehaviour
+    {
+        [SerializeField, RequireInterface(typeof(ICardUpgradeScreen))] private Object cardUpgradeScreen;
+        [SerializeField] Button upgradeButton;
+        public IInventory Inventory;
 
-    void Start()
-    {
-        Inventory.SelectedCardChanged += ButtonControl;
-    }
+        void Start()
+        {
+            Inventory.SelectedCardChanged += ButtonControl;
+        }
 
-    public void ShowCardUpgradeScreen()
-    {
-        (cardUpgradeScreen as ICardUpgradeScreen).SetCard(Inventory.SelectedCard);
-    }
-    private void ButtonControl(ICard card)
-    {
-        if (card == null)
-            return;
+        public void ShowCardUpgradeScreen()
+        {
+            (cardUpgradeScreen as ICardUpgradeScreen).SetCard(Inventory.SelectedCard);
+        }
         
-        var selectedCardList = Inventory.Cards[card.Id];
-        upgradeButton.interactable = selectedCardList.Count >= 2;
+        private void ButtonControl(ICard card)
+        {
+            if (card?.UpgradedCard == null)
+            {
+                upgradeButton.interactable = false;
+                return;
+            }
+
+            var selectedCardList = Inventory.Cards[card.Id];
+            upgradeButton.interactable = selectedCardList.Count >= 2;
+        }
+
+        public void Fuse()
+        {
+            var cardToUpgrade = Inventory.SelectedCard;
+            for (int i = 0; i < 2; i++)
+            {
+                Inventory.Remove(cardToUpgrade);
+            }
+            Inventory.Add(cardToUpgrade.UpgradedCard);
+            ButtonControl(cardToUpgrade);
+            (cardUpgradeScreen as ICardUpgradeScreen).Hide();
+        }
     }
 }
