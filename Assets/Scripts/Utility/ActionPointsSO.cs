@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Utility
@@ -7,15 +5,14 @@ namespace Utility
     [CreateAssetMenu(menuName = "ScriptableObjects/Utilities/ActionPointsHolder", fileName = "NewActionPointSO")]
     public class ActionPointsSO : ScriptableObject
     {
-        [SerializeField] private uint startAP;
-        [SerializeField] private uint maxAP;
-        [SerializeField] private float regenAP;
-       // [SerializeField] private float regenSpeed;
-
-        public uint StartAP => startAP;
-        public uint MaxAP => maxAP;
-        public float APRegen => regenAP;
-       // public float RegenSpeed => regenSpeed;
+        [SerializeField] private uint start;
+        [SerializeField] private uint max;
+        [SerializeField] private float regen;
+       
+        public uint Start => start;
+        public uint Max => max;
+        public float Regen => regen;
+       
     }
 }
 

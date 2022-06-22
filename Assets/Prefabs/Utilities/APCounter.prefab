@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e43e6672b7120948b9c335793e48ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionPoints: {fileID: 11400000, guid: fa89de08e896c5e4f888a0fa6b83153a, type: 2}
+  actionPoints: {fileID: 11400000, guid: f389d381146c1ea478cf59c6ae0903e4, type: 2}
+  playerHand: {fileID: 11400000, guid: a83d80bbbe833b3418fa6c7ccce616bd, type: 2}
   onAPUpdate:
     m_PersistentCalls:
       m_Calls:

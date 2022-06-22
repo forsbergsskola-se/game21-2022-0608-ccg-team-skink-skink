@@ -15,7 +15,7 @@ MonoBehaviour:
   cardTitle: Base
   cardImage: {fileID: 21300000, guid: e357f675cc77cb347ba6134684c078d8, type: 3}
   level: 0
-  apCost: 0
+  apCost: 10
   unitPrefab: {fileID: 3240702288915936041, guid: 33d365fa1b3ec2643b8349c66c9d369f,
     type: 3}
   coolDownTime: 3
