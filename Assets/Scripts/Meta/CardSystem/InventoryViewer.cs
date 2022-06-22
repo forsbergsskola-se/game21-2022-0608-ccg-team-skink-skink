@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
@@ -77,10 +76,21 @@ namespace Meta.CardSystem
         }
 
 
+        private BasicCardViewer lastSelectedCard;
 
         private void SetSelectedCard(ICard card)
         {
-            Debug.Log("A card has been selected! Hurray!");
+            if (card == null)
+                return;
+
+            if (cardViewers.TryGetValue(card.Id, out BasicCardViewer basicCardViewer))
+            {
+                if (lastSelectedCard != null)
+                    lastSelectedCard.IsSelected = false;
+                
+                basicCardViewer.IsSelected = true;
+                lastSelectedCard = basicCardViewer;
+            }
         }
         
         
