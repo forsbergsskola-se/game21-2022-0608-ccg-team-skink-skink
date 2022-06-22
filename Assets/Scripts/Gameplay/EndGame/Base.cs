@@ -11,10 +11,24 @@ namespace Gameplay.EndGame
             if (gameObject.CompareTag("Player")) endGame.LoseInvoke();
             else endGame.WinInvoke();
         }
+        
+        //Todo: The methods bellow are just for debugging
+        private void DebugWin()
+        {
+            Debug.Log("You win!");
+            PauseGameplay();
+        }
 
-        private void DebugWin() => Debug.Log("You win!");
-        private void DebugLose() => Debug.Log("You lose!");
+        private void DebugLose()
+        { 
+            Debug.Log("You lose!");
+            PauseGameplay();
+        }
 
+        private void PauseGameplay()
+        {
+            Time.timeScale = 0;
+        }
         private void Start()
         {
             endGame.SubscribeWin(DebugWin);
