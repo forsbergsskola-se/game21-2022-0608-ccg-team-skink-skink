@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -37,15 +36,9 @@ namespace Gameplay.Unit.Health
 
         public void TakeDamage(float value)
         {
-            //TODO:Clean up debug
-            Debug.Log($"{name} is getting attacked");
-            Debug.Log(currentHealth);
-            
             CurrentHealth -= value;
             
-            Debug.Log(currentHealth);
-        
-            // Prevent the onDamageTaken event from firing in the case of the player being healed.
+           // Prevent the onDamageTaken event from firing in the case of the player being healed.
             if (value > 0)
                 OnDamageTaken?.Invoke();
         }

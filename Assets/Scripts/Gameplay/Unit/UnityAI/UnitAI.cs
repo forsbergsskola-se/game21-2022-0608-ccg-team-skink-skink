@@ -1,8 +1,5 @@
-using System;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Gameplay.Unit.UnityAI
@@ -50,8 +47,8 @@ namespace Gameplay.Unit.UnityAI
 
         private void SetRange()
         {
-            var bc = GetComponent<BoxCollider>();
-            bc.center += new Vector3(combatStats.Range, 0, 0);
+            var collider = GetComponent<BoxCollider>();
+            collider.center += new Vector3(combatStats.Range, 0, 0);
         }
     }
 }
