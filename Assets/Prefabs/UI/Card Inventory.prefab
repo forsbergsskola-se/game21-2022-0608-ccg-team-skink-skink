@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -99,6 +99,7 @@ MonoBehaviour:
   cardImage: {fileID: 4643636640140721862}
   stackSizeText: {fileID: 1756027157856942794}
   typeImage: {fileID: 7451671397018570987}
+  cardBackground: {fileID: 404820910291226681}
 --- !u!114 &3138097285625699917
 MonoBehaviour:
   m_ObjectHideFlags: 0
