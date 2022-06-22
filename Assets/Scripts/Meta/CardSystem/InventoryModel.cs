@@ -54,6 +54,10 @@ namespace Meta.CardSystem
                     if (cards.Count <= 0)
                     {
                         internalCardList.Remove(card.Id);
+                        
+                        // TODO: Check that this actually works! Subscribers has to be able to handle null values.
+                        if (card == SelectedCard)
+                            SelectedCard = null;
                     }
                     CardRemoved?.Invoke(card);
                 }
