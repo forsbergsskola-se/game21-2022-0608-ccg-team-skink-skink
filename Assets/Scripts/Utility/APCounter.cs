@@ -1,46 +1,38 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
-using Utility;
 
-public class APCounter : MonoBehaviour
+namespace Utility
 {
-    [SerializeField] private ActionPointsSO actionPointsSO;
-    [SerializeField] private UnityEvent<uint> onAPUpdate;
-    private uint currentAP;
-    private bool isUpdating = false;
-
-    private void Awake()
+    public class APCounter : MonoBehaviour
     {
-        currentAP = actionPointsSO.StartAP;
-    }
+        [SerializeField] private ActionPointsSO actionPoints;
+        [SerializeField] private UnityEvent<uint> onAPUpdate;
+        private uint currentAP;
+        private bool isUpdating;
 
-    private void FixedUpdate()
-    {
-        if (currentAP < actionPointsSO.MaxAP && !isUpdating)
+        private void Awake() => currentAP = actionPoints.StartAP;
+       
+        private void FixedUpdate()
         {
-            isUpdating = true;
-            StartCoroutine(UpdateAP());
-        }
-    }
-
-    private IEnumerator UpdateAP()
-    {
-        
-        while (isUpdating)
-        {
-            onAPUpdate.Invoke(++currentAP);
-            yield return new WaitForSeconds(actionPointsSO.APRegen);
-            if (currentAP == actionPointsSO.MaxAP)
+            if (currentAP < actionPoints.MaxAP && !isUpdating)
             {
-                isUpdating = false;
-                Debug.Log("Dude, you gotta spend it too!");
+                isUpdating = true;
+                StartCoroutine(UpdateAP());
             }
         }
 
-        yield return null;
+        private IEnumerator UpdateAP()
+        {
+            while (isUpdating)
+            {
+                onAPUpdate.Invoke(++currentAP);
+                if (currentAP == actionPoints.MaxAP) isUpdating = false;
+            
+                yield return new WaitForSeconds(actionPoints.APRegen);
+            }
+
+            yield return null;
+        }
     }
 }
