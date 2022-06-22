@@ -11,5 +11,14 @@ namespace Gameplay.EndGame
             if (gameObject.CompareTag("Player")) endGame.LoseInvoke();
             else endGame.WinInvoke();
         }
+
+        private void DebugWin() => Debug.Log("You win!");
+        private void DebugLose() => Debug.Log("You lose!");
+
+        private void Start()
+        {
+            endGame.SubscribeWin(DebugWin);
+            endGame.SubscribeLose(DebugLose);
+        }
     }
 }

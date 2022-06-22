@@ -39,7 +39,7 @@ namespace Gameplay.Unit.Health
             CurrentHealth -= value;
             
            // Prevent the onDamageTaken event from firing in the case of the player being healed.
-            if (value > 0)
+           if (value > 0)
                 OnDamageTaken?.Invoke();
         }
 
