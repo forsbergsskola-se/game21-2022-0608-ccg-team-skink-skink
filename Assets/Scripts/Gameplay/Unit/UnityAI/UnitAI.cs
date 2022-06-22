@@ -32,7 +32,6 @@ namespace Gameplay.Unit.UnityAI
             collider = SetRange();
         }
 
-
         private void FixedUpdate()
         {
             if(state == UnitState.Moving) movement.Move(transform, Direction);
