@@ -15,7 +15,7 @@ MonoBehaviour:
   abilityCard: {fileID: 0}
   cards:
   - {fileID: 11400000, guid: b3254b495774de74a9107b74a4d37d37, type: 2}
-  - {fileID: 11400000, guid: b3254b495774de74a9107b74a4d37d37, type: 2}
+  - {fileID: 11400000, guid: 2c088130f7c2b2249affce8e920ac723, type: 2}
   - {fileID: 11400000, guid: b3254b495774de74a9107b74a4d37d37, type: 2}
   - {fileID: 11400000, guid: b3254b495774de74a9107b74a4d37d37, type: 2}
   - {fileID: 11400000, guid: b3254b495774de74a9107b74a4d37d37, type: 2}
