@@ -6,6 +6,7 @@ namespace Gameplay.Unit.Health
     public class HealthComponent : MonoBehaviour, IDamageReceiver
     {
         [SerializeField] private HealthStatsSO healthStats;
+        [SerializeField] private Healthbar healthbar;
 
         public UnityEvent OnDamageTaken;
         public UnityEvent OnDeath;
@@ -24,6 +25,7 @@ namespace Gameplay.Unit.Health
                 }
                     
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
+                healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
             }
         }
 
@@ -37,6 +39,7 @@ namespace Gameplay.Unit.Health
         public void TakeDamage(float value)
         {
             CurrentHealth -= value;
+            healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
             
            // Prevent the onDamageTaken event from firing in the case of the player being healed.
            if (value > 0)
