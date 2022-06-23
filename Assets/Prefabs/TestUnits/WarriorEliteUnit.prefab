@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: -8052910111773130973}
   - component: {fileID: -1897286552256771181}
   - component: {fileID: -3874313520190731227}
+  - component: {fileID: 7960403455483657780}
   m_Layer: 0
   m_Name: WarriorEliteUnit
   m_TagString: Untagged
@@ -640,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveStats: {fileID: 11400000, guid: b6715230ad8f6da49b99b42f5e993934, type: 2}
-  combatStats: {fileID: 11400000, guid: a1f5209c83b5be24d96e9e432d895231, type: 2}
+  combatStatsSO: {fileID: 11400000, guid: a1f5209c83b5be24d96e9e432d895231, type: 2}
 --- !u!54 &-4891279950721687291
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -695,13 +696,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b76f69653ef3ec449993d476c1a26da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthStats: {fileID: 11400000, guid: 66e7f982f0e46224e992a1d00b4d9f6a, type: 2}
+  healthStats: {fileID: 11400000, guid: 62fb8a0f56471fe4fa709754fa204774, type: 2}
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &7960403455483657780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345901830199661119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6847481151495500319
 GameObject:
   m_ObjectHideFlags: 0
