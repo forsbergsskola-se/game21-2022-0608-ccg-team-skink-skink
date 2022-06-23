@@ -19,7 +19,7 @@ namespace Gameplay.UI
             for (int i = 0; i < buttons.Length; i++)
             {
                 buttons[i].GetComponentInChildren<Text>().text = hand.Cards[i].Name;
-                cardImage[i].sprite = hand.Cards[i].Image;
+                cardImage[i].sprite = hand.Cards[i].CardImage;
             }
         }
     }

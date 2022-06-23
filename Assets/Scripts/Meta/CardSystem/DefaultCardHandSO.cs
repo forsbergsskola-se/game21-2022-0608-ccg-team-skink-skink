@@ -5,8 +5,8 @@ using Object = UnityEngine.Object;
 
 namespace Meta.InventorySystem
 {
-    [CreateAssetMenu(fileName = "NewCardHand", menuName = "ScriptableObjects/CardSystem/Cardhand")]
-    public class CardHandSO : ScriptableObject, ICardHand
+    [CreateAssetMenu(fileName = "NewDefaultCardHand", menuName = "ScriptableObjects/CardSystem/DefaultCardhand")]
+    public class DefaultCardHandSO : ScriptableObject, ICardHand
     {
         [SerializeField, RequireInterface(typeof(ICard))] private Object abilityCard;
         [SerializeField, RequireInterface(typeof(ICard))] private Object[] cards = new Object[6];
@@ -14,13 +14,11 @@ namespace Meta.InventorySystem
         public ICard[] Cards
         {
             get => Array.ConvertAll(cards, card => card as ICard);
-            set => cards = Array.ConvertAll(value, card => card as Object);
         }
 
         public ICard AbilityCard
         {
             get => abilityCard as ICard;
-            set => abilityCard = value as Object;
         }
     }
 }
