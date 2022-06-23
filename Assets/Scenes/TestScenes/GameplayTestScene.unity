@@ -912,6 +912,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
+        type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 2991052518889648240, guid: 890481bf01c2da341a397722c22a9fec,
+        type: 3}
     - target: {fileID: 5349995886529515134, guid: 5bce5ebd80fb239439e84d542f4ec893,
         type: 3}
       propertyPath: winMessage
@@ -996,6 +1002,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBase
       objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 2991052518889648240, guid: 890481bf01c2da341a397722c22a9fec,
+        type: 3}
     - target: {fileID: 8005950076918745129, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: winMessage
