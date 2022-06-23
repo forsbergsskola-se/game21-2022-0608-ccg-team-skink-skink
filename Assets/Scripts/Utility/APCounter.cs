@@ -47,6 +47,7 @@ namespace Utility
 
         public void SpendAP(int buttonId)
         {
+            //Todo: Find a way to not let the button ID pass through ApCounter to UnitSpawner
             var apCost = hand.Cards[buttonId].ApCost;
             if (currentAP >= apCost)
             {
@@ -60,7 +61,7 @@ namespace Utility
         {
             isUpdating = true;
 
-            currentAP -= (uint)apCost;
+            currentAP -= (uint)apCost; //Todo: Check why we have to cast the apCost
             onAPUpdate.Invoke(currentAP, actionPoints.Max);
             onAPSpent.Invoke(buttonId);
             
