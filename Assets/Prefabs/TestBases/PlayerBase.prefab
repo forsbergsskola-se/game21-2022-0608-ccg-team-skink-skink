@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthStats: {fileID: 11400000, guid: 62fb8a0f56471fe4fa709754fa204774, type: 2}
+  healthbar: {fileID: 0}
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
@@ -185,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.64, y: 1.3}
+  m_AnchoredPosition: {x: -0.3, y: 1.3}
   m_SizeDelta: {x: 529.2, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2236185784335565821
@@ -261,7 +262,7 @@ GameObject:
   - component: {fileID: 813881494043352719}
   - component: {fileID: 8383564702488528363}
   m_Layer: 5
-  m_Name: EnemyBaseText
+  m_Name: PlayerBaseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 84, y: 0}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &813881494043352719
