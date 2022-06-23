@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveStats: {fileID: 11400000, guid: cab54302f5df0f04783e4a26f8aa981d, type: 2}
-  combatStats: {fileID: 11400000, guid: 8644832782eaaf543aef1815ada8a62e, type: 2}
+  combatStatsSO: {fileID: 11400000, guid: cf9f4460de1834646bcb60bcb7b7bbf8, type: 2}
 --- !u!114 &8121154245991871638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b76f69653ef3ec449993d476c1a26da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthStats: {fileID: 11400000, guid: d02c407b4e8182445b6f8e5fe5b8c485, type: 2}
+  healthStats: {fileID: 11400000, guid: 62fb8a0f56471fe4fa709754fa204774, type: 2}
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []

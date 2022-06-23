@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveStats: {fileID: 11400000, guid: cab54302f5df0f04783e4a26f8aa981d, type: 2}
-  combatStats: {fileID: 11400000, guid: cf9f4460de1834646bcb60bcb7b7bbf8, type: 2}
+  combatStatsSO: {fileID: 11400000, guid: cf9f4460de1834646bcb60bcb7b7bbf8, type: 2}
 --- !u!114 &8121154245991871638
 MonoBehaviour:
   m_ObjectHideFlags: 0
