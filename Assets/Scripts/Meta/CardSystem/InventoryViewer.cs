@@ -23,10 +23,8 @@ namespace Meta.CardSystem
         private readonly Dictionary<sbyte, BasicCardViewer> cardViewers = new();
         private readonly Queue<BasicCardViewer> hiddenCards = new();
 
-        public UnityEvent InventoryChanged;
-        
-        
-        
+
+
         public void SetFromInventory(IInventory inventory)
         {
             inventory.SelectedCardChanged += SetSelectedCard;
@@ -59,8 +57,6 @@ namespace Meta.CardSystem
             basicCardViewer.SetCard(card);
             
             cardViewers.Add(card.Id, basicCardViewer);
-            
-            InventoryChanged.Invoke();
         }
 
         
@@ -76,8 +72,6 @@ namespace Meta.CardSystem
                     hiddenCards.Enqueue(basicCardViewer);
                     basicCardViewer.Reset();
                     basicCardViewer.transform.SetAsLastSibling();
-
-                    Debug.Log("Fix InventoryScrollController being called too early!");
                 }
             }
         }
@@ -110,17 +104,17 @@ namespace Meta.CardSystem
                 var basicCardViewer = cardViewerObject.GetComponent<BasicCardViewer>();
                 hiddenCards.Enqueue(basicCardViewer);
             }
-            
-            InventoryChanged.Invoke();
         }
-        
-        
+
 
         private void Show()
         {
-            Debug.Log(inventory.Cards.Count);
+            gameObject.SetActive(true);
         }
-        
-        private void Hide(){}
+
+        private void Hide()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
