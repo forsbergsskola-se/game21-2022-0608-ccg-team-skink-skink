@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace Gameplay.EndGame
@@ -5,6 +6,8 @@ namespace Gameplay.EndGame
     public class GameStateTrigger : MonoBehaviour
     {
         [SerializeField] private EndGameStateSO endGame;
+        public GameObject winMessage;
+        public GameObject loseMessage;
 
         public void TriggerEndGame()
         {
@@ -16,12 +19,14 @@ namespace Gameplay.EndGame
         private void DebugWin()
         {
             Debug.Log("You win!");
+            winMessage.SetActive(true);
             PauseGameplay();
         }
 
         private void DebugLose()
         { 
             Debug.Log("You lose!");
+            loseMessage.SetActive(true);
             PauseGameplay();
         }
 
