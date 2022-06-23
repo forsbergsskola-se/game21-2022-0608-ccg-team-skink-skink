@@ -307,26 +307,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &492142081 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5811566213381491994, guid: eff97843c49d63943b7508a03fdca803,
-    type: 3}
-  m_PrefabInstance: {fileID: 4715539959421393319}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &492142088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492142081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5d0cee876e8698418e0aad48b6e194e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryTransform: {fileID: 1427151366}
-  gridLayoutGroup: {fileID: 1427151368}
 --- !u!114 &718092973 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 718092973, guid: eff97843c49d63943b7508a03fdca803,
@@ -361,24 +341,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39f74d2d1d5e24041bf7f67de4911f5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &1427151366 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2546002088960554268, guid: eff97843c49d63943b7508a03fdca803,
-    type: 3}
-  m_PrefabInstance: {fileID: 4715539959421393319}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1427151368 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 326405527218159040, guid: eff97843c49d63943b7508a03fdca803,
-    type: 3}
-  m_PrefabInstance: {fileID: 4715539959421393319}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1750185204
@@ -612,50 +574,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 784165974, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: InventoryChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 784165974, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: InventoryChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 784165974, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: InventoryChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 492142088}
-    - target: {fileID: 784165974, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: InventoryChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 784165974, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: InventoryChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeInventoryHeight
-      objectReference: {fileID: 0}
-    - target: {fileID: 784165974, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: InventoryChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryScrollController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 784165974, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: InventoryChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1364157379, guid: eff97843c49d63943b7508a03fdca803, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1750185207}
-    - target: {fileID: 1364157379, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Remove
-      objectReference: {fileID: 0}
     - target: {fileID: 1908963129, guid: eff97843c49d63943b7508a03fdca803, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1750185207}
-    - target: {fileID: 1908963129, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Add
-      objectReference: {fileID: 0}
     - target: {fileID: 3337085230362832350, guid: eff97843c49d63943b7508a03fdca803,
         type: 3}
       propertyPath: m_Pivot.x
