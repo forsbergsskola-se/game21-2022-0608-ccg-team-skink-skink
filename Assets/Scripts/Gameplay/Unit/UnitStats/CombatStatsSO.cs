@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Gameplay.Unit
 {
     [CreateAssetMenu(fileName = "NewCombatStats", menuName = "ScriptableObjects/Unit/CombatStats")]
-    public class CombatStats : ScriptableObject, ICombatStats
+    public class CombatStatsSO : ScriptableObject, ICombatStats
     {
         [SerializeField] private float attackSpeed;
         [SerializeField] private float damage;

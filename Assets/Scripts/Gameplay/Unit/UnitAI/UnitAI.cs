@@ -9,7 +9,7 @@ namespace Gameplay.Unit.UnityAI
     {
         [Header("Dependencies")]
         [SerializeField] private MoveStats moveStats;
-        [SerializeField] private CombatStats combatStats;
+        [SerializeField] private CombatStatsSO combatStatsSO;
         
         private Movement movement;
         private Attack attack;
@@ -21,7 +21,7 @@ namespace Gameplay.Unit.UnityAI
         private void Awake()
         {
             movement = new Movement(moveStats);
-            attack = new Attack(combatStats);
+            attack = new Attack(combatStatsSO);
 
             state = UnitState.Moving;
 
@@ -48,7 +48,7 @@ namespace Gameplay.Unit.UnityAI
         private void SetRange()
         {
             var collider = GetComponent<BoxCollider>();
-            collider.center += new Vector3(combatStats.Range, 0, 0);
+            collider.center += new Vector3(combatStatsSO.Range, 0, 0);
         }
     }
 }
