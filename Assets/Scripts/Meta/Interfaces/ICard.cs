@@ -17,6 +17,8 @@ namespace Meta.Interfaces
         /// Prefab of the cards unit.
         /// </summary>
         public GameObject CardObject { get; }
+        
+        public int CoolDownTime { get; }
 
         /// <summary>
         /// Card description

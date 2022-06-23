@@ -12,6 +12,7 @@ namespace Meta.CardSystem
         [SerializeField] private Sprite typeImage;
         [SerializeField] private int level;
         [SerializeField] private int apCost;
+        [SerializeField] private int coolDownTime;
         [SerializeField] private GameObject unitPrefab;
         [SerializeField, RequireInterface(typeof(ICard))] Object upgradedCard;
         static sbyte nextId;
@@ -20,6 +21,7 @@ namespace Meta.CardSystem
             Id = nextId++;
             tempId = Id;
         }
+        public int CoolDownTime => coolDownTime;
         public string Description => description;
         public Sprite CardImage => cardImage;
         public Sprite TypeImage => typeImage;
