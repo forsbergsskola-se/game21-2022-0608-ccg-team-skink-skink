@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Gameplay.EndGame
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/Utilities/EndGameState", fileName = "NewEndGameState")]
-    public class EndGameState : ScriptableObject
+    public class EndGameStateSO : ScriptableObject
     {
         private UnityEvent win;
         private UnityEvent lose;

@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace Gameplay.EndGame
 {
-    public class Base : MonoBehaviour
+    public class GameStateTrigger : MonoBehaviour
     {
-        [SerializeField] private EndGameState endGame;
+        [SerializeField] private EndGameStateSO endGame;
 
         public void TriggerEndGame()
         {
