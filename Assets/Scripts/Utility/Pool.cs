@@ -15,22 +15,28 @@ namespace Utility
             for (int i = 0; i < cardAmount; i++)
             {
                 var tempObj = Instantiate(card);
+                
                 tempObj.SetActive(false);
                 pool.Enqueue(tempObj);
             }
-            
             collection.Add(key, pool);
         }
 
         public GameObject GetInstance(string key)
         {
-            var temp = collection[key].Dequeue();
-            temp.SetActive(true);
-            collection[key].Enqueue(temp);
+            var dequeued = collection[key].Dequeue();
+            if (dequeued.gameObject.activeInHierarchy)
+            {
+                var temp = Instantiate(dequeued);
+                collection[key].Enqueue(dequeued);
+                dequeued = temp;
+            }
+            dequeued.SetActive(true);
+            collection[key].Enqueue(dequeued);
 
-            return temp;
+            return dequeued;
         }
-        
+
     }
     
 }

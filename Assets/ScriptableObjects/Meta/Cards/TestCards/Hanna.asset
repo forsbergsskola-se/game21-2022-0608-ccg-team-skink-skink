@@ -18,3 +18,4 @@ MonoBehaviour:
   apCost: 0
   unitPrefab: {fileID: 415738900540054693, guid: 44fa5abc0b04a784386a5bc4f0f98135,
     type: 3}
+  coolDownTime: 2
