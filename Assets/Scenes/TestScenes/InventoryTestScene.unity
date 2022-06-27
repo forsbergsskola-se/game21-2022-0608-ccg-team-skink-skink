@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 104779970}
   - component: {fileID: 104779973}
   - component: {fileID: 104779972}
+  - component: {fileID: 104779974}
   m_Layer: 5
   m_Name: DeckView
   m_TagString: Untagged
@@ -239,6 +240,18 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &104779974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104779968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a411389bc9bde7845926f9de96de374c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &131885820
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +514,7 @@ MonoBehaviour:
   selectedCardController: {fileID: 1427151362}
   temporaryInventoryUserInterface: {fileID: 1750185207}
   card: {fileID: 11400000, guid: c1d93eaf5e9a1604c9a146257b3260e8, type: 2}
+  cardHandController: {fileID: 104779974}
 --- !u!4 &1750185206
 Transform:
   m_ObjectHideFlags: 0
@@ -543,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCardHandSO: {fileID: 11400000, guid: 19731bb378a263d48886436130f1bdc0, type: 2}
   cardHandViewer: {fileID: 104779972}
+  cardHandController: {fileID: 104779974}
 --- !u!1 &1874266538
 GameObject:
   m_ObjectHideFlags: 0

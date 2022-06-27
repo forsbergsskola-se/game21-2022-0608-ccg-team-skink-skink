@@ -13,6 +13,7 @@ namespace Meta.Development
         [SerializeField] private SelectedCardController selectedCardController;
         [SerializeField] private TemporaryInventoryUserInterface temporaryInventoryUserInterface;
         [SerializeField, RequireInterface(typeof(ICard))] Object card;
+        [SerializeField] private CardHandController cardHandController;
         void Awake()
         {
             var inventory = new InventoryModel();
@@ -25,6 +26,7 @@ namespace Meta.Development
             inventoryViewer.SetFromInventory(inventory);
             selectedCardController.Inventory = inventory;
             fuseCards.Inventory = inventory;
+            cardHandController.Inventory = inventory;
         }
     }
 }

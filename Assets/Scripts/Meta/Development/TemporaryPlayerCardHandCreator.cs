@@ -10,6 +10,7 @@ namespace Meta.Development
     {
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object defaultCardHandSO;
         [SerializeField] private CardHandViewer cardHandViewer;
+        [SerializeField] private CardHandController cardHandController;
 
         private void Awake()
         {
@@ -17,7 +18,8 @@ namespace Meta.Development
             var playerCardHand = new PlayerCardHand();
 
             cardHandViewer.CardHand = playerCardHand;
-            
+
+            cardHandController.CardHand = playerCardHand;
             // Adds the cards to the hand.
             for (int i = 0; i < playerCardHand.Cards.Length; i++)
             {
