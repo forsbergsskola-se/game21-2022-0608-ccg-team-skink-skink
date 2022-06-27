@@ -307,19 +307,8 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Desktop/Master
   - Mobile/Master
   Banks:
-  - Desktop/Game
-  - Desktop/Level0
-  - Desktop/Level1
-  - Desktop/Level2
-  - Desktop/Level3
-  - Desktop/Level4
-  - Desktop/Level5
-  - Desktop/Level6
-  - Desktop/Level7
-  - Desktop/MetaGame
   - Mobile/Game
   - Mobile/Level0
   - Mobile/Level1

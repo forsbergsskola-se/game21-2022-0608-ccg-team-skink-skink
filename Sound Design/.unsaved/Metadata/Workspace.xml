@@ -4,9 +4,6 @@
 		<property name="builtBanksOutputDirectory">
 			<value>../Assets/Streaming Assets</value>
 		</property>
-		<property name="builtBanksSeparateAssets">
-			<value>true</value>
-		</property>
 		<relationship name="masterEventFolder">
 			<destination>{731ea65c-8219-42ba-b6f4-4503077cf604}</destination>
 		</relationship>
