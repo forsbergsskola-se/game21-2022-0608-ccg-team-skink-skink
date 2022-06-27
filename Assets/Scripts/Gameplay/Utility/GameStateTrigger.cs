@@ -23,15 +23,14 @@ namespace Gameplay.EndGame
             Debug.Log("You win!");
             winMessage.SetActive(true);
             pauseGame.Pause();
-            SceneManager.LoadScene("MenuTest");
+           
         }
 
         private void DebugLose()
         { 
-            Debug.Log("You lose!");
-            loseMessage.SetActive(true);
+           Debug.Log("You lose!"); 
+           loseMessage.SetActive(true);
            pauseGame.Pause();
-            SceneManager.LoadScene("MenuTest");
         }
 
         
