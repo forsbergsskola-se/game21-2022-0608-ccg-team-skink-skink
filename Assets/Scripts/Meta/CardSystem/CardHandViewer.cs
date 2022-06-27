@@ -8,8 +8,9 @@ namespace Meta.CardSystem
     {
         public ISettableCardHand CardHand;
         
-        private BasicCardViewer[] cardSlots;
         [SerializeField] private GameObject cardUIPrefab;
+        private BasicCardViewer[] cardSlots;
+        
 
         void Start()
         {
@@ -18,10 +19,10 @@ namespace Meta.CardSystem
             RefreshCardHand();
         }
 
-        public void CreateCardViewers()
+        private void CreateCardViewers()
         {
             cardSlots = new BasicCardViewer[CardHand.Cards.Length];
-            for (int i = 0; i < cardSlots.Length; i++)
+            for (var i = 0; i < cardSlots.Length; i++)
             {
                 var cardViewerObject = Instantiate(cardUIPrefab, transform);
                 var basicCardViewer = cardViewerObject.GetComponent<BasicCardViewer>();
@@ -36,7 +37,7 @@ namespace Meta.CardSystem
 
         private void RefreshCardHand()
         {
-            for (int i = 0; i < cardSlots.Length; i++)
+            for (var i = 0; i < cardSlots.Length; i++)
             {
                 UpdateCardUI(i, CardHand[i]);
             }
