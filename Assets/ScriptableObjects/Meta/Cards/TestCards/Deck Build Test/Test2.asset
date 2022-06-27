@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
-  m_Name: TestCard2
+  m_Name: Test2
   m_EditorClassIdentifier: 
   description: 
   cardTitle: 
-  cardImage: {fileID: 21300000, guid: 87fd9225d88096f48be35b93c310812c, type: 3}
-  typeImage: {fileID: 0}
-  level: 0
-  apCost: 16
+  cardImage: {fileID: 21300000, guid: 19d17f8a7fc0f30418c9a3bf09f017cd, type: 3}
+  typeImage: {fileID: 21300000, guid: 490f8e82a1ceef34a891ca034b705c99, type: 3}
+  level: 2
+  apCost: 40
   coolDownTime: 0
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 3240702288915936041, guid: b74073a591996b94fbee9db6a1236e91,
+    type: 3}
   upgradedCard: {fileID: 0}
-  tempId: 9
+  tempId: 5
