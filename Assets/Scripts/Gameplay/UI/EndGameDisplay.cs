@@ -1,20 +1,15 @@
 using Gameplay.EndGame;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.UI
 {
-    [RequireComponent(typeof(TextMeshProUGUI))]
     public class EndGameDisplay : MonoBehaviour
     {
         [SerializeField] private EndGameStateSO endGame;
-        private TextMeshProUGUI textMesh;
-
-        private void Awake()
-        {
-            textMesh = GetComponent<TextMeshProUGUI>();
-            textMesh.enabled = false;
-        }
+        [SerializeField] private TextMeshProUGUI textMesh;
+        [SerializeField] private Button button;
 
         private void Start()
         {
@@ -24,16 +19,21 @@ namespace Gameplay.UI
 
         public void SetLoseScreen()
         {
+            textMesh.gameObject.SetActive(true);
             textMesh.text = "You lose!";
             textMesh.color = Color.red;
-            textMesh.enabled = true;
+
+            button.gameObject.SetActive(true);
+
         }
 
         private void SetWinScreen()
         {
+            textMesh.gameObject.SetActive(true);
             textMesh.text = "You win!";
             textMesh.color = Color.yellow;
-            textMesh.enabled = true;
+            
+            button.gameObject.SetActive(true);
         }
     }
 }
