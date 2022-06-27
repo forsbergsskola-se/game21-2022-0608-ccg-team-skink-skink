@@ -476,8 +476,9 @@ GameObject:
   - component: {fileID: 1750185206}
   - component: {fileID: 1750185205}
   - component: {fileID: 1750185207}
+  - component: {fileID: 1750185208}
   m_Layer: 0
-  m_Name: TEMPORARYInventoryCreator
+  m_Name: TEMPORARYDependencyInjectorThatBarelyWorksAndIsVeryBad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,6 +529,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: c1d93eaf5e9a1604c9a146257b3260e8, type: 2}
+--- !u!114 &1750185208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750185204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6f0169cc8cb3e40b5a03c2512046e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCardHandSO: {fileID: 11400000, guid: 19731bb378a263d48886436130f1bdc0, type: 2}
+  cardHandViewer: {fileID: 104779972}
 --- !u!1 &1874266538
 GameObject:
   m_ObjectHideFlags: 0
