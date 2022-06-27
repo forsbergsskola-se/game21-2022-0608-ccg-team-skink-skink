@@ -9,12 +9,11 @@ namespace Meta.Ads
         [SerializeField] string _iOSGameId;
         [SerializeField] bool _testMode = true;
         private string _gameId;
+
+        [SerializeField] private RewardedAdsButton rewardedAdsButton;
  
-        void Awake()
-        {
-            InitializeAds();
-        }
- 
+        void Awake() => InitializeAds();
+        
         public void InitializeAds()
         {
             _gameId = (Application.platform == RuntimePlatform.IPhonePlayer)
@@ -26,6 +25,7 @@ namespace Meta.Ads
         public void OnInitializationComplete()
         {
             Debug.Log("Unity Ads initialization complete.");
+            rewardedAdsButton.LoadAd();
         }
  
         public void OnInitializationFailed(UnityAdsInitializationError error, string message)
