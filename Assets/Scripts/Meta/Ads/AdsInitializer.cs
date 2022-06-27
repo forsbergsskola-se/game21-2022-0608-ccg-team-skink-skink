@@ -10,7 +10,7 @@ namespace Meta.Ads
         [SerializeField] bool _testMode = true;
         private string _gameId;
 
-        [SerializeField] private RewardedAdsButton rewardedAdsButton;
+        [SerializeField] private RewardedAds rewardedAdsButton;
  
         void Awake() => InitializeAds();
         

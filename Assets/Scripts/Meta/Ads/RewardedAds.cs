@@ -1,16 +1,19 @@
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Meta.Ads
 {
-    public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
+    public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
     {
         [SerializeField] Button _showAdButton;
         [SerializeField] string _androidAdUnitId = "Rewarded_Android";
         [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
         string _adUnitId = null; // This will remain null for unsupported platforms
- 
+
+        [SerializeField] private UnityEvent onAdsShowComplete;
+        
         void Awake()
         {   
             // Get the Ad Unit ID for the current platform:
@@ -62,7 +65,9 @@ namespace Meta.Ads
             {
                 Debug.Log("Unity Ads Rewarded Ad Completed");
                 // Grant a reward.
-                //Todo: Add reward here!
+                
+                onAdsShowComplete.Invoke();
+                
                 // Load another ad:
                 Advertisement.Load(_adUnitId, this);
             }
