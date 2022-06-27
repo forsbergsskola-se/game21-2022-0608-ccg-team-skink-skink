@@ -1,10 +1,12 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay.EndGame
 {
     public class GameStateTrigger : MonoBehaviour
     {
+        public PauseGame pauseGame;
         [SerializeField] private EndGameStateSO endGame;
         public GameObject winMessage;
         public GameObject loseMessage;
@@ -20,20 +22,19 @@ namespace Gameplay.EndGame
         {
             Debug.Log("You win!");
             winMessage.SetActive(true);
-            PauseGameplay();
+            pauseGame.Pause();
+            SceneManager.LoadScene("MenuTest");
         }
 
         private void DebugLose()
         { 
             Debug.Log("You lose!");
             loseMessage.SetActive(true);
-            PauseGameplay();
+           pauseGame.Pause();
+            SceneManager.LoadScene("MenuTest");
         }
 
-        private void PauseGameplay()
-        {
-            Time.timeScale = 0;
-        }
+        
         private void Start()
         {
             endGame.SubscribeWin(DebugWin);
