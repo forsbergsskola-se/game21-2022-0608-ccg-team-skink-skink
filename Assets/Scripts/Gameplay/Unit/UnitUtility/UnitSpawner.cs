@@ -1,7 +1,9 @@
+using System;
 using Gameplay.Unit.UnityAI;
 using Meta.Interfaces;
 using UnityEngine;
 using Utility;
+using Object = UnityEngine.Object;
 
 namespace Gameplay.Unit
 {
@@ -13,6 +15,11 @@ namespace Gameplay.Unit
         
         [Header("Base SetUp")] 
         [SerializeField] private bool isPlayer;
+        
+        private void Awake()
+        {
+            if(isPlayer) deckHand = FindObjectOfType<Dependencies>().PlayerCardHand as Object;
+        }
 
         public void SpawnUnit(int buttonId)
         {
