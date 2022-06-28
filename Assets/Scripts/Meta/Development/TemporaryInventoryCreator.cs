@@ -12,14 +12,18 @@ namespace Meta.Development
         [SerializeField] FuseCards fuseCards;
         [SerializeField] private SelectedCardController selectedCardController;
         [SerializeField] private TemporaryInventoryUserInterface temporaryInventoryUserInterface;
-        [SerializeField, RequireInterface(typeof(ICard))] Object card;
+        [SerializeField, RequireInterface(typeof(ICard))] Object[] card;
         [SerializeField] private CardHandController cardHandController;
         void Awake()
         {
             var inventory = new InventoryModel();
-            for (int i = 0; i < 15; i++)
+            var cardArray = Array.ConvertAll(card, c => c as ICard);
+            
+            foreach (var variablCard in cardArray)
             {
-                inventory.Add(card as ICard);    
+                inventory.Add(variablCard);
+                inventory.Add(variablCard);
+                inventory.Add(variablCard);
             }
 
             temporaryInventoryUserInterface.Inventory = inventory;
