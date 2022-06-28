@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: 
   cardTitle: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 6ee1611a2a139c7459aba030cfc8f7d0, type: 3}
   typeImage: {fileID: 0}
   level: 0
   apCost: 0
   coolDownTime: 0
   unitPrefab: {fileID: 0}
-  upgradedCard: {fileID: 0}
+  upgradedCard: {fileID: 11400000, guid: 85d9a44884299804aacfe6d0b83ea6e4, type: 2}
   tempId: 4
