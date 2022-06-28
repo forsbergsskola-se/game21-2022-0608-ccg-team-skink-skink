@@ -6,8 +6,7 @@ namespace Gameplay.Unit.Health
     public class HealthComponent : MonoBehaviour, IDamageReceiver
     {
         [SerializeField] private HealthStatsSO healthStats;
-        //TODO: remove if decided on no hp
-        [SerializeField] private Healthbar healthbar;
+        //TODO: remove if decided on no hp  [SerializeField] private Healthbar healthbar;
 
         public UnityEvent OnDamageTaken;
         public UnityEvent OnDeath;
@@ -26,8 +25,7 @@ namespace Gameplay.Unit.Health
                 }
                     
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
-                //TODO: remove if decided on no hp
-                healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
+                //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
             }
         }
 
