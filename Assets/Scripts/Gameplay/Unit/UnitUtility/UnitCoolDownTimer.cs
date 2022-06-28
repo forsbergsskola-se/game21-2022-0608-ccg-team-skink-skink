@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 
 namespace Gameplay.Unit
 {
     public class UnitCoolDownTimer : MonoBehaviour
     {
-        [Header("Dependencies")]
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object deckHand;
+        private ICardHand deckHand; // Changed to Dependency Injection
 
         public void CoolDownUnit(int buttonId)
         {
+            deckHand = FindObjectOfType<Dependencies>().PlayerCardHand;
+            
             GameObject clickedButtonGO = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
             ICardHand hand = deckHand as ICardHand;
             StartCoroutine(UnitCoolDown(clickedButtonGO, hand.Cards[buttonId].CoolDownTime));
