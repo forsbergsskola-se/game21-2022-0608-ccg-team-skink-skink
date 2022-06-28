@@ -14,5 +14,15 @@ namespace Meta.Level
 
             levelLoader.LoadLevel(level);
         }
+
+        public void StartLoadingMetaScene()
+        {
+            var level = GetComponent<ILevel>();
+            var levelLoader = FindObjectOfType<MetaSceneLoader>();
+            
+            // TODO: Do stuff before loading?
+
+            levelLoader.LoadLevel(level);
+        }
     }
 }
