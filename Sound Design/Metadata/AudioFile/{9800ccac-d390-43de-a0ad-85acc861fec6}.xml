@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{309f7916-079e-4b19-a7d8-f8debbf83fd2}">
+	<object class="AudioFile" id="{9800ccac-d390-43de-a0ad-85acc861fec6}">
 		<property name="assetPath">
-			<value>UI/InvalidCommand.wav</value>
+			<value>Misc/Cardswoosh.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>1</value>
+			<value>0.36181249999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{d77e523b-8e2f-4328-810d-dd31beea7deb}</destination>
