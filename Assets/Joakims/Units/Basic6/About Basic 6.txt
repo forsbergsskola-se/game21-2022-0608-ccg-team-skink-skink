@@ -1,0 +1,10 @@
+Unit ID: Basic 6
+
+Type: Ground Unit
+
+Size: Medium
+
+Class: Ranged
+
+Weapon: Shotgun
+
