@@ -82,7 +82,11 @@ namespace Meta.CardSystem
         private void SetSelectedCard(ICard card)
         {
             if (card == null)
+            {
+                lastSelectedCard.IsSelected = false;
                 return;
+            }
+                
 
             if (cardViewers.TryGetValue(card.Id, out BasicCardViewer basicCardViewer))
             {
