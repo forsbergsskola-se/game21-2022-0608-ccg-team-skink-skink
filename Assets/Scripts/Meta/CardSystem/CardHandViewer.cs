@@ -1,3 +1,4 @@
+using System;
 using Meta.Interfaces;
 using UnityEngine;
 
@@ -11,12 +12,14 @@ namespace Meta.CardSystem
         [SerializeField] private GameObject cardUIPrefab;
         private BasicCardViewer[] cardSlots;
         
+        private BasicCardViewer lastSelectedCard;
 
         void Start()
         {
             CardHand.HandChanged += UpdateCardUI;
             CreateCardViewers();
             RefreshCardHand();
+            CardHand.SelectedCardChanged += SetSelectedCardUI;
         }
 
         private void CreateCardViewers()
@@ -28,6 +31,21 @@ namespace Meta.CardSystem
                 var basicCardViewer = cardViewerObject.GetComponent<BasicCardViewer>();
                 cardSlots[i] = basicCardViewer;
             }
+        }
+
+        private void SetSelectedCardUI(ICard card, int index)
+        {
+            if (lastSelectedCard != null)
+                lastSelectedCard.IsSelected = false;
+            
+            if (card == null)
+                return;
+
+            if (index < 0)
+                throw new Exception("Selected card in hand does not actually exist in the hand.");
+            
+            cardSlots[index].IsSelected = true;
+            lastSelectedCard = cardSlots[index];
         }
         
         private void UpdateCardUI(int index, ICard card)
