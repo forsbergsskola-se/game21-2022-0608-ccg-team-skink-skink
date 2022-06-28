@@ -41,6 +41,7 @@ namespace Gameplay.Unit.UnityAI
                 damageReceiver.SubscribeToOnDeath(() => state = UnitState.Moving);
 
                 state = UnitState.Action;
+                //TODO: Make sure to cease action upon death event
                 StartCoroutine(attack.StartAttacking(damageReceiver));
             }
         }
