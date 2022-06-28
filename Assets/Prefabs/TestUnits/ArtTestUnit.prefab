@@ -93,7 +93,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthStats: {fileID: 11400000, guid: 62fb8a0f56471fe4fa709754fa204774, type: 2}
-  healthbar: {fileID: 5206078298318229901}
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
@@ -194,6 +193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HealthbarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 346951007560384193, guid: 890481bf01c2da341a397722c22a9fec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2511686862666551340, guid: 890481bf01c2da341a397722c22a9fec,
         type: 3}
@@ -328,15 +332,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7043047944447369725}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5206078298318229901 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2991052518889648240, guid: 890481bf01c2da341a397722c22a9fec,
-    type: 3}
-  m_PrefabInstance: {fileID: 7043047944447369725}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4327d7288581d4348892b90d9712cc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
