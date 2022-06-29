@@ -1,30 +1,32 @@
-using System;
 using Gameplay.Unit.UnityAI;
 using Meta.Interfaces;
 using UnityEngine;
 using Utility;
 using Object = UnityEngine.Object;
 
-namespace Gameplay.Unit
+namespace Gameplay.Unit.UnitUtility
 {
     public class UnitSpawner : MonoBehaviour
     {
         [Header("Dependencies")]
         [SerializeField] private Pool pool;
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object deckHand;
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyHand;
         
         [Header("Base SetUp")] 
         [SerializeField] private bool isPlayer;
-        
-        private void Awake()
-        {
-            if(isPlayer) deckHand = FindObjectOfType<Dependencies>().PlayerCardHand as Object;
-        }
 
+        private ICardHand playerHand;
+        
+        private void Start() => playerHand = Dependencies.Instance.PlayerCardHand;
+        
         public void SpawnUnit(int buttonId)
         {
-            ICardHand hand = deckHand as ICardHand;
-            PlaceUnit(hand.Cards[buttonId].Name);
+            ICardHand deckHand;
+
+            if (isPlayer) deckHand = playerHand;
+            else deckHand = enemyHand as ICardHand;
+            
+            PlaceUnit(deckHand.Cards[buttonId].Name);
         }
 
         private void PlaceUnit(string unitName)
