@@ -40,31 +40,36 @@ namespace Gameplay.Unit.UnityAI
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!triggerList.Contains(other))
-            {
+            if (!triggerList.Contains(other) && !other.gameObject.CompareTag(tag))
                 triggerList.Add(other);
-            }
           
             if (state != UnitState.Action && !other.gameObject.CompareTag(gameObject.tag))
-            {
-                var damageReceiver = other.GetComponent<IDamageReceiver>();
-                damageReceiver.SubscribeToOnDeath(() => state = UnitState.Moving);
-
-                state = UnitState.Action;
-                //TODO: Make sure to cease action upon death event
-                StartCoroutine(attack.StartAttacking(damageReceiver));
-            }
+                StartAttacking(other);
         }
 
+        private void OnTriggerStay(Collider other)
+        {
+            if (triggerList.Count == 0 || state == UnitState.Action) return;
+            StartAttacking(triggerList[0]);
+        }
+       
         private void OnTriggerExit(Collider other)
         {
             if (triggerList.Contains(other))
-            {
                 triggerList.Remove(other);
-                
-            }
         }
 
+        private void StartAttacking(Collider other)
+        {
+            var damageReceiver = other.GetComponent<IDamageReceiver>();
+
+            damageReceiver.SubscribeToOnDeath(() => state = UnitState.Moving);
+            damageReceiver.SubscribeToOnDeath(() => triggerList.Remove(other));
+
+            state = UnitState.Action;
+            StartCoroutine(attack.StartAttacking(damageReceiver));
+        }
+        
         private void SetRange()
         {
             var collider = GetComponent<BoxCollider>();
