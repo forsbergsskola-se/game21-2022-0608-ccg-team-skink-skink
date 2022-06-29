@@ -53,3 +53,8 @@ namespace Gameplay.Unit.UnityAI
         }
     }
 }
+
+//Todo: Create a List of colliders
+//Todo: Add other colliders on trigger enter
+//Todo: Remove Colliders on trigger exit or OnDeathEvent
+//Todo: Attack a new target on trigger stay
