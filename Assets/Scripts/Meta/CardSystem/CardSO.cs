@@ -19,7 +19,6 @@ namespace Meta.CardSystem
         public CardSO()
         {
             Id = nextId++;
-            tempId = Id;
         }
         public int CoolDownTime => coolDownTime;
         public string Description => description;
@@ -32,9 +31,13 @@ namespace Meta.CardSystem
         public sbyte Id { get; }
         public int ApCost => apCost;
         public GameObject CardObject => unitPrefab;
-        
-        //TODO:TEMPORARY
-        [SerializeField]
-        sbyte tempId;
+
+        public override bool Equals(object other)
+        {
+            var otherCard = other as ICard;
+            if (otherCard == null)
+                return false;
+            return otherCard.Id == Id; 
+        }
     }
 }
