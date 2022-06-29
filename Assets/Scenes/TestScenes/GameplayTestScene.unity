@@ -164,11 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 159001837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eb914c9cf63b6c48abbdb37ba1bab86, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f5447f60a95bfe4289234b56156c40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cards: {fileID: 11400000, guid: ef441da7c9c4c70499ce0681637bedee, type: 2}
-  rarityMultiplier: 5
 --- !u!4 &242458727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1571406127453671457, guid: cc787ba06c371f045b460b430b57f3c8,

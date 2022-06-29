@@ -1,50 +1,49 @@
-using System.Collections.Generic;
+using System;
 using Meta.Interfaces;
-using UnityEngine;
 using Utility;
 
 namespace Meta.LootBox
 {
-    public class LootBox : MonoBehaviour, ILootBoxSystem
+    public class LootBox : ILootBoxSystem
     {
-        [Header("Cards List")] 
-        
-        [SerializeField] private CardsTierSO cards;
-        [SerializeField] private int rarityMultiplier;
+        public int Amount { get; private set; }
+        public void CreateNewLootBox() => Amount++;
 
-        private LootBoxGenerator generator;
-
-        private void Start()
+        public ICard[] OpenLootBox(CardsTierSO cardsTier, int rarityMultiplier)
         {
-            for (int i = 0; i < 3; i++)
+            if (Amount <= 0)
             {
-                CreateNewLootBox();
-                Debug.Log(LootBoxes);
+                throw new ArgumentException(
+                    "There is no LootBox to open. Please call 'CreateNewLootBox()' before open it.");
             }
-
-            OpenLootBox(cards, rarityMultiplier);
-        }
-
-        public void OpenLootBox(CardsTierSO cardsTier, int rarityMultiplyer)
-        {
-            if (LootBoxes <= 0) return;
-
-            LootBoxes--;
             
-            generator = new();
-            var loot = generator.GetLoot(cardsTier, rarityMultiplyer);
+            Amount--;
+            
+            var loot = GetLoot(cardsTier, rarityMultiplier);
             
             foreach (var card in loot)
-            {
                 Dependencies.Instance.Inventory.Add(card);
-                Debug.Log(card.Name);
-            }
-            
-            Debug.Log(Dependencies.Instance.Inventory.Cards.Count);
+
+            return loot;
         }
 
-        public void CreateNewLootBox() => LootBoxes++;
+        private ICard[] GetLoot(CardsTierSO cardTier, int rarityMultiplier)
+        {
+            var random = new Random();
+            
+            ICard[] loot = new ICard[3];
+
+            loot[0] = GetRandom(cardTier.Common, random);
+            loot[1] = GetRandom(cardTier.Uncommon, random);
+
+            var rareChance = random.Next(0, rarityMultiplier);
+
+            if (rareChance == 0) loot[2] = GetRandom(cardTier.Rare, random);
+            else loot[2] = GetRandom(cardTier.Common, random);
+            
+            return loot;
+        }
         
-        public int LootBoxes { get; private set; }
+        private ICard GetRandom(ICard[] cards, Random random) => cards[random.Next(0, cards.Length - 1)];
     }
 }
