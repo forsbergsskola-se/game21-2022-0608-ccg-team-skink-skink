@@ -10,7 +10,7 @@ namespace Gameplay.Unit.UnityAI
     [RequireComponent(typeof(BoxCollider))]
     public class UnitAI : MonoBehaviour, IUnit
     {
-        private List<Collider> triggerList = new List<Collider>();
+        private List<Collider> triggerList = new();
 
         [Header("Dependencies")]
         [SerializeField] private MoveStats moveStats;
