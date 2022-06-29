@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Meta.Interfaces;
 using TMPro;
 using UnityEngine;
@@ -14,8 +15,10 @@ namespace Meta.CardSystem
         [SerializeField] private TMP_Text cardLevelText;
         [SerializeField] private TMP_Text singleCostText;
         [SerializeField] private TMP_Text allCostText;
+        [SerializeField] private GameObject warningIndicator;
 
         private IInventory inventory;
+        private ICardHand cardHand;
 
         public void SetViewFromCard(ICard card)
         {
@@ -32,6 +35,8 @@ namespace Meta.CardSystem
             cardLevelText.text = card.CardLevel.ToString();
             singleCostText.text = card.SellCost.ToString();
             allCostText.text = (card.SellCost * inventory.Cards[card.Id].Count).ToString();
+            
+            warningIndicator.SetActive(cardHand.Cards.Contains(card));
         }
 
         public void Hide()
@@ -42,6 +47,7 @@ namespace Meta.CardSystem
         private void Awake()
         {
             inventory = Dependencies.Instance.Inventory;
+            cardHand = Dependencies.Instance.PlayerCardHand;
         }
 
         private void Start()
