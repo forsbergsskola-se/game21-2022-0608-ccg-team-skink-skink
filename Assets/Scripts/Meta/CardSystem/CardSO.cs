@@ -1,3 +1,4 @@
+using System;
 using Meta.Interfaces;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -15,6 +16,7 @@ namespace Meta.CardSystem
         [SerializeField] private int coolDownTime;
         [SerializeField] private GameObject unitPrefab;
         [SerializeField, RequireInterface(typeof(ICard))] Object upgradedCard;
+        [SerializeField] private CurrencyValueSettings currencyValueSettings;
         static sbyte nextId;
         public CardSO()
         {
@@ -27,6 +29,8 @@ namespace Meta.CardSystem
         
         public string Name => cardTitle;
         public ICard UpgradedCard => upgradedCard as ICard;
+        public int SellCost => currencyValueSettings.SellCost;
+        public int UpgradeCost => currencyValueSettings.UpgradeCost;
         public int CardLevel => level;
         public sbyte Id { get; }
         public int ApCost => apCost;
@@ -39,5 +43,12 @@ namespace Meta.CardSystem
                 return false;
             return otherCard.Id == Id; 
         }
+    }
+    
+    [Serializable]
+    public class CurrencyValueSettings
+    {
+        [SerializeField] public int SellCost = 50;
+        [SerializeField] public int UpgradeCost = 100;
     }
 }

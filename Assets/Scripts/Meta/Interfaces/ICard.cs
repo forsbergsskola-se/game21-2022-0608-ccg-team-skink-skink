@@ -35,5 +35,8 @@ namespace Meta.Interfaces
         public string Name { get; }
 
         public ICard UpgradedCard { get; }
+        
+        public int SellCost { get; }
+        public int UpgradeCost { get; }
     }
 }
