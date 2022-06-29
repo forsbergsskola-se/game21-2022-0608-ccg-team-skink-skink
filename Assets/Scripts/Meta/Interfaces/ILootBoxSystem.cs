@@ -31,4 +31,5 @@ namespace Meta.Interfaces
         /// </summary>
         public ICard[] Loot();
     }
+
 }
