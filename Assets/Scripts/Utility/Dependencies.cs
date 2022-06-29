@@ -1,4 +1,5 @@
 using Meta.CardSystem;
+using Meta.CurrencySystem;
 using Meta.Interfaces;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Utility
     {
         public readonly IInventory Inventory = new InventoryModel();
         public readonly ISettableCardHand PlayerCardHand = new PlayerCardHand();
-        public readonly INormalCoinCarrier NormalCoinCarrier;
+        public readonly INormalCoinCarrier NormalCoinCarrier = new NormalCoinWallet();
         public readonly IPremiumCoinCarrier PremiumCoinCarrier;
         public readonly ILootBoxSystem LootBoxSystem;
         
