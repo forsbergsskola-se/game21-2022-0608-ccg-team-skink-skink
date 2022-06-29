@@ -6,8 +6,11 @@ namespace Meta.Level
 {
     public class LevelLoader : MonoBehaviour, ILevelController
     {
-        private string metaBank = "bank:/Mobile/MetaGame";
-        private string metaSceneName = "MetaScene";
+        private string metaBank = "Mobile/MetaGame";
+
+        private string gameBank = "Mobile/Game";
+        //TODO: Switch to "MetaGame", once that scene has been implemented
+        private string metaSceneName = "MenuTest";
         public void LoadLevel(ILevel level)
         {
             StartCoroutine(Co_LoadLevel(level));
@@ -21,12 +24,12 @@ namespace Meta.Level
             {
                 FMODUnity.RuntimeManager.LoadBank(metaBank);
                 yield return new WaitForSeconds(1);
-                FMODUnity.RuntimeManager.UnloadBank("bank:/Mobile/Game");
+                FMODUnity.RuntimeManager.UnloadBank(gameBank);
                 FMODUnity.RuntimeManager.UnloadBank(level.InternalSceneSoundBankName);
             }
             else
             {
-                FMODUnity.RuntimeManager.LoadBank("bank:/Mobile/Game");
+                FMODUnity.RuntimeManager.LoadBank(gameBank);
                 FMODUnity.RuntimeManager.LoadBank(level.InternalSceneSoundBankName);
                 yield return new WaitForSeconds(1);
                 FMODUnity.RuntimeManager.UnloadBank(metaBank);

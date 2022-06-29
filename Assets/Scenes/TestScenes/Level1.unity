@@ -813,7 +813,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 473418859}
         m_TargetAssemblyTypeName: Meta.Level.LevelButtonHandler, Assembly-CSharp
-        m_MethodName: StartLoadingMetaScene
+        m_MethodName: StartLoadingLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
