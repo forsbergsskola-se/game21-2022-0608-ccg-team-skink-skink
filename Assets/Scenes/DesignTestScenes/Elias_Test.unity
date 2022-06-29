@@ -486,12 +486,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -904,6 +904,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 1206569081852311617, guid: ca9c1c69fc23cc941b1bee93c8dddf68,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca9c1c69fc23cc941b1bee93c8dddf68, type: 3}
 --- !u!1001 &3308939880219249973
@@ -1142,6 +1147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToyBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5703708475599489119, guid: 799bf39bd0a1eb64798b14fa953974d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 799bf39bd0a1eb64798b14fa953974d0, type: 3}
 --- !u!1001 &7134702314535215407
@@ -1274,6 +1284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hub
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546298316635095791, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7546298316635095792, guid: 4f086328c4285a84782c341ab6222279,
         type: 3}
