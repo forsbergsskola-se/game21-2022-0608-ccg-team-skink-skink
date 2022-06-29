@@ -20,13 +20,14 @@ namespace Meta.CardSystem
         private void Start()
         {
             inventory.SelectedCardChanged += CheckIfCanSet;
+            inventory.CardRemoved += CheckIfDeletedCardIsInHand;
         }
 
         private void SetCard(int index, ICard card)
         {
             cardHand[index] = card;
         }
-        
+
         public void ReceiveCard(ICard card)
         {
             cardHand.SelectedCard = card;
@@ -43,6 +44,26 @@ namespace Meta.CardSystem
             
             inventory.SelectedCard = null;
             cardHand.SelectedCard = null;
+        }
+        
+        
+
+        private void CheckIfDeletedCardIsInHand(ICard card)
+        {
+            if (inventory.Cards.ContainsKey(card.Id))
+                return;
+            
+            if (!cardHand.Cards.Contains(card))
+                return;
+            
+            var index = Array.IndexOf(cardHand.Cards, card);
+
+            foreach (var values in inventory.Cards)
+            {
+                var inventoryCard = values.Value[0];
+                if (!cardHand.Cards.Contains(inventoryCard))
+                    SetCard(index, inventoryCard);
+            }
         }
     }
 }
