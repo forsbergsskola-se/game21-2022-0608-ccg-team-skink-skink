@@ -23,4 +23,12 @@ namespace Meta.Interfaces
         /// </summary>
         public void OpenLootBox();
     }
+
+    public interface ILootBoxGenerator
+    {
+        /// <summary>
+        /// Return the Loot
+        /// </summary>
+        public ICard[] Loot();
+    }
 }
