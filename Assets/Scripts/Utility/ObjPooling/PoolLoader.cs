@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
 
-namespace Utility
+namespace Utility.ObjPooling
 {
     public class PoolLoader : MonoBehaviour
     {
@@ -11,10 +11,14 @@ namespace Utility
         
         [Header("Dependencies")]
         [SerializeField] private Pool pool;
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object[] hands;
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyHand;
+
+        private ICardHand playerHand;
         
         private void Awake()
         {
+            playerHand = FindObjectOfType<Dependencies>().PlayerCardHand;
+            
             var cardsToPool = new Dictionary<string, GameObject>();
             AddCHands(cardsToPool); 
             CreatePools(cardsToPool); //TODO: Make card amount adjust based on AP cost(i.e. pawn might need 20 units but juggernaut might only need 2)
@@ -22,8 +26,8 @@ namespace Utility
 
         private void AddCHands(Dictionary<string, GameObject> cardsToPool)
         {
-            foreach (var hand in hands)
-                AddCards(cardsToPool, hand as ICardHand);
+            AddCards(cardsToPool, playerHand);
+            AddCards(cardsToPool, enemyHand as ICardHand);
         }
 
         private void AddCards(Dictionary<string, GameObject> cardsToPool, ICardHand hand)

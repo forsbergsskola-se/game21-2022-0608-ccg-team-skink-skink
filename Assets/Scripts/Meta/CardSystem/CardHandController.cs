@@ -2,40 +2,47 @@ using System;
 using System.Linq;
 using Meta.Interfaces;
 using UnityEngine;
+using Utility;
 
 namespace Meta.CardSystem
 {
     public class CardHandController : MonoBehaviour, ICardReceiver
     {
-        public IInventory Inventory;
-        public ISettableCardHand CardHand;
+        private IInventory inventory;
+        private ISettableCardHand cardHand;
+
+        private void Awake()
+        {
+            cardHand = Dependencies.Instance.PlayerCardHand;
+            inventory = Dependencies.Instance.Inventory;
+        }
 
         private void Start()
         {
-            Inventory.SelectedCardChanged += CheckIfCanSet;
+            inventory.SelectedCardChanged += CheckIfCanSet;
         }
 
         private void SetCard(int index, ICard card)
         {
-            CardHand[index] = card;
+            cardHand[index] = card;
         }
         
         public void ReceiveCard(ICard card)
         {
-            CardHand.SelectedCard = card;
+            cardHand.SelectedCard = card;
             CheckIfCanSet(card);
         }
 
         private void CheckIfCanSet(ICard card)
         {
-            if (Inventory.SelectedCard == null || CardHand.SelectedCard == null)
+            if (inventory.SelectedCard == null || cardHand.SelectedCard == null)
                 return;
             
-            if (Inventory.SelectedCard != CardHand.SelectedCard && !CardHand.Cards.Contains(Inventory.SelectedCard))
-                SetCard(Array.IndexOf(CardHand.Cards, CardHand.SelectedCard), Inventory.SelectedCard);
+            if (inventory.SelectedCard != cardHand.SelectedCard && !cardHand.Cards.Contains(inventory.SelectedCard))
+                SetCard(Array.IndexOf(cardHand.Cards, cardHand.SelectedCard), inventory.SelectedCard);
             
-            Inventory.SelectedCard = null;
-            CardHand.SelectedCard = null;
+            inventory.SelectedCard = null;
+            cardHand.SelectedCard = null;
         }
     }
 }
