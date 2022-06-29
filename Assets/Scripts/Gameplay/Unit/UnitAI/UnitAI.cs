@@ -1,35 +1,31 @@
-using System;
 using System.Collections.Generic;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
-using UnityEngine; 
+using Gameplay.Unit.UnityAI;
+using UnityEngine;
 
-
-namespace Gameplay.Unit.UnityAI
+namespace Gameplay.Unit.UnitAI
 {
     [RequireComponent(typeof(BoxCollider))]
     public class UnitAI : MonoBehaviour, IUnit
     {
-        private List<Collider> triggerList = new();
-
         [Header("Dependencies")]
         [SerializeField] private MoveStats moveStats;
+
         [SerializeField] private CombatStatsSO combatStatsSO;
-        
+
         private Movement movement;
         private Attack attack;
         private UnitState state;
-        
+        private List<Collider> triggerCollection = new();
+
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
         
         private void Awake()
         {
-            movement = new Movement(moveStats);
-            attack = new Attack(combatStatsSO);
-
-            state = UnitState.Moving;
-
+            LoadComponents();
+            SetInitialState();
             SetRange();
         }
 
@@ -40,45 +36,49 @@ namespace Gameplay.Unit.UnityAI
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!triggerList.Contains(other) && !other.gameObject.CompareTag(tag))
-                triggerList.Add(other);
-          
-            if (state != UnitState.Action && !other.gameObject.CompareTag(gameObject.tag))
-                StartAttacking(other);
+            if (other.gameObject.CompareTag(tag)) return;
+            
+            if (!triggerCollection.Contains(other)) triggerCollection.Add(other);
+                
+            if (state != UnitState.Action) StartAttacking(other);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (triggerList.Count == 0 || state == UnitState.Action) return;
-            StartAttacking(triggerList[0]);
+            if (triggerCollection.Count == 0 || state == UnitState.Action) return;
+            
+            StartAttacking(triggerCollection[0]);
         }
-       
+
         private void OnTriggerExit(Collider other)
         {
-            if (triggerList.Contains(other))
-                triggerList.Remove(other);
+            if (triggerCollection.Contains(other)) triggerCollection.Remove(other);
+        }
+
+        private void SetInitialState() => state = UnitState.Moving;
+        
+        private void SetRange() 
+            => GetComponent<BoxCollider>().center += new Vector3(combatStatsSO.Range, 0, 0);
+        
+        private void LoadComponents()
+        {
+            movement = new Movement(moveStats);
+            attack = new Attack(combatStatsSO);
         }
 
         private void StartAttacking(Collider other)
         {
             var damageReceiver = other.GetComponent<IDamageReceiver>();
 
-            damageReceiver.SubscribeToOnDeath(() => state = UnitState.Moving);
-            damageReceiver.SubscribeToOnDeath(() => triggerList.Remove(other));
-
+            damageReceiver.SubscribeToOnDeath(() =>
+            {
+                state = UnitState.Moving;
+                triggerCollection.Remove(other);
+            });
+            
             state = UnitState.Action;
             StartCoroutine(attack.StartAttacking(damageReceiver));
-        }
-        
-        private void SetRange()
-        {
-            var collider = GetComponent<BoxCollider>();
-            collider.center += new Vector3(combatStatsSO.Range, 0, 0);
         }
     }
 }
 
-//Todo: Create a List of colliders
-//Todo: Add other colliders on trigger enter
-//Todo: Remove Colliders on trigger exit or OnDeathEvent
-//Todo: Attack a new target on trigger stay
