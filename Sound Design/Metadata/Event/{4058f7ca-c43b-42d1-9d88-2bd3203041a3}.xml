@@ -5,7 +5,7 @@
 			<value>MusicLevel7</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cc5c0a5a-28c7-4721-89c9-f94fccb2af0e}</destination>
@@ -34,6 +34,9 @@
 		<relationship name="parameters">
 			<destination>{c246d8af-f556-4bdb-8019-8ce745c15f1c}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{34c364c1-bd3d-4b14-ad98-885f8abeb19d}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{d6460e15-1d29-4617-b5f6-f7ced4ce12cf}">
 		<relationship name="masterBus">
@@ -59,12 +62,18 @@
 	<object class="EventAutomatableProperties" id="{649bc18c-1eb2-4560-b8f2-4f7cd58a2e52}" />
 	<object class="MarkerTrack" id="{53e3d5f5-c3fd-40dc-8acd-a1ddedf62e48}" />
 	<object class="GroupTrack" id="{ce8ee23f-a9d0-4754-b055-65e7543fa1fb}">
+		<relationship name="modules">
+			<destination>{87dd4a25-558e-4e2b-8abc-766f1163c6c6}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{307b8ccc-9fcd-47f7-b8e4-2325166eda0d}</destination>
 		</relationship>
 	</object>
 	<object class="Timeline" id="{b6327ae1-324c-4251-8a74-8172a3ffb41e}" />
 	<object class="ParameterProxy" id="{c246d8af-f556-4bdb-8019-8ce745c15f1c}">
+		<relationship name="modules">
+			<destination>{87dd4a25-558e-4e2b-8abc-766f1163c6c6}</destination>
+		</relationship>
 		<relationship name="preset">
 			<destination>{41986038-acf8-42ed-a6d8-61dad2b65181}</destination>
 		</relationship>
@@ -86,6 +95,32 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b6a32717-c073-4ba5-ad56-80af44bc8636}" />
+	<object class="SingleSound" id="{87dd4a25-558e-4e2b-8abc-766f1163c6c6}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>14.5</value>
+		</property>
+		<property name="start">
+			<value>0.90484428405761719</value>
+		</property>
+		<property name="length">
+			<value>0.093425631523132324</value>
+		</property>
+		<property name="quantizationInterval">
+			<value>5</value>
+		</property>
+		<property name="voiceStealing">
+			<value>3</value>
+		</property>
+		<property name="maxVoices">
+			<value>2</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{fa04d020-4b51-4c00-b2ad-afd81e393d54}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{307b8ccc-9fcd-47f7-b8e4-2325166eda0d}">
 		<property name="name">
 			<value>Audio 1</value>

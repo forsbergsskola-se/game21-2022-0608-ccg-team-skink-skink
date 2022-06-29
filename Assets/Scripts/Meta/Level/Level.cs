@@ -10,6 +10,7 @@ namespace Meta.Level
         [SerializeField] private string visualName;
         [SerializeField] private int index;
         [SerializeField] private string internalSceneName;
+        [SerializeField] private string internalSceneSoundBankName;
         
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyCardHand;
 
@@ -17,5 +18,6 @@ namespace Meta.Level
         public int Index => index;
         public ICardHand EnemyHandPreset => enemyCardHand as ICardHand;
         public string InternalSceneName => internalSceneName;
+        public string InternalSceneSoundBankName => internalSceneSoundBankName;
     }
 }

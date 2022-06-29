@@ -1,6 +1,7 @@
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 using Object = UnityEngine.Object;
 
 namespace Gameplay.UI
@@ -9,12 +10,14 @@ namespace Gameplay.UI
     {
         [Header("Dependencies")]
         [SerializeField] private Button[] buttons;
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object playerHand;
+        //[SerializeField, RequireInterface(typeof(ICardHand))] private Object playerHand;
         [SerializeField] private Image[] cardImage;
+
+        private ICardHand playerHand;
         
         private void Awake()
         {
-            ICardHand hand = playerHand as ICardHand;
+            ICardHand hand = FindObjectOfType<Dependencies>().PlayerCardHand;
             
             for (int i = 0; i < buttons.Length; i++)
             {

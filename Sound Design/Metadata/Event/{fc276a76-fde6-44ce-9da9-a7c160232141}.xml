@@ -5,7 +5,7 @@
 			<value>MusicLevel1</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cc5c0a5a-28c7-4721-89c9-f94fccb2af0e}</destination>
@@ -34,6 +34,9 @@
 		<relationship name="parameters">
 			<destination>{da9bfd93-f02c-417c-a874-581b5c0b295b}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{d21af999-82f1-4800-9442-d5a5832788ff}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{70b70ea1-7672-4425-904f-a4f30005a9d4}">
 		<relationship name="masterBus">
@@ -59,12 +62,23 @@
 	<object class="EventAutomatableProperties" id="{a611b402-e4a2-4231-9502-c9eed2b8b840}" />
 	<object class="MarkerTrack" id="{0c6d6332-5c8e-43dd-8a19-6b75c383780e}" />
 	<object class="GroupTrack" id="{2f33caa2-fb0f-4b3e-98cf-abd05e9e07d9}">
+		<relationship name="modules">
+			<destination>{17c90fa8-8f6f-463b-91df-f6f600e295c4}</destination>
+			<destination>{c1bfe545-a286-46a4-a620-03454b9cb7d3}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{546c260c-7dce-4939-957d-b4ab9d586484}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{bcd21d2f-9f5e-40e4-88aa-6da3f57c9ed0}" />
+	<object class="Timeline" id="{bcd21d2f-9f5e-40e4-88aa-6da3f57c9ed0}">
+		<relationship name="modules">
+			<destination>{17c90fa8-8f6f-463b-91df-f6f600e295c4}</destination>
+		</relationship>
+	</object>
 	<object class="ParameterProxy" id="{da9bfd93-f02c-417c-a874-581b5c0b295b}">
+		<relationship name="modules">
+			<destination>{c1bfe545-a286-46a4-a620-03454b9cb7d3}</destination>
+		</relationship>
 		<relationship name="preset">
 			<destination>{41986038-acf8-42ed-a6d8-61dad2b65181}</destination>
 		</relationship>
@@ -86,6 +100,58 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e7575120-2f20-4e63-b324-d5e0044f7c51}" />
+	<object class="SingleSound" id="{17c90fa8-8f6f-463b-91df-f6f600e295c4}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>14.5</value>
+		</property>
+		<property name="start">
+			<value>11</value>
+		</property>
+		<property name="length">
+			<value>9.2690000000000001</value>
+		</property>
+		<property name="quantizationInterval">
+			<value>5</value>
+		</property>
+		<property name="voiceStealing">
+			<value>3</value>
+		</property>
+		<property name="maxVoices">
+			<value>2</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{fa04d020-4b51-4c00-b2ad-afd81e393d54}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{c1bfe545-a286-46a4-a620-03454b9cb7d3}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>14.5</value>
+		</property>
+		<property name="start">
+			<value>0.90000000000000002</value>
+		</property>
+		<property name="length">
+			<value>0.099999999999999978</value>
+		</property>
+		<property name="quantizationInterval">
+			<value>5</value>
+		</property>
+		<property name="voiceStealing">
+			<value>3</value>
+		</property>
+		<property name="maxVoices">
+			<value>2</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{fa04d020-4b51-4c00-b2ad-afd81e393d54}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{546c260c-7dce-4939-957d-b4ab9d586484}">
 		<property name="name">
 			<value>Audio 1</value>

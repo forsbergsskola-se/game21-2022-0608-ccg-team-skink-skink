@@ -1,0 +1,10 @@
+Unit ID: Tank 3
+
+Type: Ground Unit
+
+Size: Large
+
+Class: Close Combat Tank
+
+Weapon: Clubman
+

@@ -1,0 +1,10 @@
+Unit ID: Basic 10
+
+Type: Ground Unit
+
+Size: Medium
+
+Class: Trapper
+
+Weapon: Spike Trap
+

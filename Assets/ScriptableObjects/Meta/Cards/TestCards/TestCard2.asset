@@ -18,6 +18,7 @@ MonoBehaviour:
   typeImage: {fileID: 0}
   level: 0
   apCost: 16
+  coolDownTime: 0
   unitPrefab: {fileID: 0}
-  upgradedCard: {fileID: 11400000, guid: 5ffdb3d4292c8b54d90eaac48bd4406b, type: 2}
+  upgradedCard: {fileID: 0}
   tempId: 9
