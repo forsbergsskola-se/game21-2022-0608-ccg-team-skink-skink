@@ -1,12 +1,17 @@
+using System;
+using System.Collections.Generic;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
-using UnityEngine;
+using UnityEngine; 
+
 
 namespace Gameplay.Unit.UnityAI
 {
     [RequireComponent(typeof(BoxCollider))]
     public class UnitAI : MonoBehaviour, IUnit
     {
+        private List<Collider> triggerList = new List<Collider>();
+
         [Header("Dependencies")]
         [SerializeField] private MoveStats moveStats;
         [SerializeField] private CombatStatsSO combatStatsSO;
@@ -35,6 +40,11 @@ namespace Gameplay.Unit.UnityAI
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!triggerList.Contains(other))
+            {
+                triggerList.Add(other);
+            }
+          
             if (state != UnitState.Action && !other.gameObject.CompareTag(gameObject.tag))
             {
                 var damageReceiver = other.GetComponent<IDamageReceiver>();
@@ -43,6 +53,15 @@ namespace Gameplay.Unit.UnityAI
                 state = UnitState.Action;
                 //TODO: Make sure to cease action upon death event
                 StartCoroutine(attack.StartAttacking(damageReceiver));
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (triggerList.Contains(other))
+            {
+                triggerList.Remove(other);
+                
             }
         }
 
