@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BaseCombat
   m_EditorClassIdentifier: 
   attackSpeed: 10
-  damage: 1
+  damage: 5
   defence: 0
   range: 0.5

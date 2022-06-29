@@ -17,7 +17,7 @@ public class UnitSounds : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         attackInstance = FMODUnity.RuntimeManager.CreateInstance(attackPlaceEventHere);
     }
-    void PlayDmgTakenSound()
+    public void PlayDmgTakenSound()
     {
         if (PlaybackState(dmgTakenInstance) == FMOD.Studio.PLAYBACK_STATE.PLAYING) return;
         else
@@ -25,7 +25,7 @@ public class UnitSounds : MonoBehaviour
             dmgTakenInstance.start();
         }
     }
-    void PlayDeathSound()
+    public void PlayDeathSound()
     {
         deathInstance = FMODUnity.RuntimeManager.CreateInstance(deathPlaceEventHere);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());

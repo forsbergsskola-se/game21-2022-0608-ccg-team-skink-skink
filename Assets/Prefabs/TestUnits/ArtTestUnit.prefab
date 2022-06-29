@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6748510451150473597}
   - component: {fileID: 6493428779436629426}
   - component: {fileID: 8121154245991871638}
+  - component: {fileID: -2760818046059790893}
   m_Layer: 0
   m_Name: ArtTestUnit
   m_TagString: Untagged
@@ -95,10 +96,67 @@ MonoBehaviour:
   healthStats: {fileID: 11400000, guid: 62fb8a0f56471fe4fa709754fa204774, type: 2}
   OnDamageTaken:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2760818046059790893}
+        m_TargetAssemblyTypeName: UnitSounds, Assembly-CSharp
+        m_MethodName: PlayDmgTakenSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2760818046059790893}
+        m_TargetAssemblyTypeName: UnitSounds, Assembly-CSharp
+        m_MethodName: PlayDeathSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-2760818046059790893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240702288915936041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c50ef4780d42be4a869830257b02826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgTakenPlaceEventHere:
+    Guid:
+      Data1: 161410810
+      Data2: 1233337397
+      Data3: 286104499
+      Data4: -1580974321
+    Path: event:/Audience/AudienceApplause
+  deathPlaceEventHere:
+    Guid:
+      Data1: 933107045
+      Data2: 1122824916
+      Data3: 1443223476
+      Data4: 274715228
+    Path: event:/Music/MenuMusic
+  attackPlaceEventHere:
+    Guid:
+      Data1: -2088344493
+      Data2: 1193602269
+      Data3: 1600288189
+      Data4: 316799076
+    Path: event:/InvalidInput
 --- !u!1 &6768578155298855191
 GameObject:
   m_ObjectHideFlags: 0
