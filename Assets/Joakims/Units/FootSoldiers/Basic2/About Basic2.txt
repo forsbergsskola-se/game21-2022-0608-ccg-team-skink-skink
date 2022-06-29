@@ -1,0 +1,10 @@
+Unit ID: Basic 2
+
+Type: Ground Unit
+
+Size: Medium
+
+Class: Mini Tank
+
+Behaviour: Stops moving acting as a wall 
+
