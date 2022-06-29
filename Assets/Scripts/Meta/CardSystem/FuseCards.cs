@@ -34,6 +34,7 @@ namespace Meta.CardSystem
 
         public void Fuse()
         {
+            //TODO: Bug that you can fuse, when the card is on the hand and you only have two.
             var cardToUpgrade = Inventory.SelectedCard;
             for (int i = 0; i < 2; i++)
             {

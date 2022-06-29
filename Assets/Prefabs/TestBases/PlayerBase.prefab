@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthStats: {fileID: 11400000, guid: 62fb8a0f56471fe4fa709754fa204774, type: 2}
-  healthbar: {fileID: 0}
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
@@ -146,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0b39e7185a0c747bae2e990bcd133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseGame: {fileID: 0}
   endGame: {fileID: 11400000, guid: ad9c07104abe29c4181108a53c8848fb, type: 2}
   winMessage: {fileID: 0}
   loseMessage: {fileID: 0}

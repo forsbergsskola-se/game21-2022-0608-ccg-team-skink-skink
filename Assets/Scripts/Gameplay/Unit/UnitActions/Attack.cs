@@ -16,14 +16,12 @@ namespace Gameplay.Unit.UnitActions
         {
             targetIsAlive = true;
             
-            //Todo: Discuss with the designers how to manage attack coolDown
-            float coolDown = 2f;
             opponent.SubscribeToOnDeath(StopAttacking);
 
             while (targetIsAlive)
             {
                 opponent.TakeDamage(stats.Damage);
-                yield return new WaitForSeconds(coolDown / stats.AttackSpeed);
+                yield return new WaitForSeconds(stats.AttackSpeed);
             }
 
             yield return null;
