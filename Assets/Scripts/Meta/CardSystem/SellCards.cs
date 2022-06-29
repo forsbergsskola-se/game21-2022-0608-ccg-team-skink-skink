@@ -24,6 +24,7 @@ namespace Meta.CardSystem
 
         void Start()
         {
+            Inventory.SelectedCardChanged += ButtonControl;
             Inventory.CardRemoved += ButtonControl;
             Inventory.CardAdded += ButtonControl;
         }
