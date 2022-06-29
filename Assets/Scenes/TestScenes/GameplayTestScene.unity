@@ -167,18 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb914c9cf63b6c48abbdb37ba1bab86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare:
-  - {fileID: 11400000, guid: c6103356b16e2cd47a513862159fb647, type: 2}
-  uncommon:
-  - {fileID: 11400000, guid: dbf63d168f28e68408dd5394edd25943, type: 2}
-  - {fileID: 11400000, guid: dbf63d168f28e68408dd5394edd25943, type: 2}
-  - {fileID: 11400000, guid: dbf63d168f28e68408dd5394edd25943, type: 2}
-  common:
-  - {fileID: 11400000, guid: dc9b2a1b97b78c64e8ffec98f8eeccb9, type: 2}
-  - {fileID: 11400000, guid: dc9b2a1b97b78c64e8ffec98f8eeccb9, type: 2}
-  - {fileID: 11400000, guid: dc9b2a1b97b78c64e8ffec98f8eeccb9, type: 2}
-  - {fileID: 11400000, guid: dc9b2a1b97b78c64e8ffec98f8eeccb9, type: 2}
-  - {fileID: 11400000, guid: dc9b2a1b97b78c64e8ffec98f8eeccb9, type: 2}
+  cards: {fileID: 11400000, guid: ef441da7c9c4c70499ce0681637bedee, type: 2}
   rarityMultiplier: 5
 --- !u!4 &242458727 stripped
 Transform:

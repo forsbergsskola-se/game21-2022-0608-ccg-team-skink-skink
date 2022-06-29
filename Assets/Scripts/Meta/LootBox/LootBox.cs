@@ -1,19 +1,15 @@
-using System;
 using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
 using Utility;
-using Object = UnityEngine.Object;
 
 namespace Meta.LootBox
 {
     public class LootBox : MonoBehaviour, ILootBoxSystem
     {
-        [Header("Cards List")]
-        [SerializeField, RequireInterface(typeof(ICard))] private Object[] rare;
-        [SerializeField, RequireInterface(typeof(ICard))] private Object[] uncommon;
-        [SerializeField, RequireInterface(typeof(ICard))] private Object[] common;
+        [Header("Cards List")] 
         
+        [SerializeField] private CardsTierSO cards;
         [SerializeField] private int rarityMultiplier;
 
         private LootBoxGenerator generator;
@@ -25,35 +21,26 @@ namespace Meta.LootBox
                 CreateNewLootBox();
                 Debug.Log(LootBoxes);
             }
-            
-            OpenLootBox(Array.ConvertAll(rare, card => card as ICard),
-                Array.ConvertAll(uncommon, card => card as ICard),
-                Array.ConvertAll(common, card => card as ICard),
-                rarityMultiplier);
-            
-            Debug.Log(LootBoxes);
+
+            OpenLootBox(cards, rarityMultiplier);
         }
 
-        public void OpenLootBox(ICard[] rareCards, ICard[] uncommonCards, ICard[] commonCards, int rarityMultiplyer)
+        public void OpenLootBox(CardsTierSO cardsTier, int rarityMultiplyer)
         {
             if (LootBoxes <= 0) return;
 
             LootBoxes--;
             
-            List<ICard[]> cards = new List<ICard[]>();
-            cards.Add(Array.ConvertAll(rare, card => card as ICard));
-            cards.Add(Array.ConvertAll(uncommon, card => card as ICard));
-            cards.Add(Array.ConvertAll(common, card => card as ICard));
-            
-            generator = new LootBoxGenerator(cards, rarityMultiplier);
-            
-            var loot = generator.GetLoot();
+            generator = new();
+            var loot = generator.GetLoot(cardsTier, rarityMultiplyer);
             
             foreach (var card in loot)
             {
                 Dependencies.Instance.Inventory.Add(card);
                 Debug.Log(card.Name);
             }
+            
+            Debug.Log(Dependencies.Instance.Inventory.Cards.Count);
         }
 
         public void CreateNewLootBox() => LootBoxes++;

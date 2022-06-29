@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Meta.LootBox;
 
 namespace Meta.Interfaces
 {
@@ -11,7 +12,7 @@ namespace Meta.Interfaces
         /// <param name="uncommonCards">Array of Uncommon ICards - Each Loot box has one of them</param>
         /// <param name="commonCards">Array of Common ICards - Each Loot box has at least one of them</param>
         /// <param name="rarityMultiplier">The odds of getting a Rare ICard is 1 / rarityMultiplier. Bigger the number, smaller the odds.</param>
-        public void OpenLootBox(ICard[] rareCards, ICard[] uncommonCards, ICard[] commonCards, int rarityMultiplier);
+        public void OpenLootBox(CardsTierSO cardsTier, int rarityMultiplier);
      
         /// <summary>
         ///  Creates a new lootbox based on the provided rarity float, and adds it to the lootbox inventory.
@@ -30,7 +31,7 @@ namespace Meta.Interfaces
         /// <summary>
         /// Return the Loot
         /// </summary>
-        public ICard[] GetLoot();
+        public ICard[] GetLoot(CardsTierSO cardTier, int rarityMultiplier);
     }
 
 }
