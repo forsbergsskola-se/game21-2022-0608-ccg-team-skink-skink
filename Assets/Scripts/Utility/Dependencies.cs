@@ -1,20 +1,31 @@
+using Meta.CardSystem;
 using Meta.Interfaces;
 using UnityEngine;
+
 
 namespace Utility
 {
     public class Dependencies : MonoBehaviour
     {
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object testHand; // Todo: just for debugging
-
-        public ICardHand PlayerCardHand => testHand as ICardHand;
-
-        public Dependencies Instance { get; private set; }
+        public readonly IInventory Inventory = new InventoryModel();
+        public readonly ISettableCardHand PlayerCardHand = new PlayerCardHand();
+        public readonly INormalCoinCarrier NormalCoinCarrier;
+        public readonly IPremiumCoinCarrier PremiumCoinCarrier;
+        public readonly ILootBoxSystem LootBoxSystem;
         
-        void Start()
+        
+        public static Dependencies Instance { get; private set; }
+
+        void Awake()
         {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             Instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
         }
     }
 }

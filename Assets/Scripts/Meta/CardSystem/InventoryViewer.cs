@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
+using Utility;
 
 namespace Meta.CardSystem
 {
@@ -9,11 +11,7 @@ namespace Meta.CardSystem
     {
         [SerializeField] private GameObject cardUIPrefab;
         
-        
-        
-        
-        // TODO: This is temporary! We do not want this to be public in the future. A singleton set in all objects using a dependency injector would be preferred.
-        public IInventory inventory;
+        private IInventory inventory;
 
         // TODO: This is temporary! We will want to grab the total amount of different cards from wherever all cards are stored!
         [SerializeField] private int totalDifferentCardAmount;
@@ -24,14 +22,17 @@ namespace Meta.CardSystem
         private readonly Queue<BasicCardViewer> hiddenCards = new();
 
 
+        private void Awake()
+        {
+            inventory = Dependencies.Instance.Inventory;
+        }
 
-        public void SetFromInventory(IInventory inventory)
+
+        public void SetFromInventory()
         {
             inventory.SelectedCardChanged += SetSelectedCard;
             inventory.CardAdded += AddCard;
             inventory.CardRemoved += RemoveCard;
-
-            this.inventory = inventory;
 
             CreateCards();
 

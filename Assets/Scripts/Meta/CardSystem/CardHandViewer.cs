@@ -1,30 +1,36 @@
 using System;
 using Meta.Interfaces;
 using UnityEngine;
+using Utility;
 
 
 namespace Meta.CardSystem
 {
     public class CardHandViewer : MonoBehaviour
     {
-        public ISettableCardHand CardHand;
+        private ISettableCardHand cardHand;
         
         [SerializeField] private GameObject cardUIPrefab;
         private BasicCardViewer[] cardSlots;
         
         private BasicCardViewer lastSelectedCard;
 
-        void Start()
+        void Awake()
         {
-            CardHand.HandChanged += UpdateCardUI;
+            cardHand = Dependencies.Instance.PlayerCardHand;
+        }
+
+        private void Start()
+        {
+            cardHand.HandChanged += UpdateCardUI;
             CreateCardViewers();
             RefreshCardHand();
-            CardHand.SelectedCardChanged += SetSelectedCardUI;
+            cardHand.SelectedCardChanged += SetSelectedCardUI;
         }
 
         private void CreateCardViewers()
         {
-            cardSlots = new BasicCardViewer[CardHand.Cards.Length];
+            cardSlots = new BasicCardViewer[cardHand.Cards.Length];
             for (var i = 0; i < cardSlots.Length; i++)
             {
                 var cardViewerObject = Instantiate(cardUIPrefab, transform);
@@ -57,7 +63,7 @@ namespace Meta.CardSystem
         {
             for (var i = 0; i < cardSlots.Length; i++)
             {
-                UpdateCardUI(i, CardHand[i]);
+                UpdateCardUI(i, cardHand[i]);
             }
         }
     }
