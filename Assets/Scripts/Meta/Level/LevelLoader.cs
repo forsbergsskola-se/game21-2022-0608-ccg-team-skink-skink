@@ -15,8 +15,7 @@ namespace Meta.Level
         private string menuSceneName = "MenuTest";
         public void LoadLevel(ILevel level)
         {
-           // StartCoroutine(Co_LoadLevel(level));
-           TestLoadLevel(level.InternalSceneSoundBankName, level.InternalSceneName);
+            TestLoadLevel(level.InternalSceneSoundBankName, level.InternalSceneName);
         }
 
         public void TestLoadLevel(string soundBank, string nextLevelName)

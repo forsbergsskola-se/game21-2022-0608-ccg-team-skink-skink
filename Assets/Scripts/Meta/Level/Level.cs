@@ -7,7 +7,7 @@ namespace Meta.Level
 {
     public class Level : MonoBehaviour, ILevel
     {
-        //Neither viualName nor index is being used, what are their purposes?
+        //Neither visualName nor index is being used, what are their purposes?
         [SerializeField] private string visualName;
         [SerializeField] private int index;
         [SerializeField] private string internalSceneName;
