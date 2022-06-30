@@ -1,0 +1,10 @@
+Unit ID: Basic 5
+
+Type: Ground Unit
+
+Size: Medium
+
+Class: Close Combat
+
+Weapon: Light Attack Hand Weapon
+
