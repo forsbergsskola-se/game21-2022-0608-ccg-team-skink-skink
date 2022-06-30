@@ -672,7 +672,7 @@ PrefabInstance:
     - target: {fileID: 4990641686266647175, guid: eff97843c49d63943b7508a03fdca803,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5581885872254289810, guid: eff97843c49d63943b7508a03fdca803,
         type: 3}
@@ -1382,6 +1382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hub
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546298316635095791, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7546298316635095792, guid: 4f086328c4285a84782c341ab6222279,
         type: 3}
