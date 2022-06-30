@@ -12,7 +12,7 @@ namespace Meta.Interfaces
     }
     public interface ILevel
     {
-        //TODO: Either use or scrap the 3 unused properties below
+        //TODO: Either find a use for or scrap Index, EnemyHandPreset(and add some other way), and Name
         public string Name { get; }
         public int Index { get; }
         public ICardHand EnemyHandPreset { get; }
