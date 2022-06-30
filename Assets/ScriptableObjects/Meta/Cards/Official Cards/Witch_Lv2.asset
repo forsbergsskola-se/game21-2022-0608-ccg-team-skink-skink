@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: 
   cardTitle: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: d1b48f4289243c74aae440bf3a847899, type: 3}
   typeImage: {fileID: 0}
-  level: 0
+  level: 2
   apCost: 0
   coolDownTime: 0
   unitPrefab: {fileID: 0}
-  upgradedCard: {fileID: 0}
+  upgradedCard: {fileID: 11400000, guid: 3ad697703e667b24d935679d7fbbc3d6, type: 2}
   currencyValueSettings:
     SellCost: 50
     UpgradeCost: 100

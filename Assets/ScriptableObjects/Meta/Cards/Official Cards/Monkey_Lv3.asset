@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: 
   cardTitle: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: e320b8fbabbb2e748bc4d7863d2f84ea, type: 3}
   typeImage: {fileID: 0}
-  level: 0
+  level: 3
   apCost: 0
   coolDownTime: 0
   unitPrefab: {fileID: 0}
