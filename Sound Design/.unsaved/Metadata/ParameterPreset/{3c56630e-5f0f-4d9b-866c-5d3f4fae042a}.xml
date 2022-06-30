@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3c56630e-5f0f-4d9b-866c-5d3f4fae042a}">
+		<property name="name">
+			<value>DramaticCue</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1ea560b2-ad80-4ece-9cac-725d3916e916}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{41986038-acf8-42ed-a6d8-61dad2b65181}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{41986038-acf8-42ed-a6d8-61dad2b65181}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="velocity">
+			<value>-0.45999997854232788</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

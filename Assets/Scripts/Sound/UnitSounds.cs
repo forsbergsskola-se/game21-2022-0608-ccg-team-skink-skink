@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UnitSounds : MonoBehaviour
 {
-    LevelMusic Lm;
     public FMODUnity.EventReference dmgTakenPlaceEventHere;
     FMOD.Studio.EventInstance dmgTakenInstance;
     public FMODUnity.EventReference deathPlaceEventHere;
@@ -28,7 +27,7 @@ public class UnitSounds : MonoBehaviour
     }
     public void PlayDeathSound()
     {
-        Lm.DramaticOrchestraCue();
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("DramaticCue", 1);
         deathInstance = FMODUnity.RuntimeManager.CreateInstance(deathPlaceEventHere);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();
