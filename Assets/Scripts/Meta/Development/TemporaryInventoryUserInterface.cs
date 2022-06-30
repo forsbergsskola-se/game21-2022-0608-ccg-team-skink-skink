@@ -1,22 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using Meta.CardSystem;
+using System;
 using Meta.Interfaces;
 using UnityEngine;
+using Utility;
+using Object = UnityEngine.Object;
 
 public class TemporaryInventoryUserInterface : MonoBehaviour
 {
-    public IInventory Inventory;
+    private IInventory inventory;
 
     [SerializeField, RequireInterface(typeof(ICard))] private Object card;
 
+    private void Awake()
+    {
+        inventory = Dependencies.Instance.Inventory;
+    }
+
     public void Add()
     {
-        Inventory.Add(card as ICard);
+        inventory.Add(card as ICard);
     }
 
     public void Remove()
     {
-        Inventory.Remove(card as ICard);
+        inventory.Remove(card as ICard);
     }
 }

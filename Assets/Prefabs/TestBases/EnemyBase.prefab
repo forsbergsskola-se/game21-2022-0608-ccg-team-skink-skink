@@ -148,7 +148,6 @@ GameObject:
   - component: {fileID: 1571406127453671459}
   - component: {fileID: 1571406127453671458}
   - component: {fileID: 1571406127453671470}
-  - component: {fileID: 8005950076918745129}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Enemy
@@ -249,16 +248,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthStats: {fileID: 11400000, guid: 62fb8a0f56471fe4fa709754fa204774, type: 2}
-  healthbar: {fileID: 0}
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8005950076918745129}
-        m_TargetAssemblyTypeName: Gameplay.EndGame.Base, Assembly-CSharp
-        m_MethodName: TriggerEndGame
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Gameplay.UI.EndGameDisplay, Assembly-CSharp
+        m_MethodName: SetWinScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -268,21 +266,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8005950076918745129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571406127453671460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0b39e7185a0c747bae2e990bcd133d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endGame: {fileID: 11400000, guid: ad9c07104abe29c4181108a53c8848fb, type: 2}
-  winMessage: {fileID: 0}
-  loseMessage: {fileID: 0}
 --- !u!1 &6845584173893855658
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +458,12 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1234205636421970626, guid: f2d0884d21a44f1429cf13e69c3f09fb,
+        type: 3}
+      propertyPath: enemyHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 14116d48ebbdcfa468e7417857de4e33,
+        type: 2}
     - target: {fileID: 1234205636421970626, guid: f2d0884d21a44f1429cf13e69c3f09fb,
         type: 3}
       propertyPath: oppositeBase

@@ -1,0 +1,9 @@
+Unit ID: Tank 5
+
+Type: Ground Unit
+
+Size: Large
+
+Class: Close Combat Tank
+
+Weapon: Suicide Bomber

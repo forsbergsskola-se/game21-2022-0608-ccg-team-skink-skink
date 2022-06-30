@@ -30,9 +30,9 @@ public class UnitSounds : MonoBehaviour
         deathInstance = FMODUnity.RuntimeManager.CreateInstance(deathPlaceEventHere);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();
-        ReleaseAllInstances();
         dmgTakenInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        dmgTakenInstance.release();
+        ReleaseAllInstances();
+
     }
     FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance instance)
     {
@@ -46,6 +46,7 @@ public class UnitSounds : MonoBehaviour
     }
     void ReleaseAllInstances()
     {
+
         deathInstance.release();
         dmgTakenInstance.release();
         attackInstance.release();
