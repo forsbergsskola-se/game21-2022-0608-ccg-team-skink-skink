@@ -9,7 +9,8 @@ namespace Meta.CardSystem
 {
     public class SellCards : MonoBehaviour
     {
-        [SerializeField] Button sellButton;
+        [SerializeField] Button openSellMenuButton;
+        [SerializeField] Button sellAllButton;
 
         [SerializeField, RequireInterface(typeof(ISellCardScreen))] private Object sellCardScreen;
         
@@ -31,6 +32,8 @@ namespace Meta.CardSystem
 
         public void ShowSellCardScreen()
         {
+            sellAllButton.interactable = Inventory.Cards.Count > 6;
+            Inventory.CardRemoved += UpdateSellButtonAvailability;
             (sellCardScreen as ISellCardScreen).SetViewFromCard(Inventory.SelectedCard);
         }
 
@@ -38,6 +41,7 @@ namespace Meta.CardSystem
         {
             NormalCoinCarrier.Amount += Inventory.SelectedCard.SellCost;
             Inventory.Remove(Inventory.SelectedCard);
+            
         }
         
         public void SellAllCards()
@@ -49,10 +53,44 @@ namespace Meta.CardSystem
                 SellCard();
             }
         }
+        private void UpdateSellButtonAvailability(ICard card)
+        {
+            
+            if (!Inventory.Cards.ContainsKey(card.Id))
+            {
+                (sellCardScreen as ISellCardScreen).SetViewFromCard(null);
+                Inventory.CardRemoved -= UpdateSellButtonAvailability;
+                return;
+            }
+            if (Inventory.Cards.Count <= 6)
+            {
+                if (Inventory.Cards[card.Id].Count <= 1)
+                {
+                    (sellCardScreen as ISellCardScreen).SetViewFromCard(null);
+                    Inventory.CardRemoved -= UpdateSellButtonAvailability;
+                    return;
+                }
+            }
+        }
 
         private void ButtonControl(ICard card)
         {
-            sellButton.interactable = Inventory.Cards.Count > 6;
+            if (Inventory.SelectedCard == null)
+            {
+                openSellMenuButton.interactable = false;
+                return;
+            }
+            if (Inventory.Cards.Count > 6)
+            {
+                openSellMenuButton.interactable = true;
+                return;
+            }
+            if (Inventory.Cards[Inventory.SelectedCard.Id].Count > 1)
+            {
+                openSellMenuButton.interactable = true;
+                return;
+            }
+            openSellMenuButton.interactable = false;
         }
     }
 }
