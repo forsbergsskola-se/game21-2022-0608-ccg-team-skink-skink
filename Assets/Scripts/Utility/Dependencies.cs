@@ -1,6 +1,7 @@
 using Meta.CardSystem;
 using Meta.CurrencySystem;
 using Meta.Interfaces;
+using Meta.Level;
 using Meta.LootBox;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace Utility
         public readonly INormalCoinCarrier NormalCoinCarrier = new NormalCoinWallet();
         public readonly IPremiumCoinCarrier PremiumCoinCarrier;
         public readonly ILootBoxSystem LootBoxSystem = new LootBox();
+        public readonly ILevelLoader LevelLoader = new LevelLoader();
         
         
         public static Dependencies Instance { get; private set; }
