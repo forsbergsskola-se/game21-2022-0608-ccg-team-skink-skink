@@ -24,7 +24,7 @@ namespace Gameplay.UI
             textMesh.color = Color.red;
         }
 
-        private void SetWinScreen()
+        public void SetWinScreen()
         {
             ActivateComponents();
             textMesh.text = "You win!";

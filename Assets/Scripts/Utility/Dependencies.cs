@@ -1,8 +1,8 @@
 using Meta.CardSystem;
 using Meta.CurrencySystem;
 using Meta.Interfaces;
+using Meta.LootBox;
 using UnityEngine;
-
 
 namespace Utility
 {
@@ -12,7 +12,7 @@ namespace Utility
         public readonly ISettableCardHand PlayerCardHand = new PlayerCardHand();
         public readonly INormalCoinCarrier NormalCoinCarrier = new NormalCoinWallet();
         public readonly IPremiumCoinCarrier PremiumCoinCarrier;
-        public readonly ILootBoxSystem LootBoxSystem;
+        public readonly ILootBoxSystem LootBoxSystem = new LootBox();
         
         
         public static Dependencies Instance { get; private set; }

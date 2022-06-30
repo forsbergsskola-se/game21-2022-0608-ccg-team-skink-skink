@@ -121,9 +121,9 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5349995886529515134}
-        m_TargetAssemblyTypeName: Gameplay.EndGame.Base, Assembly-CSharp
-        m_MethodName: TriggerEndGame
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Gameplay.UI.EndGameDisplay, Assembly-CSharp
+        m_MethodName: SetLoseScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -145,10 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0b39e7185a0c747bae2e990bcd133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseGame: {fileID: 0}
   endGame: {fileID: 11400000, guid: ad9c07104abe29c4181108a53c8848fb, type: 2}
-  winMessage: {fileID: 0}
-  loseMessage: {fileID: 0}
 --- !u!1 &3711274337765347045
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +477,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7aef7322d2a0cb4c896ae1940a45aea, type: 3}
+--- !u!1 &825267188389204836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8142048309292015400, guid: d7aef7322d2a0cb4c896ae1940a45aea,
+    type: 3}
+  m_PrefabInstance: {fileID: 8902963276830395468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8142048310914365519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825267188389204836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f01e22c1dc542a4e94591d963d692d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &825267188389204837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8142048309292015401, guid: d7aef7322d2a0cb4c896ae1940a45aea,
