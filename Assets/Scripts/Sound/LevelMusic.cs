@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LevelMusic : MonoBehaviour
 {
-    [SerializeField] FMODUnity.EventReference musicLevel;
+    [SerializeField] FMODUnity.EventReference music;
     FMOD.Studio.EventInstance musicEvInst;
     void Start()
     {
-        //Select Music event reference
+        musicEvInst = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvInst.start();
     }
     void DramaticOrchestraCue()
