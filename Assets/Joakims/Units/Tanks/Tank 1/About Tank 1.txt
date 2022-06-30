@@ -1,0 +1,10 @@
+Unit ID: Tank 1
+
+Type: Ground Unit
+
+Size: Small
+
+Class: Tank
+
+Behaviour: Boost HP for all active units
+
