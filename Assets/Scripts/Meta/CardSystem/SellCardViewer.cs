@@ -38,7 +38,7 @@ namespace Meta.CardSystem
             
             warningIndicator.SetActive(cardHand.Cards.Contains(card));
         }
-
+        
         public void Hide()
         {
             gameObject.SetActive(false);
@@ -59,7 +59,6 @@ namespace Meta.CardSystem
         {
             if (RanOutOfCards(card))
             {
-                SetViewFromCard(null);
                 return;
             }
             
