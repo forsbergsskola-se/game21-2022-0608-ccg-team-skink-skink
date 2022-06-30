@@ -1,0 +1,9 @@
+Unit ID: Flyer 4
+
+Type: Air Unit
+
+Size: Medium
+
+Class: Ranged to Ground 
+
+Weapon: Oil Drop
