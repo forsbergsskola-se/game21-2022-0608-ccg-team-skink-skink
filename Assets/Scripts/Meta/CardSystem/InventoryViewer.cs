@@ -26,6 +26,13 @@ namespace Meta.CardSystem
         {
             inventory = Dependencies.Instance.Inventory;
         }
+        
+        
+
+        private void Start()
+        {
+            SetFromInventory();
+        }
 
 
         public void SetFromInventory()

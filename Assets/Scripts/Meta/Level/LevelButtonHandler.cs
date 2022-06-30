@@ -1,28 +1,23 @@
+using System;
 using Meta.Interfaces;
 using UnityEngine;
+using Utility;
+using Object = UnityEngine.Object;
 
 namespace Meta.Level
 {
     public class LevelButtonHandler : MonoBehaviour
     {
-        public void StartLoadingLevel()
+        [SerializeField, RequireInterface(typeof(ILevel))] private Object level;
+        private ILevelLoader levelLoader;
+        private void Awake()
         {
-            var level = GetComponent<ILevel>();
-            var levelLoader = FindObjectOfType<LevelLoader>();
-            
-            // TODO: Do stuff before loading?
-
-            levelLoader.LoadLevel(level);
+            levelLoader = Dependencies.Instance.LevelLoader;
         }
 
-        public void StartLoadingMetaScene()
+        public void LoadLevel()
         {
-            var level = GetComponent<ILevel>();
-            var levelLoader = FindObjectOfType<MetaSceneLoader>();
-            
-            // TODO: Do stuff before loading?
-
-            levelLoader.LoadLevel(level);
+            levelLoader.LoadLevel(level as ILevel);
         }
     }
 }

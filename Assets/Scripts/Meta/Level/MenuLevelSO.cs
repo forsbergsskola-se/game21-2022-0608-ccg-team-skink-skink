@@ -5,18 +5,17 @@ using UnityEngine;
 
 namespace Meta.Level
 {
-    public class Level : MonoBehaviour, ILevel
+    [CreateAssetMenu(fileName = "NewLevel", menuName = "ScriptableObjects/Levels/MenuLevel")]
+    public class MenuLevelSO : ScriptableObject, ILevel
     {
+        //Neither visualName nor index is being used, what are their purposes?
         [SerializeField] private string visualName;
         [SerializeField] private int index;
         [SerializeField] private string internalSceneName;
         [SerializeField] private string internalSceneSoundBankName;
         
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyCardHand;
-
         public string Name => visualName;
         public int Index => index;
-        public ICardHand EnemyHandPreset => enemyCardHand as ICardHand;
         public string InternalSceneName => internalSceneName;
         public string InternalSceneSoundBankName => internalSceneSoundBankName;
     }
