@@ -551,14 +551,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 104779969, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 104779969, guid: eff97843c49d63943b7508a03fdca803, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 332.99316
-      objectReference: {fileID: 0}
     - target: {fileID: 3337085230362832350, guid: eff97843c49d63943b7508a03fdca803,
         type: 3}
       propertyPath: m_Pivot.x
@@ -668,21 +660,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inventory Item Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990641686266647175, guid: eff97843c49d63943b7508a03fdca803,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5581885872254289810, guid: eff97843c49d63943b7508a03fdca803,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 44.34131
-      objectReference: {fileID: 0}
-    - target: {fileID: 8673961182231565801, guid: eff97843c49d63943b7508a03fdca803,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -32.21704
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff97843c49d63943b7508a03fdca803, type: 3}
