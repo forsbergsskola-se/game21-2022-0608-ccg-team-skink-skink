@@ -21,6 +21,7 @@ namespace Meta.CardSystem
         private void Start()
         {
             inventory.SelectedCardChanged += ButtonControl;
+            inventory.CardRemoved += ButtonControl;
         }
 
         public void ShowCardUpgradeScreen()
@@ -30,7 +31,7 @@ namespace Meta.CardSystem
         
         private void ButtonControl(ICard card)
         {
-            if (card?.UpgradedCard == null)
+            if (card?.UpgradedCard == null || !inventory.Cards.ContainsKey(card.Id))
             {
                 upgradeButton.interactable = false;
                 return;
@@ -42,7 +43,6 @@ namespace Meta.CardSystem
 
         public void Fuse()
         {
-            //TODO: Bug that you can fuse, when the card is on the hand and you only have two.
             var cardToUpgrade = inventory.SelectedCard;
             for (int i = 0; i < 2; i++)
             {

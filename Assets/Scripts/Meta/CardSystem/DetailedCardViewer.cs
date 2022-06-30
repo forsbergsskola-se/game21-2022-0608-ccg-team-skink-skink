@@ -3,14 +3,15 @@ using Meta.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 using Object = UnityEngine.Object;
 
 namespace Meta.CardSystem
 {
     public class DetailedCardViewer : MonoBehaviour
     {
-        [SerializeField] private TMP_Text actionPointCostText;
-        [SerializeField] private Sprite cardImage;
+        //[SerializeField] private TMP_Text actionPointCostText;
+        [SerializeField] private Image cardImage;
         [SerializeField] private TMP_Text description;
         [SerializeField] private TMP_Text levelText;
         [SerializeField] private TMP_Text nameText;
@@ -19,16 +20,23 @@ namespace Meta.CardSystem
         [SerializeField, RequireInterface(typeof(IUIValueBar))] private Object defenceBar;
         [SerializeField, RequireInterface(typeof(IUIValueBar))] private Object healthBar;
         [SerializeField, RequireInterface(typeof(IUIValueBar))] private Object speedBar;
-        
-        public IInventory Inventory { private get; set; }
-        
-        
+
+        private IInventory inventory;
+
+        void Awake()
+        {
+            inventory = Dependencies.Instance.Inventory;
+        }
+
+
         public void ViewCard()
         {
-            var card = Inventory.SelectedCard;
+            gameObject.SetActive(true);
+            var card = inventory.SelectedCard;
             
-            actionPointCostText.text = card.ApCost.ToString();
-            cardImage = card.CardImage;
+            //TODO:Remove???
+            //actionPointCostText.text = card.ApCost.ToString();
+            cardImage.sprite = card.CardImage;
             description.text = card.Description;
             levelText.text = card.CardLevel.ToString();
             nameText.text = card.Name;
@@ -37,8 +45,7 @@ namespace Meta.CardSystem
             // (defenceBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
             // (healthBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
             // (speedBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
-
-            gameObject.SetActive(true);
+            
         }
 
         public void StopView()
