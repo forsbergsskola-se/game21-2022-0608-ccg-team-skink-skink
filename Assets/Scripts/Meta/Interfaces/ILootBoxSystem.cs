@@ -3,7 +3,7 @@ using Meta.LootBox;
 
 namespace Meta.Interfaces
 {
-    public interface ILootBoxSystem
+    public interface ILootBoxModel
     {
         /// <summary>
         /// Creates a new lootbox based on the provided rarity float, and adds it to the lootbox inventory.
