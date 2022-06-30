@@ -3,12 +3,11 @@ using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Utility
+namespace Utility.ActionPoints
 {
     public class APCounter : MonoBehaviour
     {
         [SerializeField] private ActionPointsSO actionPoints;
-        [SerializeField, RequireInterface(typeof(ICardHand))] private Object playerHand;
         [SerializeField] private UnityEvent<uint, uint> onAPUpdate;
         [SerializeField] private UnityEvent<int> onAPSpent;
         
@@ -17,14 +16,12 @@ namespace Utility
 
         private ICardHand hand;
         
-        private void Awake()
-        {
-            currentAP = actionPoints.Start;
-            hand = playerHand as ICardHand;
-        } 
-       
+        private void Awake() => hand = Dependencies.Instance.PlayerCardHand;
+        
         private void FixedUpdate()
         {
+            currentAP = actionPoints.Start;
+            
             if (currentAP < actionPoints.Max && !isUpdating)
             {
                 isUpdating = true;

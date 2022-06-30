@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Utility.ObjPooling
 {
@@ -12,20 +14,25 @@ namespace Utility.ObjPooling
         [Header("Dependencies")]
         [SerializeField] private Pool pool;
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object enemyHand;
-
+        
         private ICardHand playerHand;
         
         private void Awake()
         {
-            playerHand = FindObjectOfType<Dependencies>().PlayerCardHand;
-            
-            var cardsToPool = new Dictionary<string, GameObject>();
-            AddCHands(cardsToPool); 
-            CreatePools(cardsToPool); //TODO: Make card amount adjust based on AP cost(i.e. pawn might need 20 units but juggernaut might only need 2)
+            playerHand = Dependencies.Instance.PlayerCardHand;
         }
 
-        private void AddCHands(Dictionary<string, GameObject> cardsToPool)
+        private void Start()
         {
+            var cardsToPool = new Dictionary<string, GameObject>();
+            AddHands(cardsToPool); 
+            CreatePools(cardsToPool); 
+        }
+
+        private void AddHands(Dictionary<string, GameObject> cardsToPool)
+        {
+            Debug.Log(playerHand.Cards.Length);
+            
             AddCards(cardsToPool, playerHand);
             AddCards(cardsToPool, enemyHand as ICardHand);
         }
