@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UnitSounds : MonoBehaviour
 {
+    LevelMusic Lm;
     public FMODUnity.EventReference dmgTakenPlaceEventHere;
     FMOD.Studio.EventInstance dmgTakenInstance;
     public FMODUnity.EventReference deathPlaceEventHere;
@@ -17,7 +18,7 @@ public class UnitSounds : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         attackInstance = FMODUnity.RuntimeManager.CreateInstance(attackPlaceEventHere);
     }
-    void PlayDmgTakenSound()
+    public void PlayDmgTakenSound()
     {
         if (PlaybackState(dmgTakenInstance) == FMOD.Studio.PLAYBACK_STATE.PLAYING) return;
         else
@@ -25,8 +26,9 @@ public class UnitSounds : MonoBehaviour
             dmgTakenInstance.start();
         }
     }
-    void PlayDeathSound()
+    public void PlayDeathSound()
     {
+        Lm.DramaticOrchestraCue();
         deathInstance = FMODUnity.RuntimeManager.CreateInstance(deathPlaceEventHere);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();
@@ -40,11 +42,11 @@ public class UnitSounds : MonoBehaviour
         instance.getPlaybackState(out pS);
         return pS;
     }
-    void PlayAttackSound()
+    public void PlayAttackSound()
     {
         attackInstance.start();
     }
-    void ReleaseAllInstances()
+    public void ReleaseAllInstances()
     {
 
         deathInstance.release();

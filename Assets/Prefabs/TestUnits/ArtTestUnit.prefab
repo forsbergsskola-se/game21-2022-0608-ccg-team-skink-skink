@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6748510451150473597}
   - component: {fileID: 6493428779436629426}
   - component: {fileID: 8121154245991871638}
+  - component: {fileID: -8773660820754209030}
   m_Layer: 0
   m_Name: ArtTestUnit
   m_TagString: Untagged
@@ -95,10 +96,67 @@ MonoBehaviour:
   healthStats: {fileID: 11400000, guid: 62fb8a0f56471fe4fa709754fa204774, type: 2}
   OnDamageTaken:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -8773660820754209030}
+        m_TargetAssemblyTypeName: UnitSounds, Assembly-CSharp
+        m_MethodName: PlayDmgTakenSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -8773660820754209030}
+        m_TargetAssemblyTypeName: UnitSounds, Assembly-CSharp
+        m_MethodName: PlayDeathSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-8773660820754209030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240702288915936041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c50ef4780d42be4a869830257b02826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgTakenPlaceEventHere:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  deathPlaceEventHere:
+    Guid:
+      Data1: 1465724483
+      Data2: 1099883360
+      Data3: -894563429
+      Data4: -2060999508
+    Path: event:/Units/UnitDeath
+  attackPlaceEventHere:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &6768578155298855191
 GameObject:
   m_ObjectHideFlags: 0

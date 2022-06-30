@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &163247111
 Camera:
   m_ObjectHideFlags: 0
@@ -673,7 +673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421647296}
   - component: {fileID: 421647294}
-  - component: {fileID: 421647295}
+  - component: {fileID: 421647297}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -724,14 +724,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &421647295
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421647293}
-  m_Enabled: 1
 --- !u!4 &421647296
 Transform:
   m_ObjectHideFlags: 0
@@ -747,6 +739,19 @@ Transform:
   m_Father: {fileID: 1239927976}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -0.006, z: -0.001}
+--- !u!114 &421647297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421647293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &516401789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,11 +2108,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -64525706
+      Data2: 1154416102
+      Data3: -1045976675
+      Data4: 1092690784
+    Path: event:/Music/MusicLevel1
 --- !u!1001 &4065762776050860762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2244,5 +2249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitSounds
       objectReference: {fileID: 0}
+    - target: {fileID: 8847685610618894014, guid: 21a7302020d258742a2d3bc8cac5dc6c,
+        type: 3}
+      propertyPath: Lm
+      value: 
+      objectReference: {fileID: 11294119382999073}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a7302020d258742a2d3bc8cac5dc6c, type: 3}

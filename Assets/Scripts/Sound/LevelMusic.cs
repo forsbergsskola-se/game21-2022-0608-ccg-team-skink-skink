@@ -11,8 +11,10 @@ public class LevelMusic : MonoBehaviour
         musicEvInst = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvInst.start();
     }
-    void DramaticOrchestraCue()
+    public void DramaticOrchestraCue()
     {
+        Debug.Log("DramaticCueSound");
         musicEvInst.setParameterByName("DramaticCue", 1);
+        
     }
 }
