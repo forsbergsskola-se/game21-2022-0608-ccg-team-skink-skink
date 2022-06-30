@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae75a4427e6b5ca458a21e6ef5699a37, type: 3}
   m_Name: InventoryLevel
   m_EditorClassIdentifier: 
-  visualName: Menu Level
+  visualName: Inventory Level
   index: 0
-  internalSceneName: MenuLevel
-  internalSceneSoundBankName: Mobile/Master
+  internalSceneName: InventoryTestScene
+  internalSceneSoundBankName: Mobile/MetaGame

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae75a4427e6b5ca458a21e6ef5699a37, type: 3}
   m_Name: MenuTestLevel
   m_EditorClassIdentifier: 
-  visualName: 
+  visualName: Main Menu
   index: 0
-  internalSceneName: 
-  internalSceneSoundBankName: 
+  internalSceneName: MenuTest
+  internalSceneSoundBankName: Mobile/MetaGame
