@@ -151,7 +151,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>40</value>
+			<value>28.5</value>
 		</property>
 		<property name="start">
 			<value>0.90000000000000002</value>
@@ -207,6 +207,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{68ba415c-9897-43dd-8974-7071bb32dca0}">
+		<property name="volume">
+			<value>-8.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 3</value>
 		</property>
