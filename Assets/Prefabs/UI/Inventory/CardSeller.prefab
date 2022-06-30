@@ -1052,7 +1052,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5138735856008102187}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1078,7 +1078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fad3c4a7f27d945bb7609f3994d4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellButton: {fileID: 0}
+  openSellMenuButton: {fileID: 0}
+  sellAllButton: {fileID: 8754424732753778478}
   sellCardScreen: {fileID: 752233719598501385}
 --- !u!1 &5622888032081977060
 GameObject:

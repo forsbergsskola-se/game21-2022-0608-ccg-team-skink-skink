@@ -1670,7 +1670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4695414951039683205, guid: 5cd22da1c5a54e0459db2ac65462063c,
         type: 3}
-      propertyPath: sellButton
+      propertyPath: openSellMenuButton
       value: 
       objectReference: {fileID: 6994639831184745115}
     - target: {fileID: 5138735856008102187, guid: 5cd22da1c5a54e0459db2ac65462063c,
