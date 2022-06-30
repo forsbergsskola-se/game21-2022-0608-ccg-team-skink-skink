@@ -270,107 +270,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &473418856
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4033122078446726938, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: index
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726938, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: visualName
-      value: Level1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726938, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: internalSceneName
-      value: MenuTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726938, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: internalSceneSoundBankName
-      value: Mobile/Master
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726939, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_Name
-      value: Level
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.0154424
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.0440667
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 11.784967
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4033122078446726941, guid: cca7fb9a0eebef24492366621a2af36d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cca7fb9a0eebef24492366621a2af36d, type: 3}
---- !u!114 &473418859 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4033122078446726940, guid: cca7fb9a0eebef24492366621a2af36d,
-    type: 3}
-  m_PrefabInstance: {fileID: 473418856}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334f437076aa8714784ca2bfda33f841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &487246132
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +666,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 473418859}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Meta.Level.LevelButtonHandler, Assembly-CSharp
         m_MethodName: StartLoadingLevel
         m_Mode: 1
@@ -832,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 7701788543381916519, guid: a27e6f8f131e4aa4887dd1869c4b42cc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7701788543381916519, guid: a27e6f8f131e4aa4887dd1869c4b42cc,
         type: 3}
