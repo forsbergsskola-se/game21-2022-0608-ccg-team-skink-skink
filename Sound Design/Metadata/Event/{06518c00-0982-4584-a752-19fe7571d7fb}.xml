@@ -5,7 +5,7 @@
 			<value>OpenLootbox</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{731ea65c-8219-42ba-b6f4-4503077cf604}</destination>
@@ -87,7 +87,11 @@
 			<destination>{2de9ead1-5bfe-4334-bf16-7998c1fd0501}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{840d82c1-0761-4a53-aec4-ecd005ee6816}" />
+	<object class="MultiSound" id="{840d82c1-0761-4a53-aec4-ecd005ee6816}">
+		<relationship name="sounds">
+			<destination>{aa727316-ac95-4c15-9464-3f27516dd954}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{754fb627-aab1-438e-8ba1-bbc30347425a}">
 		<relationship name="effects">
 			<destination>{1bbfd420-d174-44bf-b2eb-528f2ed1aa87}</destination>
@@ -114,6 +118,15 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6c0f4746-56e6-4e1c-b7b3-be6f4be81456}" />
+	<object class="SingleSound" id="{aa727316-ac95-4c15-9464-3f27516dd954}">
+		<relationship name="modulators">
+			<destination>{87632cfa-4eda-4819-9565-e69ff92fd43a}</destination>
+			<destination>{acae49c0-ae24-4686-962c-9e5c08f6969a}</destination>
+		</relationship>
+		<relationship name="audioFile">
+			<destination>{9c322d91-c0a3-4921-aca6-17b166d6f97e}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{1bbfd420-d174-44bf-b2eb-528f2ed1aa87}" />
 	<object class="MixerBusEffectChain" id="{736156f7-ed84-4eb8-b369-2de68f536829}">
 		<relationship name="effects">
@@ -122,5 +135,21 @@
 	</object>
 	<object class="MixerBusPanner" id="{4a080f92-de6f-42be-bf15-a2438c64a78d}" />
 	<object class="MixerBusFader" id="{0a3d31a1-68b5-4b3f-94c9-0198de72ef6a}" />
+	<object class="RandomizerModulator" id="{87632cfa-4eda-4819-9565-e69ff92fd43a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>1.5</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{acae49c0-ae24-4686-962c-9e5c08f6969a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{f4e91b23-896e-4941-83f7-e50e9bce6ce3}" />
 </objects>
