@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class TempPauseMenu : MonoBehaviour
 {
     public LevelMusic LM;
-    [SerializeField] private Button pauseButton;
-    [SerializeField] private Button unPauseButton;
-
-    public void PauseGame()
+    [SerializeField] private GameObject visibleObject;
+    [SerializeField] private GameObject invisibleObject;
+    
+    /*public void PauseGame()
     {
-        pauseButton.gameObject.SetActive(false);
-        unPauseButton.gameObject.SetActive(true);
+        invisibleObject.gameObject.SetActive(false);
+        visibleObject.gameObject.SetActive(true);
         Time.timeScale = 0;
         LM.PauseMenuAudio();
 
@@ -21,11 +21,16 @@ public class TempPauseMenu : MonoBehaviour
     public void UnPauseGame()
     {
         Time.timeScale = 1;
-        pauseButton.gameObject.SetActive(true);
-        unPauseButton.gameObject.SetActive(false);
+        invisibleObject.gameObject.SetActive(true);
+        visibleObject.gameObject.SetActive(false);
         LM.PauseMenuStopAudio();
 
-    }
+    }*/
 
+    public void ChangeCanvas(GameObject canvasToActivate)
+    {
+        UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<CanvasGroup>().alpha = 0;
+        canvasToActivate.GetComponent<CanvasGroup>().alpha = 1;
+    }
 
 }
