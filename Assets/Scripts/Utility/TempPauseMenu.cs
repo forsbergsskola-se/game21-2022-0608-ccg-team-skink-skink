@@ -29,8 +29,13 @@ public class TempPauseMenu : MonoBehaviour
 
     public void ChangeCanvas(GameObject canvasToActivate)
     {
-        UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<CanvasGroup>().alpha = 0;
+        UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>().alpha = 0;
+        UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>().interactable = false;
+        UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>().blocksRaycasts=false;
         canvasToActivate.GetComponent<CanvasGroup>().alpha = 1;
+        canvasToActivate.GetComponent<CanvasGroup>().interactable = true;
+        canvasToActivate.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        
     }
 
 }
