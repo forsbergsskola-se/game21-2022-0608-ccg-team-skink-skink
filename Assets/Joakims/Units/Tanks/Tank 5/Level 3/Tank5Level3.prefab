@@ -14,6 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3109740300377866801, guid: 8207b13170b966e45a1a06422aa1d8cf,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109740300377866801, guid: 8207b13170b966e45a1a06422aa1d8cf,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -65,7 +70,25 @@ PrefabInstance:
     - target: {fileID: 3240702288915936041, guid: 8207b13170b966e45a1a06422aa1d8cf,
         type: 3}
       propertyPath: m_Name
-      value: StrongUnit
+      value: Tank5Level3
       objectReference: {fileID: 0}
+    - target: {fileID: 6493428779436629426, guid: 8207b13170b966e45a1a06422aa1d8cf,
+        type: 3}
+      propertyPath: moveStats
+      value: 
+      objectReference: {fileID: 11400000, guid: d57006e730abbe741b1b20119e2fce43,
+        type: 2}
+    - target: {fileID: 6493428779436629426, guid: 8207b13170b966e45a1a06422aa1d8cf,
+        type: 3}
+      propertyPath: combatStatsSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b11f19ca192b6d4e996fbbdffd2eedb,
+        type: 2}
+    - target: {fileID: 8121154245991871638, guid: 8207b13170b966e45a1a06422aa1d8cf,
+        type: 3}
+      propertyPath: healthStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 09d8fa6cbdf889547a85a06026d637a3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8207b13170b966e45a1a06422aa1d8cf, type: 3}
