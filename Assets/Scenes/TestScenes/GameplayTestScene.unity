@@ -1412,6 +1412,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1576161496}
     m_Modifications:
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_text
+      value: 0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_margin.x
+      value: 92.503975
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_margin.z
+      value: -166.42247
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7507454180668607768, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_Pivot.x
