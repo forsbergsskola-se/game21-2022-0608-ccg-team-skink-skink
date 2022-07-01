@@ -7,18 +7,19 @@ namespace Meta.LootBox
     {
         [SerializeField] private CardsTierSO cards;
 
-        private void Start()
-        {
-            Dependencies.Instance.LootBoxSystem.CreateNewLootBox();
-            var loot = Dependencies.Instance.LootBoxSystem.OpenLootBox(cards, 5);
-
-            foreach (var card in loot)
-            {
-                Debug.Log(card.Name);
-            }
-            
-            Debug.Log(Dependencies.Instance.Inventory.Cards.Count);
-            
-        }
+        // TODO: REMOVE THIS SCRIPT WHEN READY!
+        // private void Start()
+        // {
+        //     Dependencies.Instance.LootBoxSystem.CreateNewLootBox();
+        //     var loot = Dependencies.Instance.LootBoxSystem.OpenLootBox(cards, 5);
+        //
+        //     foreach (var card in loot)
+        //     {
+        //         Debug.Log(card.Name);
+        //     }
+        //     
+        //     Debug.Log(Dependencies.Instance.Inventory.Cards.Count);
+        //     
+        // }
     }
 }
