@@ -24,7 +24,12 @@ public class LevelMusic : MonoBehaviour
     }
     public void PauseMenuAudio()
     {
+        Debug.Log("FilterMusic");
         pauseFilterInst = FMODUnity.RuntimeManager.CreateInstance("snapshot:/PauseFilter");
         pauseFilterInst.start();
+    }
+    public void PauseMenuStopAudio()
+    {
+        pauseFilterInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
