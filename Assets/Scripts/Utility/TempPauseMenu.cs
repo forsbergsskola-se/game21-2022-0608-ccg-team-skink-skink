@@ -9,7 +9,7 @@ public class TempPauseMenu : MonoBehaviour
     [SerializeField] private GameObject visibleObject;
     [SerializeField] private GameObject invisibleObject;
     
-    /*public void PauseGame()
+    public void PauseGame()
     {
         invisibleObject.gameObject.SetActive(false);
         visibleObject.gameObject.SetActive(true);
@@ -25,7 +25,7 @@ public class TempPauseMenu : MonoBehaviour
         visibleObject.gameObject.SetActive(false);
         LM.PauseMenuStopAudio();
 
-    }*/
+    }
 
     public void ChangeCanvas(GameObject canvasToActivate)
     {
