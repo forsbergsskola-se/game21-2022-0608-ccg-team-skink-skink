@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7865997427784065790}
   - component: {fileID: 7865997427784065789}
   - component: {fileID: 7865997427784065788}
+  - component: {fileID: 3889607978909501230}
   m_Layer: 0
   m_Name: AdsManager
   m_TagString: Untagged
@@ -66,4 +67,28 @@ MonoBehaviour:
   _iOSAdUnitId: Rewarded_iOS
   onAdsShowComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3889607978909501230}
+        m_TargetAssemblyTypeName: RewardPlayer, Assembly-CSharp
+        m_MethodName: GiveNormalCoins
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3889607978909501230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865997427784065791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fe3748fb6c25b45ae6a9035abaa508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

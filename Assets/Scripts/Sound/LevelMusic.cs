@@ -1,35 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class LevelMusic : MonoBehaviour
 {
-    [SerializeField] List<FMODUnity.EventReference> musicLevel;
-    //List of Fmod event references so we can drag and drop the right music to the right level.
+    [SerializeField] FMODUnity.EventReference music;
     FMOD.Studio.EventInstance musicEvInst;
 
-    int levelIndex; //change var to Level (not int)
+    //Audio filter for when the game is paused
+    public FMODUnity.EventReference pauseFilterRef;
+    private FMOD.Studio.EventInstance pauseFilterInst;
+
     void Start()
     {
-        
-        //Await correct bank loading (if necessary...)
-        //How do I get access to the right level? 
-        SelectMusic(levelIndex);
+        musicEvInst = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvInst.start();
     }
-    void SelectMusic(int level)
+    public void DramaticOrchestraCue()
     {
-        musicEvInst = FMODUnity.RuntimeManager.CreateInstance(musicLevel[levelIndex]);
-    }
-    void DramaticOrchestraCue()
-    {
+        Debug.Log("DramaticCueSound");
         musicEvInst.setParameterByName("DramaticCue", 1);
+        
     }
-
-    //returns loading state of bank
-    FMOD.Studio.LOADING_STATE LoadingState(FMOD.Studio.Bank bank)
+    public void PauseMenuAudio()
     {
-        FMOD.Studio.LOADING_STATE lS;
-        bank.getLoadingState(out lS);
-        return lS;
+        Debug.Log("FilterMusic");
+        pauseFilterInst = FMODUnity.RuntimeManager.CreateInstance("snapshot:/PauseFilter");
+        pauseFilterInst.start();
+    }
+    public void PauseMenuStopAudio()
+    {
+        pauseFilterInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
