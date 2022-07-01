@@ -13,15 +13,16 @@ namespace Meta.LootBox
         
         [SerializeField, RequireInterface(typeof(ILootBoxInventoryModel))] private Object lootBoxInventoryModel;
         [SerializeField] BasicCardViewer[] basicCardViewers;
+        [SerializeField] private GameObject viewContainer;
 
         void Awake()
         {
             (lootBoxInventoryModel as ILootBoxInventoryModel).LootBoxOpened += SetFromLootBox;
         }
-        
+
         public void SetFromLootBox(ICard[] cards)
         {
-            gameObject.SetActive(true);
+            viewContainer.SetActive(true);
             
             LootBoxOpen.Invoke();
             
@@ -37,6 +38,7 @@ namespace Meta.LootBox
             {
                 basicCardViewer.Reset();
             }
+            viewContainer.SetActive(false);
         }
 
         private void ShowCards(ICard[] cards)
