@@ -18,7 +18,7 @@ namespace Meta.LootBox
 
         public void OpenLootBox()
         {
-            (lootBoxViewer as ILootBoxViewer).SetFromLootBox(lootBoxSystem.OpenLootBox());
+            // (lootBoxViewer as ILootBoxViewer).SetFromLootBox(lootBoxSystem.OpenLootBox());
         }
 
         public void EnableLootBoxScreen()
