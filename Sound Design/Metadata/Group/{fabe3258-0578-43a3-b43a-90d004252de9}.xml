@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{fabe3258-0578-43a3-b43a-90d004252de9}">
+		<property name="volume">
+			<value>-9.5</value>
+		</property>
 		<property name="name">
 			<value>Music</value>
 		</property>
@@ -18,6 +21,7 @@
 		<relationship name="effects">
 			<destination>{3d3f088d-3a0a-418d-9f12-7ef0faffbda1}</destination>
 			<destination>{dcf9c0fa-dd94-4006-8d73-87315a1bc973}</destination>
+			<destination>{4c4c629c-6d3e-476b-ab69-ab3117af838c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7a6561af-6f9b-4877-ac81-d792ab74487d}" />
@@ -39,4 +43,5 @@
 			<destination>{e10355fd-b9ea-40eb-976d-cb24cec1e1b5}</destination>
 		</relationship>
 	</object>
+	<object class="ThreeEQEffect" id="{4c4c629c-6d3e-476b-ab69-ab3117af838c}" />
 </objects>
