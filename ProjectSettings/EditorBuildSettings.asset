@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/MenuTest.unity
     guid: 3dd0b55df91f775499d2c5e2f99bad9b
+  - enabled: 1
+    path: Assets/Scenes/DesignTestScenes/Elias_Test.unity
+    guid: de78237c37691a942837d53104659aec
   - enabled: 1
     path: Assets/Scenes/TestScenes/GameplayTestScene.unity
     guid: 468614b0b3090094ba0a5000a5c62791
