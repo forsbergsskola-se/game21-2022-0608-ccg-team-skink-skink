@@ -1,17 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Meta.CardSystem;
 using Meta.Interfaces;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
-public class LootBoxViewer : MonoBehaviour, ILootBoxViewer
+
+namespace Meta.LootBox
 {
-    public void SetFromLootBox(ICard[] cards)
+    public class LootBoxViewer : MonoBehaviour, ILootBoxViewer
     {
-        throw new System.NotImplementedException();
-    }
+        [SerializeField, RequireInterface(typeof(ILootBoxInventoryModel))] private Object lootBoxInventoryModel;
+        [SerializeField] BasicCardViewer[] basicCardViewers;
 
-    public void Hide()
-    {
-        throw new System.NotImplementedException();
+        void Awake()
+        {
+            (lootBoxInventoryModel as ILootBoxInventoryModel).LootBoxOpened += SetFromLootBox;
+        }
+        public void SetFromLootBox(ICard[] cards)
+        {
+            gameObject.SetActive(true);
+            
+            //TODO: Play animation here
+            
+            //TODO: Call this method after animation is finished:
+            ShowCards(cards);
+        }
+
+        public void Hide()
+        {
+            foreach (var basicCardViewer in basicCardViewers)
+            {
+                basicCardViewer.Reset();
+            }
+        }
+
+        private void ShowCards(ICard[] cards)
+        {
+            for (int i = 0; i < cards.Length; i++)
+            {
+                basicCardViewers[i].SetCard(cards[i]);
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace Meta.LootBox
 {
     public class LootBoxSystemController : MonoBehaviour
     {
-        private ILootBoxSystem lootBoxSystem;
+        private ILootBoxInventoryModel lootBoxInventoryModel;
 
         [SerializeField, RequireInterface(typeof(ILootBoxViewer))] private Object lootBoxViewer;
 

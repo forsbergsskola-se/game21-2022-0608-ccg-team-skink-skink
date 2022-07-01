@@ -6,7 +6,7 @@ using Random = System.Random;
 
 namespace Meta.LootBox
 {
-    public class LootBoxInventoryModel : MonoBehaviour, ILootBoxSystem
+    public class LootBoxInventoryModel : MonoBehaviour, ILootBoxInventoryModel
     {
         [SerializeField] private CardsTierSO lootBoxData;
         [SerializeField] private int rarityMultiplier;
