@@ -1820,4 +1820,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f01e22c1dc542a4e94591d963d692d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckHand: {fileID: 11400000, guid: f37077d337321b64583d69abed8c9cec, type: 2}
