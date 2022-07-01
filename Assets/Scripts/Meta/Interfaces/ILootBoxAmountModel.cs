@@ -1,3 +1,5 @@
+using System;
+
 namespace Meta.Interfaces
 {
     public interface ILootBoxAmountModel
@@ -6,5 +8,7 @@ namespace Meta.Interfaces
         /// Holds the current number of owned lootboxes.
         /// </summary>
         public int Amount { get; set; }
+
+        public event Action<int> ValueChanged;
     }
 }
