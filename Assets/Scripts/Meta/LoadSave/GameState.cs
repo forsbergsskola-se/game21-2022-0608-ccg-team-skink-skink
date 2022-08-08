@@ -1,11 +1,12 @@
+using System;
+
 namespace Meta.LoadSave
 {
+    [Serializable]
     public class GameState
     {
         public int currency;
-        public int lootboxesAmount;
-        public int currentLevel;
-        public int[] cardHand;
-        public InventoryUnit[] inventory;
+        public override string ToString() => $"Currency: {currency}\n";
+
     }
 }
