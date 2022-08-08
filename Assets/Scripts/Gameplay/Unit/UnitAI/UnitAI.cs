@@ -28,7 +28,8 @@ namespace Gameplay.Unit.UnitAI
             {
                 State = value;
                 onStateChanges.Invoke(State);
-            } }
+            } 
+        }
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }

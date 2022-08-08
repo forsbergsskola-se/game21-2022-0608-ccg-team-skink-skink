@@ -1,0 +1,19 @@
+{
+    "currency" : 100,
+    "lootboxesAmount" : 3,
+    "currentLevel" : 4,
+    "cardHand": ["0", "1", "2", "3", "4", "5"],
+    "inventory":
+    [
+        {
+            "id": 11,
+            "amount": 3
+        },
+        
+        {
+            "id": 21,
+            "amount": 9
+        }
+    ] 
+    
+}
