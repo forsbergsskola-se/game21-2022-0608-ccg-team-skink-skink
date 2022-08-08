@@ -33,6 +33,7 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{9dfaa7e8-b720-4ca3-9425-818556c7b577}</destination>
+			<destination>{aa8dd226-36b1-49c2-94d7-441f5fdf71c1}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{20e9dc31-f059-42b0-932d-101c8401f75c}">
@@ -74,6 +75,11 @@
 	<object class="ActionSheet" id="{9dfaa7e8-b720-4ca3-9425-818556c7b577}">
 		<relationship name="modules">
 			<destination>{7e254b67-6ee0-40e0-a561-30189c904fe9}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterProxy" id="{aa8dd226-36b1-49c2-94d7-441f5fdf71c1}">
+		<relationship name="preset">
+			<destination>{020412fc-91c9-407d-9371-26f49ff448eb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{d655e1fc-003a-41aa-836a-446926d59bbb}">

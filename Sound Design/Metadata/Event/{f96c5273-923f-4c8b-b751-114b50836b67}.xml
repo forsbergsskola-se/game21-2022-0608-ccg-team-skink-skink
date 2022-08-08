@@ -142,7 +142,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>3</value>
+			<value>3.5</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{6bc4a1d0-6f49-469f-8af2-929a8a01270e}" />
