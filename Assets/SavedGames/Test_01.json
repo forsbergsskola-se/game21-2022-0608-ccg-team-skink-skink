@@ -1,3 +1,4 @@
 {
-    "currency" : 100          
+    "currency" : 100,
+    "lootBoxesAmount": 5          
 }
