@@ -3730,6 +3730,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5421797039196699613, guid: 8ff0cdc7b21e7ce488b26d507c06e827,
+        type: 3}
+      propertyPath: number
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7962906055745049344, guid: 8ff0cdc7b21e7ce488b26d507c06e827,
         type: 3}
       propertyPath: m_Pivot.x
