@@ -15,6 +15,7 @@ namespace Utility
         public readonly IPremiumCoinCarrier PremiumCoinCarrier;
         public readonly ILootBoxAmountModel LootBoxAmountModel = new LootBoxAmountModel();
         public readonly ILevelLoader LevelLoader = new LevelLoader();
+        public readonly ILevelsModel LevelsModel = new LevelsModel();
         
         
         public static Dependencies Instance { get; private set; }
