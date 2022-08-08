@@ -1,4 +1,5 @@
 {
     "currency" : 100,
-    "lootBoxesAmount": 5          
+    "lootBoxesAmount": 5,
+    "currentLevel" : 3
 }
