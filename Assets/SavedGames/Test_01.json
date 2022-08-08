@@ -1,5 +1,6 @@
 {
     "currency" : 100,
     "lootBoxesAmount": 5,
-    "currentLevel" : 3
+    "currentLevel" : 3,
+    "cardHand" : [0,1,2,3,4,5]
 }
