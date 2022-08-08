@@ -2,6 +2,7 @@ using System;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 
 namespace Meta.Level
 {
@@ -11,13 +12,27 @@ namespace Meta.Level
         [SerializeField] private int number;
 
         public IGameplayLevel Level { get; set; }
-        
+
         public event Action<int> OnClick;
 
         public bool Unlocked
         {
             get => button.interactable;
             set => button.interactable = value;
+        }
+
+        public void TriggerOnClick() {
+            OnClick?.Invoke(number);
+        }
+
+        public void OnEnable() {
+            var levelsModel = Dependencies.Instance.LevelsModel;
+            DetermineIfUnlocked(levelsModel.CurrentMaxLevelIndex);
+            levelsModel.MaxLevelIndexChanged += DetermineIfUnlocked;
+        }
+
+        private void DetermineIfUnlocked(int currentLevelNumber) {
+            Unlocked = number <= currentLevelNumber;
         }
     }
 }
