@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
   m_Name: Basic 5 LVL 2
   m_EditorClassIdentifier: 
-  description: 
+  description: Simple light attack
   cardTitle: 
   cardImage: {fileID: 0}
   typeImage: {fileID: 0}
-  level: 0
-  apCost: 0
-  coolDownTime: 0
+  level: 2
+  apCost: 45
+  coolDownTime: 15
   unitPrefab: {fileID: 0}
   upgradedCard: {fileID: 0}
-  tempId: 3
+  currencyValueSettings:
+    SellCost: 50
+    UpgradeCost: 100

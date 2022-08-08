@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
   m_Name: Tank 3 LVL 3
   m_EditorClassIdentifier: 
-  description: 
+  description: Clubman
   cardTitle: 
   cardImage: {fileID: 0}
   typeImage: {fileID: 0}
-  level: 0
-  apCost: 0
-  coolDownTime: 0
+  level: 3
+  apCost: 280
+  coolDownTime: 60
   unitPrefab: {fileID: 0}
   upgradedCard: {fileID: 0}
   currencyValueSettings:
