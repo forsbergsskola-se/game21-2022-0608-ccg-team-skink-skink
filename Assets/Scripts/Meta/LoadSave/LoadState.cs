@@ -1,4 +1,5 @@
 using System.IO;
+using Meta.Interfaces;
 using UnityEngine;
 using Utility;
 
@@ -6,6 +7,7 @@ namespace Meta.LoadSave
 {
     public class LoadState : MonoBehaviour
     {
+        [SerializeField] private CardArraySO cardArray;
         //Todo: Change GameState to an Interface
         private GameState gameState;
         
@@ -34,10 +36,21 @@ namespace Meta.LoadSave
         {
             Dependencies.Instance.NormalCoinCarrier.Amount = state.currency;
             Dependencies.Instance.LootBoxAmountModel.Amount = state.lootBoxesAmount;
+            SetCardHand(state.cardHand);
             //Debug.Log(Dependencies.Instance.LootBoxAmountModel.Amount);
             //Todo: Add Current Level
-            //Todo: Add CardHand
+
             //Todo: Add Inventory ID and Amount
+        }
+
+        private void SetCardHand(int[] indexes)
+        {
+            var cardHand = Dependencies.Instance.PlayerCardHand.Cards;
+            
+            for (int i = 0; i < cardHand.Length; i++)
+            {
+                cardHand[i] = cardArray.GetCard(indexes[i]);
+            }
         }
     }
 }
