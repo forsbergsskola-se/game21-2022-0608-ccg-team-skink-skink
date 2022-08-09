@@ -13,8 +13,9 @@ namespace Utility
         public readonly ISettableCardHand PlayerCardHand = new PlayerCardHand();
         public readonly INormalCoinCarrier NormalCoinCarrier = new NormalCoinWallet();
         public readonly IPremiumCoinCarrier PremiumCoinCarrier;
-        public readonly ILootBoxSystem LootBoxSystem = new LootBox();
+        public readonly ILootBoxAmountModel LootBoxAmountModel = new LootBoxAmountModel();
         public readonly ILevelLoader LevelLoader = new LevelLoader();
+        public readonly ILevelsModel LevelsModel = new LevelsModel();
         
         
         public static Dependencies Instance { get; private set; }
