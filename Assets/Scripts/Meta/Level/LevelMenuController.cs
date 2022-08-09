@@ -1,6 +1,7 @@
 using System;
 using Meta.Interfaces;
 using UnityEngine;
+using Utility;
 using Object = UnityEngine.Object;
 
 namespace Meta.Level
@@ -24,8 +25,9 @@ namespace Meta.Level
             }
         }
 
-        private void OpenDetailedLevelViewByIndex(int index)
+        private void OpenDetailedLevelViewByIndex(int index) 
         {
+            Dependencies.Instance.LevelsModel.CurrentLevel = levels[index];
             (detailedLevelViewer as IDetailedLevelViewer).ActivateDetailedLevelViewer(levels[index]);
         }
     }
