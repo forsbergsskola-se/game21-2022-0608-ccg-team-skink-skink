@@ -22,12 +22,12 @@ public class PlayOneShot : MonoBehaviour
         invalidInputInst = FMODUnity.RuntimeManager.CreateInstance(invalidInputRef);
         apCapInst = FMODUnity.RuntimeManager.CreateInstance(apCapRef);
     }
-    void PlayCardAudio()
+    public void PlayCardAudio()
     {
         playCardInst.start();
         playCardInst.release();
     }
-    void ActivateCardAudio()
+    public void ActivateCardAudio()
     {
         cardActivatedInst.start();
         cardActivatedInst.release();
@@ -37,7 +37,7 @@ public class PlayOneShot : MonoBehaviour
         invalidInputInst.start();
         cardActivatedInst.release();
     }
-    void ApCapAudio()
+    public void ApCapAudio()
     {
         apCapInst.start();
         apCapInst.release();
