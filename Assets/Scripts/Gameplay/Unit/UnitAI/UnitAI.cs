@@ -20,15 +20,9 @@ namespace Gameplay.Unit.UnitAI
         private Movement movement;
         private Attack attack;
         private List<Collider> triggerCollection = new();
+
+        private UnitState state;
         
-        private UnitState State
-        {
-            get => this.State;
-            set
-            {
-                State = value;
-                onStateChanges.Invoke(State);
-            } }
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
@@ -42,7 +36,7 @@ namespace Gameplay.Unit.UnitAI
 
         private void FixedUpdate()
         {
-            if(State == UnitState.Moving) movement.Move(transform, Direction);
+            if(state == UnitState.Moving) movement.Move(transform, Direction);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -51,12 +45,12 @@ namespace Gameplay.Unit.UnitAI
             
             if (!triggerCollection.Contains(other)) triggerCollection.Add(other);
                 
-            if (State != UnitState.Action) StartAttacking(other);
+            if (state != UnitState.Action) StartAttacking(other);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (triggerCollection.Count == 0 || State == UnitState.Action) return;
+            if (triggerCollection.Count == 0 || state == UnitState.Action) return;
             
             StartAttacking(triggerCollection[0]);
         }
@@ -66,7 +60,7 @@ namespace Gameplay.Unit.UnitAI
             if (triggerCollection.Contains(other)) triggerCollection.Remove(other);
         }
 
-        private void SetInitialState() => State = UnitState.Moving;
+        private void SetInitialState() => state = UnitState.Moving;
         
         private void SetRange() 
             => GetComponent<BoxCollider>().center += new Vector3(combatStatsSO.Range, 0, 0);
@@ -83,11 +77,11 @@ namespace Gameplay.Unit.UnitAI
 
             damageReceiver.SubscribeToOnDeath(() =>
             {
-                State = UnitState.Moving;
+                state = UnitState.Moving;
                 triggerCollection.Remove(other);
             });
             
-            State = UnitState.Action;
+            state = UnitState.Action;
             StartCoroutine(attack.StartAttacking(damageReceiver));
         }
     }
