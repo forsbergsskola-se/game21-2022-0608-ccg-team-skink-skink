@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -12,6 +13,11 @@ namespace Meta.LoadSave
             gameState = JsonUtility.FromJson<GameState>(json);
             
             Debug.Log(gameState);
+
+            for (int i = 0; i < gameState.inventoryID.Length; i++)
+            {
+                Debug.Log($"ID: {gameState.inventoryID[i]} | Amount: {gameState.inventoryAmount[i]}");
+            }
         }
     }
 }
