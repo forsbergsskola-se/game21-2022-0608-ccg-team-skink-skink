@@ -8,16 +8,16 @@ namespace Meta.LoadSave
     public class LoadState : MonoBehaviour
     {
         [SerializeField] private CardArraySO cardArray;
-        //Todo: Change GameState to an Interface
-        private GameState gameState;
+        
+        private GameState gameState; //Todo: Change GameState to an Interface
         
         private void Awake()
         {
-            gameState = GetGameState();
+            gameState = GetGameStateFromJson();
             SetGameState(gameState);
         }
 
-        private GameState GetGameState()
+        private GameState GetGameStateFromJson()
         {
             string json = File.ReadAllText(Application.dataPath + "/SavedGames/Test_01.json");
             var fromJson = JsonUtility.FromJson<GameState>(json);
@@ -31,7 +31,7 @@ namespace Meta.LoadSave
             Dependencies.Instance.LootBoxAmountModel.Amount = state.lootBoxesAmount;
             SetCardHand(state.cardHand);
             SetInventory(state.inventoryID,state.inventoryAmount);
-            Debug.Log(Dependencies.Instance.Inventory.Cards.Count);
+            
             //Todo: Add Current Level
            
         }
