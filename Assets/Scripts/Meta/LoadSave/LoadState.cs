@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+using Utility;
 
 namespace Meta.LoadSave
 {
@@ -29,10 +30,11 @@ namespace Meta.LoadSave
             return fromJson;
         }
 
-        private void SetGameState(GameState gameState)
+        private void SetGameState(GameState state)
         {
-            //Todo: Add Currency
-            //Todo: Add LootBoxesAmount
+            Dependencies.Instance.NormalCoinCarrier.Amount = state.currency;
+            Dependencies.Instance.LootBoxAmountModel.Amount = state.lootBoxesAmount;
+            //Debug.Log(Dependencies.Instance.LootBoxAmountModel.Amount);
             //Todo: Add Current Level
             //Todo: Add CardHand
             //Todo: Add Inventory ID and Amount
