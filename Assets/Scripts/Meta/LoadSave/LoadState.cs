@@ -1,11 +1,11 @@
 using System.IO;
 using UnityEngine;
-using Utility;
 
 namespace Meta.LoadSave
 {
     public class LoadState : MonoBehaviour
     {
+        //Todo: Change GameState to an Interface
         private GameState gameState;
         
         private void Awake()
