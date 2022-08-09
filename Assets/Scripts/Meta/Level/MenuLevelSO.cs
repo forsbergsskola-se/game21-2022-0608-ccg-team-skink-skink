@@ -1,6 +1,4 @@
-using System.Runtime.CompilerServices;
 using Meta.Interfaces;
-using Meta.InventorySystem;
 using UnityEngine;
 
 namespace Meta.Level
@@ -10,13 +8,13 @@ namespace Meta.Level
     {
         //Neither visualName nor index is being used, what are their purposes?
         [SerializeField] private string visualName;
-        [SerializeField] private int index;
+        [SerializeField] private string description;
         [SerializeField] private string internalSceneName;
         [SerializeField] private string internalSceneSoundBankName;
         
         public string Name => visualName;
-        public int Index => index;
         public string InternalSceneName => internalSceneName;
         public string InternalSceneSoundBankName => internalSceneSoundBankName;
+        public string Description => description;
     }
 }

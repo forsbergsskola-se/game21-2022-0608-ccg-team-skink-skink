@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{153e8036-8b24-46f4-9c53-8a19b1839c7d}">
+		<property name="assetPath">
+			<value>Units/ImpactPaperLayer2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.71556249999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d77e523b-8e2f-4328-810d-dd31beea7deb}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -32,4 +32,9 @@ public class LevelMusic : MonoBehaviour
     {
         pauseFilterInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
+    public void StopMusic()
+    {
+        musicEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicEvInst.release();
+    }
 }
