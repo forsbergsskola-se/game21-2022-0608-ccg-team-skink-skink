@@ -150,6 +150,9 @@
 		<property name="triggerProbabilityEnabled">
 			<value>true</value>
 		</property>
+		<property name="triggerProbability">
+			<value>69.5</value>
+		</property>
 		<property name="start">
 			<value>0.90000000000000002</value>
 		</property>
