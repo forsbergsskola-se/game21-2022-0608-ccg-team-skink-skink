@@ -7,6 +7,7 @@ namespace Meta.Level
     public class GameplayLevelSO: ScriptableObject, IGameplayLevel
     {
         [SerializeField] private string visualName;
+        [SerializeField] private string description;
         [SerializeField] private string internalSceneName;
         [SerializeField] private string internalSceneSoundBankName;
         [SerializeField] private string gameSoundBank;
@@ -15,6 +16,7 @@ namespace Meta.Level
         public string Name => visualName;
         public string InternalSceneName => internalSceneName;
         public string InternalSceneSoundBankName => internalSceneSoundBankName;
+        public string Description => description;
         public ICardHand EnemyHandPreset => enemyCardHand as ICardHand;
         public string GameSoundBank => gameSoundBank;
     }
