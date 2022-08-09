@@ -1385,10 +1385,20 @@ PrefabInstance:
       propertyPath: open
       value: 
       objectReference: {fileID: 7546298317300395041}
-    - target: {fileID: 3242753715588510477, guid: 86afafd702c252c439d538f062c2c291,
+    - target: {fileID: 3696333043473058966, guid: 86afafd702c252c439d538f062c2c291,
         type: 3}
-      propertyPath: m_Alpha
+      propertyPath: m_Colors.m_PressedColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263747506064411212, guid: 86afafd702c252c439d538f062c2c291,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 141.2831
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263747506064411212, guid: 86afafd702c252c439d538f062c2c291,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 307.3639
       objectReference: {fileID: 0}
     - target: {fileID: 5329725319920893372, guid: 86afafd702c252c439d538f062c2c291,
         type: 3}
