@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 7134702314288938763}
   - component: {fileID: 7134702314288938764}
   - component: {fileID: 7134702314288938765}
+  - component: {fileID: 3916980187418991772}
   m_Layer: 5
   m_Name: Button_BackStartScreen
   m_TagString: Untagged
@@ -778,18 +779,32 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TempPauseMenu, Assembly-CSharp
-        m_MethodName: ChangeCanvas
-        m_Mode: 2
+      - m_Target: {fileID: 3916980187418991772}
+        m_TargetAssemblyTypeName: ButtonAlpha, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3916980187418991772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134702314288938767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  close: {fileID: 7890413829553513071}
+  open: {fileID: 0}
 --- !u!1 &7134702314392022709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1446,7 @@ CanvasGroup:
   m_GameObject: {fileID: 7134702315436354795}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &7134702315869826144
@@ -1446,6 +1461,7 @@ GameObject:
   - component: {fileID: 7134702315869826172}
   - component: {fileID: 7134702315869826173}
   - component: {fileID: 7134702315869826174}
+  - component: {fileID: 795538700712849132}
   m_Layer: 5
   m_Name: Button_Credits
   m_TagString: Untagged
@@ -1471,7 +1487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.94451773, y: 1}
   m_AnchorMax: {x: 0.94451773, y: 1}
-  m_AnchoredPosition: {x: -4.3532715, y: -62.31604}
+  m_AnchoredPosition: {x: -4.3532715, y: -55}
   m_SizeDelta: {x: 130.90952, y: 54.18931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7134702315869826172
@@ -1556,18 +1572,32 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TempPauseMenu, Assembly-CSharp
-        m_MethodName: ChangeCanvas
-        m_Mode: 2
+      - m_Target: {fileID: 795538700712849132}
+        m_TargetAssemblyTypeName: ButtonAlpha, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &795538700712849132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134702315869826144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  close: {fileID: 7890413829553513071}
+  open: {fileID: 0}
 --- !u!1 &7134702315895344531
 GameObject:
   m_ObjectHideFlags: 0

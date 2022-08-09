@@ -2231,6 +2231,7 @@ GameObject:
   - component: {fileID: 2001415088037459605}
   - component: {fileID: 2296758738231753781}
   - component: {fileID: 9177983719967247920}
+  - component: {fileID: 555035830230258517}
   m_Layer: 5
   m_Name: Button_BackStartScreen
   m_TagString: Untagged
@@ -2341,18 +2342,32 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TempPauseMenu, Assembly-CSharp
-        m_MethodName: ChangeCanvas
-        m_Mode: 2
+      - m_Target: {fileID: 555035830230258517}
+        m_TargetAssemblyTypeName: ButtonAlpha, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &555035830230258517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688323457339376356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  close: {fileID: 7673350763925942413}
+  open: {fileID: 0}
 --- !u!1 &5088096631411481968
 GameObject:
   m_ObjectHideFlags: 0

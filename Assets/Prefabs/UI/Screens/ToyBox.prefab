@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 3544461371970535665}
   - component: {fileID: 3816034744763003591}
   - component: {fileID: 7386460091482491960}
+  - component: {fileID: 702901963599358462}
   m_Layer: 5
   m_Name: Button_BackHub
   m_TagString: Untagged
@@ -454,7 +455,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3816034744763003591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 702901963599358462}
+        m_TargetAssemblyTypeName: ButtonAlpha, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &702901963599358462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217192837065210595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  close: {fileID: 2177801327233874243}
+  open: {fileID: 0}
 --- !u!1 &5703708475599489119
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +534,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5703708475599489119}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -547,8 +574,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00002861, y: 44}
-  m_SizeDelta: {x: 243.639, y: 243.639}
+  m_AnchoredPosition: {x: -0.0000038147, y: 69}
+  m_SizeDelta: {x: 362.07, y: 362.0714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5703708475764043800
 CanvasRenderer:
@@ -578,7 +605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 53c613d1b79a74645a2ab2d95234c6c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -693,8 +720,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lootboxes
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e3d0ffa728e4b0d47a3d9d597865e83d, type: 2}
+  m_sharedMaterial: {fileID: 7381682503091823290, guid: e3d0ffa728e4b0d47a3d9d597865e83d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -754,7 +782,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -52.315918, y: 0, z: -35.500122, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -909,7 +937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 169, y: -104}
+  m_AnchoredPosition: {x: 183, y: -111.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5703708477134568531
@@ -942,8 +970,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '##'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e3d0ffa728e4b0d47a3d9d597865e83d, type: 2}
+  m_sharedMaterial: {fileID: 7381682503091823290, guid: e3d0ffa728e4b0d47a3d9d597865e83d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1261,7 +1290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1661957960530393971
 RectTransform:
   m_ObjectHideFlags: 0
