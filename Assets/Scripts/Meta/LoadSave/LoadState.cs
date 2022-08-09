@@ -22,13 +22,6 @@ namespace Meta.LoadSave
             string json = File.ReadAllText(Application.dataPath + "/SavedGames/Test_01.json");
             var fromJson = JsonUtility.FromJson<GameState>(json);
 
-            Debug.Log(fromJson);
-
-            for (int i = 0; i < fromJson.inventoryID.Length; i++)
-            {
-                Debug.Log($"ID: {fromJson.inventoryID[i]} | Amount: {fromJson.inventoryAmount[i]}");
-            }
-
             return fromJson;
         }
 
@@ -37,20 +30,17 @@ namespace Meta.LoadSave
             Dependencies.Instance.NormalCoinCarrier.Amount = state.currency;
             Dependencies.Instance.LootBoxAmountModel.Amount = state.lootBoxesAmount;
             SetCardHand(state.cardHand);
-            //Debug.Log(Dependencies.Instance.LootBoxAmountModel.Amount);
+            
             //Todo: Add Current Level
-
             //Todo: Add Inventory ID and Amount
         }
 
         private void SetCardHand(int[] indexes)
         {
-            var cardHand = Dependencies.Instance.PlayerCardHand.Cards;
+            var cardHand = Dependencies.Instance.PlayerCardHand;
             
-            for (int i = 0; i < cardHand.Length; i++)
-            {
+            for (int i = 0; i < cardHand.Cards.Length; i++)
                 cardHand[i] = cardArray.GetCard(indexes[i]);
-            }
         }
     }
 }
