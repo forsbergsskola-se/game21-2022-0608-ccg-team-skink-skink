@@ -22,5 +22,5 @@ MonoBehaviour:
   unitPrefab: {fileID: 0}
   upgradedCard: {fileID: 0}
   currencyValueSettings:
-    SellCost: 50
+    SellCost: 20
     UpgradeCost: 100

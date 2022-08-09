@@ -23,5 +23,5 @@ MonoBehaviour:
     type: 3}
   upgradedCard: {fileID: 0}
   currencyValueSettings:
-    SellCost: 50
-    UpgradeCost: 100
+    SellCost: 8
+    UpgradeCost: 70
