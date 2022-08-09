@@ -30,9 +30,10 @@ namespace Meta.LoadSave
             Dependencies.Instance.NormalCoinCarrier.Amount = state.currency;
             Dependencies.Instance.LootBoxAmountModel.Amount = state.lootBoxesAmount;
             SetCardHand(state.cardHand);
-            
+            SetInventory(state.inventoryID,state.inventoryAmount);
+            Debug.Log(Dependencies.Instance.Inventory.Cards.Count);
             //Todo: Add Current Level
-            //Todo: Add Inventory ID and Amount
+           
         }
 
         private void SetCardHand(int[] indexes)
@@ -41,6 +42,19 @@ namespace Meta.LoadSave
             
             for (int i = 0; i < cardHand.Cards.Length; i++)
                 cardHand[i] = cardArray.GetCard(indexes[i]);
+        }
+
+        private void SetInventory(int[] indexes, int[] amounts)
+        {
+            var inventory = Dependencies.Instance.Inventory;
+
+            for (int i = 0; i < indexes.Length; i++)
+            {
+                for (int j = 1; j <= amounts[i]; j++)
+                {
+                    inventory.Add(cardArray.GetCard(i));
+                }
+            }
         }
     }
 }
