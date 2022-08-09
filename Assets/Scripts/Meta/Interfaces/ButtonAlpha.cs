@@ -6,7 +6,8 @@ public class ButtonAlpha : MonoBehaviour
 {
     [SerializeField] private CanvasGroup close;
     [SerializeField] private CanvasGroup open;
-    
+    [SerializeField] string soundEventPath;
+
     public void Press()
     {
         close.alpha = 0;
@@ -16,5 +17,9 @@ public class ButtonAlpha : MonoBehaviour
         open.alpha = 1;
         open.interactable = true;
         open.blocksRaycasts = true;
+    }
+    void PlayButtonSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(soundEventPath);
     }
 }
