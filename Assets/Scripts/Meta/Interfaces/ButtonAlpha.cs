@@ -6,7 +6,7 @@ public class ButtonAlpha : MonoBehaviour
 {
     [SerializeField] private CanvasGroup close;
     [SerializeField] private CanvasGroup open;
-    [SerializeField] string soundEventPath;
+    private string soundEventPath = "event:/ButtonPress";
 
     public void Press()
     {
@@ -17,6 +17,8 @@ public class ButtonAlpha : MonoBehaviour
         open.alpha = 1;
         open.interactable = true;
         open.blocksRaycasts = true;
+        
+        PlayButtonSound();
     }
     void PlayButtonSound()
     {

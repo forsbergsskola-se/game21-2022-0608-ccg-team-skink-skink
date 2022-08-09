@@ -1267,6 +1267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   close: {fileID: 4668993379016885691}
   open: {fileID: 0}
+  soundEventPath: 
 --- !u!1 &5363056631103429756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,6 +3972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   close: {fileID: 4668993379016885691}
   open: {fileID: 0}
+  soundEventPath: 
 --- !u!1 &7546298316530294093
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,6 +5106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   close: {fileID: 4668993379016885691}
   open: {fileID: 0}
+  soundEventPath: 
 --- !u!1 &7546298316743190149
 GameObject:
   m_ObjectHideFlags: 0
@@ -5517,6 +5520,7 @@ GameObject:
   - component: {fileID: 7546298316961247115}
   - component: {fileID: 7546298316961247114}
   - component: {fileID: 7546298316961247113}
+  - component: {fileID: 6749347599119357812}
   m_Layer: 5
   m_Name: Button_Deck
   m_TagString: Untagged
@@ -5640,6 +5644,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6749347599119357812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7546298316961247111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  close: {fileID: 0}
+  open: {fileID: 0}
+  soundEventPath: 
 --- !u!1 &7546298316975253348
 GameObject:
   m_ObjectHideFlags: 0

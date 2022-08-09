@@ -1508,6 +1508,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3521501520291677824}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &3521501520291677826 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3242753715588510477, guid: 86afafd702c252c439d538f062c2c291,
+    type: 3}
+  m_PrefabInstance: {fileID: 3521501520291677824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5703708475332449416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1794,6 +1800,16 @@ PrefabInstance:
       propertyPath: open
       value: 
       objectReference: {fileID: 872666612}
+    - target: {fileID: 6749347599119357812, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: open
+      value: 
+      objectReference: {fileID: 3521501520291677826}
+    - target: {fileID: 6749347599119357812, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: close
+      value: 
+      objectReference: {fileID: 7546298317300395041}
     - target: {fileID: 7546298316635095791, guid: 4f086328c4285a84782c341ab6222279,
         type: 3}
       propertyPath: m_Name
@@ -1908,6 +1924,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 7546298317300395042}
+    - target: {fileID: 7546298316961247113, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Press
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546298316961247113, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonAlpha, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f086328c4285a84782c341ab6222279, type: 3}
@@ -1917,3 +1943,15 @@ CanvasGroup:
     type: 3}
   m_PrefabInstance: {fileID: 7546298317300395040}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7546298317300395042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6749347599119357812, guid: 4f086328c4285a84782c341ab6222279,
+    type: 3}
+  m_PrefabInstance: {fileID: 7546298317300395040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
