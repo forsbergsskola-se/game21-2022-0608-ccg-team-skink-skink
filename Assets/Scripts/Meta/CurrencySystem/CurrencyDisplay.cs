@@ -25,7 +25,7 @@ namespace Meta.CurrencySystem
 
         private void UpdateDisplay(int amount)
         {
-            textMesh.text = $"SoftCurrency: {amount}";
+            textMesh.text = amount.ToString();
         } 
     }
 }
