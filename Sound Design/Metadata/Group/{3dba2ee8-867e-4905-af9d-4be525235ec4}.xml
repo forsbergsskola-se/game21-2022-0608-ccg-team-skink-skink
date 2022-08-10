@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{3dba2ee8-867e-4905-af9d-4be525235ec4}">
+		<property name="name">
+			<value>SnapshotBuss</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{6acdb51a-1501-45e8-ac7f-9b81ed105ba3}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{b7a5934a-fdeb-46f7-8b0d-4ebc53de6fb3}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{29130461-7eae-43b7-8ded-6995dd9ddf5c}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{6acdb51a-1501-45e8-ac7f-9b81ed105ba3}">
+		<relationship name="effects">
+			<destination>{462b8116-80b5-47e6-b65f-484b3bb396b2}</destination>
+			<destination>{f76dd11b-8c5c-4078-96df-8cfce8fabb6e}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{b7a5934a-fdeb-46f7-8b0d-4ebc53de6fb3}" />
+	<object class="MixerBusFader" id="{462b8116-80b5-47e6-b65f-484b3bb396b2}" />
+	<object class="ThreeEQEffect" id="{f76dd11b-8c5c-4078-96df-8cfce8fabb6e}" />
+</objects>

@@ -633,51 +633,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1439851176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1439851178}
-  - component: {fileID: 1439851177}
-  m_Layer: 0
-  m_Name: TempObj
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1439851177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439851176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa6f0169cc8cb3e40b5a03c2512046e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCardHandSO: {fileID: 11400000, guid: a83d80bbbe833b3418fa6c7ccce616bd, type: 2}
---- !u!4 &1439851178
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439851176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: 2.5, z: 0.20000017}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1466402346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1367,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1576161496}
     m_Modifications:
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_text
+      value: 0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_margin.x
+      value: 92.503975
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_margin.z
+      value: -166.42247
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511928179, guid: a812e705abe261149936f973b3a4aad2, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7507454180668607768, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_Pivot.x

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{41ffc618-c4e5-4f6e-a124-045c88bfd102}">
+		<property name="name">
+			<value>MetaGame</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{6a1cef8b-9d5f-47d6-9d4a-5c94fe539677}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{124a4e95-e0ad-4255-95a0-cd0ae6f352f1}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5734f2cc-0548-4e70-96af-244b00907e21}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{6a1cef8b-9d5f-47d6-9d4a-5c94fe539677}">
+		<relationship name="effects">
+			<destination>{9c745cd0-d949-4b43-9ae3-eab0426b3a7f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{124a4e95-e0ad-4255-95a0-cd0ae6f352f1}" />
+	<object class="MixerBusFader" id="{9c745cd0-d949-4b43-9ae3-eab0426b3a7f}" />
+</objects>

@@ -15,42 +15,31 @@ public class PlayOneShot : MonoBehaviour
 
     public FMODUnity.EventReference apCapRef;
     FMOD.Studio.EventInstance apCapInst;
-
-
-
-
     void Start()
     {
         playCardInst = FMODUnity.RuntimeManager.CreateInstance(playCardRef);
         cardActivatedInst = FMODUnity.RuntimeManager.CreateInstance(cardActivatedRef);
-        invalidInputInst = FMODUnity.RuntimeManager.CreateInstance(cardActivatedRef);
+        invalidInputInst = FMODUnity.RuntimeManager.CreateInstance(invalidInputRef);
         apCapInst = FMODUnity.RuntimeManager.CreateInstance(apCapRef);
-
     }
-
-    void Update()
-    {
-        
-    }
-    void PlayCardAudio()
+    public void PlayCardAudio()
     {
         playCardInst.start();
         playCardInst.release();
     }
-    void ActivateCardAudio()
+    public void ActivateCardAudio()
     {
         cardActivatedInst.start();
         cardActivatedInst.release();
     }
-    void IvalidInputAudio()
+    public void InvalidInputAudio()
     {
         invalidInputInst.start();
         cardActivatedInst.release();
     }
-    void ApCapAudio()
+    public void ApCapAudio()
     {
         apCapInst.start();
         apCapInst.release();
-
     }
 }
