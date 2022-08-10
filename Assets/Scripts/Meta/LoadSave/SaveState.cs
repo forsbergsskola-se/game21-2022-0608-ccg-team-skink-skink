@@ -34,8 +34,8 @@ namespace Meta.LoadSave
 
             currentState.inventoryID = GetInventoryFromDependencies(out List<int> amount).ToArray();
             currentState.inventoryAmount = amount.ToArray();
+            currentState.currentLevel = Dependencies.Instance.LevelsModel.CurrentMaxLevelIndex;
             
-            //TODO Add CurrentLevel
             return currentState;
         }
 

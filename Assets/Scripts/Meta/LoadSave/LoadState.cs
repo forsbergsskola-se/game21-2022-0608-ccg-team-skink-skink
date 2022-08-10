@@ -31,9 +31,9 @@ namespace Meta.LoadSave
             Dependencies.Instance.LootBoxAmountModel.Amount = state.lootBoxesAmount;
             SetCardHand(state.cardHand);
             SetInventory(state.inventoryID,state.inventoryAmount);
+            Dependencies.Instance.LevelsModel.CurrentMaxLevelIndex = state.currentLevel;
             
-            //Todo: Add Current Level
-           
+
         }
 
         private void SetCardHand(int[] indexes)
