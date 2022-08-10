@@ -11,7 +11,6 @@ namespace Utility
 
         public ICard GetCard(int id) => cards[id] as ICard;
 
-        public ICard[] GetHand() => cards as ICard[];
-        
+        public Object[] GetCollection() => cards;
     }
 }
