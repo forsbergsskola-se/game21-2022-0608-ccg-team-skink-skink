@@ -226,7 +226,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -39.62264, y: -165.3}
-  m_SizeDelta: {x: 35.373, y: 40.1526}
+  m_SizeDelta: {x: 37.3653, y: 46.9684}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7737915724857143872
 CanvasRenderer:
@@ -258,7 +258,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 8997ad4f550fe8c4fa816d031f825b23, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -722,7 +722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -29.6, y: -24.8}
+  m_AnchoredPosition: {x: -29.6, y: -18.4}
   m_SizeDelta: {x: 60, y: 20}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &2867376201819506164
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.2092285, y: -3.2246418, z: 31.235352, w: 0}
+  m_margin: {x: 1.2092285, y: -3.2246418, z: 20.330107, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
