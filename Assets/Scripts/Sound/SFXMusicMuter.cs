@@ -18,18 +18,20 @@ public class SFXMusicMuter : MonoBehaviour
     private void Start()
     {
         muteMusicEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
+        Debug.Log("Checking if music is on.");
         if (musicMuted)
         {
-            muteMusicEvInst.start();
             On.SetActive(false);
             Off.SetActive(true);
             ToggleMusicOff();
+            Debug.Log("Music is off.");
         }
         else
         {
             On.SetActive(true);
             Off.SetActive(false);
             ToggleMusicOn();
+            Debug.Log("Music is on");
         }
     }
 
@@ -62,6 +64,10 @@ public class SFXMusicMuter : MonoBehaviour
     }
     private void OnDestroy()
     {
+        muteMusicEvInst.getPlaybackState(out pbState);
+        //Check if Fmod event MuteMusic is playing, and set static bool to right value for next scene
+        if (pbState == FMOD.Studio.PLAYBACK_STATE.PLAYING) musicMuted = true;
+        else musicMuted = false;
         ToggleMusicOn();
         muteMusicEvInst.release();
     }
