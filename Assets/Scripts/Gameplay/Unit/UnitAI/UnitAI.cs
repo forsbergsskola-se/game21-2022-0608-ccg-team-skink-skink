@@ -3,6 +3,7 @@ using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
 using Gameplay.Unit.UnityAI;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Gameplay.Unit.UnitAI
 {
@@ -14,11 +15,15 @@ namespace Gameplay.Unit.UnitAI
 
         [SerializeField] private CombatStatsSO combatStatsSO;
 
+        [SerializeField] private UnityEvent<UnitState> onStateChanges;
+
         private Movement movement;
         private Attack attack;
-        private UnitState state;
         private List<Collider> triggerCollection = new();
 
+        private UnitState state;
+        
+        
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
         

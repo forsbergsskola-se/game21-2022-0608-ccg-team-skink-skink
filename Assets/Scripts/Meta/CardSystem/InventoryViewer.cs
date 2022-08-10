@@ -25,7 +25,9 @@ namespace Meta.CardSystem
         private void Awake()
         {
             inventory = Dependencies.Instance.Inventory;
+            SetFromInventory();
         }
+
 
 
         public void SetFromInventory()
@@ -84,7 +86,8 @@ namespace Meta.CardSystem
         {
             if (card == null)
             {
-                lastSelectedCard.IsSelected = false;
+                if (lastSelectedCard != null)
+                    lastSelectedCard.IsSelected = false;
                 return;
             }
                 

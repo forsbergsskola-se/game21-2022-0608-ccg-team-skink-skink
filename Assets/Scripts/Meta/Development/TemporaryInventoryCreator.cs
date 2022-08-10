@@ -10,7 +10,6 @@ namespace Meta.Development
 {
     public class TemporaryInventoryCreator : MonoBehaviour
     {
-        [SerializeField] private InventoryViewer inventoryViewer;
         [SerializeField, RequireInterface(typeof(ICard))] private Object[] cards;
         
         
@@ -25,8 +24,6 @@ namespace Meta.Development
                 inventory.Add(card);
                 inventory.Add(card);
             }
-            
-            inventoryViewer.SetFromInventory();
         }
     }
 }
