@@ -497,6 +497,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0457222e79fb9654b865f8c1bb697fdf, type: 3}
+--- !u!1 &1070417842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3696146047767597133, guid: 0457222e79fb9654b865f8c1bb697fdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1070417841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1070417843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070417842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb343f42c79e526409b3640bb6df08f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1081807840
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +770,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SaveLoaderMimic
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253572373281442728, guid: ba75e8bc8944e9f4d9e8deb5979cc376,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6253572373281442731, guid: ba75e8bc8944e9f4d9e8deb5979cc376,
         type: 3}
