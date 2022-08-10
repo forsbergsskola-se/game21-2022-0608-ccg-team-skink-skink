@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Utility;
@@ -11,28 +12,30 @@ namespace Meta.LoadSave
 
         private GameState gameState = new ();
 
-        public void SetGameStateToJson(GameState state)
-        {
-            var toJson = JsonUtility.ToJson(state);
-            File.WriteAllText(Application.dataPath + "/SavedGames/Test_save.json", toJson);
-        }
-
         public void Awake()
         {
             gameState = GetGameStateFromDependencies();
             SetGameStateToJson(gameState);
         }
 
+        public void SetGameStateToJson(GameState state)
+        {
+            var toJson = JsonUtility.ToJson(state);
+            File.WriteAllText(Application.dataPath + "/SavedGames/Test_save.json", toJson);
+        }
+
         private GameState GetGameStateFromDependencies()
         {
             var currentState = new GameState();
-            
+
             currentState.currency = Dependencies.Instance.NormalCoinCarrier.Amount;
             currentState.lootBoxesAmount = Dependencies.Instance.LootBoxAmountModel.Amount;
-            //TODO Add CurrentLevel
             currentState.cardHand = GetCardHandFromDependencies();
-            //TODO Add GetInventory
 
+            currentState.inventoryID = GetInventoryFromDependencies(out List<int> amount).ToArray();
+            currentState.inventoryAmount = amount.ToArray();
+            
+            //TODO Add CurrentLevel
             return currentState;
         }
 
@@ -46,6 +49,25 @@ namespace Meta.LoadSave
                 currentCardHand[i] = Array.IndexOf(cardCollection, cardsFromOnDependencies[i]);
             
             return currentCardHand;
+        }
+
+        private List<int> GetInventoryFromDependencies(out List<int> amount)
+        {
+            var id = new List<int>();
+            amount = new List<int>();
+            
+            var inventory = Dependencies.Instance.Inventory.Cards;
+            var cardCollection = cardArray.GetCollection();
+
+            foreach (var cardList in inventory)
+            {
+                int index = Array.IndexOf(cardCollection, cardList.Value[0]);
+                
+                id.Add(index);
+                amount.Add(cardList.Value.Count);
+            }
+
+            return id;
         }
     }
 }
