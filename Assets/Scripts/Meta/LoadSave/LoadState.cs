@@ -52,7 +52,7 @@ namespace Meta.LoadSave
             {
                 for (int j = 1; j <= amounts[i]; j++)
                 {
-                    inventory.Add(cardArray.GetCard(i));
+                    inventory.Add(cardArray.GetCard(indexes[i]));
                 }
             }
         }
