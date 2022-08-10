@@ -1580,6 +1580,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f37077d337321b64583d69abed8c9cec,
         type: 2}
+    - target: {fileID: 355229051959140867, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1571406127388479551, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: deckHand
@@ -1592,6 +1597,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f37077d337321b64583d69abed8c9cec,
         type: 2}
+    - target: {fileID: 1571406127388479551, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1571406127453671457, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: m_RootOrder
