@@ -6,69 +6,41 @@ public class SFXMusicMuter : MonoBehaviour
 {
     FMOD.Studio.EventInstance muteMusicEvInst;
     string muteMusicPath = "snapshot:/MuteMusic";
-    bool musicIsMuted = false;
+    static bool musicMuted;
 
     FMOD.Studio.EventInstance muteSFXEvInst;
     string muteSFXPath = "snapshot:/MuteSFX";
-    bool SFXAreMuted = false;
+    
+    FMOD.Studio.PLAYBACK_STATE pbState;
 
-    public void ToggleMusic(bool setToMute)
+    private void Start()
     {
-        if (setToMute)
+        muteMusicEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
+        if (musicMuted)
         {
-            if (musicIsMuted)
-            {
-                return;
-            }
-            else
-            {
-                musicIsMuted = true;
-                muteMusicEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
-                muteMusicEvInst.start();
-            }
-        }
-        else
-        {
-            if (!musicIsMuted)
-            {
-                return;
-            }
-            else
-            {
-                musicIsMuted = false;
-                muteMusicEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
-                muteMusicEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                muteMusicEvInst.release();
-            }
+            muteMusicEvInst.start();
         }
     }
-    public void ToggleSFX(bool setToMute)
+    public void ToggleMusicMuted()
     {
-        if (setToMute)
-        {
-            if (SFXAreMuted)
-            {
-                return;
-            }
-            else
-            {
-                SFXAreMuted = true;
-                muteSFXEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
-                muteSFXEvInst.start();
-            }
-        }
+       muteMusicEvInst.getPlaybackState(out pbState);
+        if (pbState == FMOD.Studio.PLAYBACK_STATE.PLAYING) return;
         else
         {
-            if (!SFXAreMuted)
-            {
-                return;
-            }
-            else
-            {
-                SFXAreMuted = false;
-                muteSFXEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
-                muteSFXEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }
+            musicMuted = true;
+            muteMusicEvInst.start();
         }
+    }
+    public void ToggleMusicOn()
+    {
+        muteMusicEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicMuted = false;
+    }
+    private void OnDestroy()
+    {
+        ToggleMusicOn();
+        muteMusicEvInst.release();
     }
 }
+
+    
