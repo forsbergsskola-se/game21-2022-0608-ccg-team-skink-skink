@@ -11,6 +11,7 @@ namespace Meta.CardSystem
     {
         [SerializeField, RequireInterface(typeof(ICardUpgradeScreen))] private Object cardUpgradeScreen;
         [SerializeField] Button upgradeButton;
+        
         private IInventory inventory;
 
         void Awake()
@@ -43,11 +44,14 @@ namespace Meta.CardSystem
 
         public void Fuse()
         {
+            if (inventory.SelectedCard.UpgradeCost > Dependencies.Instance.NormalCoinCarrier.Amount) return;
+            
             var cardToUpgrade = inventory.SelectedCard;
             for (int i = 0; i < 2; i++)
             {
                 inventory.Remove(cardToUpgrade);
             }
+            Dependencies.Instance.NormalCoinCarrier.Amount -= inventory.SelectedCard.UpgradeCost;
             inventory.Add(cardToUpgrade.UpgradedCard);
             ButtonControl(inventory.SelectedCard);
             (cardUpgradeScreen as ICardUpgradeScreen).Hide();
