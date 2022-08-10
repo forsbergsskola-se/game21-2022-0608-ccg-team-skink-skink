@@ -10,5 +10,8 @@ namespace Utility
         private Object[] cards;
 
         public ICard GetCard(int id) => cards[id] as ICard;
+
+        public ICard[] GetHand() => cards as ICard[];
+        
     }
 }
