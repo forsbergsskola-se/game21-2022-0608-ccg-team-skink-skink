@@ -6,7 +6,7 @@ public class LevelMusic : MonoBehaviour
 {
     [SerializeField] FMODUnity.EventReference music;
     FMOD.Studio.EventInstance musicEvInst;
-
+    
     //Audio filter for when the game is paused
     public FMODUnity.EventReference pauseFilterRef;
     private FMOD.Studio.EventInstance pauseFilterInst;
