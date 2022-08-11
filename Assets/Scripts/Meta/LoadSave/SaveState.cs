@@ -8,12 +8,9 @@ namespace Meta.LoadSave
 {
     public class SaveState 
     {
-        private CardArraySO cardArray;
+        private ICardArray cardArray;
 
-        public SaveState(CardArraySO cardArray)
-        {
-            this.cardArray = cardArray;
-        }
+        public SaveState(ICardArray cardArray) => this.cardArray = cardArray;
         
         public void Save(GameState state)
         {
