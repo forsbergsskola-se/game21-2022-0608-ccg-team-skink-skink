@@ -658,6 +658,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveLoaderMimic
       objectReference: {fileID: 0}
+    - target: {fileID: 6253572373281442728, guid: ba75e8bc8944e9f4d9e8deb5979cc376,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6253572373281442731, guid: ba75e8bc8944e9f4d9e8deb5979cc376,
         type: 3}
       propertyPath: m_RootOrder
@@ -1742,6 +1747,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Alpha
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870405929900406132, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870405929900406132, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 6130863942133725668, guid: 4f086328c4285a84782c341ab6222279,
         type: 3}
