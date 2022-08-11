@@ -6,18 +6,16 @@ namespace Meta.LoadSave
 {
     public class LoadState
     {
-        private GameState state;
         private CardArraySO cardArray;
 
-        public LoadState(GameState state, CardArraySO cardArray)
+        public LoadState(CardArraySO cardArray)
         {
-            this.state = state;
             this.cardArray = cardArray;
         }
 
         public GameState Load()
         {
-            state = GetGameStateFromJson();
+            var state = GetGameStateFromJson();
             SetGameState(state);
 
             return state;

@@ -13,8 +13,11 @@ namespace Meta.LoadSave
 
         private void Awake()
         {
-            loadState = new LoadState(state, cardArray);
-            loadState.Load();
+            loadState = new LoadState(cardArray);
+            saveState = new SaveState(cardArray);
+            
+            state = loadState.Load();
+            saveState.Save(state);
         }
     }
 }

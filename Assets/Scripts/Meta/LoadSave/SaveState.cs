@@ -6,16 +6,19 @@ using Utility;
 
 namespace Meta.LoadSave
 {
-    public class SaveState : MonoBehaviour
+    public class SaveState 
     {
-        [SerializeField] private CardArraySO cardArray;
+        private CardArraySO cardArray;
 
-        private GameState gameState = new ();
-
-        public void Awake()
+        public SaveState(CardArraySO cardArray)
         {
-            gameState = GetGameStateFromDependencies();
-            SetGameStateToJson(gameState);
+            this.cardArray = cardArray;
+        }
+        
+        public void Save(GameState state)
+        {
+            state = GetGameStateFromDependencies();
+            SetGameStateToJson(state);
         }
 
         public void SetGameStateToJson(GameState state)
