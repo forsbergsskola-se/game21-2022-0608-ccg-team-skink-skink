@@ -57,4 +57,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313833e53b005de4581179874c8a2193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 2
   cardArray: {fileID: 11400000, guid: 4bb0abafffe1f3140bec9544b709312d, type: 2}

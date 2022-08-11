@@ -9,7 +9,6 @@ namespace Meta.LoadSave
     public class LoadSaveManager : MonoBehaviour
     {
         [SerializeField] private float waitTime;
-        
         [SerializeField] private CardArraySO cardArray;
 
         private GameState state = new ();
@@ -20,11 +19,13 @@ namespace Meta.LoadSave
         {
             loadState = new LoadState(cardArray);
             saveState = new SaveState(cardArray);
-            
             state = loadState.Load();
-            saveState.Save(state);
+           
+            SubscribeToDependencies();
+        }
 
-
+        private void SubscribeToDependencies()
+        {
             Dependencies.Instance.Inventory.CardAdded += (ICard card) => Save();
             Dependencies.Instance.Inventory.CardRemoved += (ICard card) => Save();
             Dependencies.Instance.LevelsModel.MaxLevelIndexChanged += (int i) => Save();
