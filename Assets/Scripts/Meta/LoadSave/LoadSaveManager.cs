@@ -7,8 +7,14 @@ namespace Meta.LoadSave
     {
         [SerializeField] private CardArraySO cardArray;
 
-        private GameState gameState = new GameState();
-        private LoadState loadState = new LoadState();
-        private SaveState saveState = new SaveState();
+        private GameState state = new ();
+        private LoadState loadState;
+        private SaveState saveState;
+
+        private void Awake()
+        {
+            loadState = new LoadState(state, cardArray);
+            loadState.Load();
+        }
     }
 }

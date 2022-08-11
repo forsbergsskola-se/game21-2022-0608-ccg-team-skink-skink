@@ -1,25 +1,31 @@
 using System.IO;
-using Meta.Interfaces;
 using UnityEngine;
 using Utility;
 
 namespace Meta.LoadSave
 {
-    public class LoadState : MonoBehaviour
+    public class LoadState
     {
-        [SerializeField] private CardArraySO cardArray;
-        
-        private GameState gameState; //Todo: Change GameState to an Interface
-        
-        private void Awake()
+        private GameState state;
+        private CardArraySO cardArray;
+
+        public LoadState(GameState state, CardArraySO cardArray)
         {
-            gameState = GetGameStateFromJson();
-            SetGameState(gameState);
+            this.state = state;
+            this.cardArray = cardArray;
+        }
+
+        public GameState Load()
+        {
+            state = GetGameStateFromJson();
+            SetGameState(state);
+
+            return state;
         }
 
         private GameState GetGameStateFromJson()
         {
-            string json = File.ReadAllText(Application.dataPath + "/SavedGames/Test_01.json");
+            string json = File.ReadAllText(Application.dataPath + "/SavedGames/SavedData.json");
             var fromJson = JsonUtility.FromJson<GameState>(json);
 
             return fromJson;
@@ -32,8 +38,6 @@ namespace Meta.LoadSave
             SetCardHand(state.cardHand);
             SetInventory(state.inventoryID,state.inventoryAmount);
             Dependencies.Instance.LevelsModel.CurrentMaxLevelIndex = state.currentLevel;
-            
-
         }
 
         private void SetCardHand(int[] indexes)
