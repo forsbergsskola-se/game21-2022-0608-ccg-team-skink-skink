@@ -1437,6 +1437,11 @@ PrefabInstance:
       propertyPath: open
       value: 
       objectReference: {fileID: 7546298317300395041}
+    - target: {fileID: 3242753715588510477, guid: 86afafd702c252c439d538f062c2c291,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3696333043473058966, guid: 86afafd702c252c439d538f062c2c291,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.a
@@ -1561,6 +1566,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371567223772278022, guid: 86afafd702c252c439d538f062c2c291,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7777754137712966489, guid: 86afafd702c252c439d538f062c2c291,
+        type: 3}
+      propertyPath: totalDifferentCardAmount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7805737753097903164, guid: 86afafd702c252c439d538f062c2c291,
         type: 3}
