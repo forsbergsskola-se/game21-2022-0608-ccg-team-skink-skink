@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WaveCollection_LVL_01
   m_EditorClassIdentifier: 
   waveCollection:
-  - {fileID: 11400000, guid: f518397fd08c52140b402b35212d03d8, type: 2}
+  - {fileID: 11400000, guid: 32eba05b0c125444c9c0dde4b733c566, type: 2}
