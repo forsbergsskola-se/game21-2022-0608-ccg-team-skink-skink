@@ -7,7 +7,7 @@ namespace Meta.GenericUIScripts {
         [SerializeField] Slider slider;
         [SerializeField] float maxValue;
     
-        public void Awake() {
+        private void Awake() {
             slider.maxValue = maxValue;
         }
         public void SetValue(float value) {
