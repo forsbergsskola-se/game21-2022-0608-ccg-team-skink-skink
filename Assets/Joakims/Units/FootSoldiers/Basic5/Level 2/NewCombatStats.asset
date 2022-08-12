@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 0.2
   damage: 2
-  defence: 0
+  defence: 2
   range: 1
