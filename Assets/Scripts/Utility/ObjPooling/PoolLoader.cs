@@ -24,12 +24,12 @@ namespace Utility.ObjPooling
 
         private void Start()
         {
-            var cardsToPool = new Dictionary<string, GameObject>();
+            var cardsToPool = new Dictionary<sbyte, GameObject>();
             AddHands(cardsToPool); 
             CreatePools(cardsToPool); 
         }
 
-        private void AddHands(Dictionary<string, GameObject> cardsToPool)
+        private void AddHands(Dictionary<sbyte, GameObject> cardsToPool)
         {
             Debug.Log(playerHand.Cards.Length);
             
@@ -37,16 +37,16 @@ namespace Utility.ObjPooling
             AddCards(cardsToPool, enemyHand as ICardHand);
         }
 
-        private void AddCards(Dictionary<string, GameObject> cardsToPool, ICardHand hand)
+        private void AddCards(Dictionary<sbyte, GameObject> cardsToPool, ICardHand hand)
         {
             foreach (var card in hand.Cards)
             {
-                if (!cardsToPool.ContainsKey(card.Name))
-                    cardsToPool.Add(card.Name, card.CardObject);
+                if (!cardsToPool.ContainsKey(card.Id))
+                    cardsToPool.Add(card.Id, card.CardObject);
             } 
         }
 
-        private void CreatePools(Dictionary<string, GameObject> cardsToPool)
+        private void CreatePools(Dictionary<sbyte, GameObject> cardsToPool)
         {
             foreach (var uniqueCard in cardsToPool)
             {

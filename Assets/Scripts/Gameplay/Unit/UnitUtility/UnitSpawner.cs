@@ -26,12 +26,12 @@ namespace Gameplay.Unit.UnitUtility
             if (isPlayer) deckHand = playerHand;
             else deckHand = enemyHand as ICardHand;
             
-            PlaceUnit(deckHand.Cards[buttonId].Name);
+            PlaceUnit(deckHand.Cards[buttonId].Id);
         }
 
-        private void PlaceUnit(string unitName)
+        private void PlaceUnit(sbyte unitId)
         {
-            var temp = pool.GetInstance(unitName);
+            var temp = pool.GetInstance(unitId);
             SetTransform(temp);
 
             IUnit ai = temp.GetComponentInChildren<IUnit>(); 
