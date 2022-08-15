@@ -76,7 +76,7 @@ namespace Gameplay.Unit.UnitAI
         private void LoadComponents()
         {
             movement = new Movement(moveStats);
-            attack = new Attack(combatStatsSO);
+            attack = new Attack(combatStatsSO, () => onStateChanges.Invoke(state));
         }
 
         private void StartAttacking(Collider other)

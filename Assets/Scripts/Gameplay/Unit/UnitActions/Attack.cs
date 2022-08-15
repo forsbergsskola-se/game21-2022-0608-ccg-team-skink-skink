@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.StatsInterfaces;
@@ -9,8 +10,13 @@ namespace Gameplay.Unit.UnitActions
     {
         private ICombatStats stats;
         private bool targetIsAlive;
+        private Action onAttack;
 
-        public Attack(ICombatStats stats) => this.stats = stats;
+        public Attack(ICombatStats stats, Action subscribeOnAttack)
+        {
+            this.stats = stats;
+            onAttack += subscribeOnAttack;
+        }
         
         public IEnumerator StartAttacking(IDamageReceiver opponent)
         {
@@ -20,6 +26,7 @@ namespace Gameplay.Unit.UnitActions
 
             while (targetIsAlive)
             {
+                onAttack.Invoke();
                 opponent.TakeDamage(stats.Damage);
                 yield return new WaitForSeconds(stats.AttackSpeed);
             }
