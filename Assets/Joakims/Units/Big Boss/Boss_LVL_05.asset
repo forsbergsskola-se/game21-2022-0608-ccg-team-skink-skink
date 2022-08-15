@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
-  m_Name: White_Lv2
+  m_Name: Boss_LVL_05
   m_EditorClassIdentifier: 
   description: 
   cardTitle: 
-  cardImage: {fileID: 21300000, guid: f87bf60acb5d0b04182b65405e61db8e, type: 3}
+  cardImage: {fileID: 0}
   typeImage: {fileID: 0}
-  level: 2
-  apCost: 30
-  coolDownTime: 20
-  unitPrefab: {fileID: 2963407571845942736, guid: a719575f5a979e946a345a8af93c75f0,
-    type: 3}
-  upgradedCard: {fileID: 11400000, guid: 2c7d0db8f14643247abc444d34adccc7, type: 2}
+  level: 0
+  apCost: 0
+  coolDownTime: 0
+  unitPrefab: {fileID: 0}
+  upgradedCard: {fileID: 0}
   currencyValueSettings:
     SellCost: 50
     UpgradeCost: 100

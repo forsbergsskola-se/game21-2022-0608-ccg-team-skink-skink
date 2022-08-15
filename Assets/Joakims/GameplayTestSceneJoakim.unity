@@ -253,6 +253,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveLoaderMimic
       objectReference: {fileID: 0}
+    - target: {fileID: 6253572373281442728, guid: ba75e8bc8944e9f4d9e8deb5979cc376,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6253572373281442729, guid: ba75e8bc8944e9f4d9e8deb5979cc376,
         type: 3}
       propertyPath: defaultCardHandSO
@@ -998,6 +1003,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8682931561542764745, guid: 0457222e79fb9654b865f8c1bb697fdf,
+        type: 3}
+      propertyPath: starterCardHand
+      value: 
+      objectReference: {fileID: 11400000, guid: c1efba36896761b488d0fef20990ee52,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0457222e79fb9654b865f8c1bb697fdf, type: 3}
 --- !u!1 &1876109635 stripped
@@ -1218,8 +1229,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 11400000, guid: f37077d337321b64583d69abed8c9cec,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bce5ebd80fb239439e84d542f4ec893, type: 3}
 --- !u!1001 &1571406127420944454
@@ -1914,6 +1924,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415261882}
     m_Modifications:
+    - target: {fileID: 8113515734996193452, guid: 84c55b2dd92a4f941b6d2e04cd0a9ea8,
+        type: 3}
+      propertyPath: enemyHand
+      value: 
+      objectReference: {fileID: 11400000, guid: c9c3d2eed8374cb449392e02c0ecf8c3,
+        type: 2}
     - target: {fileID: 8113515734996193452, guid: 84c55b2dd92a4f941b6d2e04cd0a9ea8,
         type: 3}
       propertyPath: hands.Array.data[0]

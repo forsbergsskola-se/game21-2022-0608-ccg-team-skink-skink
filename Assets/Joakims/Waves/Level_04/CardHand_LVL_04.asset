@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityCard: {fileID: 0}
   cards:
-  - {fileID: 11400000, guid: 906a2f1d0439c454ebc83baf961edc6f, type: 2}
+  - {fileID: 11400000, guid: fefdf1a786972e3459ccd4987aed9788, type: 2}
   - {fileID: 11400000, guid: ac1dae7776ee9e547b342b58d546bee0, type: 2}
   - {fileID: 11400000, guid: d260becc68b772347906574191e6561e, type: 2}
   - {fileID: 11400000, guid: 2cadd36533f9de54aaf73ee5f8745f3e, type: 2}
