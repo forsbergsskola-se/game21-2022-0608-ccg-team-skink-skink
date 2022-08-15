@@ -20,7 +20,7 @@ namespace Utility
         public readonly IEndOfGame EndOfGameRelay = new EndOfGameRelay();
         
         // LevelProgression is only a self contained logic script that reacts to event inside some of the dependencies.
-        private LevelProgression levelProgression = new LevelProgression();
+        private LevelProgression levelProgression;
         
         
         public static Dependencies Instance { get; private set; }
@@ -35,6 +35,8 @@ namespace Utility
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            levelProgression = new LevelProgression();
         }
     }
 }
