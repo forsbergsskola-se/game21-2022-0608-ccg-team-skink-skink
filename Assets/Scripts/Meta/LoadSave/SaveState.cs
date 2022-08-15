@@ -12,9 +12,9 @@ namespace Meta.LoadSave
 
         public SaveState(ICardArray cardArray) => this.cardArray = cardArray;
         
-        public void Save(GameState state)
+        public void Save()
         {
-            state = GetGameStateFromDependencies();
+            var state = GetGameStateFromDependencies();
             SetGameStateToJson(state);
         }
 
