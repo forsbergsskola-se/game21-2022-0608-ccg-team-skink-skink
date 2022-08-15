@@ -121,9 +121,9 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Gameplay.UI.EndGameDisplay, Assembly-CSharp
-        m_MethodName: SetLoseScreen
+      - m_Target: {fileID: 5349995886529515134}
+        m_TargetAssemblyTypeName: Gameplay.Utility.GameStateTrigger, Assembly-CSharp
+        m_MethodName: TriggerEndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -495,6 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f01e22c1dc542a4e94591d963d692d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayOneShot: {fileID: 0}
 --- !u!4 &825267188389204837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8142048309292015401, guid: d7aef7322d2a0cb4c896ae1940a45aea,
