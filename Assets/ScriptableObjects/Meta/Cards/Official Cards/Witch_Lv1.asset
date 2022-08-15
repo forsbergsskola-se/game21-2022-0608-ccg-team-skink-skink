@@ -19,7 +19,8 @@ MonoBehaviour:
   level: 1
   apCost: 30
   coolDownTime: 10
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 9198173200974718301, guid: ea29d365e4eb7054ea8ec1908645a18d,
+    type: 3}
   upgradedCard: {fileID: 11400000, guid: 38999835355ba7845a675c06e132a590, type: 2}
   currencyValueSettings:
     SellCost: 50

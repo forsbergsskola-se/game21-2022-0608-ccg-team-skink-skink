@@ -1,10 +1,9 @@
 using System;
 using Meta.Interfaces;
-using UnityEngine;
 
 namespace Meta.Relays
 {
-    public class EndOfGameRelay : MonoBehaviour, IEndOfGame
+    public class EndOfGameRelay : IEndOfGame
     {
         public void OnGameEnded(bool userWon)
         {

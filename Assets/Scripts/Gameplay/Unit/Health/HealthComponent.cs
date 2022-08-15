@@ -10,7 +10,8 @@ namespace Gameplay.Unit.Health
 
         public UnityEvent OnDamageTaken;
         public UnityEvent OnDeath;
-
+        public Animator myAnimator;
+        
         private float currentHealth;
         //Todo: Possibly make private
         public float CurrentHealth
@@ -23,7 +24,6 @@ namespace Gameplay.Unit.Health
                     OnDeath?.Invoke();
                     gameObject.SetActive(false);
                 }
-                    
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
                 //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
             }
