@@ -37,4 +37,8 @@ public class LevelMusic : MonoBehaviour
         musicEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicEvInst.release();
     }
+    private void OnDestroy()
+    {
+        StopMusic();
+    }
 }
