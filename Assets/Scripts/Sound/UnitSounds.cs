@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Gameplay.Unit.Health;
 
 public class UnitSounds : MonoBehaviour
 {
@@ -15,14 +12,12 @@ public class UnitSounds : MonoBehaviour
     //public FMODUnity.EventReference attackPlaceEventHere;
     FMOD.Studio.EventInstance attackInstance;
 
-    private IDamageReceiver damageReciever;
 
     void Start()
     {
         dmgTakenInstance = FMODUnity.RuntimeManager.CreateInstance(dmgTaken);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         //attackInstance = FMODUnity.RuntimeManager.CreateInstance(unitAttack);
-        damageReciever.SubscribeToOnDeath(PlayDeathSound);
     }
     public void PlayDmgTakenSound()
     {
