@@ -565,3 +565,4 @@ FodyWeavers.xsd
 # Log files can be ignored.
 fmod_editor.log
 ProjectSettings/RiderScriptEditorPersistedState.asset
+Assets/SavedGames/SavedData.json
