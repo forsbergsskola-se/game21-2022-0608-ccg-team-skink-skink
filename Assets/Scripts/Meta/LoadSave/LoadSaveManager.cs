@@ -1,8 +1,8 @@
-using System;
 using System.Collections;
 using Meta.Interfaces;
 using UnityEngine;
 using Utility;
+using Object = UnityEngine.Object;
 
 namespace Meta.LoadSave
 {
@@ -11,13 +11,15 @@ namespace Meta.LoadSave
         [SerializeField] private float waitTime;
         [SerializeField] private CardArraySO cardArray;
 
+        [SerializeField, RequireInterface(typeof(ICardHand))] private Object starterCardHand;
+
         private GameState state = new ();
         private LoadState loadState;
         private SaveState saveState;
 
         private void Awake()
         {
-            loadState = new LoadState(cardArray);
+            loadState = new LoadState(cardArray, starterCardHand as ICardHand);
             saveState = new SaveState(cardArray);
             state = loadState.Load();
            
