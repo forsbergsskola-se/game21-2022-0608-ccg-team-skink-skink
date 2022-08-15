@@ -1,4 +1,5 @@
 using System.IO;
+using Meta.Interfaces;
 using UnityEngine;
 using Utility;
 
@@ -7,11 +8,23 @@ namespace Meta.LoadSave
     public class LoadState
     {
         private ICardArray cardArray;
+        private ICardHand starterCardHand;
+        private string saveFilePath = Application.dataPath + "/SavedGames/SavedData.json";
 
-        public LoadState(ICardArray cardArray) => this.cardArray = cardArray;
+        public LoadState(ICardArray cardArray, ICardHand starterCardHand)
+        {
+            this.cardArray = cardArray;
+            this.starterCardHand = starterCardHand;
+        }
         
         public GameState Load()
         {
+            if (!File.Exists(saveFilePath))
+            {
+                SetStateFromStarterHand();
+                return new GameState();
+            }
+            
             var state = GetGameStateFromJson();
             SetGameState(state);
 
@@ -20,10 +33,28 @@ namespace Meta.LoadSave
 
         private GameState GetGameStateFromJson()
         {
-            string json = File.ReadAllText(Application.dataPath + "/SavedGames/SavedData.json");
+            string json = File.ReadAllText(saveFilePath);
             var fromJson = JsonUtility.FromJson<GameState>(json);
 
             return fromJson;
+        }
+
+        /// <summary>
+        /// Added this because we need a easy way for the designers to set the starting card hand when you launch the game.
+        /// It would maybe have been preferred to do this some other way. But we can do refinements later.
+        /// </summary>
+        private void SetStateFromStarterHand()
+        {
+            var playerCardHand = Dependencies.Instance.PlayerCardHand;
+            for (int i = 0; i < playerCardHand.Cards.Length; i++)
+            {
+                playerCardHand[i] = starterCardHand.Cards[i];
+            }
+
+            foreach (var card in starterCardHand.Cards)
+            {
+                Dependencies.Instance.Inventory.Add(card);
+            }
         }
 
         private void SetGameState(GameState state)
