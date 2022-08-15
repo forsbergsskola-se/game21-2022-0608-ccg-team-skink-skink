@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Gameplay.Unit.Health;
 
 public class UnitSounds : MonoBehaviour
 {
-    public FMODUnity.EventReference dmgTakenPlaceEventHere;
+    string dmgTaken = "event:/Units/UnitTakesDmg";
+    string unitDeath = "event:/Units/UnitDeath";
+    //string unitAttack = "event:/Units/UnitAttack";
+    //public FMODUnity.EventReference dmgTakenPlaceEventHere;
     FMOD.Studio.EventInstance dmgTakenInstance;
-    public FMODUnity.EventReference deathPlaceEventHere;
+    //public FMODUnity.EventReference deathPlaceEventHere;
     FMOD.Studio.EventInstance deathInstance;
-    public FMODUnity.EventReference attackPlaceEventHere;
+    //public FMODUnity.EventReference attackPlaceEventHere;
     FMOD.Studio.EventInstance attackInstance;
+
+    private IDamageReceiver damageReciever;
 
     void Start()
     {
-        dmgTakenInstance = FMODUnity.RuntimeManager.CreateInstance(dmgTakenPlaceEventHere);
+        dmgTakenInstance = FMODUnity.RuntimeManager.CreateInstance(dmgTaken);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        attackInstance = FMODUnity.RuntimeManager.CreateInstance(attackPlaceEventHere);
+        //attackInstance = FMODUnity.RuntimeManager.CreateInstance(unitAttack);
+        damageReciever.SubscribeToOnDeath(PlayDeathSound);
     }
     public void PlayDmgTakenSound()
     {
@@ -28,7 +35,8 @@ public class UnitSounds : MonoBehaviour
     public void PlayDeathSound()
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("DramaticCue", 1);
-        deathInstance = FMODUnity.RuntimeManager.CreateInstance(deathPlaceEventHere);
+        Debug.Log("Playing dramatic cue");
+        deathInstance = FMODUnity.RuntimeManager.CreateInstance(unitDeath);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();
         dmgTakenInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
