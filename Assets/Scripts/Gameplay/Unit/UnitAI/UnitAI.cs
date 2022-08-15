@@ -10,12 +10,11 @@ namespace Gameplay.Unit.UnitAI
     [RequireComponent(typeof(BoxCollider))]
     public class UnitAI : MonoBehaviour, IUnit
     {
+        [SerializeField] private UnityEvent<UnitState> onStateChanges;
+
         [Header("Dependencies")]
         [SerializeField] private MoveStats moveStats;
-
         [SerializeField] private CombatStatsSO combatStatsSO;
-
-        [SerializeField] private UnityEvent<UnitState> onStateChanges;
 
         private Movement movement;
         private Attack attack;
@@ -23,6 +22,15 @@ namespace Gameplay.Unit.UnitAI
 
         private UnitState state;
         
+        private UnitState State
+        {
+            get => state;
+            set
+            {
+                state = value;
+                onStateChanges.Invoke(state);
+            }
+        }
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
@@ -36,7 +44,7 @@ namespace Gameplay.Unit.UnitAI
 
         private void FixedUpdate()
         {
-            if(state == UnitState.Moving) movement.Move(transform, Direction);
+            if(State == UnitState.Moving) movement.Move(transform, Direction);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -45,12 +53,12 @@ namespace Gameplay.Unit.UnitAI
             
             if (!triggerCollection.Contains(other)) triggerCollection.Add(other);
                 
-            if (state != UnitState.Action) StartAttacking(other);
+            if (State != UnitState.Action) StartAttacking(other);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (triggerCollection.Count == 0 || state == UnitState.Action) return;
+            if (triggerCollection.Count == 0 || State == UnitState.Action) return;
             
             StartAttacking(triggerCollection[0]);
         }
@@ -60,7 +68,7 @@ namespace Gameplay.Unit.UnitAI
             if (triggerCollection.Contains(other)) triggerCollection.Remove(other);
         }
 
-        private void SetInitialState() => state = UnitState.Moving;
+        private void SetInitialState() => State = UnitState.Moving;
         
         private void SetRange() 
             => GetComponent<BoxCollider>().center += new Vector3(combatStatsSO.Range, 0, 0);
@@ -77,11 +85,11 @@ namespace Gameplay.Unit.UnitAI
 
             damageReceiver.SubscribeToOnDeath(() =>
             {
-                state = UnitState.Moving;
+                State = UnitState.Moving;
                 triggerCollection.Remove(other);
             });
             
-            state = UnitState.Action;
+            State = UnitState.Action;
             StartCoroutine(attack.StartAttacking(damageReceiver));
         }
     }
