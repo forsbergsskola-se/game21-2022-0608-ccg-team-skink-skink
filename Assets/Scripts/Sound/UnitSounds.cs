@@ -16,7 +16,6 @@ public class UnitSounds : MonoBehaviour
     void Start()
     {
         dmgTakenInstance = FMODUnity.RuntimeManager.CreateInstance(dmgTaken);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         //attackInstance = FMODUnity.RuntimeManager.CreateInstance(unitAttack);
         deathInstance = FMODUnity.RuntimeManager.CreateInstance(unitDeath);
     }
@@ -25,6 +24,7 @@ public class UnitSounds : MonoBehaviour
         if (PlaybackState(dmgTakenInstance) == FMOD.Studio.PLAYBACK_STATE.PLAYING) return;
         else
         {
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
             dmgTakenInstance.start();
         }
     }
@@ -32,7 +32,7 @@ public class UnitSounds : MonoBehaviour
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("DramaticCue", 1);
         Debug.Log("Playing dramatic cue");
-        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();
         dmgTakenInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
@@ -52,5 +52,9 @@ public class UnitSounds : MonoBehaviour
         deathInstance.release();
         dmgTakenInstance.release();
         attackInstance.release();
+    }
+    private void OnDestroy()
+    {
+        ReleaseAllInstances();
     }
 }
