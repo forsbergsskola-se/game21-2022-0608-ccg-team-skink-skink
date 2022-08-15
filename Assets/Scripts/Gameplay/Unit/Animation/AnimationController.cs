@@ -1,4 +1,5 @@
 using System;
+using Gameplay.Unit.UnitAI;
 using UnityEngine;
 
 namespace Gameplay.Unit.Animation
@@ -16,8 +17,13 @@ namespace Gameplay.Unit.Animation
                     break;
                 
                 case UnitState.Action:
-                    animator.SetTrigger("Action");
                     animator.SetBool("IsWalking", false);
+                    animator.SetTrigger("Action");
+                    break;
+                
+                case UnitState.Death:
+                    animator.SetBool("IsWalking", false);
+                    animator.SetTrigger("Death");
                     break;
                 
                 default:
