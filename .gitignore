@@ -566,3 +566,4 @@ FodyWeavers.xsd
 fmod_editor.log
 ProjectSettings/RiderScriptEditorPersistedState.asset
 Assets/SavedGames/SavedData.json
+Assets/SavedGames/SavedData.json.meta
