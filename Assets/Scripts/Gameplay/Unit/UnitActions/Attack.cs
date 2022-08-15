@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.StatsInterfaces;
+using Gameplay.Unit.UnitAI;
 using UnityEngine;
 
 namespace Gameplay.Unit.UnitActions
@@ -22,7 +23,7 @@ namespace Gameplay.Unit.UnitActions
         {
             targetIsAlive = true;
             
-            opponent.SubscribeToOnDeath(StopAttacking);
+            opponent.SubscribeToOnDeath((UnitState state) => StopAttacking());
 
             while (targetIsAlive)
             {

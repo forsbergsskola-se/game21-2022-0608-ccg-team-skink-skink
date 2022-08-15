@@ -83,7 +83,7 @@ namespace Gameplay.Unit.UnitAI
         {
             var damageReceiver = other.GetComponent<IDamageReceiver>();
 
-            damageReceiver.SubscribeToOnDeath(() =>
+            damageReceiver.SubscribeToOnDeath((UnitState state) =>
             {
                 State = UnitState.Moving;
                 triggerCollection.Remove(other);

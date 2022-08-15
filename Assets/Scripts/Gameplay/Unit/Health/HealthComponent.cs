@@ -1,3 +1,4 @@
+using Gameplay.Unit.UnitAI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,8 +10,7 @@ namespace Gameplay.Unit.Health
         //TODO: remove if decided on no hp  [SerializeField] private Healthbar healthbar;
 
         public UnityEvent OnDamageTaken;
-        public UnityEvent OnDeath;
-        public Animator myAnimator;
+        public UnityEvent<UnitState> OnDeath;
         
         private float currentHealth;
         //Todo: Possibly make private
@@ -21,17 +21,21 @@ namespace Gameplay.Unit.Health
             {
                 if (value <= 0)
                 {
-                    OnDeath?.Invoke();
-                    gameObject.SetActive(false);
+                    OnDeath?.Invoke(UnitState.Death);
                 }
+                
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
                 //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
             }
         }
 
-
         void OnEnable()
         {
+            OnDeath.AddListener((UnitState) =>
+            {
+                GetComponent<UnitAI.UnitAI>().enabled = false;
+                GetComponent<BoxCollider>().enabled = false;
+            });
             currentHealth = healthStats.MaxHealth;
         }
 
@@ -46,7 +50,7 @@ namespace Gameplay.Unit.Health
                 OnDamageTaken?.Invoke();
         }
 
-        public void SubscribeToOnDeath(UnityAction method)
+        public void SubscribeToOnDeath(UnityAction<UnitState> method)
         {
             OnDeath.AddListener(method);
         }
