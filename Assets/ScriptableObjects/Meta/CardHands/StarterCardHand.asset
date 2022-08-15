@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d0ca79fc7a3df04ab65fba0163430a5, type: 3}
-  m_Name: EnemyHand
+  m_Name: StarterCardHand
   m_EditorClassIdentifier: 
   abilityCard: {fileID: 0}
   cards:
@@ -18,5 +18,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 87c8bb6bb95b33045930ecaaf1d83507, type: 2}
   - {fileID: 11400000, guid: b9161e241cc6e234f953773145337168, type: 2}
   - {fileID: 11400000, guid: 990f9460056afbe47a5c89179b31e6d8, type: 2}
-  - {fileID: 11400000, guid: ee8d3f55e97718f46b808606f6796b00, type: 2}
+  - {fileID: 11400000, guid: c0e2f6fbcfad2d2489b5cb05a5eab83e, type: 2}
   - {fileID: 11400000, guid: b94cb49d2382c074395242acb033e220, type: 2}
