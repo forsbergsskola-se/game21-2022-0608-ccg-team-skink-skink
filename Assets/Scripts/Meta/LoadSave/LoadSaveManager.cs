@@ -9,20 +9,21 @@ namespace Meta.LoadSave
     public class LoadSaveManager : MonoBehaviour
     {
         [SerializeField] private float waitTime;
+        
+        [Header("Dependencies")]
         [SerializeField] private CardArraySO cardArray;
-
         [SerializeField, RequireInterface(typeof(ICardHand))] private Object starterCardHand;
 
-        private GameState state = new ();
         private LoadState loadState;
         private SaveState saveState;
 
         private void Awake()
         {
             loadState = new LoadState(cardArray, starterCardHand as ICardHand);
+            loadState.Load();
+            
             saveState = new SaveState(cardArray);
-            state = loadState.Load();
-           
+            
             SubscribeToDependencies();
         }
 
@@ -45,9 +46,9 @@ namespace Meta.LoadSave
         private IEnumerator WaitThanSave()
         {
             yield return new WaitForSeconds(waitTime);
-            saveState.Save(state);
+            saveState.Save();
         }
 
-        private void OnDestroy() => saveState.Save(state);
+        private void OnDestroy() => saveState.Save();
     }
 }
