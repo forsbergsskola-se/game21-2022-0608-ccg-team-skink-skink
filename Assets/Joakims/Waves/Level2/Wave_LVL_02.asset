@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a92e0a809a7b5499349356dfc57459, type: 3}
-  m_Name: WaveCollection_LVL_02
+  m_Script: {fileID: 11500000, guid: d87ea7c8a093224459d9dccddbac6c41, type: 3}
+  m_Name: Wave_LVL_02
   m_EditorClassIdentifier: 
-  waveCollection:
-  - {fileID: 11400000, guid: f518397fd08c52140b402b35212d03d8, type: 2}
+  units: 00000000040000000200000000000000020000000000000003000000010000000000000005000000040000000100000000000000020000000100000003000000020000000500000004000000030000000200000001000000

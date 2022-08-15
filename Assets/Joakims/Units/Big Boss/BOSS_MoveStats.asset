@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a92e0a809a7b5499349356dfc57459, type: 3}
-  m_Name: WaveCollection_LVL_01
+  m_Script: {fileID: 11500000, guid: 40732d18a02a7664eb0b38dbc8ccb430, type: 3}
+  m_Name: BOSS_MoveStats
   m_EditorClassIdentifier: 
-  waveCollection:
-  - {fileID: 11400000, guid: 32eba05b0c125444c9c0dde4b733c566, type: 2}
+  speed: 0.05
