@@ -6,9 +6,9 @@ namespace Utility
     [CreateAssetMenu(menuName = "ScriptableObjects/Utilities/Pool",fileName = "NewPool")]
     public class Pool : ScriptableObject
     {
-        private Dictionary<string, Queue<GameObject>> collection = new();
+        private Dictionary<sbyte, Queue<GameObject>> collection = new();
 
-        public void CreatePool(string key, GameObject card, int cardAmount)
+        public void CreatePool(sbyte key, GameObject card, int cardAmount)
         {
             var pool = new Queue<GameObject>();
             
@@ -22,7 +22,7 @@ namespace Utility
             collection.Add(key, pool);
         }
 
-        public GameObject GetInstance(string key)
+        public GameObject GetInstance(sbyte key)
         {
             var dequeued = collection[key].Dequeue();
             if (dequeued.gameObject.activeInHierarchy)
