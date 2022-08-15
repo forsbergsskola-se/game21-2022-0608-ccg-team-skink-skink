@@ -1474,8 +1474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b5840d4ef0c85479285ff0dcb2c58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  On: {fileID: 7134702314525816402}
-  Off: {fileID: 7134702314569817186}
+  MusicOn: {fileID: 7134702314525816402}
+  MusicOff: {fileID: 7134702314569817186}
+  SFXOn: {fileID: 7134702315010479618}
+  SFXOff: {fileID: 7134702315895344531}
 --- !u!1 &7134702315869826144
 GameObject:
   m_ObjectHideFlags: 0
