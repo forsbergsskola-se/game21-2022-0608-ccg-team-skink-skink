@@ -25,9 +25,9 @@ namespace Meta.Level
             }
         }
 
-        private void OpenDetailedLevelViewByIndex(int index) 
+        private void OpenDetailedLevelViewByIndex(int index)
         {
-            Dependencies.Instance.LevelsModel.CurrentLevel = levels[index];
+            Dependencies.Instance.LevelsModel.SetCurrentLevel(levels[index], index);
             (detailedLevelViewer as IDetailedLevelViewer).ActivateDetailedLevelViewer(levels[index]);
         }
     }
