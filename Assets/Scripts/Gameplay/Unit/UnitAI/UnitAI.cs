@@ -16,10 +16,11 @@ namespace Gameplay.Unit.UnitAI
         [SerializeField] private MoveStats moveStats;
         [SerializeField] private CombatStatsSO combatStatsSO;
 
+        public CombatStatsSO CombatStats => combatStatsSO;
+        
         private Movement movement;
         private Attack attack;
         private List<Collider> triggerCollection = new();
-
         private UnitState state;
         
         private UnitState State
