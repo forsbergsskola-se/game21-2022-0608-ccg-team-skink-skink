@@ -31,8 +31,6 @@ namespace Utility.ObjPooling
 
         private void AddHands(Dictionary<sbyte, GameObject> cardsToPool)
         {
-            Debug.Log(playerHand.Cards.Length);
-            
             AddCards(cardsToPool, playerHand);
             AddCards(cardsToPool, enemyHand as ICardHand);
         }
