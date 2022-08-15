@@ -1,4 +1,8 @@
 using System;
+using Gameplay.Unit;
+using Gameplay.Unit.Health;
+using Gameplay.Unit.UnitAI;
+using Meta.GenericUIScripts;
 using Meta.Interfaces;
 using TMPro;
 using UnityEngine;
@@ -20,6 +24,7 @@ namespace Meta.CardSystem
         [SerializeField, RequireInterface(typeof(IUIValueBar))] private Object defenceBar;
         [SerializeField, RequireInterface(typeof(IUIValueBar))] private Object healthBar;
         [SerializeField, RequireInterface(typeof(IUIValueBar))] private Object speedBar;
+        
 
         private IInventory inventory;
 
@@ -41,10 +46,10 @@ namespace Meta.CardSystem
             levelText.text = card.CardLevel.ToString();
             nameText.text = card.Name;
             
-            // (attackBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
-            // (defenceBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
-            // (healthBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
-            // (speedBar as IUIValueBar).SetValue(/*TODO: Get value here*/);
+            (attackBar as IUIValueBar).SetValue(card.CardObject.GetComponent<UnitAI>().CombatStats.Damage);
+            (defenceBar as IUIValueBar).SetValue(card.CardObject.GetComponent<UnitAI>().CombatStats.Defence);
+            (healthBar as IUIValueBar).SetValue(card.CardObject.GetComponent<HealthComponent>().HealthStats.MaxHealth);
+            (speedBar as IUIValueBar).SetValue(card.CardObject.GetComponent<UnitAI>().CombatStats.AttackSpeed);
             
         }
 

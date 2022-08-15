@@ -65,7 +65,25 @@ PrefabInstance:
     - target: {fileID: 3240702288915936041, guid: 8207b13170b966e45a1a06422aa1d8cf,
         type: 3}
       propertyPath: m_Name
-      value: StrongUnit
+      value: Tank1Level2
       objectReference: {fileID: 0}
+    - target: {fileID: 6493428779436629426, guid: 8207b13170b966e45a1a06422aa1d8cf,
+        type: 3}
+      propertyPath: moveStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d59c8a3c7461f349a80c5487b013dac,
+        type: 2}
+    - target: {fileID: 6493428779436629426, guid: 8207b13170b966e45a1a06422aa1d8cf,
+        type: 3}
+      propertyPath: combatStatsSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 734b24151590d4a4991748c5d351125d,
+        type: 2}
+    - target: {fileID: 8121154245991871638, guid: 8207b13170b966e45a1a06422aa1d8cf,
+        type: 3}
+      propertyPath: healthStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 8644c337d088eea4389584ef716d9cd9,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8207b13170b966e45a1a06422aa1d8cf, type: 3}
