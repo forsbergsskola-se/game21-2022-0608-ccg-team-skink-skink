@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
-  m_Name: Boss_LVL_05
+  m_Name: Fifth_Witch_Boss
   m_EditorClassIdentifier: 
-  description: 
-  cardTitle: 
-  cardImage: {fileID: 0}
+  description: Witch Boss Joins in overtime level 4
+  cardTitle: Fifth Witch
+  cardImage: {fileID: 21300000, guid: 509b5b69ca7f05a40a805714d50cfe99, type: 3}
   typeImage: {fileID: 0}
-  level: 0
+  level: 5
   apCost: 0
   coolDownTime: 0
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 3240702288915936041, guid: 116f7cb97254cad4bb0f15e825c66586,
+    type: 3}
   upgradedCard: {fileID: 0}
   currencyValueSettings:
-    SellCost: 50
-    UpgradeCost: 100
+    SellCost: 0
+    UpgradeCost: 0

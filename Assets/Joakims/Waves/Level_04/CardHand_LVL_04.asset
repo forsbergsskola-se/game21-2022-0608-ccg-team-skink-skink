@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityCard: {fileID: 0}
   cards:
-  - {fileID: 11400000, guid: fefdf1a786972e3459ccd4987aed9788, type: 2}
-  - {fileID: 11400000, guid: ac1dae7776ee9e547b342b58d546bee0, type: 2}
-  - {fileID: 11400000, guid: d260becc68b772347906574191e6561e, type: 2}
-  - {fileID: 11400000, guid: 2cadd36533f9de54aaf73ee5f8745f3e, type: 2}
-  - {fileID: 11400000, guid: 87c8bb6bb95b33045930ecaaf1d83507, type: 2}
-  - {fileID: 11400000, guid: fefdf1a786972e3459ccd4987aed9788, type: 2}
-  - {fileID: 11400000, guid: b94cb49d2382c074395242acb033e220, type: 2}
+  - {fileID: 11400000, guid: 6c50090bfb5d1b941b4262ded46e4ebe, type: 2}
+  - {fileID: 11400000, guid: 59530260f06963649a977045ca7f1e53, type: 2}
+  - {fileID: 11400000, guid: 54ecc90c86ca2ea4e944513c284de3bc, type: 2}
+  - {fileID: 11400000, guid: 73d0a6683caadac4498ebee19ae65c1d, type: 2}
+  - {fileID: 11400000, guid: 9a6aa8c9f94282f4a8dbd4f2abc805d9, type: 2}
+  - {fileID: 11400000, guid: 2c7d0db8f14643247abc444d34adccc7, type: 2}
+  - {fileID: 11400000, guid: 3ad697703e667b24d935679d7fbbc3d6, type: 2}
+  - {fileID: 11400000, guid: 950e2fdea178d834aa3e6a03a08f585f, type: 2}
