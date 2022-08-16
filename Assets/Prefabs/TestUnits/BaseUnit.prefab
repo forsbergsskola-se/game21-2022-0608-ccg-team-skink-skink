@@ -79,6 +79,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d0f479dcbfc4d4db51ca717e2038b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onStateChanges:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   moveStats: {fileID: 11400000, guid: cab54302f5df0f04783e4a26f8aa981d, type: 2}
   combatStatsSO: {fileID: 11400000, guid: cf9f4460de1834646bcb60bcb7b7bbf8, type: 2}
   onStateChanges:

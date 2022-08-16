@@ -17,11 +17,8 @@ namespace Utility.ObjPooling
         
         private ICardHand playerHand;
         
-        private void Awake()
-        {
-            playerHand = Dependencies.Instance.PlayerCardHand;
-        }
-
+        private void Awake() =>  playerHand = Dependencies.Instance.PlayerCardHand;
+        
         private void Start()
         {
             var cardsToPool = new Dictionary<sbyte, GameObject>();

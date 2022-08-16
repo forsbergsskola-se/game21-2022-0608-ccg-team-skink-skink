@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.StatsInterfaces;
+using Gameplay.Unit.UnitAI;
 using UnityEngine;
 
 namespace Gameplay.Unit.UnitActions
@@ -9,17 +11,23 @@ namespace Gameplay.Unit.UnitActions
     {
         private ICombatStats stats;
         private bool targetIsAlive;
+        private Action onAttack;
 
-        public Attack(ICombatStats stats) => this.stats = stats;
+        public Attack(ICombatStats stats, Action subscribeOnAttack)
+        {
+            this.stats = stats;
+            onAttack += subscribeOnAttack;
+        }
         
         public IEnumerator StartAttacking(IDamageReceiver opponent)
         {
             targetIsAlive = true;
             
-            opponent.SubscribeToOnDeath(StopAttacking);
+            opponent.SubscribeToOnDeath((UnitState state) => StopAttacking());
 
             while (targetIsAlive)
             {
+                onAttack.Invoke();
                 opponent.TakeDamage(stats.Damage);
                 yield return new WaitForSeconds(stats.AttackSpeed);
             }
