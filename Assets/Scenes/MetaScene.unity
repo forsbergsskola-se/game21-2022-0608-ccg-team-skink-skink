@@ -193,7 +193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3255b88ddf03d9a478491b8d1dbc7359, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47df2c9da98d80046913b142417b69f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1281,6 +1281,11 @@ PrefabInstance:
       propertyPath: open
       value: 
       objectReference: {fileID: 7134702314535215409}
+    - target: {fileID: 5175227406946272922, guid: a8ba353dd764c88478a6b726eb4e98f3,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ba353dd764c88478a6b726eb4e98f3, type: 3}
 --- !u!225 &3308939880219249975 stripped
@@ -1918,21 +1923,6 @@ PrefabInstance:
       propertyPath: open
       value: 
       objectReference: {fileID: 691233092573034008}
-    - target: {fileID: 7134702314505641742, guid: 6acc058f7a7629344a83e02b541f52e3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7134702314505641742, guid: 6acc058f7a7629344a83e02b541f52e3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7134702314505641742, guid: 6acc058f7a7629344a83e02b541f52e3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7134702315436354794, guid: 6acc058f7a7629344a83e02b541f52e3,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2095,6 +2085,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Alpha
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376951428415816911, guid: 4f086328c4285a84782c341ab6222279,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.1550903
       objectReference: {fileID: 0}
     - target: {fileID: 5870405929900406132, guid: 4f086328c4285a84782c341ab6222279,
         type: 3}
