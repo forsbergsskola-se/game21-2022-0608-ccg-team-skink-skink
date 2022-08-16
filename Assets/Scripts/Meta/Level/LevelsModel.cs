@@ -1,5 +1,6 @@
 using System;
 using Meta.Interfaces;
+using UnityEngine;
 
 namespace Meta.Level 
 {
@@ -7,6 +8,7 @@ namespace Meta.Level
         public event Action<int> MaxLevelIndexChanged;
 
         int currentMaxLevelIndex;
+        
         public int CurrentMaxLevelIndex
         {
             get => currentMaxLevelIndex;
@@ -16,10 +18,14 @@ namespace Meta.Level
                 MaxLevelIndexChanged?.Invoke(value);
             } 
         }
-        public IGameplayLevel CurrentLevel
+        
+        public IGameplayLevel CurrentLevel { get; private set; }
+        
+        public int CurrentLevelIndex { get; private set; }
+        public void SetCurrentLevel(IGameplayLevel level, int levelIndex)
         {
-            get;
-            set;
+            CurrentLevel = level;
+            CurrentLevelIndex = levelIndex;
         }
     }
 }

@@ -1,12 +1,11 @@
 using System.Collections;
-using Gameplay.Unit;
 using Gameplay.Unit.UnitUtility;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
 using Object = UnityEngine.Object;
 
-namespace Gameplay.AI
+namespace Gameplay.EnemyAI
 {
     [RequireComponent(typeof(UnitSpawner))]
     public class AISpawner : MonoBehaviour
@@ -37,7 +36,7 @@ namespace Gameplay.AI
                 yield return new WaitForSeconds(spawnTimer);
                 StartCoroutine(SpawnEnemyUnit()); 
             }
-            else  yield return null;
+            else yield return null;
         }
     }
 }

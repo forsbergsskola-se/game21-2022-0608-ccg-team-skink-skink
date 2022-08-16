@@ -1,7 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+//TODO: REMOVE THIS SCRIPT
 namespace Gameplay.EndGame
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/Utilities/EndGameState", fileName = "NewEndGameState")]

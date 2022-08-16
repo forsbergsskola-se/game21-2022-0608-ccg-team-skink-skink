@@ -1918,6 +1918,21 @@ PrefabInstance:
       propertyPath: open
       value: 
       objectReference: {fileID: 691233092573034008}
+    - target: {fileID: 7134702314505641742, guid: 6acc058f7a7629344a83e02b541f52e3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134702314505641742, guid: 6acc058f7a7629344a83e02b541f52e3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134702314505641742, guid: 6acc058f7a7629344a83e02b541f52e3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7134702315436354794, guid: 6acc058f7a7629344a83e02b541f52e3,
         type: 3}
       propertyPath: m_Pivot.x
