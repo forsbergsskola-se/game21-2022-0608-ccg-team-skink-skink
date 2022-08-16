@@ -32,9 +32,10 @@ namespace Gameplay.Unit.Ai
         
         private void Awake()
         {
-            LoadComponents();
-            SetInitialState();
-            //SetRange();
+            movement = new Movement(moveStats);
+            attack = new Attack(combatStatsSO, () => onStateChanges.Invoke(state));
+            
+            state = UnitState.Moving;
         }
 
         private void FixedUpdate()
@@ -60,20 +61,8 @@ namespace Gameplay.Unit.Ai
             if (triggerCollection.Contains(other)) triggerCollection.Remove(other);
         }
 
-        private void SetInitialState() => state = UnitState.Moving;
-        
-        // private void SetRange() 
-        //     => GetComponent<BoxCollider>().center += new Vector3(combatStatsSO.Range, 0, 0);
-        
-        private void LoadComponents()
-        {
-            movement = new Movement(moveStats);
-            attack = new Attack(combatStatsSO, () => onStateChanges.Invoke(state));
-        }
-
         private void StartAttacking(Collider other)
         {
-            Debug.Log("I am attacking!");
             var damageReceiver = other.GetComponent<IDamageReceiver>();
 
             damageReceiver.SubscribeToOnDeath((UnitState unitState) =>
