@@ -26,8 +26,6 @@ namespace Meta.Level
         {
             CurrentLevel = level;
             CurrentLevelIndex = levelIndex;
-            Debug.Log(level);
-            Debug.Log(levelIndex);
         }
     }
 }
