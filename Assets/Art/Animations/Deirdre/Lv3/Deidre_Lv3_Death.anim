@@ -199,7 +199,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 3.6666667
-    functionName: Deactivate
+    functionName: Parent
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
