@@ -129,6 +129,13 @@ MonoBehaviour:
   - {fileID: 2779851028874512370}
   - {fileID: 2779851027968754409}
   - {fileID: 2779851027558468513}
+  apCosts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &7507454181422288643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1197,7 @@ PrefabInstance:
     - target: {fileID: 2218294846759227267, guid: 554ac4b83425e4c41bb82e1dc2a2ba9d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 541.60004
+      value: 540.2
       objectReference: {fileID: 0}
     - target: {fileID: 2218294846759227267, guid: 554ac4b83425e4c41bb82e1dc2a2ba9d,
         type: 3}

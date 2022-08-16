@@ -1,5 +1,6 @@
 using System;
 using Meta.Interfaces;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utility;
@@ -12,6 +13,7 @@ namespace Gameplay.UI
         [Header("Dependencies")]
         [SerializeField] private Button[] buttons;
         [SerializeField] private Image[] cardImage;
+        [SerializeField] private TextMeshProUGUI[] apCosts;
 
         private ICardHand playerHand;
         
@@ -23,6 +25,7 @@ namespace Gameplay.UI
             {
                 buttons[i].GetComponentInChildren<Text>().text = playerHand.Cards[i].Name;
                 cardImage[i].sprite = playerHand.Cards[i].CardImage;
+                apCosts[i].text = playerHand.Cards[i].ApCost.ToString();
             }
         }
     }
