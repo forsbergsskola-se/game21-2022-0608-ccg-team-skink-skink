@@ -16,6 +16,9 @@ namespace Gameplay.Unit.UnitAI
         [SerializeField] private CombatStatsSO combatStatsSO;
 
         [SerializeField] private UnityEvent<UnitState> onStateChanges;
+        
+        public MoveStats MoveStats => moveStats;
+        public CombatStatsSO CombatStats => combatStatsSO;
 
         private Movement movement;
         private Attack attack;

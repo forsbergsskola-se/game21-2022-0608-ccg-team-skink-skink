@@ -13,7 +13,7 @@ namespace Gameplay.UI
         [Header("Dependencies")]
         [SerializeField] private Button[] buttons;
         [SerializeField] private Image[] cardImage;
-        [SerializeField] private TextMeshProUGUI[] apCosts;
+        [SerializeField] private Text[] apCosts;
 
         private ICardHand playerHand;
         

@@ -16,13 +16,15 @@ namespace Utility.ActionPoints
         private bool isUpdating;
 
         private ICardHand hand;
-        
-        private void Awake() => hand = Dependencies.Instance.PlayerCardHand;
+
+        private void Awake()
+        {
+            hand = Dependencies.Instance.PlayerCardHand;
+            currentAP = actionPoints.Start;
+        } 
         
         private void FixedUpdate()
         {
-            currentAP = actionPoints.Start;
-            
             if (currentAP < actionPoints.Max && !isUpdating)
             {
                 isUpdating = true;
@@ -45,7 +47,6 @@ namespace Utility.ActionPoints
 
         public void SpendAP(int buttonId)
         {
-            //Todo: Find a way to not let the button ID pass through ApCounter to UnitSpawner
             var apCost = hand.Cards[buttonId].ApCost;
             if (currentAP >= apCost)
             {
