@@ -5,7 +5,7 @@ using Gameplay.Unit.UnityAI;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Gameplay.Unit.UnitAI
+namespace Gameplay.Unit.Ai
 {
     [RequireComponent(typeof(BoxCollider))]
     public class UnitAI : MonoBehaviour, IUnit
@@ -34,7 +34,7 @@ namespace Gameplay.Unit.UnitAI
         {
             LoadComponents();
             SetInitialState();
-            SetRange();
+            //SetRange();
         }
 
         private void FixedUpdate()
@@ -42,20 +42,17 @@ namespace Gameplay.Unit.UnitAI
             if(state == UnitState.Moving) movement.Move(transform, Direction);
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.CompareTag(tag)) return;
             
-            if (!triggerCollection.Contains(other)) triggerCollection.Add(other);
-                
-            if (state != UnitState.Action) StartAttacking(other);
-        }
+            if (!triggerCollection.Contains(other) 
+                && Vector3.Distance(transform.position, other.transform.position) <= combatStatsSO.Range) 
+                triggerCollection.Add(other);
 
-        private void OnTriggerStay(Collider other)
-        {
             if (triggerCollection.Count == 0 || state == UnitState.Action) return;
             
-            StartAttacking(triggerCollection[0]);
+            if (state != UnitState.Action) StartAttacking(other);
         }
 
         private void OnTriggerExit(Collider other)
@@ -65,8 +62,8 @@ namespace Gameplay.Unit.UnitAI
 
         private void SetInitialState() => state = UnitState.Moving;
         
-        private void SetRange() 
-            => GetComponent<BoxCollider>().center += new Vector3(combatStatsSO.Range, 0, 0);
+        // private void SetRange() 
+        //     => GetComponent<BoxCollider>().center += new Vector3(combatStatsSO.Range, 0, 0);
         
         private void LoadComponents()
         {
@@ -76,6 +73,7 @@ namespace Gameplay.Unit.UnitAI
 
         private void StartAttacking(Collider other)
         {
+            Debug.Log("I am attacking!");
             var damageReceiver = other.GetComponent<IDamageReceiver>();
 
             damageReceiver.SubscribeToOnDeath(() =>

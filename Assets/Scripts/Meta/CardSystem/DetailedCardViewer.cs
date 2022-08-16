@@ -1,7 +1,7 @@
 using System;
 using Gameplay.Unit;
+using Gameplay.Unit.Ai;
 using Gameplay.Unit.Health;
-using Gameplay.Unit.UnitAI;
 using Meta.GenericUIScripts;
 using Meta.Interfaces;
 using TMPro;

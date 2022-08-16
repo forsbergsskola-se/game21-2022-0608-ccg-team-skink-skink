@@ -81,6 +81,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveStats: {fileID: 11400000, guid: cab54302f5df0f04783e4a26f8aa981d, type: 2}
   combatStatsSO: {fileID: 11400000, guid: cf9f4460de1834646bcb60bcb7b7bbf8, type: 2}
+  onStateChanges:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8121154245991871638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +128,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 0
+  myAnimator: {fileID: 0}
 --- !u!114 &3479581331175805251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7993642469215597663
 Transform:
   m_ObjectHideFlags: 0

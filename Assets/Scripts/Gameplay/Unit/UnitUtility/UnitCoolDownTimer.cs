@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 using Utility;
 
-namespace Gameplay.Unit
+namespace Gameplay.Unit.UnitUtility
 {
     public class UnitCoolDownTimer : MonoBehaviour
     {
