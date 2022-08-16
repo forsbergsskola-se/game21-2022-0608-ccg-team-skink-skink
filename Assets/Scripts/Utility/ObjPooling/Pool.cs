@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Gameplay.Unit.UnitAI;
 using UnityEngine;
 
-namespace Utility
+namespace Utility.ObjPooling
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/Utilities/Pool",fileName = "NewPool")]
     public class Pool : ScriptableObject
@@ -31,7 +32,11 @@ namespace Utility
                 collection[key].Enqueue(dequeued);
                 dequeued = temp;
             }
+            
             dequeued.SetActive(true);
+            dequeued.GetComponent<BoxCollider>().enabled = true;
+            dequeued.GetComponent<UnitAI>().enabled = true;
+            
             collection[key].Enqueue(dequeued);
 
             return dequeued;
