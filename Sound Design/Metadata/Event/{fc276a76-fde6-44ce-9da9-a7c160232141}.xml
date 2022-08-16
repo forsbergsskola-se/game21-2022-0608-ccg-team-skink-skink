@@ -74,9 +74,6 @@
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{26988bd5-1a9f-4012-9e41-fd8b24416ded}">
-		<relationship name="modules">
-			<destination>{7830d061-8a1c-4e04-af95-534312d2f1b7}</destination>
-		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{b8240467-ba3c-44f6-a044-a1d49f638062}</destination>
 		</relationship>
@@ -101,7 +98,6 @@
 	<object class="ParameterProxy" id="{da9bfd93-f02c-417c-a874-581b5c0b295b}">
 		<relationship name="modules">
 			<destination>{c1bfe545-a286-46a4-a620-03454b9cb7d3}</destination>
-			<destination>{7830d061-8a1c-4e04-af95-534312d2f1b7}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{41986038-acf8-42ed-a6d8-61dad2b65181}</destination>
@@ -146,26 +142,6 @@
 			<destination>{2d84aaf0-0e2e-4642-8c6c-e2eebc266c3d}</destination>
 		</relationship>
 	</object>
-	<object class="CommandSound" id="{7830d061-8a1c-4e04-af95-534312d2f1b7}">
-		<property name="triggerProbabilityEnabled">
-			<value>true</value>
-		</property>
-		<property name="triggerProbability">
-			<value>69.5</value>
-		</property>
-		<property name="start">
-			<value>0.90000000000000002</value>
-		</property>
-		<property name="length">
-			<value>0.10000000000000005</value>
-		</property>
-		<property name="quantizationInterval">
-			<value>6</value>
-		</property>
-		<relationship name="commandTarget">
-			<destination>{7ccda885-8e60-44ae-8e5c-337ef8e4cb96}</destination>
-		</relationship>
-	</object>
 	<object class="EventMixerGroup" id="{b8240467-ba3c-44f6-a044-a1d49f638062}">
 		<property name="name">
 			<value>Audio 2</value>
@@ -207,9 +183,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{68ba415c-9897-43dd-8974-7071bb32dca0}">
-		<property name="volume">
-			<value>-8.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 3</value>
 		</property>
