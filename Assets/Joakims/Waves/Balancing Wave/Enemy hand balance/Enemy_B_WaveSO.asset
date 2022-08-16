@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f07d6003ba72d59498b74d4ad2aecb9e, type: 3}
-  m_Name: NewCombatStats
+  m_Script: {fileID: 11500000, guid: d87ea7c8a093224459d9dccddbac6c41, type: 3}
+  m_Name: Enemy_B_WaveSO
   m_EditorClassIdentifier: 
-  attackSpeed: 0.3
-  damage: 3
-  defence: 3
-  range: 0.5
+  units: 000000000000000000000000000000000000000000000000

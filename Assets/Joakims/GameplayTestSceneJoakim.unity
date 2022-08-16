@@ -1565,6 +1565,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: APCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 5645230862172465348, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff8a5af530a7c314b9fcf0ee1dee8a13, type: 3}
 --- !u!1001 &7507454182356554358
