@@ -110,8 +110,8 @@ public class SFXMusicMuter : MonoBehaviour
         muteSFXEvInst.getPlaybackState(out pbState);
         if (pbState == FMOD.Studio.PLAYBACK_STATE.PLAYING) sfxMuted = true;
         else sfxMuted = false;
-        ToggleAudioOn(true);
-        ToggleAudioOff(false);
+        //ToggleAudioOn(true);
+        //ToggleAudioOff(false);
         muteMusicEvInst.release();
         muteSFXEvInst.release();
     }

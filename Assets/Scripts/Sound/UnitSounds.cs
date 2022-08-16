@@ -11,6 +11,8 @@ public class UnitSounds : MonoBehaviour
     FMOD.Studio.EventInstance deathInstance;
     //public FMODUnity.EventReference attackPlaceEventHere;
     FMOD.Studio.EventInstance attackInstance;
+    string audienceReactsPath = "event:/Audience/AudienceReacts";
+    FMOD.Studio.EventInstance audienceReactsInstance;
 
 
     void Start()
@@ -18,6 +20,7 @@ public class UnitSounds : MonoBehaviour
         dmgTakenInstance = FMODUnity.RuntimeManager.CreateInstance(dmgTaken);
         //attackInstance = FMODUnity.RuntimeManager.CreateInstance(unitAttack);
         deathInstance = FMODUnity.RuntimeManager.CreateInstance(unitDeath);
+        audienceReactsInstance = FMODUnity.RuntimeManager.CreateInstance(audienceReactsPath);
     }
     public void PlayDmgTakenSound()
     {
@@ -32,7 +35,8 @@ public class UnitSounds : MonoBehaviour
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("DramaticCue", 1);
         Debug.Log("Playing dramatic cue");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        audienceReactsInstance.start();
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();
         dmgTakenInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
@@ -45,6 +49,10 @@ public class UnitSounds : MonoBehaviour
     public void PlayAttackSound()
     {
         attackInstance.start();
+    }
+    public void AudienceReacts()
+    {
+        audienceReactsInstance.start();
     }
     public void ReleaseAllInstances()
     {
