@@ -19,7 +19,11 @@ namespace Meta.LoadSave
         
         public void Load()
         {
-            if (!File.Exists(saveFilePath)) SetStateFromStarterHand();
+            if (!File.Exists(saveFilePath))
+            {
+                SetStateFromStarterHand();
+                return;
+            }
             
             var state = GetGameStateFromJson();
             SetGameState(state);
