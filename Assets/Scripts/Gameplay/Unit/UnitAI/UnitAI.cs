@@ -91,7 +91,7 @@ namespace Gameplay.Unit.UnitAI
             });
             
             State = UnitState.Action;
-            StartCoroutine(attack.StartAttacking(damageReceiver));
+            if (isActiveAndEnabled) StartCoroutine(attack.StartAttacking(damageReceiver));
         }
     }
 }
