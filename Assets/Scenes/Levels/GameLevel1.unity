@@ -1151,6 +1151,17 @@ PrefabInstance:
       propertyPath: spawnTimer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1133773918475948095, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b778a551912b214bb5e9a883daf25e6,
+        type: 3}
+    - target: {fileID: 1133773918475948095, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1571406127388479551, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: deckHand
@@ -1250,6 +1261,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 9b778a551912b214bb5e9a883daf25e6,
         type: 3}
+    - target: {fileID: 4033398031361477301, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 234.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033398031361477301, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 294.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033398031361477301, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 33.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033398031361477301, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -114
+      objectReference: {fileID: 0}
     - target: {fileID: 4781898545574020651, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: m_AnchoredPosition.x

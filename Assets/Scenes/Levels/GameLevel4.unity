@@ -1151,6 +1151,12 @@ PrefabInstance:
       propertyPath: spawnTimer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1133773918475948095, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab120700f4b5db74782e5806441ccaa1,
+        type: 3}
     - target: {fileID: 1571406127388479551, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: deckHand
