@@ -940,7 +940,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95799479ca3f2034da5d52c55e3dbff9, type: 2}
+  - {fileID: 2100000, guid: c76c10fad95f9d6498b5bc149d4b1392, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1243,6 +1243,12 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 2991052518889648240, guid: 890481bf01c2da341a397722c22a9fec,
+        type: 3}
+    - target: {fileID: 2886795132378016532, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e9c22a3f6f152f7478d53c27b37141c9,
         type: 3}
     - target: {fileID: 8005950076918745129, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
