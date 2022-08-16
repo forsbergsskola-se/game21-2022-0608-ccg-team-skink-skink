@@ -1,7 +1,6 @@
 using Gameplay.Unit.UnitAI;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 namespace Gameplay.Unit.Health
 {
@@ -22,10 +21,7 @@ namespace Gameplay.Unit.Health
             get => currentHealth;
             private set
             {
-                if (value <= 0)
-                {
-                    OnDeath?.Invoke(UnitState.Death);
-                }
+                if (value <= 0) OnDeath?.Invoke(UnitState.Death);
                 
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
                 //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
@@ -36,7 +32,7 @@ namespace Gameplay.Unit.Health
         {
             OnDeath.AddListener((UnitState) =>
             {
-                if (TryGetComponent(out UnitAI.UnitAI unitAI)) unitAI.enabled = false;
+                if (TryGetComponent(out Ai.UnitAI unitAI)) unitAI.enabled = false;
                 if (TryGetComponent(out BoxCollider boxCollider)) boxCollider.enabled = false;
             });
             currentHealth = healthStats.MaxHealth;
@@ -47,15 +43,8 @@ namespace Gameplay.Unit.Health
         {
             CurrentHealth -= value;
            //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
-            
-           // Prevent the onDamageTaken event from firing in the case of the player being healed.
-           if (value > 0)
-                OnDamageTaken?.Invoke();
         }
 
-        public void SubscribeToOnDeath(UnityAction<UnitState> method)
-        {
-            OnDeath.AddListener(method);
-        }
+        public void SubscribeToOnDeath(UnityAction<UnitState> method) => OnDeath.AddListener(method);
     }
 }

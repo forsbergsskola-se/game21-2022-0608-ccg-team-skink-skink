@@ -3,7 +3,6 @@ using System.Collections;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.StatsInterfaces;
 using Gameplay.Unit.UnitAI;
-using Gameplay.Unit.UnityAI;
 using UnityEngine;
 
 namespace Gameplay.Unit.UnitActions
