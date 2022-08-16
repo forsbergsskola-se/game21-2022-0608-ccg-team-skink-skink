@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
+using Gameplay.Unit.UnitAI;
 using Gameplay.Unit.UnityAI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -25,7 +26,6 @@ namespace Gameplay.Unit.Ai
         private List<Collider> triggerCollection = new();
 
         private UnitState state;
-        
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
@@ -68,7 +68,7 @@ namespace Gameplay.Unit.Ai
         private void LoadComponents()
         {
             movement = new Movement(moveStats);
-            attack = new Attack(combatStatsSO);
+            attack = new Attack(combatStatsSO, () => onStateChanges.Invoke(state));
         }
 
         private void StartAttacking(Collider other)
@@ -76,7 +76,7 @@ namespace Gameplay.Unit.Ai
             Debug.Log("I am attacking!");
             var damageReceiver = other.GetComponent<IDamageReceiver>();
 
-            damageReceiver.SubscribeToOnDeath(() =>
+            damageReceiver.SubscribeToOnDeath((UnitState unitState) =>
             {
                 state = UnitState.Moving;
                 triggerCollection.Remove(other);
