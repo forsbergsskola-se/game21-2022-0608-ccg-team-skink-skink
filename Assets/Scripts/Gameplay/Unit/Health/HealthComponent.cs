@@ -36,8 +36,8 @@ namespace Gameplay.Unit.Health
         {
             OnDeath.AddListener((UnitState) =>
             {
-                GetComponent<UnitAI.UnitAI>().enabled = false;
-                GetComponent<BoxCollider>().enabled = false;
+                if (TryGetComponent(out UnitAI.UnitAI unitAI)) unitAI.enabled = false;
+                if (TryGetComponent(out BoxCollider boxCollider)) boxCollider.enabled = false;
             });
             currentHealth = healthStats.MaxHealth;
         }
