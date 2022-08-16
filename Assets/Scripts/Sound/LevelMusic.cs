@@ -8,6 +8,8 @@ public class LevelMusic : MonoBehaviour
     FMOD.Studio.EventInstance musicEvInst;
     string winOrLosePath = "event:/WinLose";
     FMOD.Studio.EventInstance winLose;
+    string audienceReactsPath = "event:/Audience/AudienceReacts";
+    FMOD.Studio.EventInstance audienceReactsInstance;
 
     //Audio filter for when the game is paused
     public FMODUnity.EventReference pauseFilterRef;
@@ -17,12 +19,13 @@ public class LevelMusic : MonoBehaviour
     {
         musicEvInst = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvInst.start();
+        audienceReactsInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Audience/AudienceReacts");
+
     }
     public void DramaticOrchestraCue()
     {
         Debug.Log("DramaticCueSound");
         musicEvInst.setParameterByName("DramaticCue", 1);
-        
     }
     public void PauseMenuAudio()
     {
@@ -39,6 +42,10 @@ public class LevelMusic : MonoBehaviour
         winLose = FMODUnity.RuntimeManager.CreateInstance(winOrLosePath);
         winLose.start();
         winLose.release();
+    }
+    public void AudienceReacts()
+    {
+        audienceReactsInstance.start();
     }
     public void StopMusic()
     {
