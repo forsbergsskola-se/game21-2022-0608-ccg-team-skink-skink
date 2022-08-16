@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NewCombatStats
   m_EditorClassIdentifier: 
   attackSpeed: 0.21
-  damage: 9
+  damage: 5
   defence: 0
   range: 1

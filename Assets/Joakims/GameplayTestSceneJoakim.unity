@@ -938,7 +938,7 @@ PrefabInstance:
         type: 3}
       propertyPath: starterCardHand
       value: 
-      objectReference: {fileID: 11400000, guid: c1efba36896761b488d0fef20990ee52,
+      objectReference: {fileID: 11400000, guid: f37077d337321b64583d69abed8c9cec,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0457222e79fb9654b865f8c1bb697fdf, type: 3}
@@ -1160,7 +1160,8 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: f37077d337321b64583d69abed8c9cec,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bce5ebd80fb239439e84d542f4ec893, type: 3}
 --- !u!1001 &1571406127420944454
@@ -1180,7 +1181,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 11400000, guid: c9c3d2eed8374cb449392e02c0ecf8c3,
+      objectReference: {fileID: 11400000, guid: 2e68857c8ffbbf64893c038d82321d2c,
         type: 2}
     - target: {fileID: 355229051959140867, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
@@ -1202,7 +1203,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 11400000, guid: c9c3d2eed8374cb449392e02c0ecf8c3,
+      objectReference: {fileID: 11400000, guid: 2e68857c8ffbbf64893c038d82321d2c,
         type: 2}
     - target: {fileID: 1571406127388479551, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
@@ -1859,7 +1860,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 11400000, guid: c9c3d2eed8374cb449392e02c0ecf8c3,
+      objectReference: {fileID: 11400000, guid: f37077d337321b64583d69abed8c9cec,
         type: 2}
     - target: {fileID: 8113515734996193452, guid: 84c55b2dd92a4f941b6d2e04cd0a9ea8,
         type: 3}
