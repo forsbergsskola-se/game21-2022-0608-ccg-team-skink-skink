@@ -17,18 +17,16 @@ namespace Meta.LoadSave
             this.starterCardHand = starterCardHand;
         }
         
-        public GameState Load()
+        public void Load()
         {
             if (!File.Exists(saveFilePath))
             {
                 SetStateFromStarterHand();
-                return new GameState();
+                return;
             }
             
             var state = GetGameStateFromJson();
             SetGameState(state);
-
-            return state;
         }
 
         private GameState GetGameStateFromJson()
