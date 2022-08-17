@@ -34,6 +34,7 @@ public class LevelMusic : MonoBehaviour
     public void PlayWinSound()
     {
         winLose = FMODUnity.RuntimeManager.CreateInstance(winOrLosePath);
+        StopMusic();
         winLose.setParameterByName("Lose", 0);
         winLose.start();
         winLose.release();
@@ -41,6 +42,7 @@ public class LevelMusic : MonoBehaviour
     public void PlayLoseSound()
     {
         winLose = FMODUnity.RuntimeManager.CreateInstance(winOrLosePath);
+        StopMusic();
         winLose.setParameterByName("Lose", 1);
         winLose.start();
         winLose.release();
