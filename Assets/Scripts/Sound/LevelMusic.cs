@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utility;
 
 public class LevelMusic : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class LevelMusic : MonoBehaviour
     {
         musicEvInst = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvInst.start();
+        Dependencies.Instance.EndOfGameRelay.OnWin += PlayWinSound;
+        Dependencies.Instance.EndOfGameRelay.OnLose += PlayLoseSound;
     }
     public void PauseMenuAudio()
     {
@@ -28,9 +31,17 @@ public class LevelMusic : MonoBehaviour
     {
         pauseFilterInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
-    public void PlayWinLoseSound()
+    public void PlayWinSound()
     {
         winLose = FMODUnity.RuntimeManager.CreateInstance(winOrLosePath);
+        winLose.setParameterByName("Lose", 0);
+        winLose.start();
+        winLose.release();
+    }
+    public void PlayLoseSound()
+    {
+        winLose = FMODUnity.RuntimeManager.CreateInstance(winOrLosePath);
+        winLose.setParameterByName("Lose", 1);
         winLose.start();
         winLose.release();
     }
@@ -42,5 +53,7 @@ public class LevelMusic : MonoBehaviour
     private void OnDestroy()
     {
         StopMusic();
+        Dependencies.Instance.EndOfGameRelay.OnWin -= PlayWinSound;
+        Dependencies.Instance.EndOfGameRelay.OnLose -= PlayLoseSound;
     }
 }
