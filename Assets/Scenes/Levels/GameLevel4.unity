@@ -1250,6 +1250,61 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2991052518889648240, guid: 890481bf01c2da341a397722c22a9fec,
         type: 3}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1902710986604220235}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1571406127420944455}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TriggerEndGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Gameplay.UI.EndGameDisplay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Utility.GameStateTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2886795132378016532, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: m_Sprite
@@ -1274,6 +1329,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8005950076918745129, guid: cc787ba06c371f045b460b430b57f3c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cc787ba06c371f045b460b430b57f3c8, type: 3}
+--- !u!114 &1571406127420944455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1571406127420944456, guid: cc787ba06c371f045b460b430b57f3c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571406127420944454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0b39e7185a0c747bae2e990bcd133d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654567434990805115
 GameObject:
   m_ObjectHideFlags: 0
