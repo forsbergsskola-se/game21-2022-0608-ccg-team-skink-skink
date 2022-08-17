@@ -10,7 +10,6 @@ namespace Utility.ActionPoints
         [SerializeField] private ActionPointsSO actionPoints;
         [SerializeField] private UnityEvent<uint, uint> onAPUpdate;
         [SerializeField] private UnityEvent<int> onAPSpent;
-        public PlayOneShot PlayOneShot;
         
         private uint currentAP;
         private bool isUpdating;
@@ -51,7 +50,7 @@ namespace Utility.ActionPoints
             if (currentAP >= apCost)
             {
                 StopAllCoroutines();
-                
+                PlayOneShot.PlayCardAudio();
                 StartCoroutine(SubtractAP(apCost, buttonId));
             }
             else if (currentAP <= apCost)
