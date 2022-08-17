@@ -164,7 +164,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>14.5</value>
+			<value>40</value>
 		</property>
 		<property name="start">
 			<value>0.90657436847686779</value>
