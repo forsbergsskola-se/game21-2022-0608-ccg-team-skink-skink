@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
@@ -14,9 +15,7 @@ namespace Gameplay.Unit.Ai
     {
         [Header("Dependencies")]
         [SerializeField] private MoveStats moveStats;
-
         [SerializeField] private CombatStatsSO combatStatsSO;
-
         [SerializeField] private UnityEvent<UnitState> onStateChanges;
         
         public MoveStats MoveStats => moveStats;
@@ -25,9 +24,19 @@ namespace Gameplay.Unit.Ai
         private Movement movement;
         private Attack attack;
         private IDamageReceiver health;
-        private Queue<Collider> triggerCollection = new();
+        private List<Collider> triggerCollection = new();
 
         private UnitState state;
+        
+        private UnitState State
+        {
+            get => state;
+            set
+            {
+                state = value;
+                onStateChanges.Invoke(state);
+            }
+        }
         
         public string Target { get; set; }
         public Vector3 Direction { get; set; }
@@ -39,30 +48,30 @@ namespace Gameplay.Unit.Ai
             
             GetComponent<IDamageReceiver>().SubscribeToOnDeath((UnitState state) => StopAllCoroutines() );
             
-            state = UnitState.Moving;
+            State = UnitState.Moving;
         }
 
         private void FixedUpdate()
         {
-            if(state == UnitState.Moving) movement.Move(transform, Direction);
+            if (State == UnitState.Moving)
+            {
+                if (triggerCollection.Count == 0) movement.Move(transform, Direction);
+                else State = UnitState.Action;
+            }
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (!other.gameObject.CompareTag(tag))
+            if (!other.gameObject.CompareTag(tag) && !triggerCollection.Contains(other))
             {
-                if (Vector3.Distance(transform.position, other.transform.position) <= combatStatsSO.Range
-                    && !triggerCollection.Contains(other))
-                {
-                    triggerCollection.Enqueue(other);
-                    state = UnitState.Action;
-                }
+                if (Vector3.Distance(transform.position, other.transform.position) <= combatStatsSO.Range)
+                    triggerCollection.Add(other);
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (triggerCollection.Contains(other)) {}//triggerCollection.Remove(other);
+            if (triggerCollection.Contains(other)) triggerCollection.Remove(other);
         }
 
         private void StartAttacking(Collider other)
