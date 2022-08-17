@@ -9,7 +9,6 @@ namespace Gameplay.Unit.UnitUtility
     public class UnitCoolDownTimer : MonoBehaviour
     {
         private ICardHand deckHand; // Changed to Dependency Injection
-        public PlayOneShot PlayOneShot;
 
         public void CoolDownUnit(int buttonId)
         {
@@ -23,9 +22,9 @@ namespace Gameplay.Unit.UnitUtility
         private IEnumerator UnitCoolDown(GameObject cardButton,int coolDownTime)
         {
             cardButton.GetComponent<Button>().enabled = false;
-            PlayOneShot.InvalidInputAudio();
             //TODO: Animation + sound (in a separated script ??)
             yield return new WaitForSeconds(coolDownTime);
+            PlayOneShot.ActivateCardAudio();
             cardButton.GetComponent<Button>().enabled = true;
         }
     }
