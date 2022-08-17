@@ -1068,9 +1068,29 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
         type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
+        type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1902710986604220235}
+    - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 825267189044769794}
+    - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1078,8 +1098,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
         type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TriggerEndGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
+        type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Gameplay.UI.EndGameDisplay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Utility.GameStateTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 825267188389204838, guid: 5bce5ebd80fb239439e84d542f4ec893,
         type: 3}
@@ -1104,6 +1139,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f01e22c1dc542a4e94591d963d692d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &825267189044769794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5349995886529515134, guid: 5bce5ebd80fb239439e84d542f4ec893,
+    type: 3}
+  m_PrefabInstance: {fileID: 825267189044769792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0b39e7185a0c747bae2e990bcd133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &919132149462033036
