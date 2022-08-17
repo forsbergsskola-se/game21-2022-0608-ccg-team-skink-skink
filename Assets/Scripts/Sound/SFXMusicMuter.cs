@@ -21,36 +21,36 @@ public class SFXMusicMuter : MonoBehaviour
     private void Start()
     {
         muteMusicEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
-        Debug.Log("Checking if music is on.");
+        // Debug.Log("Checking if music is on.");
         if (musicMuted)
         {
             MusicOn.SetActive(false);
             MusicOff.SetActive(true);
             ToggleAudioOff(true);
-            Debug.Log("Music is off.");
+            // Debug.Log("Music is off.");
         }
         else
         {
             MusicOn.SetActive(true);
             MusicOff.SetActive(false);
             ToggleAudioOn(true);
-            Debug.Log("Music is on");
+            // Debug.Log("Music is on");
         }
         muteSFXEvInst = FMODUnity.RuntimeManager.CreateInstance(muteSFXPath);
-        Debug.Log("Checking if SFX are on.");
+        // Debug.Log("Checking if SFX are on.");
         if (sfxMuted)
         {
             SFXOn.SetActive(false);
             SFXOff.SetActive(true);
             ToggleAudioOff(false);
-            Debug.Log("SFX are not on.");
+            // Debug.Log("SFX are not on.");
         }
         else
         {
             SFXOn.SetActive(true);
             SFXOff.SetActive(false);
             ToggleAudioOn(false);
-            Debug.Log("SFX are on");
+            // Debug.Log("SFX are on");
         }
     }
     public void SwitchAudioMusic()
@@ -60,7 +60,7 @@ public class SFXMusicMuter : MonoBehaviour
             MusicOn.SetActive(true);
             MusicOff.SetActive(false);
             ToggleAudioOn(true);
-            Debug.Log("Click - Music On");
+            // Debug.Log("Click - Music On");
             musicMuted = false;
         }
         else
@@ -68,7 +68,7 @@ public class SFXMusicMuter : MonoBehaviour
             MusicOn.SetActive(false);
             MusicOff.SetActive(true);
             ToggleAudioOff(true);
-            Debug.Log("Click - Music Off");
+            // Debug.Log("Click - Music Off");
             musicMuted = true;
         }
     }
@@ -79,7 +79,7 @@ public class SFXMusicMuter : MonoBehaviour
             SFXOn.SetActive(true);
             SFXOff.SetActive(false);
             ToggleAudioOn(false);
-            Debug.Log("Click - SFX On");
+            // Debug.Log("Click - SFX On");
             sfxMuted = false;
         }
         else
@@ -87,7 +87,7 @@ public class SFXMusicMuter : MonoBehaviour
             SFXOn.SetActive(false);
             SFXOff.SetActive(true);
             ToggleAudioOff(false);
-            Debug.Log("Click - SFX Off");
+            // Debug.Log("Click - SFX Off");
             sfxMuted = true;
         }
     }

@@ -23,7 +23,6 @@ public static class PlayOneShot
     static public void PlayCardAudio()
     {
         playCardInst.start();
-        Debug.Log("Play card");
     }
     static public void ActivateCardAudio()
     {
@@ -32,11 +31,9 @@ public static class PlayOneShot
     static public void InvalidInputAudio()
     {
         invalidInputInst.start();
-        Debug.Log("Trying to play card");
     }
     static public void ApCapAudio()
     {
         apCapInst.start();
-        Debug.Log("cap");
     }
 }
