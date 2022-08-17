@@ -54,6 +54,9 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>snapshotIntensity</value>
 		</property>
+		<property name="attackTime">
+			<value>140</value>
+		</property>
 		<property name="attackShape">
 			<value>-1.00000048</value>
 		</property>
@@ -62,6 +65,9 @@
 		</property>
 		<property name="sustainValue">
 			<value>100</value>
+		</property>
+		<property name="releaseTime">
+			<value>120</value>
 		</property>
 		<property name="releaseShape">
 			<value>1</value>
