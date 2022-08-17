@@ -23,7 +23,7 @@ namespace Gameplay.Unit.UnitActions
         {
             targetIsAlive = true;
             
-            opponent.SubscribeToOnDeath((UnitState state) => StopAttacking());
+            opponent.SubscribeToOnDeath((UnitState state) => targetIsAlive = false);
 
             while (targetIsAlive)
             {
@@ -34,8 +34,5 @@ namespace Gameplay.Unit.UnitActions
 
             yield return null;
         }
-
-        private void StopAttacking() => targetIsAlive = false;
     }
-    
 }

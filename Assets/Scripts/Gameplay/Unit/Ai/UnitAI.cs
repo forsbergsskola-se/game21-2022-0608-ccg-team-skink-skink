@@ -46,18 +46,12 @@ namespace Gameplay.Unit.Ai
             movement = new Movement(moveStats);
             attack = new Attack(combatStatsSO, () => onStateChanges.Invoke(state));
             
-            GetComponent<IDamageReceiver>().SubscribeToOnDeath((UnitState state) => StopAllCoroutines() );
-            
             State = UnitState.Moving;
         }
 
         private void FixedUpdate()
         {
-            if (State == UnitState.Moving)
-            {
-                if (triggerCollection.Count == 0) movement.Move(transform, Direction);
-                else State = UnitState.Action;
-            }
+            if (State == UnitState.Moving) movement.Move(transform, Direction);
         }
 
         private void OnTriggerStay(Collider other)
@@ -67,6 +61,8 @@ namespace Gameplay.Unit.Ai
                 if (Vector3.Distance(transform.position, other.transform.position) <= combatStatsSO.Range)
                     triggerCollection.Add(other);
             }
+            
+            if (State != UnitState.Action && triggerCollection.Count != 0) StartAttacking(triggerCollection[0]);
         }
 
         private void OnTriggerExit(Collider other)
@@ -76,16 +72,16 @@ namespace Gameplay.Unit.Ai
 
         private void StartAttacking(Collider other)
         {
-            var damageReceiver = other.GetComponent<IDamageReceiver>();
+            State = UnitState.Action;
+            var otherHealth = other.GetComponent<IDamageReceiver>();
 
-            damageReceiver.SubscribeToOnDeath((UnitState unitState) =>
-            {
-                state = UnitState.Moving;
-                //triggerCollection.Remove(other);
-            });
-            
-            state = UnitState.Action;
-            StartCoroutine(attack.StartAttacking(damageReceiver));
+            otherHealth.SubscribeToOnDeath((UnitState state) =>
+                {
+                    State = UnitState.Moving;
+                    triggerCollection.Remove(other);
+                }
+            );
+            StartCoroutine(attack.StartAttacking(otherHealth));
         }
     }
 }
