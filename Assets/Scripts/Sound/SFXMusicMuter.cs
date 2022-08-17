@@ -7,8 +7,11 @@ public class SFXMusicMuter : MonoBehaviour
     FMOD.Studio.EventInstance muteMusicEvInst;
     string muteMusicPath = "snapshot:/MuteMusic";
     static bool musicMuted = false;
-    [SerializeField] private GameObject On;
-    [SerializeField] private GameObject Off;
+    static bool sfxMuted = false;
+    [SerializeField] private GameObject MusicOn;
+    [SerializeField] private GameObject MusicOff;
+    [SerializeField] private GameObject SFXOn;
+    [SerializeField] private GameObject SFXOff;
 
     FMOD.Studio.EventInstance muteSFXEvInst;
     string muteSFXPath = "snapshot:/MuteSFX";
@@ -18,49 +21,85 @@ public class SFXMusicMuter : MonoBehaviour
     private void Start()
     {
         muteMusicEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
-        Debug.Log("Checking if music is on.");
+        // Debug.Log("Checking if music is on.");
         if (musicMuted)
         {
-            On.SetActive(false);
-            Off.SetActive(true);
-            ToggleMusicOff();
-            Debug.Log("Music is off.");
+            MusicOn.SetActive(false);
+            MusicOff.SetActive(true);
+            ToggleAudioOff(true);
+            // Debug.Log("Music is off.");
         }
         else
         {
-            On.SetActive(true);
-            Off.SetActive(false);
-            ToggleMusicOn();
-            Debug.Log("Music is on");
+            MusicOn.SetActive(true);
+            MusicOff.SetActive(false);
+            ToggleAudioOn(true);
+            // Debug.Log("Music is on");
+        }
+        muteSFXEvInst = FMODUnity.RuntimeManager.CreateInstance(muteSFXPath);
+        // Debug.Log("Checking if SFX are on.");
+        if (sfxMuted)
+        {
+            SFXOn.SetActive(false);
+            SFXOff.SetActive(true);
+            ToggleAudioOff(false);
+            // Debug.Log("SFX are not on.");
+        }
+        else
+        {
+            SFXOn.SetActive(true);
+            SFXOff.SetActive(false);
+            ToggleAudioOn(false);
+            // Debug.Log("SFX are on");
         }
     }
-
-    public void SwitchAudio()
+    public void SwitchAudioMusic()
     {
         if (musicMuted)
         {
-            On.SetActive(true);
-            Off.SetActive(false);
-            ToggleMusicOn();
-            Debug.Log("Click - Music On");
+            MusicOn.SetActive(true);
+            MusicOff.SetActive(false);
+            ToggleAudioOn(true);
+            // Debug.Log("Click - Music On");
             musicMuted = false;
         }
         else
         {
-            On.SetActive(false);
-            Off.SetActive(true);
-            ToggleMusicOff();
-            Debug.Log("Click - Music Off");
+            MusicOn.SetActive(false);
+            MusicOff.SetActive(true);
+            ToggleAudioOff(true);
+            // Debug.Log("Click - Music Off");
             musicMuted = true;
         }
     }
-    public void ToggleMusicOff()
+    public void SwitchAudioSFX()
     {
-        muteMusicEvInst.start();
+        if (sfxMuted)
+        {
+            SFXOn.SetActive(true);
+            SFXOff.SetActive(false);
+            ToggleAudioOn(false);
+            // Debug.Log("Click - SFX On");
+            sfxMuted = false;
+        }
+        else
+        {
+            SFXOn.SetActive(false);
+            SFXOff.SetActive(true);
+            ToggleAudioOff(false);
+            // Debug.Log("Click - SFX Off");
+            sfxMuted = true;
+        }
     }
-    public void ToggleMusicOn()
+    public void ToggleAudioOff(bool musicCheckBox)
     {
-        muteMusicEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        if (musicCheckBox) muteMusicEvInst.start();
+        else muteSFXEvInst.start();
+    }
+    public void ToggleAudioOn(bool musicCheckBox)
+    {
+        if (musicCheckBox) muteMusicEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        else muteSFXEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
     private void OnDestroy()
     {
@@ -68,8 +107,12 @@ public class SFXMusicMuter : MonoBehaviour
         //Check if Fmod event MuteMusic is playing, and set static bool to right value for next scene
         if (pbState == FMOD.Studio.PLAYBACK_STATE.PLAYING) musicMuted = true;
         else musicMuted = false;
-        ToggleMusicOn();
+        muteSFXEvInst.getPlaybackState(out pbState);
+        if (pbState == FMOD.Studio.PLAYBACK_STATE.PLAYING) sfxMuted = true;
+        else sfxMuted = false;
+        //ToggleAudioOn(true);
+        //ToggleAudioOff(false);
         muteMusicEvInst.release();
+        muteSFXEvInst.release();
     }
-
 }
