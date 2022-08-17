@@ -9,6 +9,7 @@ using UnityEngine.Events;
 namespace Gameplay.Unit.Ai
 {
     [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(HealthComponent))]
     public class UnitAI : MonoBehaviour, IUnit
     {
         [Header("Dependencies")]
@@ -23,6 +24,7 @@ namespace Gameplay.Unit.Ai
 
         private Movement movement;
         private Attack attack;
+        private IDamageReceiver health;
         private List<Collider> triggerCollection = new();
 
         private UnitState state;
@@ -35,6 +37,8 @@ namespace Gameplay.Unit.Ai
             movement = new Movement(moveStats);
             attack = new Attack(combatStatsSO, () => onStateChanges.Invoke(state));
             
+            GetComponent<IDamageReceiver>().SubscribeToOnDeath((UnitState state) => StopAllCoroutines() );
+            
             state = UnitState.Moving;
         }
 
@@ -45,15 +49,10 @@ namespace Gameplay.Unit.Ai
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag(tag)) return;
-            
-            if (!triggerCollection.Contains(other) 
-                && Vector3.Distance(transform.position, other.transform.position) <= combatStatsSO.Range) 
-                triggerCollection.Add(other);
-
-            if (triggerCollection.Count == 0 || state == UnitState.Action) return;
-            
-            if (state != UnitState.Action) StartAttacking(other);
+            if (!other.gameObject.CompareTag(tag))
+            {
+                state = UnitState.Action;
+            }
         }
 
         private void OnTriggerExit(Collider other)

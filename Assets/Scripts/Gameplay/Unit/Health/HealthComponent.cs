@@ -42,7 +42,7 @@ namespace Gameplay.Unit.Health
         public void TakeDamage(float value)
         {
             CurrentHealth -= value;
-           //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
+            //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
         }
 
         public void SubscribeToOnDeath(UnityAction<UnitState> method) => OnDeath.AddListener(method);
