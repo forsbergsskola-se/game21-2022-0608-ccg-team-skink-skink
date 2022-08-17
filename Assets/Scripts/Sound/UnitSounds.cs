@@ -34,7 +34,6 @@ public class UnitSounds : MonoBehaviour
     public void PlayDeathSound()
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("DramaticCue", 1);
-        Debug.Log("Playing dramatic cue");
         audienceReactsInstance.start();
         //FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();

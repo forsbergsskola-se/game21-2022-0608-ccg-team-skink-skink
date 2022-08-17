@@ -10,7 +10,6 @@ namespace Gameplay.Unit
     public class UnitCoolDownTimer : MonoBehaviour
     {
         private ICardHand deckHand; // Changed to Dependency Injection
-        public PlayOneShot PlayOneShot;
 
         public void CoolDownUnit(int buttonId)
         {

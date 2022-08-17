@@ -2,48 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayOneShot : MonoBehaviour
+public static class PlayOneShot
 {
     //public FMODUnity.EventReference playCardRef;
-    string playCardPath;
-    FMOD.Studio.EventInstance playCardInst;
+    static string playCardPath = "event:/Cards/PlayCard";
+    static FMOD.Studio.EventInstance playCardInst = FMODUnity.RuntimeManager.CreateInstance(playCardPath);
 
     //public FMODUnity.EventReference cardActivatedRef;
-    string cardActivatedPath;
-    FMOD.Studio.EventInstance cardActivatedInst;
+    static string cardActivatedPath = "event:/Cards/CardActivated";
+    static FMOD.Studio.EventInstance cardActivatedInst = FMODUnity.RuntimeManager.CreateInstance(cardActivatedPath);
 
     //public FMODUnity.EventReference invalidInputRef;
-    string invalidInputPath;
-    FMOD.Studio.EventInstance invalidInputInst;
+    static string invalidInputPath = "event:/InvalidInput";
+    static FMOD.Studio.EventInstance invalidInputInst = FMODUnity.RuntimeManager.CreateInstance(invalidInputPath);
 
     //public FMODUnity.EventReference apCapRef;
-    string apCapPath;
-    FMOD.Studio.EventInstance apCapInst;
-    void Start()
-    {
-        playCardInst = FMODUnity.RuntimeManager.CreateInstance(playCardPath);
-        cardActivatedInst = FMODUnity.RuntimeManager.CreateInstance(cardActivatedPath);
-        invalidInputInst = FMODUnity.RuntimeManager.CreateInstance(invalidInputPath);
-        apCapInst = FMODUnity.RuntimeManager.CreateInstance(apCapPath);
-    }
-    public void PlayCardAudio()
+    static string apCapPath = "event:/APcap";
+    static FMOD.Studio.EventInstance apCapInst = FMODUnity.RuntimeManager.CreateInstance(apCapPath);
+
+    static public void PlayCardAudio()
     {
         playCardInst.start();
-        playCardInst.release();
+        Debug.Log("Play card");
     }
-    public void ActivateCardAudio()
+    static public void ActivateCardAudio()
     {
         cardActivatedInst.start();
-        cardActivatedInst.release();
     }
-    public void InvalidInputAudio()
+    static public void InvalidInputAudio()
     {
         invalidInputInst.start();
-        cardActivatedInst.release();
+        Debug.Log("Trying to play card");
     }
-    public void ApCapAudio()
+    static public void ApCapAudio()
     {
         apCapInst.start();
-        apCapInst.release();
+        Debug.Log("cap");
     }
 }
