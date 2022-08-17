@@ -25,7 +25,7 @@ namespace Gameplay.Unit.Ai
         private Movement movement;
         private Attack attack;
         private IDamageReceiver health;
-        private List<Collider> triggerCollection = new();
+        private Queue<Collider> triggerCollection = new();
 
         private UnitState state;
         
@@ -51,13 +51,18 @@ namespace Gameplay.Unit.Ai
         {
             if (!other.gameObject.CompareTag(tag))
             {
-                state = UnitState.Action;
+                if (Vector3.Distance(transform.position, other.transform.position) <= combatStatsSO.Range
+                    && !triggerCollection.Contains(other))
+                {
+                    triggerCollection.Enqueue(other);
+                    state = UnitState.Action;
+                }
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (triggerCollection.Contains(other)) triggerCollection.Remove(other);
+            if (triggerCollection.Contains(other)) {}//triggerCollection.Remove(other);
         }
 
         private void StartAttacking(Collider other)
@@ -67,7 +72,7 @@ namespace Gameplay.Unit.Ai
             damageReceiver.SubscribeToOnDeath((UnitState unitState) =>
             {
                 state = UnitState.Moving;
-                triggerCollection.Remove(other);
+                //triggerCollection.Remove(other);
             });
             
             state = UnitState.Action;
