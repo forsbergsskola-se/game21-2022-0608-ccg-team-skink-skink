@@ -7,7 +7,6 @@ namespace Gameplay.Unit.Health
     public class HealthComponent : MonoBehaviour, IDamageReceiver
     {
         [SerializeField] private HealthStatsSO healthStats;
-        //TODO: remove if decided on no hp  [SerializeField] private Healthbar healthbar;
         
         public HealthStatsSO HealthStats => healthStats;
 
@@ -15,16 +14,16 @@ namespace Gameplay.Unit.Health
         public UnityEvent<UnitState> OnDeath;
         
         private float currentHealth;
-        //Todo: Possibly make private
+        
         public float CurrentHealth
         {
             get => currentHealth;
             private set
             {
-                if (value <= 0) OnDeath?.Invoke(UnitState.Death);
+                if (value <= 0 && currentHealth > 0) OnDeath?.Invoke(UnitState.Death);
                 
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
-                //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
+               
             }
         }
 
@@ -42,7 +41,7 @@ namespace Gameplay.Unit.Health
         public void TakeDamage(float value)
         {
             CurrentHealth -= value;
-            //TODO: remove if decided on no hp healthbar.UpdateHealthbar(currentHealth, healthStats.MaxHealth);
+           
         }
 
         public void SubscribeToOnDeath(UnityAction<UnitState> method) => OnDeath.AddListener(method);
