@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using Utility;
 
@@ -13,6 +14,11 @@ public class LevelMusic : MonoBehaviour
     //Audio filter for when the game is paused
     public FMODUnity.EventReference pauseFilterRef;
     private FMOD.Studio.EventInstance pauseFilterInst;
+    
+    //AudienceAmbience
+    private FMOD.Studio.EventInstance audienceAmbInst;
+    private string audienceAmbPath = "event:/AudienceAmbience";
+
 
     void Start()
     {
@@ -20,6 +26,9 @@ public class LevelMusic : MonoBehaviour
         musicEvInst.start();
         Dependencies.Instance.EndOfGameRelay.OnWin += PlayWinSound;
         Dependencies.Instance.EndOfGameRelay.OnLose += PlayLoseSound;
+        audienceAmbInst = FMODUnity.RuntimeManager.CreateInstance(audienceAmbPath);
+        audienceAmbInst.start();
+
     }
     public void PauseMenuAudio()
     {
@@ -57,5 +66,8 @@ public class LevelMusic : MonoBehaviour
         StopMusic();
         Dependencies.Instance.EndOfGameRelay.OnWin -= PlayWinSound;
         Dependencies.Instance.EndOfGameRelay.OnLose -= PlayLoseSound;
+        audienceAmbInst.stop(STOP_MODE.ALLOWFADEOUT);
+        audienceAmbInst.release();
+
     }
 }
