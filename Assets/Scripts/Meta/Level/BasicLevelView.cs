@@ -11,7 +11,7 @@ namespace Meta.Level
         [SerializeField] private Button button;
         [SerializeField] private int number;
 
-        public IGameplayLevel Level { get; set; }
+        public ILevel Level { get; set; }
 
         public event Action<int> OnClick;
 
