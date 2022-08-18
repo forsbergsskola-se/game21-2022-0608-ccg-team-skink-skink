@@ -9,7 +9,6 @@ namespace Meta.Level
         public void LoadLevel(ILevel level)
         {
             SceneManager.LoadScene(level.InternalSceneName);
-            FMODUnity.RuntimeManager.LoadBank(level.InternalSceneSoundBankName);
         }
     }
 }

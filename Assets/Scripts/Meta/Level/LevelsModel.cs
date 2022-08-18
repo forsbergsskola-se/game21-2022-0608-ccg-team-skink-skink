@@ -19,10 +19,10 @@ namespace Meta.Level
             } 
         }
         
-        public IGameplayLevel CurrentLevel { get; private set; }
+        public ILevel CurrentLevel { get; private set; }
         
         public int CurrentLevelIndex { get; private set; }
-        public void SetCurrentLevel(IGameplayLevel level, int levelIndex)
+        public void SetCurrentLevel(ILevel level, int levelIndex)
         {
             CurrentLevel = level;
             CurrentLevelIndex = levelIndex;
