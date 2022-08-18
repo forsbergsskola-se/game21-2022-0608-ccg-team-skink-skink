@@ -1,33 +1,30 @@
+using System;
 using System.Collections;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.StatsInterfaces;
+using Gameplay.Unit.UnitAI;
 using UnityEngine;
 
 namespace Gameplay.Unit.UnitActions
 {
     public class Attack
     {
-        private ICombatStats stats;
-        private bool targetIsAlive;
-
-        public Attack(ICombatStats stats) => this.stats = stats;
+        public IDamageReceiver Target { get; set; }
         
-        public IEnumerator StartAttacking(IDamageReceiver opponent)
+        private ICombatStats stats;
+        private Action onAttack;
+
+        public Attack(ICombatStats stats, Action subscribeOnAttack)
         {
-            targetIsAlive = true;
-            
-            opponent.SubscribeToOnDeath(StopAttacking);
-
-            while (targetIsAlive)
-            {
-                opponent.TakeDamage(stats.Damage);
-                yield return new WaitForSeconds(stats.AttackSpeed);
-            }
-
-            yield return null;
+            this.stats = stats;
+            onAttack += subscribeOnAttack;
         }
-
-        private void StopAttacking() => targetIsAlive = false;
+        
+        public void StartAttacking()
+        {
+            onAttack.Invoke();
+            Target.TakeDamage(stats.Damage);
+                
+        }
     }
-    
 }

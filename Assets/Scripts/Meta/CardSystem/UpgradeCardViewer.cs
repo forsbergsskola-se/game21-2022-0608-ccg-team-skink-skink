@@ -1,5 +1,5 @@
+using Gameplay.Unit.Ai;
 using Gameplay.Unit.Health;
-using Gameplay.Unit.UnitAI;
 using Meta.Interfaces;
 using TMPro;
 using UnityEngine;
