@@ -1,20 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Gameplay.Unit.Health;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SetHealthBar : MonoBehaviour
 {
     public Slider slider;
+    public HealthComponent HealthComponent;
 
-    public void SetMaxHealth(int health)
+    private void Start()
     {
-        slider.maxValue = health;
-        slider.value = health;
+        slider.maxValue = HealthComponent.HealthStats.MaxHealth;
+        UpdateHealthBar();
+        HealthComponent.OnDamageTaken.AddListener(UpdateHealthBar);
     }
 
-    public void SetHealth(int health)
+    private void UpdateHealthBar()
     {
-        slider.value = health;
+        slider.value = HealthComponent.CurrentHealth;
     }
 }
