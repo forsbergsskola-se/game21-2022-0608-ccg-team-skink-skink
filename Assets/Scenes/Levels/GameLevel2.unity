@@ -2180,7 +2180,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 11400000, guid: c9c3d2eed8374cb449392e02c0ecf8c3,
+      objectReference: {fileID: 11400000, guid: 2e68857c8ffbbf64893c038d82321d2c,
         type: 2}
     - target: {fileID: 8113515734996193452, guid: 84c55b2dd92a4f941b6d2e04cd0a9ea8,
         type: 3}

@@ -1004,13 +1004,13 @@ PrefabInstance:
         type: 3}
       propertyPath: waves
       value: 
-      objectReference: {fileID: 11400000, guid: f016810c74cb13d4e9c6ea377a597f0a,
+      objectReference: {fileID: 11400000, guid: bae56d509e18a5b45ade9f3b6873c04c,
         type: 2}
     - target: {fileID: 355229051959140867, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 11400000, guid: 2e68857c8ffbbf64893c038d82321d2c,
+      objectReference: {fileID: 11400000, guid: 9c0e21345e1ef4742b9c3b5b8502a46a,
         type: 2}
     - target: {fileID: 355229051959140867, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
@@ -1043,7 +1043,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 11400000, guid: 2e68857c8ffbbf64893c038d82321d2c,
+      objectReference: {fileID: 11400000, guid: 9c0e21345e1ef4742b9c3b5b8502a46a,
         type: 2}
     - target: {fileID: 1571406127388479551, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
@@ -2269,7 +2269,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHand
       value: 
-      objectReference: {fileID: 11400000, guid: c9c3d2eed8374cb449392e02c0ecf8c3,
+      objectReference: {fileID: 11400000, guid: 9c0e21345e1ef4742b9c3b5b8502a46a,
         type: 2}
     - target: {fileID: 8113515734996193452, guid: 84c55b2dd92a4f941b6d2e04cd0a9ea8,
         type: 3}
