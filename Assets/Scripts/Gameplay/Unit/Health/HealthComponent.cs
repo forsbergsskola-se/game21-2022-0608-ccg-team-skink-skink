@@ -23,7 +23,7 @@ namespace Gameplay.Unit.Health
                 if (value <= 0 && currentHealth > 0) OnDeath?.Invoke(UnitState.Death);
                 
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
-               
+               Debug.Log(currentHealth);
             }
         }
 
@@ -41,7 +41,7 @@ namespace Gameplay.Unit.Health
         public void TakeDamage(float value)
         {
             CurrentHealth -= value;
-           
+            OnDamageTaken.Invoke();
         }
 
         public void SubscribeToOnDeath(UnityAction<UnitState> method) => OnDeath.AddListener(method);
