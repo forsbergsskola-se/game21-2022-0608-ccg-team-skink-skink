@@ -4,6 +4,17 @@ using UnityEngine;
 
 public static class PlayOneShot
 {
+
+    //Sfx and music mute
+    static FMOD.Studio.EventInstance muteMusicEvInst;
+    static string muteMusicPath = "snapshot:/MuteMusic";
+    
+    static FMOD.Studio.EventInstance muteSFXEvInst;
+    static string muteSFXPath = "snapshot:/MuteSFX";
+    
+    public static bool musicMuted = false;
+    public static bool sfxMuted = false;
+    
     //public FMODUnity.EventReference playCardRef;
     static string playCardPath = "event:/Cards/PlayCard";
     static FMOD.Studio.EventInstance playCardInst = FMODUnity.RuntimeManager.CreateInstance(playCardPath);
@@ -36,4 +47,25 @@ public static class PlayOneShot
     {
         apCapInst.start();
     }
+    static public void ToggleAudioOff(bool musicCheckBox)
+    {
+        //true=music false=sfx
+
+        if (musicCheckBox)
+        {
+            muteMusicEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
+            muteMusicEvInst.start();
+        }
+        else
+        {
+            muteSFXEvInst = FMODUnity.RuntimeManager.CreateInstance(muteSFXPath);
+            muteSFXEvInst.start();
+        }
+    }
+    static public void ToggleAudioOn(bool musicCheckBox)
+    {
+        if (musicCheckBox) muteMusicEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        else muteSFXEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
 }

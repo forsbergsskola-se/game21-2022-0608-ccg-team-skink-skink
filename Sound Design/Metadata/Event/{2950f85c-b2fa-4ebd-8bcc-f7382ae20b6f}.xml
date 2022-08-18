@@ -72,9 +72,6 @@
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{aaccb4b7-ecd5-418e-9848-567a6014a1b9}">
-		<relationship name="modules">
-			<destination>{af971ada-1a32-474e-bf3a-27a7f803daba}</destination>
-		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{1f9a188a-e773-47e7-a178-e88b59d35341}</destination>
 		</relationship>
@@ -98,13 +95,18 @@
 	<object class="ParameterProxy" id="{1882a909-61f5-49f7-b3ba-82610213cc1e}">
 		<relationship name="modules">
 			<destination>{d429fbb9-8451-4a6a-a3cc-0fe640734e86}</destination>
-			<destination>{af971ada-1a32-474e-bf3a-27a7f803daba}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{41986038-acf8-42ed-a6d8-61dad2b65181}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{85fa4663-dedd-4512-98a9-d9f73c0dfe1a}">
+		<property name="volume">
+			<value>-4.5</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{7ccfda44-61d4-4d95-8d8a-5c911a76ece7}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{cac95bf5-f705-4c6b-973a-fda10288daf1}</destination>
 		</relationship>
@@ -143,26 +145,6 @@
 			<destination>{85fa4663-dedd-4512-98a9-d9f73c0dfe1a}</destination>
 		</relationship>
 	</object>
-	<object class="CommandSound" id="{af971ada-1a32-474e-bf3a-27a7f803daba}">
-		<property name="triggerProbabilityEnabled">
-			<value>true</value>
-		</property>
-		<property name="triggerProbability">
-			<value>69.5</value>
-		</property>
-		<property name="start">
-			<value>0.9047619104385376</value>
-		</property>
-		<property name="length">
-			<value>0.095238089561462402</value>
-		</property>
-		<property name="quantizationInterval">
-			<value>6</value>
-		</property>
-		<relationship name="commandTarget">
-			<destination>{7ccda885-8e60-44ae-8e5c-337ef8e4cb96}</destination>
-		</relationship>
-	</object>
 	<object class="EventMixerGroup" id="{1f9a188a-e773-47e7-a178-e88b59d35341}">
 		<property name="name">
 			<value>Audio 2</value>
@@ -182,7 +164,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>14.5</value>
+			<value>40</value>
 		</property>
 		<property name="start">
 			<value>0.90657436847686779</value>
@@ -230,6 +212,26 @@
 		<relationship name="markerTrack">
 			<destination>{1957839a-b745-4c4e-8f76-a2271e666226}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{7ccfda44-61d4-4d95-8d8a-5c911a76ece7}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>500</value>
+		</property>
+		<property name="attackShape">
+			<value>-0.356008708</value>
+		</property>
+		<property name="releaseShape">
+			<value>0.312405944</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{cac95bf5-f705-4c6b-973a-fda10288daf1}">
 		<relationship name="effects">
