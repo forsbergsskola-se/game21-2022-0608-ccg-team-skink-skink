@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9030882443734063726}
   - component: {fileID: 3485958833702126279}
   - component: {fileID: 4791348390173450003}
+  - component: {fileID: 4178336673898611025}
   m_Layer: 0
   m_Name: 0001
   m_TagString: Untagged
@@ -132,6 +133,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 9030882443734063726}
+--- !u!114 &4178336673898611025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349593000155430102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd76dc50d5bd724eb2f8d1e2ae0b412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6671906302393147358}
+        m_TargetAssemblyTypeName: Gameplay.Unit.Ai.UnitAI, Assembly-CSharp
+        m_MethodName: dealDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &471211637920694892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -380,5 +408,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c50ef4780d42be4a869830257b02826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6671906302393147358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6493428779436629426, guid: 33d365fa1b3ec2643b8349c66c9d369f,
+    type: 3}
+  m_PrefabInstance: {fileID: 471211637920694892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d0f479dcbfc4d4db51ca717e2038b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
