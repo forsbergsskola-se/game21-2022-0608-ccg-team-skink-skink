@@ -15,4 +15,4 @@ MonoBehaviour:
   attackSpeed: 0.19
   damage: 4
   defence: 0
-  range: 2
+  range: 5
