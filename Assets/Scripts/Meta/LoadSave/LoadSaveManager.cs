@@ -50,6 +50,6 @@ namespace Meta.LoadSave
             saveState.Save();
         }
 
-        private void OnDestroy() => saveState.Save();
+        // private void OnDestroy() => saveState.Save();
     }
 }
