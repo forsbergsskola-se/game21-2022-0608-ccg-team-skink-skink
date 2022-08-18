@@ -26,11 +26,8 @@ public class LevelMusic : MonoBehaviour
         Dependencies.Instance.EndOfGameRelay.OnWin += PlayWinSound;
         Dependencies.Instance.EndOfGameRelay.OnLose += PlayLoseSound;
         audienceAmbInst = FMODUnity.RuntimeManager.CreateInstance(audienceAmbPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(audienceAmbInst, GetComponent<Transform>(), GetComponent<Rigidbody>());
         audienceAmbInst.start();
-    }
-    private void Update()
-    {
-        audienceAmbInst.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
     }
     public void PauseMenuAudio()
     {
