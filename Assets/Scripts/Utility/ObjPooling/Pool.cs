@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Gameplay.Unit.UnitAI;
+using Gameplay.Unit.Ai;
 using UnityEngine;
 
 namespace Utility.ObjPooling
