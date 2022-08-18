@@ -8,24 +8,30 @@ namespace Meta.LootBox
     public class LootBoxAmountViewer : MonoBehaviour
     {
         private ILootBoxAmountModel lootBoxAmountModel;
+        private TextMeshProUGUI textMesh;
+        
+        [SerializeField] private string stringBeforeValue = "";
 
-        [SerializeField] private string stringBeforeValue = "ToyBoxes: ";
-        [SerializeField] private TMP_Text valueText;
-
-        private void OnEnable()
+        private void Awake()
         {
-            Dependencies.Instance.LootBoxAmountModel.ValueChanged += UpdateAmountText;
-            UpdateAmountText(Dependencies.Instance.LootBoxAmountModel.Amount);
+            textMesh = GetComponent<TextMeshProUGUI>();
+            lootBoxAmountModel = Dependencies.Instance.LootBoxAmountModel;
         }
 
-        private void OnDisable()
+        private void Start()
         {
-            Dependencies.Instance.LootBoxAmountModel.ValueChanged -= UpdateAmountText;
+            lootBoxAmountModel.ValueChanged += UpdateAmountText;
+            UpdateAmountText(lootBoxAmountModel.Amount);
+        }
+
+        private void OnDestroy()
+        {
+            lootBoxAmountModel.ValueChanged -= UpdateAmountText;
         }
 
         private void UpdateAmountText(int amount)
         {
-            valueText.text = stringBeforeValue + amount;
+            textMesh.text = stringBeforeValue + amount;
         }
     }
 }
