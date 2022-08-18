@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
@@ -85,7 +86,7 @@ namespace Gameplay.Unit.UnitAI
             });
             
             state = UnitState.Action;
-            StartCoroutine(attack.StartAttacking(damageReceiver));
+            if (isActiveAndEnabled) StartCoroutine(attack.StartAttacking(damageReceiver));
         }
     }
 }
