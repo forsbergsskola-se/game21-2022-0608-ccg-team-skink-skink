@@ -1,3 +1,4 @@
+using Gameplay.Unit.Health;
 using UnityEngine;
 
 public class UnitSounds : MonoBehaviour
@@ -6,29 +7,26 @@ public class UnitSounds : MonoBehaviour
     string unitDeath = "event:/Units/UnitDeath";
     //string unitAttack = "event:/Units/UnitAttack";
     //public FMODUnity.EventReference dmgTakenPlaceEventHere;
-    FMOD.Studio.EventInstance dmgTakenInstance;
     //public FMODUnity.EventReference deathPlaceEventHere;
     FMOD.Studio.EventInstance deathInstance;
     //public FMODUnity.EventReference attackPlaceEventHere;
     FMOD.Studio.EventInstance attackInstance;
     string audienceReactsPath = "event:/Audience/AudienceReacts";
     FMOD.Studio.EventInstance audienceReactsInstance;
+    FMOD.Studio.EventInstance dmgTakenInstance;
 
 
     void Start()
     {
-        dmgTakenInstance = FMODUnity.RuntimeManager.CreateInstance(dmgTaken);
         //attackInstance = FMODUnity.RuntimeManager.CreateInstance(unitAttack);
         deathInstance = FMODUnity.RuntimeManager.CreateInstance(unitDeath);
+        GetComponent<HealthComponent>().OnDamageTaken.AddListener(PlayDmgTakenSound);
     }
     public void PlayDmgTakenSound()
     {
-        if (PlaybackState(dmgTakenInstance) == FMOD.Studio.PLAYBACK_STATE.PLAYING) return;
-        else
-        {
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
-            dmgTakenInstance.start();
-        }
+        dmgTakenInstance = FMODUnity.RuntimeManager.CreateInstance(dmgTaken);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        dmgTakenInstance.start();
     }
     public void PlayDeathSound()
     {
@@ -36,7 +34,7 @@ public class UnitSounds : MonoBehaviour
         audienceReactsInstance = FMODUnity.RuntimeManager.CreateInstance(audienceReactsPath);
         audienceReactsInstance.start();
         audienceReactsInstance.release();
-        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();
         dmgTakenInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }

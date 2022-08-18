@@ -308,17 +308,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Mobile/Master
-  Banks:
-  - Mobile/Game
-  - Mobile/Level0
-  - Mobile/Level1
-  - Mobile/Level2
-  - Mobile/Level3
-  - Mobile/Level4
-  - Mobile/Level5
-  - Mobile/Level6
-  - Mobile/Level7
-  - Mobile/MetaGame
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
