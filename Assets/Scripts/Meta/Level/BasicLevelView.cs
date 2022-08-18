@@ -21,17 +21,25 @@ namespace Meta.Level
             set => button.interactable = value;
         }
 
-        public void TriggerOnClick() {
+        public void TriggerOnClick() 
+        {
             OnClick?.Invoke(number);
         }
 
-        public void OnEnable() {
+        public void OnEnable() 
+        {
             var levelsModel = Dependencies.Instance.LevelsModel;
             DetermineIfUnlocked(levelsModel.CurrentMaxLevelIndex);
             levelsModel.MaxLevelIndexChanged += DetermineIfUnlocked;
         }
 
-        private void DetermineIfUnlocked(int currentLevelNumber) {
+        public void OnDestroy()
+        {
+            Dependencies.Instance.LevelsModel.MaxLevelIndexChanged -= DetermineIfUnlocked;
+        }
+
+        private void DetermineIfUnlocked(int currentLevelNumber) 
+        {
             Unlocked = number <= currentLevelNumber;
         }
     }
