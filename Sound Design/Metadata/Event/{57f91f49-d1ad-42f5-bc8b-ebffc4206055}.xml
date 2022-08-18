@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{57f91f49-d1ad-42f5-bc8b-ebffc4206055}">
 		<property name="name">
-			<value>MusicLevel5</value>
+			<value>MusicLevel1</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -36,7 +36,7 @@
 			<destination>{6ccfa41d-20a7-4565-8528-dc4dde435e8f}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{1dff138a-1add-4831-b598-1239691ae0c6}</destination>
+			<destination>{290af36b-2860-4de0-837e-3c1aa9da5ec5}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{e2082ecc-87f3-452f-a8dc-2592c89f8eae}">
@@ -90,6 +90,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{7e1f5f61-86fe-455a-bf0c-2ece66ea2cc2}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{53d77617-6a91-4bd3-9354-9942c2dc5ee3}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{fda4a4c6-cdb4-435f-8138-8d0b9eb2f176}</destination>
 		</relationship>
@@ -187,6 +193,23 @@
 		<relationship name="markerTrack">
 			<destination>{fd104ca3-bf6f-460a-b6e8-77ebf1c87edb}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{53d77617-6a91-4bd3-9354-9942c2dc5ee3}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>500</value>
+		</property>
+		<property name="attackShape">
+			<value>-0.271852672</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{fda4a4c6-cdb4-435f-8138-8d0b9eb2f176}">
 		<relationship name="effects">
