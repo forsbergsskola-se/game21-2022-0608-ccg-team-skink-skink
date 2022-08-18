@@ -17,9 +17,9 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: a83f8d2c4810e214abdb65628bb52205, type: 3}
   typeImage: {fileID: 0}
   level: 3
-  apCost: 100
+  apCost: 30
   coolDownTime: 40
-  unitPrefab: {fileID: 5431715178251225751, guid: 43510f26d09a3774895d2d628ae1e65f,
+  unitPrefab: {fileID: 2963407571845942736, guid: 1d102242a14441946aa0b58bc50178ce,
     type: 3}
   upgradedCard: {fileID: 0}
   currencyValueSettings:

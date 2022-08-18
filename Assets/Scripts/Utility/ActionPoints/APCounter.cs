@@ -16,11 +16,15 @@ namespace Utility.ActionPoints
 
         private ICardHand hand;
         
-        private void Awake() => hand = Dependencies.Instance.PlayerCardHand;
+        private void Awake()
+        {
+            hand = Dependencies.Instance.PlayerCardHand;
+            currentAP = actionPoints.Start;
+        } 
         
         private void FixedUpdate()
         {
-            currentAP = actionPoints.Start;
+            
             
             if (currentAP < actionPoints.Max && !isUpdating)
             {

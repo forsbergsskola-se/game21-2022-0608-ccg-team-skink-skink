@@ -9,7 +9,7 @@ namespace Meta.Level
         [SerializeField] private TMP_Text levelDescriptionTextBox;
         [SerializeField] private TMP_Text levelNameTextBox;
 
-        public void ActivateDetailedLevelViewer(IGameplayLevel gameplayLevel) {
+        public void ActivateDetailedLevelViewer(ILevel gameplayLevel) {
             this.gameObject.SetActive(true);
             levelDescriptionTextBox.text = gameplayLevel.Description;
             levelNameTextBox.text = gameplayLevel.Name;
