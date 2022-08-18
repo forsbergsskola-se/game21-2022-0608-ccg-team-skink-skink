@@ -8,15 +8,15 @@ namespace Meta.Level
 {
     public class LevelMenuController : MonoBehaviour
     {
-        [SerializeField, RequireInterface(typeof(GameplayLevelSO))] private Object[] levelsInOrder;
+        [SerializeField, RequireInterface(typeof(ILevel))] private Object[] levelsInOrder;
 
         [SerializeField, RequireInterface(typeof(IDetailedLevelViewer))] private Object detailedLevelViewer;
 
-        private GameplayLevelSO[] levels;
+        private ILevel[] levels;
 
         private void Awake()
         {
-            levels = Array.ConvertAll(levelsInOrder, input => input as GameplayLevelSO);
+            levels = Array.ConvertAll(levelsInOrder, input => input as ILevel);
 
             var basicLevelViewers = GetComponentsInChildren<IBasicLevelViewer>();
             foreach (var basicLevelViewer in basicLevelViewers)
