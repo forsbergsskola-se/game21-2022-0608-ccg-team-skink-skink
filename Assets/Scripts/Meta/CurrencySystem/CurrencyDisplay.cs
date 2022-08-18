@@ -21,6 +21,7 @@ namespace Meta.CurrencySystem
         private void Start()
         {
             normalCoinCarrier.ValueChanged += UpdateDisplay;
+            UpdateDisplay(normalCoinCarrier.Amount);
         }
 
         private void UpdateDisplay(int amount)

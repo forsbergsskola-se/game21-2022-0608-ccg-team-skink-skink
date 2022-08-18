@@ -9,10 +9,9 @@ namespace Gameplay.Utility
         public void TriggerEndGame()
         {
             Dependencies.Instance.EndOfGameRelay.OnGameEnded(!gameObject.CompareTag("Player"));
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
         }
 
-        private void OnDestroy() => Time.timeScale = 1;
-        
+        // private void OnDestroy() => Time.timeScale = 1;
     }
 }

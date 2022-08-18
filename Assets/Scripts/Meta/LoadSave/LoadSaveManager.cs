@@ -19,6 +19,7 @@ namespace Meta.LoadSave
 
         private void Awake()
         {
+            Debug.Log("Start file read in saveManager");
             loadState = new LoadState(cardArray, starterCardHand as ICardHand);
             loadState.Load();
             
