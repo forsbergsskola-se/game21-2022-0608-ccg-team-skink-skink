@@ -207,18 +207,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5645230861739667727}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &842430168 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1902710986723040339, guid: cdd9b8b2147e4f44480547fb3c2b48ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 1902710986604220234}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &874239917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,16 +994,16 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1902710986604220235}
+      objectReference: {fileID: 825267189044769795}
     - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetLoseScreen
+      value: TriggerEndGame
       objectReference: {fileID: 0}
     - target: {fileID: 825267187892035196, guid: 5bce5ebd80fb239439e84d542f4ec893,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Gameplay.UI.EndGameDisplay, Assembly-CSharp
+      value: Gameplay.Utility.GameStateTrigger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 825267188389204838, guid: 5bce5ebd80fb239439e84d542f4ec893,
         type: 3}
@@ -1052,6 +1040,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b76f69653ef3ec449993d476c1a26da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &825267189044769795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5349995886529515134, guid: 5bce5ebd80fb239439e84d542f4ec893,
+    type: 3}
+  m_PrefabInstance: {fileID: 825267189044769792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0b39e7185a0c747bae2e990bcd133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &919132149462033036
@@ -1201,7 +1201,7 @@ PrefabInstance:
     - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
@@ -1212,12 +1212,12 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1902710986604220235}
+      objectReference: {fileID: 1571406127420944455}
     - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1571406127420944455}
+      objectReference: {fileID: 0}
     - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -1226,22 +1226,22 @@ PrefabInstance:
     - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetWinScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
-        type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: TriggerEndGame
       objectReference: {fileID: 0}
     - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetWinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
+        type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Gameplay.UI.EndGameDisplay, Assembly-CSharp
+      value: Gameplay.Utility.GameStateTrigger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Gameplay.Utility.GameStateTrigger, Assembly-CSharp
+      value: Gameplay.UI.EndGameDisplay, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1571406127453671470, guid: cc787ba06c371f045b460b430b57f3c8,
         type: 3}
@@ -1500,18 +1500,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd9b8b2147e4f44480547fb3c2b48ed, type: 3}
---- !u!114 &1902710986604220235 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3383545295129949390, guid: cdd9b8b2147e4f44480547fb3c2b48ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 1902710986604220234}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0902b0dd8752d468fcd13db2fdfe79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2214734924405106087
 Transform:
   m_ObjectHideFlags: 0
@@ -2207,7 +2195,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _showAdButton
       value: 
-      objectReference: {fileID: 842430168}
+      objectReference: {fileID: 0}
     - target: {fileID: 7865997427784065790, guid: 3a17ae80d3e17774585daa1a6a626004,
         type: 3}
       propertyPath: m_RootOrder

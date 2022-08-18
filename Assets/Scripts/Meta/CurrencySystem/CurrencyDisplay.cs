@@ -1,3 +1,4 @@
+using System;
 using Meta.Interfaces;
 using TMPro;
 using UnityEngine;
@@ -21,6 +22,12 @@ namespace Meta.CurrencySystem
         private void Start()
         {
             normalCoinCarrier.ValueChanged += UpdateDisplay;
+            UpdateDisplay(normalCoinCarrier.Amount);
+        }
+
+        private void OnDestroy()
+        {
+            normalCoinCarrier.ValueChanged -= UpdateDisplay;
         }
 
         private void UpdateDisplay(int amount)
