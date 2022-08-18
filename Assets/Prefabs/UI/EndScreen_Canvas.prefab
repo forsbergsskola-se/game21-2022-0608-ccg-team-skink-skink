@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4893853244526212482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -206,6 +206,7 @@ MonoBehaviour:
   lootBoxLoseRewardAmount: 0
   normalCoinRewardTextMesh: {fileID: 4949617686198171249}
   lootBoxAmountRewardTextMesh: {fileID: 9121258503927304659}
+  endOfGameScreenObject: {fileID: 55098045539255524}
   level: {fileID: 11400000, guid: c0709d36f06715745a0a5f53dc8b20db, type: 2}
 --- !u!1 &1902710987497405807
 GameObject:
@@ -1104,7 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

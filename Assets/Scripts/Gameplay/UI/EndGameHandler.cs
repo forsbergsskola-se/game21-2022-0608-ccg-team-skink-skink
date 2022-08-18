@@ -13,21 +13,22 @@ public class EndGameHandler : MonoBehaviour {
     [SerializeField] TextMeshProUGUI normalCoinRewardTextMesh;
     [SerializeField] TextMeshProUGUI lootBoxAmountRewardTextMesh;
 
+    [SerializeField] private GameObject endOfGameScreenObject;
+
     [SerializeField, RequireInterface(typeof(ILevel))] Object level;
 
     void Start() {
         Dependencies.Instance.EndOfGameRelay.OnWin += WinScreen;
         Dependencies.Instance.EndOfGameRelay.OnLose += LoseScreen;
-        gameObject.SetActive(false);
     }
     
 
     void WinScreen() {
-        gameObject.SetActive(true);
+        endOfGameScreenObject.SetActive(true);
         UpdateTextAndRewardPlayer(normalCoinWinReward, lootBoxWinRewardAmount);
     }
     void LoseScreen() {
-        gameObject.SetActive(true);
+        endOfGameScreenObject.SetActive(true);
         UpdateTextAndRewardPlayer(normalCoinLoseReward, lootBoxLoseRewardAmount);
     }
 
