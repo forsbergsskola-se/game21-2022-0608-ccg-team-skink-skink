@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
@@ -81,8 +80,11 @@ namespace Gameplay.Unit.Ai
                     triggerCollection.Remove(other);
                 }
             );
-            StartCoroutine(attack.StartAttacking(otherHealth));
+
+            attack.Target = otherHealth;
         }
+
+        public void dealDamage() => attack.StartAttacking();
     }
 }
 

@@ -9,8 +9,9 @@ namespace Gameplay.Unit.UnitActions
 {
     public class Attack
     {
+        public IDamageReceiver Target { get; set; }
+        
         private ICombatStats stats;
-        private bool targetIsAlive;
         private Action onAttack;
 
         public Attack(ICombatStats stats, Action subscribeOnAttack)
@@ -19,20 +20,11 @@ namespace Gameplay.Unit.UnitActions
             onAttack += subscribeOnAttack;
         }
         
-        public IEnumerator StartAttacking(IDamageReceiver opponent)
+        public void StartAttacking()
         {
-            targetIsAlive = true;
-            
-            opponent.SubscribeToOnDeath((UnitState state) => targetIsAlive = false);
-
-            while (targetIsAlive)
-            {
-                onAttack.Invoke();
-                opponent.TakeDamage(stats.Damage);
-                yield return new WaitForSeconds(stats.AttackSpeed);
-            }
-
-            yield return null;
+            onAttack.Invoke();
+            Target.TakeDamage(stats.Damage);
+                
         }
     }
 }
