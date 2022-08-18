@@ -21,7 +21,7 @@ public static class PlayOneShot
 
     //public FMODUnity.EventReference cardActivatedRef;
     static string cardActivatedPath = "event:/Cards/CardActivated";
-    static FMOD.Studio.EventInstance cardActivatedInst = FMODUnity.RuntimeManager.CreateInstance(cardActivatedPath);
+    
 
     //public FMODUnity.EventReference invalidInputRef;
     static string invalidInputPath = "event:/InvalidInput";
@@ -37,11 +37,11 @@ public static class PlayOneShot
     }
     static public void ActivateCardAudio()
     {
-        cardActivatedInst.start();
+        FMODUnity.RuntimeManager.PlayOneShot(cardActivatedPath);
     }
     static public void InvalidInputAudio()
     {
-        invalidInputInst.start();
+        FMODUnity.RuntimeManager.PlayOneShot(invalidInputPath);
     }
     static public void ApCapAudio()
     {

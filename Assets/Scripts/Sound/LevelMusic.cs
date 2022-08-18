@@ -19,7 +19,6 @@ public class LevelMusic : MonoBehaviour
     private FMOD.Studio.EventInstance audienceAmbInst;
     private string audienceAmbPath = "event:/AudienceAmbience";
 
-
     void Start()
     {
         musicEvInst = FMODUnity.RuntimeManager.CreateInstance(music);
@@ -27,8 +26,8 @@ public class LevelMusic : MonoBehaviour
         Dependencies.Instance.EndOfGameRelay.OnWin += PlayWinSound;
         Dependencies.Instance.EndOfGameRelay.OnLose += PlayLoseSound;
         audienceAmbInst = FMODUnity.RuntimeManager.CreateInstance(audienceAmbPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(audienceAmbInst, GetComponent<Transform>(), GetComponent<Rigidbody>());
         audienceAmbInst.start();
-
     }
     public void PauseMenuAudio()
     {
