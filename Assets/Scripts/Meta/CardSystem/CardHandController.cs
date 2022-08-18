@@ -23,6 +23,12 @@ namespace Meta.CardSystem
             inventory.CardRemoved += CheckIfDeletedCardIsInHand;
         }
 
+        private void OnDestroy()
+        {
+            inventory.SelectedCardChanged -= CheckIfCanSet;
+            inventory.CardRemoved -= CheckIfDeletedCardIsInHand;
+        }
+
         private void SetCard(int index, ICard card)
         {
             cardHand[index] = card;

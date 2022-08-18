@@ -55,6 +55,11 @@ namespace Meta.CardSystem
             inventory.CardRemoved += UpdateAllCost;
         }
 
+        private void OnDestroy()
+        {
+            inventory.CardRemoved -= UpdateAllCost;
+        }
+
         private void UpdateAllCost(ICard card)
         {
             if (RanOutOfCards(card))

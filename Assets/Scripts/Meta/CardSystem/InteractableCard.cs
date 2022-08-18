@@ -18,6 +18,15 @@ namespace Meta.CardSystem
             }
         }
 
+        private void OnDestroy()
+        {
+            var receivers = transform.parent.gameObject.GetComponents<ICardReceiver>();
+            foreach (var cardReceiver in receivers)
+            {
+                CardClicked -= cardReceiver.ReceiveCard;
+            }
+        }
+
         public void TriggerClickedCardEvent()
         {
             CardClicked?.Invoke(basicCardViewer.Card);

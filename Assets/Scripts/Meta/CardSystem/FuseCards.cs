@@ -25,6 +25,12 @@ namespace Meta.CardSystem
             inventory.CardRemoved += ButtonControl;
         }
 
+        private void OnDestroy()
+        {
+            inventory.SelectedCardChanged -= ButtonControl;
+            inventory.CardRemoved -= ButtonControl;
+        }
+
         public void ShowCardUpgradeScreen()
         {
             (cardUpgradeScreen as ICardUpgradeScreen).SetCard(inventory.SelectedCard);

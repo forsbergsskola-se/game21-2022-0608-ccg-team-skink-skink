@@ -1,3 +1,4 @@
+using System;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,6 +29,13 @@ namespace Meta.CardSystem
             Inventory.SelectedCardChanged += ButtonControl;
             Inventory.CardRemoved += ButtonControl;
             Inventory.CardAdded += ButtonControl;
+        }
+
+        private void OnDestroy()
+        {
+            Inventory.SelectedCardChanged -= ButtonControl;
+            Inventory.CardRemoved -= ButtonControl;
+            Inventory.CardAdded -= ButtonControl;
         }
 
         public void ShowSellCardScreen()
