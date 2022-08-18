@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -8,7 +9,7 @@ namespace Gameplay.Unit.Health
     {
         [SerializeField] private HealthStatsSO healthStats;
         //TODO: remove if decided on no hp  [SerializeField] private Healthbar healthbar;
-        
+
         public HealthStatsSO HealthStats => healthStats;
 
         public UnityEvent OnDamageTaken;
@@ -17,6 +18,7 @@ namespace Gameplay.Unit.Health
         
         private float currentHealth;
         //Todo: Possibly make private
+
         public float CurrentHealth
         {
             get => currentHealth;
