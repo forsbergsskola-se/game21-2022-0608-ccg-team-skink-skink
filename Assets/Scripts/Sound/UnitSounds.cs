@@ -25,8 +25,8 @@ public class UnitSounds : MonoBehaviour
     public void PlayDmgTakenSound()
     {
         dmgTakenInstance = FMODUnity.RuntimeManager.CreateInstance(dmgTaken);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         dmgTakenInstance.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dmgTakenInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
     }
     public void PlayDeathSound()
     {
@@ -34,8 +34,8 @@ public class UnitSounds : MonoBehaviour
         audienceReactsInstance = FMODUnity.RuntimeManager.CreateInstance(audienceReactsPath);
         audienceReactsInstance.start();
         audienceReactsInstance.release();
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         deathInstance.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         dmgTakenInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
     FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance instance)

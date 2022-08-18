@@ -133,6 +133,9 @@
 		<property name="length">
 			<value>132.427875</value>
 		</property>
+		<property name="volume">
+			<value>0.5</value>
+		</property>
 		<property name="polyphony">
 			<value>3</value>
 		</property>
@@ -140,19 +143,19 @@
 			<value>3</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>7200</value>
+			<value>5500</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
 			<value>20000</value>
 		</property>
 		<property name="spawnRate">
-			<value>105</value>
+			<value>125</value>
 		</property>
 		<property name="minimumScatterDistance">
-			<value>1.60000002</value>
+			<value>2.04999995</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>12.5</value>
+			<value>1200</value>
 		</property>
 		<property name="pitchRandomization">
 			<value>1.10000002</value>
@@ -356,8 +359,11 @@
 		<property name="lowShelfGain">
 			<value>-4</value>
 		</property>
+		<property name="wetLevel">
+			<value>-10.5</value>
+		</property>
 		<property name="dryLevel">
-			<value>-17</value>
+			<value>-13.5</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{7ce27af2-9806-40e5-a759-8de70a74fe76}">
