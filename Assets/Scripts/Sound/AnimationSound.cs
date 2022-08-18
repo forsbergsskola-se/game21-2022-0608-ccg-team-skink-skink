@@ -8,11 +8,6 @@ public class AnimationSound : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
     }
-
-    void StopAnimSound(string path)
-    {
-        
-        
-    }
+    
 
 }
