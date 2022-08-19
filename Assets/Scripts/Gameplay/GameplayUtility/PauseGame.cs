@@ -1,28 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using Meta.Interfaces;
 using UnityEngine;
+using Utility;
 
-public class PauseGame : MonoBehaviour
+namespace Gameplay.GameplayUtility
 {
-    public void Pause()
+    public class PauseGame : MonoBehaviour
     {
-         Time.timeScale = 0;
-    }
+        [SerializeField] private GameObject pauseMenu;
+        [SerializeField, RequireInterface(typeof(ILevel))] Object level;
     
-    public void UnPause()
-    {
-        Time.timeScale = 1;
-    }
-    public void PauseMenu()
-    {
-        //pauseMenu.SetActive(true);
-    }
-    public void UnPauseMenu()
-    {
-        //pauseMenu.SetActive(false);
-    }
-    public void QuitGame()
-    {
-        Application.Quit();
+    
+        public void Pause()
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    
+        public void UnPause()
+        {
+            Time.timeScale = 1;
+            pauseMenu.SetActive(false);
+        }
+
+        public void QuitGame()
+        {
+            Dependencies.Instance.LevelLoader.LoadLevel(level as ILevel);
+        }
     }
 }
