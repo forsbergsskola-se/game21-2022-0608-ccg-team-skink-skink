@@ -1041,6 +1041,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 691233092573034007}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1747344631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7326739994516813559, guid: 799bf39bd0a1eb64798b14fa953974d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 5703708475332449416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb914c9cf63b6c48abbdb37ba1bab86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &691233092573034007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2345,6 +2357,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1667722355}
     m_Modifications:
+    - target: {fileID: 66290044395260844, guid: 799bf39bd0a1eb64798b14fa953974d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 189957161872509012, guid: 799bf39bd0a1eb64798b14fa953974d0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2360,6 +2377,11 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2179968038931117767, guid: 799bf39bd0a1eb64798b14fa953974d0,
+        type: 3}
+      propertyPath: lootBoxInventoryModel
+      value: 
+      objectReference: {fileID: 1747344631}
     - target: {fileID: 5703708475599489104, guid: 799bf39bd0a1eb64798b14fa953974d0,
         type: 3}
       propertyPath: m_Pivot.x
