@@ -24,7 +24,6 @@ namespace Gameplay.Unit.UnitActions
         {
             onAttack.Invoke();
             Target.TakeDamage(stats.Damage);
-                
         }
     }
 }
