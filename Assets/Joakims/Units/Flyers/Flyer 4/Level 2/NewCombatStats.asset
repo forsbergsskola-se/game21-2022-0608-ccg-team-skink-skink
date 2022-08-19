@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07d6003ba72d59498b74d4ad2aecb9e, type: 3}
   m_Name: NewCombatStats
   m_EditorClassIdentifier: 
-  attackSpeed: 0.19
+  attackSpeed: 2
   damage: 4
   defence: 0
   range: 5

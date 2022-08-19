@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7273398531614379603}
+  combatStats: {fileID: 11400000, guid: 7855035289cd5a74bbc85b69e644f449, type: 2}
 --- !u!114 &3520380455956332763
 MonoBehaviour:
   m_ObjectHideFlags: 0
