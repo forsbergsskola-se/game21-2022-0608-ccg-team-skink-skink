@@ -8,22 +8,17 @@ namespace Gameplay.GameplayUtility
     {
         [SerializeField] private GameObject pauseMenu;
         [SerializeField, RequireInterface(typeof(ILevel))] Object level;
-    
-    
-        public void Pause()
+
+
+        public void TogglePause()
         {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0;
-        }
-    
-        public void UnPause()
-        {
-            Time.timeScale = 1;
-            pauseMenu.SetActive(false);
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            Time.timeScale = pauseMenu.activeSelf ? 0 : 1;
         }
 
         public void QuitGame()
         {
+            Time.timeScale = 1;
             Dependencies.Instance.LevelLoader.LoadLevel(level as ILevel);
         }
     }
