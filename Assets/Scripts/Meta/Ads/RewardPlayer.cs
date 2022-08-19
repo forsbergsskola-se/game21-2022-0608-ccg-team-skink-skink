@@ -1,15 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Utility;
 
-public class RewardPlayer : MonoBehaviour
+namespace Meta.Ads
 {
-    // Start is called before the first frame update
-    public void GiveNormalCoins(int value)
+    public class RewardPlayer : MonoBehaviour
     {
-        Debug.Log("Coins before rewards  :"+Dependencies.Instance.NormalCoinCarrier.Amount);
-        Dependencies.Instance.NormalCoinCarrier.Amount += value;
-        Debug.Log("Coins after rewards  :"+Dependencies.Instance.NormalCoinCarrier.Amount);
+        public void GiveNormalCoins(int value)
+        {
+            StopAllCoroutines();
+            StartCoroutine(Reward(value));
+        }
+
+        private IEnumerator Reward(int value)
+        {
+            yield return new WaitForSeconds(0.2f);
+            Dependencies.Instance.NormalCoinCarrier.Amount += value;
+        }
     }
 }
