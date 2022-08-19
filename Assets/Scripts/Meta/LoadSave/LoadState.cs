@@ -9,12 +9,13 @@ namespace Meta.LoadSave
     {
         private ICardArray cardArray;
         private ICardHand starterCardHand;
-        private string saveFilePath = Application.dataPath + "/SavedGames/SavedData.json";
+        private string saveFilePath = Application.persistentDataPath + "/SavedGames/SavedData.json";
 
         public LoadState(ICardArray cardArray, ICardHand starterCardHand)
         {
             this.cardArray = cardArray;
             this.starterCardHand = starterCardHand;
+            Debug.Log(saveFilePath);
         }
         
         public void Load()
