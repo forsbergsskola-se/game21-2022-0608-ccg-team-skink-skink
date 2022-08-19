@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6917872111304481066}
   - component: {fileID: 1364857735452763336}
   - component: {fileID: 6725748523103494581}
+  - component: {fileID: 4931973096067070226}
   m_Layer: 0
   m_Name: 0001
   m_TagString: Untagged
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6917872111304481066}
+  combatStats: {fileID: 11400000, guid: e482446352d55624793a6df11d598e05, type: 2}
 --- !u!114 &6725748523103494581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +134,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dab81b4e109d584bb218d822502890a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4931973096067070226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200215363034513156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd76dc50d5bd724eb2f8d1e2ae0b412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1379157993899873897}
+        m_TargetAssemblyTypeName: Gameplay.Unit.Ai.UnitAI, Assembly-CSharp
+        m_MethodName: dealDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &5277809681989143515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -359,6 +388,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33d365fa1b3ec2643b8349c66c9d369f, type: 3}
+--- !u!114 &1379157993899873897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6493428779436629426, guid: 33d365fa1b3ec2643b8349c66c9d369f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5277809681989143515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d0f479dcbfc4d4db51ca717e2038b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7067994595122596330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3109740300377866801, guid: 33d365fa1b3ec2643b8349c66c9d369f,
