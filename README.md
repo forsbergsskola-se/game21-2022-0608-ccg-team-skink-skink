@@ -1,8 +1,14 @@
-# {game-title}
+# Puppet Tears
 
-{video}
+![Screenshot 2022-08-19 161750](https://user-images.githubusercontent.com/20385915/185653739-82cb1335-7eb6-48c1-9dfc-b5bed13860d1.png)
 
-{description}
+https://user-images.githubusercontent.com/20385915/185653638-39dafd9f-54b8-491b-ae41-77eeac3f229f.mp4
+
+Description:
+
+Theater is cool but sometimes it can be very tedious with long monologues and endless acts. Imagine if the puppets on stage would start fighting and a full on tug o war takes place instead of the usual play. In this game you are responsible for a gang of paper puppets that travel around the world visiting different theaters. Your goal is to smash the local puppet gangs and make a name for yourself.  Find toy boxes where you can unlock new puppets to use in battles, combine puppets together to make even stronger puppets, and decide which puppets that will act for the current play. This will give you a big supply of puppets to find and a list of things to do.  Can you get the best score from the audience?
+
+https://puppettearsgame.wixsite.com/main
 
 ## Team Skink Skink
 

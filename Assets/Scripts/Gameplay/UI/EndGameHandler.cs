@@ -10,10 +10,13 @@ public class EndGameHandler : MonoBehaviour {
     [SerializeField] int lootBoxWinRewardAmount;
     [SerializeField] int lootBoxLoseRewardAmount;
 
+    [SerializeField] private TextMeshProUGUI winLoseText;
+
     [SerializeField] TextMeshProUGUI normalCoinRewardTextMesh;
     [SerializeField] TextMeshProUGUI lootBoxAmountRewardTextMesh;
 
     [SerializeField] private GameObject endOfGameScreenObject;
+    [SerializeField] private Canvas mainUiCanvas;
 
     [SerializeField, RequireInterface(typeof(ILevel))] Object level;
 
@@ -26,17 +29,21 @@ public class EndGameHandler : MonoBehaviour {
     void WinScreen() {
         endOfGameScreenObject.SetActive(true);
         UpdateTextAndRewardPlayer(normalCoinWinReward, lootBoxWinRewardAmount);
+        winLoseText.text = "You Win!";
     }
     void LoseScreen() {
         endOfGameScreenObject.SetActive(true);
         UpdateTextAndRewardPlayer(normalCoinLoseReward, lootBoxLoseRewardAmount);
+        winLoseText.text = "You Lose!";
     }
 
     public void LoadMainMenu() {
         Dependencies.Instance.LevelLoader.LoadLevel(level as ILevel);
     }
     
-    void UpdateTextAndRewardPlayer(int normalCoin, int lootBoxAmount) {
+    void UpdateTextAndRewardPlayer(int normalCoin, int lootBoxAmount)
+    {
+        mainUiCanvas.enabled = false;
         normalCoinRewardTextMesh.text = normalCoin.ToString();
         Dependencies.Instance.NormalCoinCarrier.Amount += normalCoin;
         
