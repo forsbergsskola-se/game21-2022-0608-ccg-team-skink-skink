@@ -23,7 +23,6 @@ namespace Gameplay.Unit.Health
                 if (value <= 0 && currentHealth > 0) OnDeath?.Invoke(UnitState.Death);
                 
                 currentHealth = Mathf.Clamp(value, 0, healthStats.MaxHealth);
-               Debug.Log(currentHealth);
             }
         }
 
