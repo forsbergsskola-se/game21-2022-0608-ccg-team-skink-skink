@@ -6,6 +6,7 @@ namespace Gameplay.GameplayUtility
 {
     public class PauseGame : MonoBehaviour
     {
+        [SerializeField] private Canvas gameCanvas;
         [SerializeField] private GameObject pauseMenu;
         [SerializeField, RequireInterface(typeof(ILevel))] Object level;
 
@@ -13,6 +14,7 @@ namespace Gameplay.GameplayUtility
         public void TogglePause()
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
+            gameCanvas.enabled = !pauseMenu.activeSelf;
             Time.timeScale = pauseMenu.activeSelf ? 0 : 1;
         }
 
