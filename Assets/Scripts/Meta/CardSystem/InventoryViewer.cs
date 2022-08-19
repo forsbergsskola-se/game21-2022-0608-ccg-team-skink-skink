@@ -28,6 +28,12 @@ namespace Meta.CardSystem
             SetFromInventory();
         }
 
+        private void OnDestroy()
+        {
+            inventory.SelectedCardChanged -= SetSelectedCard;
+            inventory.CardAdded -= AddCard;
+            inventory.CardRemoved -= RemoveCard;
+        }
 
 
         public void SetFromInventory()

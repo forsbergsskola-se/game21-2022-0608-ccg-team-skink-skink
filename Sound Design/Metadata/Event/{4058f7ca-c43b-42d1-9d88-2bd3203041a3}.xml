@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{4058f7ca-c43b-42d1-9d88-2bd3203041a3}">
 		<property name="name">
-			<value>MusicLevel7</value>
+			<value>OutroMusic</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -34,9 +34,6 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{c246d8af-f556-4bdb-8019-8ce745c15f1c}</destination>
-		</relationship>
-		<relationship name="banks">
-			<destination>{34c364c1-bd3d-4b14-ad98-885f8abeb19d}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{d6460e15-1d29-4617-b5f6-f7ced4ce12cf}">

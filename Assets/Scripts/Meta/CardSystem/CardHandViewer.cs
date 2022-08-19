@@ -28,6 +28,12 @@ namespace Meta.CardSystem
             cardHand.SelectedCardChanged += SetSelectedCardUI;
         }
 
+        private void OnDestroy()
+        {
+            cardHand.HandChanged -= UpdateCardUI;
+            cardHand.SelectedCardChanged -= SetSelectedCardUI;
+        }
+
         private void CreateCardViewers()
         {
             cardSlots = new BasicCardViewer[cardHand.Cards.Length];
