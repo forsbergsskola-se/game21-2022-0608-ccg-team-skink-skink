@@ -15,21 +15,10 @@ namespace Gameplay.GameplayUtility
             pauseMenu.SetActive(!pauseMenu.activeSelf);
             Time.timeScale = pauseMenu.activeSelf ? 0 : 1;
         }
-    
-        public void Pause()
-        {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0;
-        }
-    
-        public void UnPause()
-        {
-            Time.timeScale = 1;
-            pauseMenu.SetActive(false);
-        }
 
         public void QuitGame()
         {
+            Time.timeScale = 1;
             Dependencies.Instance.LevelLoader.LoadLevel(level as ILevel);
         }
     }
