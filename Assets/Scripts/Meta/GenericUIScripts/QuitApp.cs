@@ -7,7 +7,7 @@ namespace Meta.GenericUIScripts
     {
         [SerializeField] private float doubleClickTime;
         
-        private bool quitAllowed;
+        private bool quitAllowed = true;
         
         public void AttemptQuit()
         {
