@@ -149,7 +149,7 @@ MonoBehaviour:
   onAttack:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 667231309464259526}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Gameplay.Unit.Ai.UnitAI, Assembly-CSharp
         m_MethodName: dealDamage
         m_Mode: 1
@@ -389,18 +389,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33d365fa1b3ec2643b8349c66c9d369f, type: 3}
---- !u!114 &667231309464259526 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6493428779436629426, guid: 33d365fa1b3ec2643b8349c66c9d369f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6007573500900710004}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d0f479dcbfc4d4db51ca717e2038b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7140110373288150839 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3479581331175805251, guid: 33d365fa1b3ec2643b8349c66c9d369f,
