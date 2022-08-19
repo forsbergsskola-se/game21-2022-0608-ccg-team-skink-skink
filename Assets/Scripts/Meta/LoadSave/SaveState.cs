@@ -21,7 +21,7 @@ namespace Meta.LoadSave
         public void SetGameStateToJson(GameState state)
         {
             var toJson = JsonUtility.ToJson(state);
-            File.WriteAllText(Application.dataPath + "/SavedGames/SavedData.json", toJson);
+            File.WriteAllText(Application.persistentDataPath + "/SavedGames/SavedData.json", toJson);
         }
 
         private GameState GetGameStateFromDependencies()

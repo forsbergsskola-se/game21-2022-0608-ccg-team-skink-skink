@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Gameplay.Unit.Health;
 using Gameplay.Unit.UnitActions;
 using Gameplay.Unit.UnitAI;
+using Gameplay.Unit.UnityAI;
 using UnityEngine;
 using UnityEngine.Events;
 
