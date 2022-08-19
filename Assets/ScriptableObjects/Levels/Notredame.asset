@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae75a4427e6b5ca458a21e6ef5699a37, type: 3}
   m_Name: Notredame
   m_EditorClassIdentifier: 
-  visualName: Notredame
-  description: 
+  visualName: The hunchback of Notre-Dame
+  description: Visit Paris and see the beautiful Notre-Dame. Help the bell ringer
+    Quasimodo protect the girl Esmeralda
   internalSceneName: GameLevel3
