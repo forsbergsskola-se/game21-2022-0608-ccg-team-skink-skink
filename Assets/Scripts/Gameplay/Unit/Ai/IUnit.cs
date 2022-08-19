@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameplay.Unit.UnityAI
+namespace Gameplay.Unit.Ai
 {
     public interface IUnit
     {
