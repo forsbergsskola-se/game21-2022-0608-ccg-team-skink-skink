@@ -82,7 +82,19 @@ MonoBehaviour:
   combatStatsSO: {fileID: 11400000, guid: 4f4d1ea61d3a7a14bbecca351ef2d619, type: 2}
   onStateChanges:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2738742629114264651}
+        m_TargetAssemblyTypeName: Gameplay.Unit.Animation.AnimationController, Assembly-CSharp
+        m_MethodName: ChangeAnimation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8121154245991871638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,8 +113,19 @@ MonoBehaviour:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
-  myAnimator: {fileID: 0}
+      m_Calls:
+      - m_Target: {fileID: 2738742629114264651}
+        m_TargetAssemblyTypeName: Gameplay.Unit.Animation.AnimationController, Assembly-CSharp
+        m_MethodName: ChangeAnimation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6768578155298855191
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +220,9 @@ GameObject:
   - component: {fileID: 808168313366755003}
   - component: {fileID: 2320991924029914396}
   - component: {fileID: 6622629680730241706}
+  - component: {fileID: 2738742629114264651}
+  - component: {fileID: 5021585672247690080}
+  - component: {fileID: 6064729475284846599}
   m_Layer: 0
   m_Name: 0001
   m_TagString: Untagged
@@ -291,3 +317,56 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2738742629114264651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9117906304672784672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed24caee01d7184aa811816d007510d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6622629680730241706}
+  combatStats: {fileID: 11400000, guid: 4f4d1ea61d3a7a14bbecca351ef2d619, type: 2}
+--- !u!114 &5021585672247690080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9117906304672784672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd76dc50d5bd724eb2f8d1e2ae0b412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6493428779436629426}
+        m_TargetAssemblyTypeName: Gameplay.Unit.Ai.UnitAI, Assembly-CSharp
+        m_MethodName: dealDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6064729475284846599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9117906304672784672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dab81b4e109d584bb218d822502890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
