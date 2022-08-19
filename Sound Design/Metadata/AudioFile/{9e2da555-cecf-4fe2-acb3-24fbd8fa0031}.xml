@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9e2da555-cecf-4fe2-acb3-24fbd8fa0031}">
+		<property name="assetPath">
+			<value>Music/outro_V1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>79.799999999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d77e523b-8e2f-4328-810d-dd31beea7deb}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -2,44 +2,70 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayOneShot : MonoBehaviour
+public static class PlayOneShot
 {
-    public FMODUnity.EventReference playCardRef;
-    FMOD.Studio.EventInstance playCardInst;
 
-    public FMODUnity.EventReference cardActivatedRef;
-    FMOD.Studio.EventInstance cardActivatedInst;
+    //Sfx and music mute
+    static FMOD.Studio.EventInstance muteMusicEvInst;
+    static string muteMusicPath = "snapshot:/MuteMusic";
+    
+    static FMOD.Studio.EventInstance muteSFXEvInst;
+    static string muteSFXPath = "snapshot:/MuteSFX";
+    
+    public static bool musicMuted = false;
+    public static bool sfxMuted = false;
+    
+    //public FMODUnity.EventReference playCardRef;
+    static string playCardPath = "event:/Cards/PlayCard";
+    static FMOD.Studio.EventInstance playCardInst = FMODUnity.RuntimeManager.CreateInstance(playCardPath);
 
-    public FMODUnity.EventReference invalidInputRef;
-    FMOD.Studio.EventInstance invalidInputInst;
+    //public FMODUnity.EventReference cardActivatedRef;
+    static string cardActivatedPath = "event:/Cards/CardActivated";
+    
 
-    public FMODUnity.EventReference apCapRef;
-    FMOD.Studio.EventInstance apCapInst;
-    void Start()
-    {
-        playCardInst = FMODUnity.RuntimeManager.CreateInstance(playCardRef);
-        cardActivatedInst = FMODUnity.RuntimeManager.CreateInstance(cardActivatedRef);
-        invalidInputInst = FMODUnity.RuntimeManager.CreateInstance(invalidInputRef);
-        apCapInst = FMODUnity.RuntimeManager.CreateInstance(apCapRef);
-    }
-    void PlayCardAudio()
+    //public FMODUnity.EventReference invalidInputRef;
+    static string invalidInputPath = "event:/InvalidInput";
+    static FMOD.Studio.EventInstance invalidInputInst = FMODUnity.RuntimeManager.CreateInstance(invalidInputPath);
+
+    //public FMODUnity.EventReference apCapRef;
+    static string apCapPath = "event:/APcap";
+    static FMOD.Studio.EventInstance apCapInst = FMODUnity.RuntimeManager.CreateInstance(apCapPath);
+
+    static public void PlayCardAudio()
     {
         playCardInst.start();
-        playCardInst.release();
     }
-    void ActivateCardAudio()
+    static public void ActivateCardAudio()
     {
-        cardActivatedInst.start();
-        cardActivatedInst.release();
+        FMODUnity.RuntimeManager.PlayOneShot(cardActivatedPath);
     }
-    public void InvalidInputAudio()
+    static public void InvalidInputAudio()
     {
-        invalidInputInst.start();
-        cardActivatedInst.release();
+        FMODUnity.RuntimeManager.PlayOneShot(invalidInputPath);
     }
-    void ApCapAudio()
+    static public void ApCapAudio()
     {
         apCapInst.start();
-        apCapInst.release();
     }
+    static public void ToggleAudioOff(bool musicCheckBox)
+    {
+        //true=music false=sfx
+
+        if (musicCheckBox)
+        {
+            muteMusicEvInst = FMODUnity.RuntimeManager.CreateInstance(muteMusicPath);
+            muteMusicEvInst.start();
+        }
+        else
+        {
+            muteSFXEvInst = FMODUnity.RuntimeManager.CreateInstance(muteSFXPath);
+            muteSFXEvInst.start();
+        }
+    }
+    static public void ToggleAudioOn(bool musicCheckBox)
+    {
+        if (musicCheckBox) muteMusicEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        else muteSFXEvInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b43e364028847e428fee8af62c50a4a, type: 3}
   m_Name: BaseAP
   m_EditorClassIdentifier: 
-  start: 30
+  start: 60
   max: 100
-  regen: 0.5
+  regen: 0.1

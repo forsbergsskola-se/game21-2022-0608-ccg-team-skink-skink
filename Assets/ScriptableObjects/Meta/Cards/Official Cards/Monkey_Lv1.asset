@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
   m_Name: Monkey_Lv1
   m_EditorClassIdentifier: 
-  description: 
-  cardTitle: 
+  description: Air to ground close combat
+  cardTitle: Monkey King (Basic)
   cardImage: {fileID: 21300000, guid: 3bee522fcee089045a42dd04d93e3356, type: 3}
   typeImage: {fileID: 0}
   level: 1
-  apCost: 30
+  apCost: 40
   coolDownTime: 10
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 9198173200974718301, guid: 800d025ee8d19a948a920976adbe255c,
+    type: 3}
   upgradedCard: {fileID: 11400000, guid: 9272713457d338e43b017e11179b5253, type: 2}
   currencyValueSettings:
     SellCost: 50

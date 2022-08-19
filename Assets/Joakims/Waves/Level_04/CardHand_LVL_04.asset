@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0ca79fc7a3df04ab65fba0163430a5, type: 3}
+  m_Name: CardHand_LVL_04
+  m_EditorClassIdentifier: 
+  abilityCard: {fileID: 0}
+  cards:
+  - {fileID: 11400000, guid: 6c50090bfb5d1b941b4262ded46e4ebe, type: 2}
+  - {fileID: 11400000, guid: 59530260f06963649a977045ca7f1e53, type: 2}
+  - {fileID: 11400000, guid: 54ecc90c86ca2ea4e944513c284de3bc, type: 2}
+  - {fileID: 11400000, guid: 73d0a6683caadac4498ebee19ae65c1d, type: 2}
+  - {fileID: 11400000, guid: 9a6aa8c9f94282f4a8dbd4f2abc805d9, type: 2}
+  - {fileID: 11400000, guid: 2c7d0db8f14643247abc444d34adccc7, type: 2}
+  - {fileID: 11400000, guid: 3ad697703e667b24d935679d7fbbc3d6, type: 2}
+  - {fileID: 11400000, guid: 950e2fdea178d834aa3e6a03a08f585f, type: 2}

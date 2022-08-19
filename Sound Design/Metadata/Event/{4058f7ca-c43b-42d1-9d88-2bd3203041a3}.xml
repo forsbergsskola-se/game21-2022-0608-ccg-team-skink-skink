@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{4058f7ca-c43b-42d1-9d88-2bd3203041a3}">
 		<property name="name">
-			<value>MusicLevel7</value>
+			<value>OutroMusic</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -24,6 +24,7 @@
 		</relationship>
 		<relationship name="markerTracks">
 			<destination>{53e3d5f5-c3fd-40dc-8acd-a1ddedf62e48}</destination>
+			<destination>{03f31c17-15e5-4472-9811-9ab5a0b1e42a}</destination>
 		</relationship>
 		<relationship name="groupTracks">
 			<destination>{ce8ee23f-a9d0-4754-b055-65e7543fa1fb}</destination>
@@ -33,9 +34,6 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{c246d8af-f556-4bdb-8019-8ce745c15f1c}</destination>
-		</relationship>
-		<relationship name="banks">
-			<destination>{34c364c1-bd3d-4b14-ad98-885f8abeb19d}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{d6460e15-1d29-4617-b5f6-f7ced4ce12cf}">
@@ -61,15 +59,25 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{649bc18c-1eb2-4560-b8f2-4f7cd58a2e52}" />
 	<object class="MarkerTrack" id="{53e3d5f5-c3fd-40dc-8acd-a1ddedf62e48}" />
+	<object class="MarkerTrack" id="{03f31c17-15e5-4472-9811-9ab5a0b1e42a}" />
 	<object class="GroupTrack" id="{ce8ee23f-a9d0-4754-b055-65e7543fa1fb}">
 		<relationship name="modules">
 			<destination>{87dd4a25-558e-4e2b-8abc-766f1163c6c6}</destination>
+			<destination>{a7518edb-0fd9-4756-aab7-1737060133c2}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{307b8ccc-9fcd-47f7-b8e4-2325166eda0d}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{b6327ae1-324c-4251-8a74-8172a3ffb41e}" />
+	<object class="Timeline" id="{b6327ae1-324c-4251-8a74-8172a3ffb41e}">
+		<relationship name="modules">
+			<destination>{a7518edb-0fd9-4756-aab7-1737060133c2}</destination>
+		</relationship>
+		<relationship name="markers">
+			<destination>{5d00183b-9d13-4194-8a94-9c4de968acac}</destination>
+			<destination>{126c1f74-133b-4275-a358-2cb7278736af}</destination>
+		</relationship>
+	</object>
 	<object class="ParameterProxy" id="{c246d8af-f556-4bdb-8019-8ce745c15f1c}">
 		<relationship name="modules">
 			<destination>{87dd4a25-558e-4e2b-8abc-766f1163c6c6}</destination>
@@ -79,6 +87,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{fbad1713-16d4-49ce-92da-edfcc34fa82f}">
+		<property name="volume">
+			<value>-4</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{cb1d3833-6c2f-44a2-88ab-ed72f7358b54}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{a47c1a4b-8996-496c-93d9-db86bf0cd5b0}</destination>
 		</relationship>
@@ -121,6 +135,20 @@
 			<destination>{fa04d020-4b51-4c00-b2ad-afd81e393d54}</destination>
 		</relationship>
 	</object>
+	<object class="SingleSound" id="{a7518edb-0fd9-4756-aab7-1737060133c2}">
+		<property name="length">
+			<value>77.727450738916247</value>
+		</property>
+		<relationship name="fadeInCurve">
+			<destination>{0459eeef-b456-4968-b68b-206e83ef6bcb}</destination>
+		</relationship>
+		<relationship name="fadeOutCurve">
+			<destination>{83822362-6621-46ed-bf8d-6b5c137684d7}</destination>
+		</relationship>
+		<relationship name="audioFile">
+			<destination>{9e2da555-cecf-4fe2-acb3-24fbd8fa0031}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{307b8ccc-9fcd-47f7-b8e4-2325166eda0d}">
 		<property name="name">
 			<value>Audio 1</value>
@@ -135,6 +163,48 @@
 			<destination>{fbad1713-16d4-49ce-92da-edfcc34fa82f}</destination>
 		</relationship>
 	</object>
+	<object class="TempoMarker" id="{5d00183b-9d13-4194-8a94-9c4de968acac}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="tempo">
+			<value>100</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{b6327ae1-324c-4251-8a74-8172a3ffb41e}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{53e3d5f5-c3fd-40dc-8acd-a1ddedf62e48}</destination>
+		</relationship>
+	</object>
+	<object class="LoopRegion" id="{126c1f74-133b-4275-a358-2cb7278736af}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>76.799999999999997</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{b6327ae1-324c-4251-8a74-8172a3ffb41e}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{03f31c17-15e5-4472-9811-9ab5a0b1e42a}</destination>
+		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{cb1d3833-6c2f-44a2-88ab-ed72f7358b54}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>180</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{a47c1a4b-8996-496c-93d9-db86bf0cd5b0}">
 		<relationship name="effects">
 			<destination>{874b209b-44c3-4980-8816-9eebcb904eda}</destination>
@@ -142,6 +212,22 @@
 	</object>
 	<object class="MixerBusPanner" id="{00cb027a-cc4a-4602-aa27-9af2fc88e893}" />
 	<object class="MixerBusFader" id="{8cc3f30d-73c5-40a9-ae29-fc04114aaae1}" />
+	<object class="FadeCurve" id="{0459eeef-b456-4968-b68b-206e83ef6bcb}">
+		<relationship name="startPoint">
+			<destination>{42e32063-5962-4c66-a347-52ee1c8aae93}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{6f1febfc-df21-4143-86c3-9286bd4f8677}</destination>
+		</relationship>
+	</object>
+	<object class="FadeCurve" id="{83822362-6621-46ed-bf8d-6b5c137684d7}">
+		<relationship name="startPoint">
+			<destination>{a8aa67e3-4200-4de4-ad41-e5849ce11aa1}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{67c62121-34cc-4895-8cb4-81020799829d}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{fc72ac42-f639-4340-9c96-239a7a615c82}">
 		<relationship name="effects">
 			<destination>{b7e37601-3afb-453a-9ce3-5403acff38ae}</destination>
@@ -149,5 +235,43 @@
 	</object>
 	<object class="MixerBusPanner" id="{783f0bac-8c60-4e5e-b0b8-3951a5eff225}" />
 	<object class="MixerBusFader" id="{874b209b-44c3-4980-8816-9eebcb904eda}" />
+	<object class="AutomationPoint" id="{42e32063-5962-4c66-a347-52ee1c8aae93}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.2547189</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{6f1febfc-df21-4143-86c3-9286bd4f8677}">
+		<property name="position">
+			<value>0.84437192118226601</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{a8aa67e3-4200-4de4-ad41-e5849ce11aa1}">
+		<property name="position">
+			<value>62.727450738916247</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>0.25471893</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{67c62121-34cc-4895-8cb4-81020799829d}">
+		<property name="position">
+			<value>77.727450738916247</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{b7e37601-3afb-453a-9ce3-5403acff38ae}" />
 </objects>

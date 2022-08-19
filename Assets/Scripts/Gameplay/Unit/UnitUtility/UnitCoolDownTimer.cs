@@ -1,33 +1,68 @@
 using System.Collections;
-using System.Collections.Generic;
 using Meta.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 using Utility;
 
-namespace Gameplay.Unit
+namespace Gameplay.Unit.UnitUtility
 {
     public class UnitCoolDownTimer : MonoBehaviour
     {
-        private ICardHand deckHand; // Changed to Dependency Injection
-        public PlayOneShot PlayOneShot;
+        [SerializeField] private sbyte animationFramerate = 30;
+        
+        private ICardHand deckHand;
+        private float frameTime;
 
-        public void CoolDownUnit(int buttonId)
+        
+        private void Start()
         {
-            deckHand = FindObjectOfType<Dependencies>().PlayerCardHand;
-            
-            GameObject clickedButtonGO = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
-            ICardHand hand = deckHand as ICardHand;
-            StartCoroutine(UnitCoolDown(clickedButtonGO, hand.Cards[buttonId].CoolDownTime));
+            frameTime = 1 / (float)animationFramerate;
+            deckHand = Dependencies.Instance.PlayerCardHand;
         }
         
-        private IEnumerator UnitCoolDown(GameObject cardButton,int coolDownTime)
+        
+        public void CoolDownUnit(int buttonId)
         {
-            cardButton.GetComponent<Button>().enabled = false;
-            PlayOneShot.InvalidInputAudio();
-            //TODO: Animation + sound (in a separated script ??)
-            yield return new WaitForSeconds(coolDownTime);
-            cardButton.GetComponent<Button>().enabled = true;
+            GameObject clickedButtonGO = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
+            StartCoroutine(CardAnimation(clickedButtonGO, deckHand.Cards[buttonId].CoolDownTime));
+        }
+        
+        
+        private IEnumerator CardAnimation(GameObject cardObject, int coolDown)
+        {
+            cardObject.GetComponent<Button>().interactable = false;
+            
+            var cardTransform = cardObject.GetComponent<RectTransform>();
+            var startPos = cardTransform.anchoredPosition;
+            var height = cardTransform.rect.height;
+            var stepSize = 1f / (coolDown * animationFramerate);
+            var xPos = startPos.x;
+
+            // Animation and timer.
+            float time = 1;
+            do
+            {
+                var yPos = startPos.y + (height*0.75f) * AnimationFormula(time, coolDown * 4);
+                cardTransform.anchoredPosition = new Vector2(xPos, yPos);
+                time -= stepSize;
+                yield return new WaitForSeconds(frameTime);
+            } while (time > 0);
+
+            cardTransform.anchoredPosition = startPos;
+            PlayOneShot.ActivateCardAudio();
+            cardObject.GetComponent<Button>().interactable = true;
+        }
+
+
+        /// <summary>
+        /// Returns a float to be used as a multiplier for changing card height.
+        /// </summary>
+        /// <param name="x">Any value between 1 - 0 for start to end of animation.</param>
+        /// <param name="fallSpeed">The speed of the initial bounce up and fall down.</param>
+        /// <returns></returns>
+        private float AnimationFormula(float x, float fallSpeed)
+        {
+            return Mathf.Sin(2.2f * Mathf.Pow(x, fallSpeed + 5.9f)) - x + 0.15f * Mathf.Pow(x, 4);
         }
     }
     

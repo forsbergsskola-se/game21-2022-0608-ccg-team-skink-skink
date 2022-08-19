@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
   m_Name: Deirdre_Lv3
   m_EditorClassIdentifier: 
-  description: 
-  cardTitle: 
+  description: Act as a wall to slow enemy down
+  cardTitle: Deirdre (Professional)
   cardImage: {fileID: 21300000, guid: b298b601976418c4ba4a0689a14b76fd, type: 3}
   typeImage: {fileID: 0}
   level: 3
-  apCost: 100
+  apCost: 55
   coolDownTime: 40
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 7334044366877866226, guid: 79ccfeac4ed2bab4e9aad599fe8b95a6,
+    type: 3}
   upgradedCard: {fileID: 0}
   currencyValueSettings:
     SellCost: 50

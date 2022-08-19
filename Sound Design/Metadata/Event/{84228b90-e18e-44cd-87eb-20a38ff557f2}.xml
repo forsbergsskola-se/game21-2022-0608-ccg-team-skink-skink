@@ -35,7 +35,7 @@
 			<destination>{0c784b5f-90b6-4a92-9fc3-46e65fb93ca9}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{2ec09904-d3d5-4274-ad83-68f646c88e00}</destination>
+			<destination>{290af36b-2860-4de0-837e-3c1aa9da5ec5}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{54c7aa74-d043-4f32-aa78-1c0701b04e08}">
@@ -59,10 +59,14 @@
 			<destination>{43e2d444-a86e-4053-9803-8dd1acba7bca}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{29130461-7eae-43b7-8ded-6995dd9ddf5c}</destination>
+			<destination>{9d3b8f4b-90f2-420c-b4b1-4b36fb1e52f5}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{123fce81-ea81-4029-a6ea-5117f48275f4}" />
+	<object class="EventAutomatableProperties" id="{123fce81-ea81-4029-a6ea-5117f48275f4}">
+		<property name="maxVoices">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{32ae2ae9-4474-42df-b023-a4faeee1743d}" />
 	<object class="GroupTrack" id="{65af1b99-c4a4-4cdb-a5f7-dc3df722772b}">
 		<relationship name="mixerGroup">

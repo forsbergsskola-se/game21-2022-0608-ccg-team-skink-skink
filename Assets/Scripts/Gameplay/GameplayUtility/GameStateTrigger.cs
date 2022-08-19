@@ -1,16 +1,17 @@
-using Gameplay.EndGame;
+using System;
 using UnityEngine;
+using Utility;
 
 namespace Gameplay.Utility
 {
     public class GameStateTrigger : MonoBehaviour
     {
-        [SerializeField] private EndGameStateSO endGame;
-        
         public void TriggerEndGame()
         {
-            if (gameObject.CompareTag("Player")) endGame.LoseInvoke();
-            else endGame.WinInvoke();
+            Dependencies.Instance.EndOfGameRelay.OnGameEnded(!gameObject.CompareTag("Player"));
+            // Time.timeScale = 0;
         }
+
+        // private void OnDestroy() => Time.timeScale = 1;
     }
 }

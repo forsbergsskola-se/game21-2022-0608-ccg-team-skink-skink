@@ -10,18 +10,21 @@ namespace Utility.ActionPoints
         [SerializeField] private ActionPointsSO actionPoints;
         [SerializeField] private UnityEvent<uint, uint> onAPUpdate;
         [SerializeField] private UnityEvent<int> onAPSpent;
-        public PlayOneShot PlayOneShot;
         
         private uint currentAP;
         private bool isUpdating;
 
         private ICardHand hand;
         
-        private void Awake() => hand = Dependencies.Instance.PlayerCardHand;
+        private void Awake()
+        {
+            hand = Dependencies.Instance.PlayerCardHand;
+            currentAP = actionPoints.Start;
+        } 
         
         private void FixedUpdate()
         {
-            currentAP = actionPoints.Start;
+            
             
             if (currentAP < actionPoints.Max && !isUpdating)
             {
@@ -50,7 +53,7 @@ namespace Utility.ActionPoints
             if (currentAP >= apCost)
             {
                 StopAllCoroutines();
-                
+                PlayOneShot.PlayCardAudio();
                 StartCoroutine(SubtractAP(apCost, buttonId));
             }
             else if (currentAP <= apCost)

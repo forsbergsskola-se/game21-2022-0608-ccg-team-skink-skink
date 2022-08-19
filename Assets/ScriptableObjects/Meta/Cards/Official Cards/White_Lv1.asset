@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
   m_Name: White_Lv1
   m_EditorClassIdentifier: 
-  description: 
-  cardTitle: 
+  description: Strong close combat tank
+  cardTitle: 'Wat yak pho (Basic) '
   cardImage: {fileID: 21300000, guid: de202ab40c7b43f47a43d794e4e04466, type: 3}
   typeImage: {fileID: 0}
   level: 1
-  apCost: 30
+  apCost: 50
   coolDownTime: 10
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 2963407571845942736, guid: a44b4836576700e418aad542e04d3580,
+    type: 3}
   upgradedCard: {fileID: 11400000, guid: ee8d3f55e97718f46b808606f6796b00, type: 2}
   currencyValueSettings:
     SellCost: 50

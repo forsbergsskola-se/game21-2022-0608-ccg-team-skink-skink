@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
   m_Name: Quasimodo_Lv3
   m_EditorClassIdentifier: 
-  description: 
-  cardTitle: 
+  description: Close combat tank
+  cardTitle: Quasimodo (Professional)
   cardImage: {fileID: 21300000, guid: e7302e2e4bd91594ea950ce10034b01f, type: 3}
   typeImage: {fileID: 0}
   level: 3
-  apCost: 100
+  apCost: 70
   coolDownTime: 40
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 2963407571845942736, guid: 9c40b5549a32b9544b5121385aae96cf,
+    type: 3}
   upgradedCard: {fileID: 0}
   currencyValueSettings:
     SellCost: 50

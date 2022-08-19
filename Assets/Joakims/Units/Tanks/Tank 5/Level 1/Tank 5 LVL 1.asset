@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
+  m_Name: Tank 5 LVL 1
+  m_EditorClassIdentifier: 
+  description: Suicide Tank
+  cardTitle: 
+  cardImage: {fileID: 0}
+  typeImage: {fileID: 0}
+  level: 1
+  apCost: 250
+  coolDownTime: 70
+  unitPrefab: {fileID: 2963407571845942736, guid: a44b4836576700e418aad542e04d3580,
+    type: 3}
+  upgradedCard: {fileID: 0}
+  currencyValueSettings:
+    SellCost: 30
+    UpgradeCost: 130

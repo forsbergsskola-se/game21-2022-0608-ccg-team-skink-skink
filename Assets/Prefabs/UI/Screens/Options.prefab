@@ -263,9 +263,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.4797, y: 15.9907}
-  m_SizeDelta: {x: 229.3702, y: 116.0682}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.21588135, y: -3.576538}
+  m_SizeDelta: {x: 359.946, y: 182.1435}
+  m_Pivot: {x: 0.5172681, y: 0.3650705}
 --- !u!222 &2113762727139773967
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -415,8 +415,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000010967, y: 10.9}
-  m_SizeDelta: {x: 229.7441, y: 113.9977}
+  m_AnchoredPosition: {x: -6.6, y: 24.1}
+  m_SizeDelta: {x: 359.946, y: 182.1435}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8429482308607824322
 CanvasRenderer:
@@ -579,7 +579,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7134702314044845896}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8521389337037223098}
+        m_TargetAssemblyTypeName: SFXMusicMuter, Assembly-CSharp
+        m_MethodName: SwitchAudioSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7134702314187040763
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +680,7 @@ GameObject:
   - component: {fileID: 7134702314288938763}
   - component: {fileID: 7134702314288938764}
   - component: {fileID: 7134702314288938765}
+  - component: {fileID: 3916980187418991772}
   m_Layer: 5
   m_Name: Button_BackStartScreen
   m_TagString: Untagged
@@ -691,10 +704,10 @@ RectTransform:
   m_Father: {fileID: 7134702315078245657}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.052243017, y: 1}
-  m_AnchorMax: {x: 0.052243017, y: 1}
-  m_AnchoredPosition: {x: -0.79815674, y: -59.142853}
-  m_SizeDelta: {x: 130.9095, y: 54.1893}
+  m_AnchorMin: {x: 0.071, y: 1}
+  m_AnchorMax: {x: 0.071, y: 1}
+  m_AnchoredPosition: {x: 3.696289, y: -63.5513}
+  m_SizeDelta: {x: 201.21548, y: 83.2921}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7134702314288938763
 CanvasRenderer:
@@ -777,7 +790,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7134702314288938764}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3916980187418991772}
+        m_TargetAssemblyTypeName: ButtonAlpha, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3916980187418991772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134702314288938767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  close: {fileID: 7890413829553513071}
+  open: {fileID: 0}
 --- !u!1 &7134702314392022709
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -977,7 +1016,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7134702314505641741}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8521389337037223098}
+        m_TargetAssemblyTypeName: SFXMusicMuter, Assembly-CSharp
+        m_MethodName: SwitchAudioMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7134702314525816402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7134702315436354794}
   - component: {fileID: 7890413829553513071}
+  - component: {fileID: 8521389337037223098}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1418,10 +1470,26 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7134702315436354795}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &8521389337037223098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134702315436354795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b5840d4ef0c85479285ff0dcb2c58e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicOn: {fileID: 7134702314525816402}
+  MusicOff: {fileID: 7134702314569817186}
+  SFXOn: {fileID: 7134702315010479618}
+  SFXOff: {fileID: 7134702315895344531}
 --- !u!1 &7134702315869826144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,6 +1502,7 @@ GameObject:
   - component: {fileID: 7134702315869826172}
   - component: {fileID: 7134702315869826173}
   - component: {fileID: 7134702315869826174}
+  - component: {fileID: 795538700712849132}
   m_Layer: 5
   m_Name: Button_Credits
   m_TagString: Untagged
@@ -1457,10 +1526,10 @@ RectTransform:
   m_Father: {fileID: 7134702315078245657}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.94451773, y: 1}
-  m_AnchorMax: {x: 0.94451773, y: 1}
-  m_AnchoredPosition: {x: -4.3533936, y: -62.31601}
-  m_SizeDelta: {x: 130.90952, y: 54.18931}
+  m_AnchorMin: {x: 0.92725086, y: 1}
+  m_AnchorMax: {x: 0.92725086, y: 1}
+  m_AnchoredPosition: {x: 0.7800293, y: -64.3}
+  m_SizeDelta: {x: 201.2155, y: 83.2921}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7134702315869826172
 CanvasRenderer:
@@ -1513,7 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1543,7 +1612,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7134702315869826173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 795538700712849132}
+        m_TargetAssemblyTypeName: ButtonAlpha, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &795538700712849132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134702315869826144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  close: {fileID: 7890413829553513071}
+  open: {fileID: 0}
 --- !u!1 &7134702315895344531
 GameObject:
   m_ObjectHideFlags: 0
