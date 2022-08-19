@@ -15,7 +15,6 @@ namespace Meta.LoadSave
         {
             this.cardArray = cardArray;
             this.starterCardHand = starterCardHand;
-            Debug.Log(saveFilePath);
         }
         
         public void Load()
