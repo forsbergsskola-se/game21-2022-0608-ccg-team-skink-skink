@@ -1615,7 +1615,7 @@ PrefabInstance:
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
       propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
@@ -1629,6 +1629,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
+      propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
+        type: 3}
       propertyPath: onAPUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -1637,6 +1642,11 @@ PrefabInstance:
       propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8142048310914365517}
+    - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
+        type: 3}
+      propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 825267189044769793}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
       propertyPath: onAPUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1654,8 +1664,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
+      propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
+        type: 3}
       propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SpawnUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
+        type: 3}
+      propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CoolDownUnit
       objectReference: {fileID: 0}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
@@ -1674,12 +1694,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
+      propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gameplay.Unit.UnitUtility.UnitCoolDownTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
+        type: 3}
       propertyPath: onAPUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Gameplay.Unit.UnitSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
       propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
+        type: 3}
+      propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
@@ -2028,9 +2058,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 825267189044769793}
+      objectReference: {fileID: 734796236}
     - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2039,7 +2074,12 @@ PrefabInstance:
     - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CoolDownUnit
+      value: SpendAP
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507454181359136931, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Utility.APCounter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7507454182356554365, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
@@ -2094,9 +2134,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 825267189044769793}
+      objectReference: {fileID: 734796236}
     - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2105,7 +2150,12 @@ PrefabInstance:
     - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CoolDownUnit
+      value: SpendAP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911118562625, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Utility.APCounter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8567854911203016220, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
@@ -2114,9 +2164,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 825267189044769793}
+      objectReference: {fileID: 734796236}
     - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2125,13 +2180,23 @@ PrefabInstance:
     - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CoolDownUnit
+      value: SpendAP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911203016221, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Utility.APCounter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 825267189044769793}
+      objectReference: {fileID: 734796236}
     - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2140,7 +2205,12 @@ PrefabInstance:
     - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CoolDownUnit
+      value: SpendAP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854911969007890, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Utility.APCounter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8567854911969007891, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
@@ -2149,9 +2219,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 825267189044769793}
+      objectReference: {fileID: 734796236}
     - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2160,7 +2235,12 @@ PrefabInstance:
     - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CoolDownUnit
+      value: SpendAP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912237602614, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Utility.APCounter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8567854912237602615, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
@@ -2169,9 +2249,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 825267189044769793}
+      objectReference: {fileID: 734796236}
     - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2180,7 +2265,12 @@ PrefabInstance:
     - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CoolDownUnit
+      value: SpendAP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567854912359764058, guid: a812e705abe261149936f973b3a4aad2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Utility.APCounter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8567854912359764059, guid: a812e705abe261149936f973b3a4aad2,
         type: 3}
