@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07d6003ba72d59498b74d4ad2aecb9e, type: 3}
   m_Name: Witch_CombatStats
   m_EditorClassIdentifier: 
-  attackSpeed: 2
+  attackSpeed: 1
   damage: 3
   defence: 0
   range: 5
