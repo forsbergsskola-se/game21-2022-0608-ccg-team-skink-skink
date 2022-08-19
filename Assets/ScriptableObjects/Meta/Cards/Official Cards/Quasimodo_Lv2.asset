@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d8747a93a8cbf4da21b9fdf2bb640a, type: 3}
   m_Name: Quasimodo_Lv2
   m_EditorClassIdentifier: 
-  description: 
-  cardTitle: 
+  description: Close combat tank
+  cardTitle: Quasimodo (Advanced)
   cardImage: {fileID: 21300000, guid: 92635c6bfe72e4f4fbfed546fca0f97f, type: 3}
   typeImage: {fileID: 0}
   level: 2
