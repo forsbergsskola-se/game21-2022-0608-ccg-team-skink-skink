@@ -1617,7 +1617,7 @@ PrefabInstance:
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
       propertyPath: onAPSpent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5645230862172465347, guid: ff8a5af530a7c314b9fcf0ee1dee8a13,
         type: 3}
