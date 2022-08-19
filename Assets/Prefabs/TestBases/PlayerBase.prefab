@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 825267187892035192}
   - component: {fileID: 825267187892035196}
   - component: {fileID: 5349995886529515134}
+  - component: {fileID: 3314447836091460421}
   m_Layer: 0
   m_Name: PlayerBase
   m_TagString: Player
@@ -209,7 +210,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  myAnimator: {fileID: 0}
 --- !u!114 &5349995886529515134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +222,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0b39e7185a0c747bae2e990bcd133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endGame: {fileID: 11400000, guid: ad9c07104abe29c4181108a53c8848fb, type: 2}
+--- !u!114 &3314447836091460421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825267187892035190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dab81b4e109d584bb218d822502890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3711274337765347045
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f01e22c1dc542a4e94591d963d692d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayOneShot: {fileID: 0}
+  animationFramerate: 30
 --- !u!4 &825267188389204837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8142048309292015401, guid: d7aef7322d2a0cb4c896ae1940a45aea,
