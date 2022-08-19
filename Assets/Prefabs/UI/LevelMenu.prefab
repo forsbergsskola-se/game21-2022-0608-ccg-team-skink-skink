@@ -95,8 +95,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsInOrder:
-  - {fileID: 11400000, guid: de86d4f163b455a4fb368b97586f2155, type: 2}
-  - {fileID: 11400000, guid: de86d4f163b455a4fb368b97586f2155, type: 2}
+  - {fileID: 11400000, guid: f5cd2c92fec81e24cbd3245a200a6f5c, type: 2}
+  - {fileID: 11400000, guid: 60860dc8399441548a7d0dda308ffd21, type: 2}
+  - {fileID: 11400000, guid: 18801822fcb0cb24bba4ac94c2116c19, type: 2}
+  - {fileID: 11400000, guid: f2e6042ed27ef4d48b8ab88e3a4f8614, type: 2}
+  - {fileID: 11400000, guid: 8bfe1449030997b4383e28ba899932bb, type: 2}
   detailedLevelViewer: {fileID: 0}
 --- !u!1001 &1020394754225334669
 PrefabInstance:

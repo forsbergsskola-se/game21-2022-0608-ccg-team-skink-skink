@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae75a4427e6b5ca458a21e6ef5699a37, type: 3}
   m_Name: NilsOskar
   m_EditorClassIdentifier: 
-  visualName: Nils Oskar
-  description: 
+  visualName: Nils Holgersson's journey through Sweden
+  description: Visit Sweden and meet the boy Nils. He is a real menace to animals
+    so teach him a lesson!
   internalSceneName: GameLevel4

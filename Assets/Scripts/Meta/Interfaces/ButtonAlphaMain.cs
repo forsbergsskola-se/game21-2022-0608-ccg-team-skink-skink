@@ -38,7 +38,7 @@ public class ButtonAlphaMain : MonoBehaviour
 
     public void HideHubScreen()
     {
-        close.alpha = 1;
+        open.alpha = 0;
         close.interactable = true;
         close.blocksRaycasts = true;
     }

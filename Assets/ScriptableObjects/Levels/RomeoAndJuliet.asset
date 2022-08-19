@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: RomeoAndJuliet
   m_EditorClassIdentifier: 
   visualName: Romeo And Juliet
-  description: 
+  description: In this play you take to the streets of Italy. It is filled with passion,
+    tragic, and forbidden love. Help Romeo and Juliet to stay together!
   internalSceneName: GameLevel1

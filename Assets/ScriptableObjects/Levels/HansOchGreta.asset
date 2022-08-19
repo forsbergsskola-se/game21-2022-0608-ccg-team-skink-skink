@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae75a4427e6b5ca458a21e6ef5699a37, type: 3}
   m_Name: HansOchGreta
   m_EditorClassIdentifier: 
-  visualName: Hans och Greta
-  description: 
+  visualName: Hansel & Gretel
+  description: Hansel & Gretel has gotten lost in the woods. A flesh hungry witch
+    has lured them into her oven. Help the children!
   internalSceneName: GameLevel2
