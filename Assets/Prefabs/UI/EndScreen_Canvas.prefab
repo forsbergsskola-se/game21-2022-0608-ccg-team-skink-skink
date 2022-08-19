@@ -204,6 +204,7 @@ MonoBehaviour:
   normalCoinLoseReward: 10
   lootBoxWinRewardAmount: 1
   lootBoxLoseRewardAmount: 0
+  winLoseText: {fileID: 1902710987497405794}
   normalCoinRewardTextMesh: {fileID: 4949617686198171249}
   lootBoxAmountRewardTextMesh: {fileID: 9121258503927304659}
   endOfGameScreenObject: {fileID: 55098045539255524}

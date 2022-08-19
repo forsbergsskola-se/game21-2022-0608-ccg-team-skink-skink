@@ -10,6 +10,8 @@ public class EndGameHandler : MonoBehaviour {
     [SerializeField] int lootBoxWinRewardAmount;
     [SerializeField] int lootBoxLoseRewardAmount;
 
+    [SerializeField] private TextMeshProUGUI winLoseText;
+
     [SerializeField] TextMeshProUGUI normalCoinRewardTextMesh;
     [SerializeField] TextMeshProUGUI lootBoxAmountRewardTextMesh;
 
@@ -26,10 +28,12 @@ public class EndGameHandler : MonoBehaviour {
     void WinScreen() {
         endOfGameScreenObject.SetActive(true);
         UpdateTextAndRewardPlayer(normalCoinWinReward, lootBoxWinRewardAmount);
+        winLoseText.text = "You Win!";
     }
     void LoseScreen() {
         endOfGameScreenObject.SetActive(true);
         UpdateTextAndRewardPlayer(normalCoinLoseReward, lootBoxLoseRewardAmount);
+        winLoseText.text = "You Lose!";
     }
 
     public void LoadMainMenu() {
