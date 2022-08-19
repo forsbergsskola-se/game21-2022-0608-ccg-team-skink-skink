@@ -17,8 +17,19 @@ namespace Meta.LoadSave
         private LoadState loadState;
         private SaveState saveState;
 
+        public static LoadSaveManager Instance { get; private set; }
+        
         private void Awake()
         {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
             Debug.Log("Start file read in saveManager");
             loadState = new LoadState(cardArray, starterCardHand as ICardHand);
             loadState.Load();
