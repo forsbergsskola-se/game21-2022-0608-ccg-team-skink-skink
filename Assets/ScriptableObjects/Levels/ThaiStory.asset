@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae75a4427e6b5ca458a21e6ef5699a37, type: 3}
   m_Name: ThaiStory
   m_EditorClassIdentifier: 
-  visualName: Thai Story
-  description: 
+  visualName: Yak wat chaeng & Yak wat pho
+  description: Two giants got separated over a money lending fight. Now they are
+    fighting again. Visit Thailand and solve the dispute!
   internalSceneName: GameLevel5
