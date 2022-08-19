@@ -24,7 +24,7 @@ namespace Meta.Ads
 #endif
 
             //Disable the button until the ad is ready to show:
-            _showAdButton.interactable = false;
+            if (_showAdButton != null) _showAdButton.interactable = false;
         }
  
         // Load content to the Ad Unit:
@@ -92,7 +92,7 @@ namespace Meta.Ads
         void OnDestroy()
         {
             // Clean up the button listeners:
-            _showAdButton.onClick.RemoveAllListeners();
+            if (_showAdButton != null) _showAdButton.onClick.RemoveAllListeners();
         }
     }
 }
