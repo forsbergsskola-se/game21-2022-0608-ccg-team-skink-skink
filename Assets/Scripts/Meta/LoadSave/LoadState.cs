@@ -22,7 +22,7 @@ namespace Meta.LoadSave
             if (!File.Exists(saveFilePath))
             {
                 SetStateFromStarterHand();
-                Directory.CreateDirectory(Application.persistentDataPath + "/SaveGames");
+                Directory.CreateDirectory(Application.persistentDataPath + "/SavedGames");
                 return;
             }
             
