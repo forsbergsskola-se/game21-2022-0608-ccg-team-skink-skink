@@ -2198,8 +2198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607e5088d0ffde7428f9dcc934600979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainmenu: 0
   close: {fileID: 3242753715588510477}
   open: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &6591267391302435787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,6 +3408,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6354848057906404331}
     m_Modifications:
+    - target: {fileID: 811895397534855462, guid: 5cd22da1c5a54e0459db2ac65462063c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811895397534855462, guid: 5cd22da1c5a54e0459db2ac65462063c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.5000763
+      objectReference: {fileID: 0}
     - target: {fileID: 1765265302089330097, guid: 5cd22da1c5a54e0459db2ac65462063c,
         type: 3}
       propertyPath: m_IsActive
@@ -3535,6 +3547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562330975821311733, guid: 5cd22da1c5a54e0459db2ac65462063c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.9390259
       objectReference: {fileID: 0}
     - target: {fileID: 4695414951039683205, guid: 5cd22da1c5a54e0459db2ac65462063c,
         type: 3}
