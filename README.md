@@ -25,7 +25,7 @@ Joakim Örnerfors | [LinkedIn]() | [Portfolio]()<br/>
 
 **Programmers**<br/>
 Emir Ulusoy | [LinkedIn]() | [Portfolio]()<br/>
-Felix Kjellberg | [LinkedIn](https://www.linkedin.com/in/felix-kjellberg-837321228/) | [Portfolio]()<br/>
+Felix Kjellberg | [LinkedIn](https://www.linkedin.com/in/felix-kjellberg-837321228/) | [Portfolio](https://felixlkjellberg.wixsite.com/felix-kjellberg)<br/>
 Olle Reberg | [LinkedIn]() | [Portfolio]()<br/>
 Oskar Anderson | [LinkedIn]() | [Portfolio]()<br/>
 Sami Olsson | [LinkedIn]() | [Portfolio]()<br/>
