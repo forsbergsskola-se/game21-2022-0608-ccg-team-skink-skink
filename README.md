@@ -13,28 +13,28 @@ https://puppettearsgame.wixsite.com/main
 ## Team Skink Skink
 
 **Art**<br/>
-Amanda Hahne 
-Filip Suthawan 
-Rachael Whelan 
-Rasmus Mårtenson 
+Amanda Hahne <br/>
+Filip Suthawan <br/>
+Rachael Whelan <br/>
+Rasmus Mårtenson <br/>
 
 **Game Designers**<br/>
 Elias Bernmarker | [LinkedIn](https://www.linkedin.com/in/elias-bernmarker-0733a9203/?original_referer=) | [Portfolio](https://ivinsiblee.wixsite.com/eliasbernmarker)<br/>
-Erick Vaghi 
-Joakim Örnerfors
+Erick Vaghi <br/>
+Joakim Örnerfors<br/>
 
 **Programmers**<br/>
-Emir Ulusoy 
+Emir Ulusoy <br/>
 Felix Kjellberg | [LinkedIn](https://www.linkedin.com/in/felix-kjellberg-837321228/) | [Portfolio](https://felixlkjellberg.wixsite.com/felix-kjellberg)<br/>
-Olle Reberg 
-Oskar Anderson 
-Sami Olsson 
-Sara Saber 
+Olle Reberg <br/>
+Oskar Anderson <br/>
+Sami Olsson <br/>
+Sara Saber <br/>
 Sokratis Papageorgiou | [LinkedIn](https://www.linkedin.com/in/sokratis-papageorgiou-b26b1652/) | [Portfolio](https://www.sokpapageorgiou.com/)<br/>
 
 **Sound Designers**<br/>
-Arvid Lundin 
-Tom Olovsson
+Arvid Lundin <br/>
+Tom Olovsson<br/>
 
 ## Design Documents
 
