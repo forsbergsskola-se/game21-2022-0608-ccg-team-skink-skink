@@ -13,28 +13,28 @@ https://puppettearsgame.wixsite.com/main
 ## Team Skink Skink
 
 **Art**<br/>
-Amanda Hahne | [LinkedIn]() | [Portfolio]()<br/>
-Filip Suthawan | [LinkedIn]() | [Portfolio]()<br/>
-Rachael Whelan | [LinkedIn]() | [Portfolio]()<br/>
-Rasmus Mårtenson | [LinkedIn]() | [Portfolio]()<br/>
+Amanda Hahne 
+Filip Suthawan 
+Rachael Whelan 
+Rasmus Mårtenson 
 
 **Game Designers**<br/>
 Elias Bernmarker | [LinkedIn](https://www.linkedin.com/in/elias-bernmarker-0733a9203/?original_referer=) | [Portfolio](https://ivinsiblee.wixsite.com/eliasbernmarker)<br/>
-Erick Vaghi | [LinkedIn]() | [Portfolio]()<br/>
-Joakim Örnerfors | [LinkedIn]() | [Portfolio]()<br/>
+Erick Vaghi 
+Joakim Örnerfors
 
 **Programmers**<br/>
-Emir Ulusoy | [LinkedIn]() | [Portfolio]()<br/>
+Emir Ulusoy 
 Felix Kjellberg | [LinkedIn](https://www.linkedin.com/in/felix-kjellberg-837321228/) | [Portfolio](https://felixlkjellberg.wixsite.com/felix-kjellberg)<br/>
-Olle Reberg | [LinkedIn]() | [Portfolio]()<br/>
-Oskar Anderson | [LinkedIn]() | [Portfolio]()<br/>
-Sami Olsson | [LinkedIn]() | [Portfolio]()<br/>
-Sara Saber | [LinkedIn]() | [Portfolio]()<br/>
+Olle Reberg 
+Oskar Anderson 
+Sami Olsson 
+Sara Saber 
 Sokratis Papageorgiou | [LinkedIn](https://www.linkedin.com/in/sokratis-papageorgiou-b26b1652/) | [Portfolio](https://www.sokpapageorgiou.com/)<br/>
 
 **Sound Designers**<br/>
-Arvid Lundin | [LinkedIn]() | [Portfolio]()<br/>
-Tom Olovsson | [LinkedIn]() | [Portfolio]()<br/>
+Arvid Lundin 
+Tom Olovsson
 
 ## Design Documents
 
